@@ -250,6 +250,7 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
                 env!("CARGO_PKG_VERSION"),
                 include_str!("parser.rs"),
                 include_str!("links.rs"),
+                include_str!("markup.rs"),
                 include_str!("metadata.rs"),
                 include_str!("index.rs")
             )
