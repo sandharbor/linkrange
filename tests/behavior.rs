@@ -517,3 +517,34 @@ fn equally_short_routes_preserve_discovery_order_for_stable_breadcrumbs() {
         vec!["A.md", "Z.md", "Target.md"]
     );
 }
+
+#[test]
+fn explicit_physical_excalidraw_filenames_resolve_in_wikilinks_and_markdown() {
+    let fixture = Fixture::new();
+    fixture.write(
+        "A.md",
+        "[[nested/drawing.excalidraw.md|drawing]] [drawing](nested/drawing.excalidraw.md)",
+    );
+    fixture.write(
+        "nested/drawing.excalidraw.md",
+        "---\nexcalidraw-plugin: parsed\n---\n",
+    );
+    let mut request = fixture.request(&["A.md"], 1, 0);
+    request.query.explain_resolution = true;
+    let response = query(&request).unwrap();
+    assert_eq!(
+        paths(&response),
+        vec!["A.md", "nested/drawing.excalidraw.md"]
+    );
+    assert_eq!(
+        node(&response, "nested/drawing.excalidraw.md").file.format,
+        "excalidraw"
+    );
+    for link in &response.links_by_source["A.md"] {
+        assert_eq!(link.target.as_deref(), Some("nested/drawing.excalidraw.md"));
+        assert_eq!(
+            link.resolution.as_ref().unwrap().candidates,
+            vec!["nested/drawing.excalidraw.md"]
+        );
+    }
+}

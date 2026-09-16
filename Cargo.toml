@@ -18,5 +18,4 @@ pulldown-cmark = "0.13"
 html5ever = "0.40"
 
 [dev-dependencies]
-libc = "0.2"
 tempfile = "3"

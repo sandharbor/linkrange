@@ -275,7 +275,6 @@ dependencies = [
  "clap",
  "fs2",
  "html5ever",
- "libc",
  "pulldown-cmark",
  "serde",
  "serde_json",

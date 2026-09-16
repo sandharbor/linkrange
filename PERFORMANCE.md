@@ -6,7 +6,7 @@ It writes exactly 500,000 source files by default, plus its manifest outside the
 source root. Corpus creation is not part of the measured query time.
 
 ```sh
-cargo build --locked --release --example performance
+cargo build --locked --release --bin linkrange --example performance
 ./target/release/examples/performance generate --directory /tmp/linkrange-corpus
 ./target/release/examples/performance measure --directory /tmp/linkrange-corpus \
   --repeats 3 > results.jsonl
@@ -14,22 +14,24 @@ cargo build --locked --release --example performance
 
 Use an unused directory name, or a smaller `--files 1000` for a harness smoke
 check. Delete only a corpus you created when done. The corpus has three link
-syntaxes, a deterministic ternary graph, variable prose lengths, selected and
-irrelevant frontmatter, malformed irrelevant YAML, and ignored code/comments.
+syntaxes, a deterministic ternary graph, ambiguous titles, HTML, SVG, Excalidraw,
+leaf assets, variable prose lengths, selected and irrelevant frontmatter,
+malformed irrelevant YAML, and ignored code/comments. Generator flags configure
+branching, directory size, frontmatter frequency, prose length, and seed.
 The manifest contains a generator version, file count, byte count, seed, and
 content fingerprint. This synthetic workload complements the authored suite;
 it does not claim to model every real vault.
 
 Each JSON line is independently interpretable: schema version, scenario, sample,
-Git revision, corpus identity, platform, total/open/serialization milliseconds,
+Git revision, Rust toolchain, corpus identity, platform, total milliseconds,
 phase timings, reads/link parses/YAML parses, cache bytes, process peak RSS,
-response bytes, graph sizes, semantic SHA-256, and correctness status. Peak RSS
-is the process lifetime high-water mark, so compare isolated scenario processes
-when assessing memory. Timing uses monotonic clocks. Cold means rebuilt index;
+response bytes, graph sizes, semantic SHA-256, and correctness status. Each sample executes a fresh CLI process: total time includes process startup,
+indexing, query, JSON serialization, and output transfer. Peak RSS comes from
+`/usr/bin/time` for that process (null when unavailable). Timing uses monotonic clocks. Cold means rebuilt index;
 OS filesystem caches are not flushed and must be reported as such.
 
 Scenarios: `cold`, `warm` (persisted-cache restart), `incremental` (one content
-edit), `metadata-change`, `no-cache`, and `wide`. Default queries stop at three
+edit), `add`, `delete`, `rename`, `metadata-change`, `no-cache`, and `wide`. Default queries stop at three
 hops (40 files); `wide` separately uses eight hops (9,841 files on the full
 corpus). Corpus size and traversal size are independent. Run one scenario with
 `--scenario warm`. Setup/priming and restoring controlled edits are excluded.

@@ -115,6 +115,15 @@ impl Resolver {
                 "relativePath",
             );
         }
+        // An explicit physical filename remains valid even when its detected
+        // format differs from its suffix (notably Excalidraw Markdown).
+        if crate::parser::wiki_link_has_explicit_file_type(link) {
+            if let Some(id) = self.by_path.get(&requested) {
+                if self.candidates[*id].format != link.link_parsed_file_type {
+                    return (vec![*id], "exactPath");
+                }
+            }
+        }
         let ids = self
             .by_title
             .get(&link.link_parsed_title)
@@ -204,7 +213,13 @@ impl Resolver {
     }
 
     pub fn explain(&self, link: &Link, source_directory: &str) -> ResolutionExplanation {
-        let (matches, reason) = self.matches(link, source_directory);
+        let mut original = link.clone();
+        original.link_parsed_file_type = if link.is_relative_path_link {
+            crate::links::parse_markdown_link_href(&link.link_original_text).file_type
+        } else {
+            crate::links::parse_link_text(&link.link_original_text).file_type
+        };
+        let (matches, reason) = self.matches(&original, source_directory);
         let mut paths: Vec<_> = matches
             .into_iter()
             .map(|id| self.candidates[id].path.clone())
