@@ -1,0 +1,1 @@
+ [[con - the data advantage is going to drive value creation]] and [[person - David Friedberg]] describes how YouTube has a large advantage there, because of the amount of content being uploaded, and how the content is multimodal.

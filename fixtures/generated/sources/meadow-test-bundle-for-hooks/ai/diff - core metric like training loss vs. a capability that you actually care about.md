@@ -1,0 +1,1 @@
+A [[core metrics]] like [[training loss]] vs. [[con - capabilities that you actually care about]]

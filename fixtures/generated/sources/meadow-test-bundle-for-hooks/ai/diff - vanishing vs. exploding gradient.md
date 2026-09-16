@@ -1,0 +1,1 @@
+[[vanishing gradient problem]] [[exploding gradient problem]]

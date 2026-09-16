@@ -1,0 +1,503 @@
+//! Executable behavior specifications. Each test creates real source files and
+//! exercises the public library; CLI scenarios use the compiled executable.
+use linkrange::*;
+use std::{fs, process::Command};
+
+struct Fixture {
+    temp: tempfile::TempDir,
+}
+impl Fixture {
+    fn new() -> Self {
+        let temp = tempfile::tempdir().unwrap();
+        fs::create_dir(temp.path().join("source")).unwrap();
+        Self { temp }
+    }
+    fn root(&self) -> std::path::PathBuf {
+        self.temp.path().join("source")
+    }
+    fn write(&self, path: &str, content: impl AsRef<[u8]>) {
+        let path = self.root().join(path);
+        fs::create_dir_all(path.parent().unwrap()).unwrap();
+        fs::write(path, content).unwrap();
+    }
+    fn request(&self, starts: &[&str], outlinks: u32, inlinks: u32) -> Request {
+        Request {
+            source_root: self.root(),
+            index: IndexOptions {
+                cache_directory: Some(self.temp.path().join("cache")),
+                ..Default::default()
+            },
+            query: Query {
+                starts: starts
+                    .iter()
+                    .map(|path| Start {
+                        path: (*path).into(),
+                        depths: None,
+                    })
+                    .collect(),
+                depths: Depths { outlinks, inlinks },
+                ..Default::default()
+            },
+        }
+    }
+}
+fn paths(response: &Response) -> Vec<&str> {
+    response
+        .nodes
+        .iter()
+        .map(|node| node.file.path.as_str())
+        .collect()
+}
+fn node<'a>(response: &'a Response, path: &str) -> &'a Node {
+    response.nodes.iter().find(|n| n.file.path == path).unwrap()
+}
+fn field(key: &str) -> FrontmatterField {
+    FrontmatterField {
+        key: key.into(),
+        substring: None,
+    }
+}
+
+#[test]
+fn every_hop_consumes_both_budgets_for_files_folders_and_mixed_starts() {
+    // Given one outbound hop uses the last incoming allowance.
+    let f = Fixture::new();
+    f.write("folder/A.md", "[[B]]");
+    f.write("B.md", "");
+    f.write("Incoming.md", "[[B]]");
+    for starts in [
+        &["folder/A.md"][..],
+        &["folder"][..],
+        &["folder", "folder/A.md"][..],
+    ] {
+        // When the same graph is requested through each supported start form.
+        let response = query(&f.request(starts, 3, 1)).unwrap();
+        // Then incoming traversal is not revived at B.
+        assert_eq!(paths(&response), ["B.md", "folder/A.md"]);
+        assert_eq!(node(&response, "B.md").remaining_inlinks, 0);
+        assert_eq!(node(&response, "B.md").remaining_outlinks, 2);
+    }
+    let f = Fixture::new();
+    f.write("A.md", "");
+    f.write("B.md", "[[A]]");
+    f.write("C.md", "[[B]]");
+    assert_eq!(
+        paths(&query(&f.request(&["A.md"], 1, 3)).unwrap()),
+        ["A.md", "B.md"],
+        "Incoming hops also consume outgoing depth"
+    );
+}
+
+#[test]
+fn frontier_ignores_both_expansive_and_restrictive_overrides_and_remains_capped() {
+    // Given A -> B -> C -> D -> E and an incoming link to C.
+    let f = Fixture::new();
+    for (path, text) in [
+        ("A", "[[B]]"),
+        ("B", "[[C]]"),
+        ("C", "[[D]]"),
+        ("D", "[[E]]"),
+        ("E", ""),
+        ("Incoming", "[[C]]"),
+    ] {
+        f.write(&format!("{path}.md"), text);
+    }
+    for override_depth in [0, 100] {
+        let mut request = f.request(&["A.md"], 1, 0);
+        request.query.frontier_depth = 2;
+        request.query.rules.push(Rule {
+            path: "C.md".into(),
+            outlinks: Some(override_depth),
+            inlinks: Some(100),
+            ..Default::default()
+        });
+        // When two frontier hops encounter the override.
+        let response = query(&request).unwrap();
+        // Then C and D are frontier, E is beyond the cap, and incoming stays exhausted.
+        assert_eq!(paths(&response), ["A.md", "B.md", "C.md", "D.md"]);
+        assert_eq!(node(&response, "C.md").inclusion, Inclusion::Frontier);
+        assert_eq!(node(&response, "D.md").remaining_outlinks, -2);
+        assert_eq!(node(&response, "C.md").remaining_inlinks, 0);
+        request.query.frontier_depth = 0;
+        assert_eq!(paths(&query(&request).unwrap()), ["A.md", "B.md"]);
+    }
+}
+
+#[test]
+fn stop_includes_a_node_exclude_omits_it_and_independent_routes_remain_valid() {
+    let f = Fixture::new();
+    f.write("A.md", "[[B]] [[D]]");
+    f.write("B.md", "[[C]]");
+    f.write("C.md", "");
+    f.write("D.md", "[[C]]");
+    let mut request = f.request(&["A.md"], 3, 0);
+    request.query.rules.push(Rule {
+        path: "B.md".into(),
+        stop: true,
+        ..Default::default()
+    });
+    assert_eq!(
+        paths(&query(&request).unwrap()),
+        ["A.md", "B.md", "C.md", "D.md"]
+    );
+    request.query.rules[0].exclude = true;
+    let response = query(&request).unwrap();
+    assert_eq!(paths(&response), ["A.md", "C.md", "D.md"]);
+    assert_eq!(node(&response, "C.md").route, ["A.md", "D.md", "C.md"]);
+    f.write("A.md", "[[B]]");
+    request.query.rules[0].exclude = false;
+    assert_eq!(paths(&query(&request).unwrap()), ["A.md", "B.md"]);
+}
+
+#[test]
+fn boundary_embeds_are_terminal_and_only_selected_types_get_the_exception() {
+    let f = Fixture::new();
+    f.write("A.md", "![[image.svg]] [[linked.svg]] ![[page.md]]");
+    f.write("image.svg", "<svg><a href='Beyond.md'/></svg>");
+    f.write("linked.svg", "");
+    f.write("page.md", "[[Beyond]]");
+    f.write("Beyond.md", "");
+    let mut request = f.request(&["A.md"], 0, 0);
+    request.query.boundary_embed_types = vec!["svg".into()];
+    let response = query(&request).unwrap();
+    assert_eq!(paths(&response), ["A.md", "image.svg"]);
+    assert_eq!(
+        node(&response, "image.svg").inclusion,
+        Inclusion::EmbeddedAsset
+    );
+    request.query.rules.push(Rule {
+        path: "image.svg".into(),
+        outlinks: Some(100),
+        ..Default::default()
+    });
+    assert_eq!(paths(&query(&request).unwrap()), ["A.md", "image.svg"]);
+}
+
+#[test]
+fn query_scoped_resolution_and_adjacency_include_outside_neighbors_without_admitting_them() {
+    let f = Fixture::new();
+    f.write("A.md", "[[B]] [[Missing]]");
+    f.write("B.md", "");
+    f.write("Outside.md", "[[A]]");
+    f.write("Unrelated.md", "");
+    let mut request = f.request(&["A.md"], 0, 0);
+    request.query.adjacency = true;
+    let response = query(&request).unwrap();
+    assert_eq!(paths(&response), ["A.md"]);
+    assert_eq!(response.adjacency["A.md"].inlinks, ["Outside.md"]);
+    assert_eq!(response.adjacency["A.md"].outlinks, ["B.md"]);
+    assert_eq!(response.links_by_source.len(), 1);
+    assert_eq!(
+        response.links_by_source["A.md"][0].target.as_deref(),
+        Some("B.md")
+    );
+    assert_eq!(response.links_by_source["A.md"][1].target, None);
+    assert!(response.edges.is_empty());
+}
+
+#[test]
+fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() {
+    let f = Fixture::new();
+    f.write("nested/A.md", "[[Idea|display]]");
+    for name in [
+        "Idea.md",
+        "nested/Idea.md",
+        "aaa/Idea.md",
+        "zzz/Idea.md",
+        "deep/deeper/Idea.md",
+    ] {
+        f.write(name, "");
+    }
+    let mut request = f.request(&["nested/A.md"], 1, 0);
+    request.query.explain_resolution = true;
+    for (remove, expected, reason) in [
+        (None, "Idea.md", "sourceRoot"),
+        (Some("Idea.md"), "nested/Idea.md", "sourceDirectory"),
+        (
+            Some("nested/Idea.md"),
+            "aaa/Idea.md",
+            "shallowestThenLexical",
+        ),
+        (Some("aaa/Idea.md"), "zzz/Idea.md", "shallowestThenLexical"),
+    ] {
+        if let Some(path) = remove {
+            fs::remove_file(f.root().join(path)).unwrap();
+        }
+        let response = query(&request).unwrap();
+        let link = &response.links_by_source["nested/A.md"][0];
+        assert_eq!(link.target.as_deref(), Some(expected));
+        assert_eq!(link.link_parsed_alias.as_deref(), Some("display"));
+        assert_eq!(link.resolution.as_ref().unwrap().reason, reason);
+    }
+}
+
+#[test]
+fn html_svg_and_html_inside_markdown_classify_elements_and_ignore_comments_and_code() {
+    let f = Fixture::new();
+    f.write("A.md", "<img src='image.svg'>\n\n```html\n<img src='missing.png'>\n```\n\n<!-- <img src='missing.png'> -->\n\n[Page](page.html)");
+    f.write(
+        "image.svg",
+        "<svg><image href='texture.png'/><a href='B.md'/></svg>",
+    );
+    f.write("B.md", "");
+    f.write("texture.png", []);
+    f.write("page.html","<!-- <a href='missing.md'> --> <a href='B.md'>B</a><script>const text = `<img src='missing.png'>`;</script><img src='texture.png'>");
+    let response = query(&f.request(&["A.md"], 3, 0)).unwrap();
+    assert_eq!(
+        paths(&response),
+        ["A.md", "B.md", "image.svg", "page.html", "texture.png"]
+    );
+    assert_eq!(response.links_by_source["A.md"].len(), 2);
+    assert_eq!(response.links_by_source["page.html"].len(), 2);
+    assert!(
+        response.links_by_source["image.svg"]
+            .iter()
+            .find(|link| link.target.as_deref() == Some("texture.png"))
+            .unwrap()
+            .is_embedded
+    );
+    assert!(
+        !response.links_by_source["image.svg"]
+            .iter()
+            .find(|link| link.target.as_deref() == Some("B.md"))
+            .unwrap()
+            .is_embedded
+    );
+}
+
+#[test]
+fn standard_markdown_reference_links_are_resolved() {
+    let f = Fixture::new();
+    f.write("A.md", "[Page][id]\n\n[id]: B.md\n");
+    f.write("B.md", "");
+    assert_eq!(
+        paths(&query(&f.request(&["A.md"], 1, 0)).unwrap()),
+        ["A.md", "B.md"]
+    );
+}
+
+#[test]
+fn excalidraw_keeps_physical_path_and_reports_detected_format() {
+    let f = Fixture::new();
+    f.write("A.md", "![[Drawing]]");
+    f.write(
+        "Drawing.excalidraw.md",
+        "---\nexcalidraw-plugin: parsed\n---\n[[B]]",
+    );
+    f.write("B.md", "");
+    let response = query(&f.request(&["A.md"], 2, 0)).unwrap();
+    assert_eq!(paths(&response), ["A.md", "B.md", "Drawing.excalidraw.md"]);
+    assert_eq!(
+        node(&response, "Drawing.excalidraw.md").file.format,
+        "excalidraw"
+    );
+    assert_eq!(
+        response.links_by_source["Drawing.excalidraw.md"][0].link_source_page_path,
+        "Drawing.excalidraw.md"
+    );
+}
+
+#[test]
+fn frontmatter_parsing_requires_both_leading_delimiter_and_requested_substring() {
+    let f = Fixture::new();
+    f.write("A.md", "tracked: true\n---\n");
+    f.write("B.md", "---\nother: [ malformed\n---\ntracked: true");
+    f.write("C.md", "---\ntracked: true\nother: value\n---\n");
+    let mut request = f.request(&[""], 0, 0);
+    request.index.frontmatter = vec![field("tracked")];
+    let response = query(&request).unwrap();
+    assert_eq!(response.metrics.yaml_parses, 1);
+    assert!(response.diagnostics.is_empty());
+    assert_eq!(node(&response, "C.md").file.metadata["tracked"], true);
+    assert!(node(&response, "A.md").file.metadata.is_empty());
+    f.write("B.md", "---\ntracked: [ malformed\n---\n");
+    let response = query(&request).unwrap();
+    assert!(response.complete);
+    assert_eq!(response.diagnostics.len(), 1);
+    assert_eq!(response.diagnostics[0].code, "malformedFrontmatter");
+    request.index.frontmatter.clear();
+    let response = query(&request).unwrap();
+    assert_eq!(response.metrics.yaml_parses, 0);
+    assert!(response.diagnostics.is_empty());
+}
+
+#[test]
+fn missing_frontmatter_delimiter_is_diagnosed_only_for_requested_substrings() {
+    let f = Fixture::new();
+    f.write("A.md", "---\nother: [broken");
+    let mut request = f.request(&["A.md"], 0, 0);
+    request.index.frontmatter = vec![field("tracked")];
+    assert!(query(&request).unwrap().diagnostics.is_empty());
+    f.write("A.md", "---\ntracked: true");
+    assert_eq!(
+        query(&request).unwrap().diagnostics[0].code,
+        "malformedFrontmatter"
+    );
+}
+
+#[test]
+fn field_selection_changes_rescan_metadata_without_reparsing_unchanged_links() {
+    let f = Fixture::new();
+    f.write("A.md", "---\none: 1\ntwo: 2\n---\n[[B]]");
+    f.write("B.md", "");
+    let mut request = f.request(&["A.md"], 1, 0);
+    request.index.frontmatter = vec![field("one")];
+    assert_eq!(query(&request).unwrap().metrics.link_parses, 2);
+    let warm = query(&request).unwrap();
+    assert_eq!(warm.metrics.files_read, 0);
+    assert_eq!(warm.metrics.yaml_parses, 0);
+    request.index.frontmatter = vec![field("two")];
+    let changed = query(&request).unwrap();
+    assert_eq!(changed.metrics.link_parses, 0);
+    assert_eq!(changed.metrics.files_read, 2);
+    assert_eq!(node(&changed, "A.md").file.metadata.len(), 1);
+    assert_eq!(node(&changed, "A.md").file.metadata["two"], 2);
+}
+
+#[test]
+fn cache_rebuild_and_no_cache_match_incremental_results_after_edits_additions_and_deletions() {
+    let f = Fixture::new();
+    f.write("A.md", "[[Idea]]");
+    f.write("nested/Idea.md", "");
+    let mut request = f.request(&["A.md"], 2, 1);
+    query(&request).unwrap();
+    f.write("Idea.md", "[[A]]");
+    f.write("Incoming.md", "[[A]]");
+    let incremental = query(&request).unwrap();
+    assert_eq!(incremental.metrics.files_read, 2);
+    request.index.rebuild = true;
+    let rebuilt = query(&request).unwrap();
+    assert_eq!(paths(&incremental), paths(&rebuilt));
+    assert_eq!(
+        serde_json::to_value(&incremental.links_by_source).unwrap(),
+        serde_json::to_value(&rebuilt.links_by_source).unwrap()
+    );
+    fs::remove_file(f.root().join("Idea.md")).unwrap();
+    request.index.rebuild = false;
+    let removed = query(&request).unwrap();
+    assert_eq!(removed.metrics.files_read, 0);
+    request.index.no_cache = true;
+    request.index.cache_directory = Some(f.temp.path().join("unused"));
+    assert_eq!(paths(&removed), paths(&query(&request).unwrap()));
+    assert!(!f.temp.path().join("unused").exists());
+}
+
+#[test]
+fn strict_index_failure_preserves_cache_and_best_effort_is_explicitly_incomplete() {
+    let f = Fixture::new();
+    f.write("A.md", "");
+    let mut request = f.request(&["A.md"], 0, 0);
+    query(&request).unwrap();
+    let cache = fs::read_dir(f.temp.path().join("cache"))
+        .unwrap()
+        .map(|entry| entry.unwrap().path())
+        .find(|path| path.extension().is_some_and(|ext| ext == "json"))
+        .unwrap();
+    let before = fs::read(&cache).unwrap();
+    f.write("Broken.md", [0xff, 0xfe]);
+    assert!(query(&request).is_err());
+    assert_eq!(before, fs::read(&cache).unwrap());
+    request.index.best_effort = true;
+    let partial = query(&request).unwrap();
+    assert!(!partial.complete);
+    assert_eq!(paths(&partial), ["A.md"]);
+    assert_eq!(partial.diagnostics[0].path, "Broken.md");
+    assert_eq!(before, fs::read(&cache).unwrap());
+}
+
+#[cfg(unix)]
+#[test]
+fn symlinks_are_skipped_by_default_and_opt_in_stays_inside_root_deduplicates_and_detects_cycles() {
+    use std::os::unix::fs::symlink;
+    let f = Fixture::new();
+    f.write("A.md", "[[alias]] [[escape]]");
+    f.write("inside/real.md", "");
+    fs::write(f.temp.path().join("outside.md"), "[[A]]").unwrap();
+    symlink("inside/real.md", f.root().join("alias.md")).unwrap();
+    symlink("inside/real.md", f.root().join("alias2.md")).unwrap();
+    symlink(f.temp.path().join("outside.md"), f.root().join("escape.md")).unwrap();
+    symlink("escape.md", f.root().join("chain.md")).unwrap();
+    symlink("..", f.root().join("inside/loop")).unwrap();
+    let mut request = f.request(&["A.md"], 1, 0);
+    let skipped = query(&request).unwrap();
+    assert_eq!(paths(&skipped), ["A.md"]);
+    assert_eq!(
+        skipped
+            .diagnostics
+            .iter()
+            .filter(|d| d.code == "symlinkSkipped")
+            .count(),
+        5
+    );
+    request.index.symlinks = Symlinks::FollowInternal;
+    let followed = query(&request).unwrap();
+    assert_eq!(paths(&followed), ["A.md", "inside/real.md"]);
+    assert!(followed.complete);
+    assert_eq!(
+        followed
+            .diagnostics
+            .iter()
+            .filter(|d| d.code == "symlinkOutsideRoot")
+            .count(),
+        2
+    );
+    assert!(followed
+        .diagnostics
+        .iter()
+        .any(|d| d.code == "symlinkCycle"));
+    request.query.rules.push(Rule {
+        path: "inside".into(),
+        subtree: true,
+        exclude: true,
+        ..Default::default()
+    });
+    assert_eq!(paths(&query(&request).unwrap()), ["A.md"]);
+}
+
+#[test]
+fn cli_exercises_public_request_and_emits_json_and_structured_errors() {
+    let f = Fixture::new();
+    f.write("A.md", "[[B]]");
+    f.write("B.md", "");
+    let path = f.temp.path().join("request.json");
+    fs::write(
+        &path,
+        serde_json::to_vec(&f.request(&["A.md"], 1, 0)).unwrap(),
+    )
+    .unwrap();
+    let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .arg("query")
+        .arg("--request")
+        .arg(&path)
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let response: Response = serde_json::from_slice(&output.stdout).unwrap();
+    assert_eq!(paths(&response), ["A.md", "B.md"]);
+    let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .args(["query", "--source-root"])
+        .arg(f.root())
+        .args(["--start", "Missing.md"])
+        .output()
+        .unwrap();
+    assert!(!output.status.success());
+    assert!(output.stdout.is_empty());
+    assert_eq!(
+        serde_json::from_slice::<serde_json::Value>(&output.stderr).unwrap()["code"],
+        "queryFailed"
+    );
+}
+
+#[test]
+fn relative_links_cannot_escape_root_and_accidentally_resolve_to_a_root_file() {
+    let f = Fixture::new();
+    f.write("A.md", "[escaped](../B.md)");
+    f.write("B.md", "");
+    let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
+    assert_eq!(paths(&response), ["A.md"]);
+    assert!(response.links_by_source["A.md"][0].target.is_none());
+}

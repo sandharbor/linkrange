@@ -1,0 +1,1 @@
+[[reasoning]] model like [[model - o1]].  Like, using [[test-time compute]]

@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light;
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  background: #f5efff;
+  color: #2e174d;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #eadcff 0, #f8f5ff 55%, #fff 100%);
+}
+
+.html-node-card {
+  width: min(42rem, calc(100vw - 4rem));
+  padding: 3rem;
+  border: 3px solid #c4b5fd;
+  border-radius: 2rem;
+  background: #fbf9ff;
+  color: #2e174d;
+  box-shadow: 0 2rem 5rem rgb(76 29 149 / 12%);
+}
+
+.html-node-card-secondary {
+  background: #f5efff;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #6d28d9;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 0.95;
+}
+
+img {
+  display: block;
+  width: min(15rem, 60%);
+  margin: 2rem auto;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+a {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+#script-status {
+  margin: 1.5rem 0 0;
+  color: #6d28d9;
+  font-weight: 700;
+}

@@ -1,0 +1,7117 @@
+[
+  {
+    "name": "home_fixture_big_and_small/meadow-test-bundle-big",
+    "source": "sources/meadow-test-bundles-data",
+    "query": {
+      "starts": [
+        {
+          "path": "main page.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 4,
+        "inlinks": 100
+      },
+      "rules": [
+        {
+          "path": "t006 - second directory/embedded in page in other t006 directory.md",
+          "stop": true
+        },
+        {
+          "path": "main page.md",
+          "stop": false
+        },
+        {
+          "path": "t006/page linked from Excalidraw from a non-text element.md",
+          "stop": false
+        },
+        {
+          "path": "t006/page linked from tracked sunflower image in Excalidraw.md",
+          "stop": false
+        },
+        {
+          "path": "t001 - deeply nested.md",
+          "stop": false
+        },
+        {
+          "path": "t001/t001 ---- child 1.md",
+          "stop": false
+        },
+        {
+          "path": "t001/deeper/t001 ---- child 2.md",
+          "stop": false
+        },
+        {
+          "path": "t001/t001 ---- child 3 in same dir as child 1.md",
+          "stop": false
+        },
+        {
+          "path": "t002 - dup pages and images.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- dup.png",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup.png",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup 2.png",
+          "stop": false
+        },
+        {
+          "path": "t002/extra nested/t002 ---- dup 2.png",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to extra nested dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to nested dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to nested png dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- points to png dup 2 with no path from root.md",
+          "stop": false
+        },
+        {
+          "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to root dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to root png dup.md",
+          "stop": false
+        },
+        {
+          "path": "t003 - link to section.md",
+          "stop": false
+        },
+        {
+          "path": "t003 ---- page with section to link to.md",
+          "stop": false
+        },
+        {
+          "path": "t005 - in and out links.md",
+          "stop": false
+        },
+        {
+          "path": "t005 ---- has in link and points back to same page.md",
+          "stop": false
+        },
+        {
+          "path": "t006 - embedded media.md",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- dup-linked-from-excalidraw.md",
+          "stop": false
+        },
+        {
+          "path": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- linked-from-excalidraw.md",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- meadow.png",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- meadow-flower.excalidraw.md",
+          "stop": true
+        },
+        {
+          "path": "t006/t006 --- meadow-flower.svg",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- meadow-flower-petals-ani.gif",
+          "stop": false
+        },
+        {
+          "path": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+          "stop": false
+        },
+        {
+          "path": "t007 - blacklisted.md",
+          "stop": false
+        },
+        {
+          "path": "t007 ---- blacklisted image.png",
+          "stop": true
+        },
+        {
+          "path": "t007 ---- blacklisted page.md",
+          "stop": true
+        },
+        {
+          "path": "t007 ---- child of blacklisted page.md",
+          "stop": false
+        },
+        {
+          "path": "t008 - page conf do not include inlinks.md",
+          "inlinks": 0,
+          "stop": false
+        },
+        {
+          "path": "t008 ---- has in link to page conf test.md",
+          "stop": false
+        },
+        {
+          "path": "t009 - page conf graph depth.md",
+          "outlinks": 0,
+          "stop": false
+        },
+        {
+          "path": "t009 ---- page conf graph depth 2.md",
+          "stop": false
+        },
+        {
+          "path": "t009 ---- page conf graph depth 3.md",
+          "stop": false
+        },
+        {
+          "path": "t010 - linking in same depth.md",
+          "stop": false
+        },
+        {
+          "path": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+          "stop": false
+        },
+        {
+          "path": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+          "stop": false
+        },
+        {
+          "path": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+          "stop": false
+        },
+        {
+          "path": "t010/t010 ---- same depth 4 - no connection.md",
+          "stop": false
+        },
+        {
+          "path": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+          "stop": false
+        },
+        {
+          "path": "t011 - special links.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 --- pointed to by an escaped alias outside a table.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 --- table test row 1 column 1.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 --- table test row 1 column 3.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 --- table test row 2 column 1.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 --- table test row 2 column 3.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 ---- page name with special characters -- before dot . and after dot.md",
+          "stop": false
+        },
+        {
+          "path": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+          "stop": false
+        },
+        {
+          "path": "t013 - inlinks_depth.md",
+          "inlinks": 1,
+          "stop": false
+        },
+        {
+          "path": "t013 ---- inlinks_depth - branch 1 - depth 1.md",
+          "stop": false
+        },
+        {
+          "path": "t013 ---- inlinks_depth - branch 1 - depth 2.md",
+          "stop": false
+        },
+        {
+          "path": "t013 ---- inlinks_depth - branch 1 - depth 3.md",
+          "stop": false
+        },
+        {
+          "path": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+          "stop": false
+        },
+        {
+          "path": "t013 ---- inlinks_depth - branch 2 - depth 2 from outlink.md",
+          "stop": false
+        },
+        {
+          "path": "t014/t014 ---- in-link in nested folder to main page.md",
+          "stop": false
+        },
+        {
+          "path": "t015 - block anchors.md",
+          "stop": false
+        },
+        {
+          "path": "t015 ---- page 1 with backlinks to block anchors.md",
+          "stop": false
+        },
+        {
+          "path": "t015 ---- page 2 with backlinks to block anchors.md",
+          "stop": false
+        },
+        {
+          "path": "t017 - transclusion.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- block source.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- block transclusion.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- deep transclusion.md",
+          "stop": false
+        },
+        {
+          "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+          "stop": false
+        },
+        {
+          "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 4.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- full page source.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- full page transclusion.md",
+          "stop": false
+        },
+        {
+          "path": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+          "outlinks": 1,
+          "stop": false
+        },
+        {
+          "path": "t017 - second directory/t017 ---- linked from within this second directory.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- section source.md",
+          "stop": false
+        },
+        {
+          "path": "t017/t017 ---- section transclusion.md",
+          "stop": false
+        },
+        {
+          "path": "t018 - tags.md",
+          "stop": false
+        },
+        {
+          "path": "t018/t018 ---- code blocks and inline code should not create tag links.md",
+          "stop": false
+        },
+        {
+          "path": "t018/t018 ---- shared tags page 1.md",
+          "stop": false
+        },
+        {
+          "path": "t018/t018 ---- shared tags page 2.md",
+          "stop": false
+        },
+        {
+          "path": "t018/t018 ---- unique tags.md",
+          "stop": false
+        },
+        {
+          "path": "t019 - embeds.md",
+          "stop": false
+        },
+        {
+          "path": "t019/t019 ---- mermaid.md",
+          "stop": false
+        },
+        {
+          "path": "t019/t019 ---- typescript.md",
+          "stop": false
+        },
+        {
+          "path": "t020 - code blocks.md",
+          "stop": false
+        },
+        {
+          "path": "t020/t020 ---- code blocks should end properly.md",
+          "stop": false
+        },
+        {
+          "path": "t020/t020 ---- page links in code blocks should not become links.md",
+          "stop": false
+        },
+        {
+          "path": "t020/t020 ---- tags in code blocks should not become tag links.md",
+          "stop": false
+        },
+        {
+          "path": "t021 - link gaps.md",
+          "stop": false
+        },
+        {
+          "path": "t021/t021 ---- inlink gap.md",
+          "inlinks": 0,
+          "stop": false
+        },
+        {
+          "path": "t021/t021 ---- outlink gap.md",
+          "outlinks": 0,
+          "stop": false
+        },
+        {
+          "path": "t022 - spaced repetition.md",
+          "stop": false
+        },
+        {
+          "path": "t022/t022 ---- alpha cards.md",
+          "stop": false
+        },
+        {
+          "path": "t022/t022 ---- beta cards.md",
+          "stop": false
+        },
+        {
+          "path": "t023 - backlinks.md",
+          "stop": false
+        },
+        {
+          "path": "t023/multiple_links/t023 ---- page a.md",
+          "stop": false
+        },
+        {
+          "path": "t023/multiple_links/t023 ---- page b.md",
+          "stop": false
+        },
+        {
+          "path": "t023/table/t023 ---- table row 1.md",
+          "stop": false
+        },
+        {
+          "path": "t023/table/t023 ---- table row 2.md",
+          "stop": false
+        },
+        {
+          "path": "t024 - markdown links.md",
+          "stop": false
+        },
+        {
+          "path": "t024/deeper/t024 ---- deep page.md",
+          "stop": false
+        },
+        {
+          "path": "t024/t024 ---- inlink only.md",
+          "stop": false
+        },
+        {
+          "path": "t024/t024 ---- linked page.md",
+          "stop": false
+        },
+        {
+          "path": "t024/t024 ---- test image.png",
+          "stop": false
+        },
+        {
+          "path": "t025 - extended syntax.md",
+          "stop": false
+        },
+        {
+          "path": "t026 - HTML node.md",
+          "stop": false
+        },
+        {
+          "path": "t026/t026 ---- first HTML page.html",
+          "stop": false
+        },
+        {
+          "path": "t026/t026 ---- second HTML page.html",
+          "stop": false
+        },
+        {
+          "path": "t026/t026 ---- shared style.css",
+          "stop": false
+        },
+        {
+          "path": "t026/t026 ---- shared behavior.js",
+          "stop": false
+        },
+        {
+          "path": "t026/t026 ---- shared image.svg",
+          "stop": false
+        },
+        {
+          "path": "t026/nested/t026 ---- nested markdown.md",
+          "stop": false
+        },
+        {
+          "path": "t011/test.io which looks like a filename suffix.md",
+          "stop": false
+        },
+        {
+          "path": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": [
+      {
+        "path": "main page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t003 - link to section.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t004 - sensitive.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t005 - in and out links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t007 - blacklisted.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t008 - page conf do not include inlinks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t009 - page conf graph depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t012 - custom filters.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t013 - inlinks_depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t015 - block anchors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t016 - frontier.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t017 - transclusion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t018 - tags.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t019 - embeds.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t020 - code blocks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t021 - link gaps.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t022 - spaced repetition.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t023 - backlinks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t025 - extended syntax.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026 - HTML node.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t014/t014 ---- in-link in nested folder to main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001/deeper/t001 ---- child 2.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001/t001 ---- child 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001/t001 ---- child 3 in same dir as child 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t001/t001 ---- child 1.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001 - deeply nested.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t001/t001 ---- child 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/deeper/t001 ---- child 2.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/extra nested/t002 ---- dup 2.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/extra nested/t002 ---- dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to extra nested dup.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/extra nested/t002 ---- dup 2.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- dup 2.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to nested dup.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- dup.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to nested png dup.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to extra nested dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/extra nested/t002 ---- dup.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to nested dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- dup.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to nested png dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- dup.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- dup 2.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to root dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002 ---- dup.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/t002 ---- points to root png dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002 ---- dup.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002 - dup pages and images.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to root dup.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to nested dup.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to extra nested dup.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to root png dup.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to nested png dup.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- dup 2.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002 ---- dup.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to root dup.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002 ---- dup.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t002/t002 ---- points to root png dup.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002 ---- points to png dup 2 with no path from root.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t002/t002 ---- dup 2.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t002 - dup pages and images.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t003 - link to section.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t003 ---- page with section to link to.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t003 ---- page with section to link to.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t003 - link to section.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t004 - sensitive.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t004 ---- sensitive page.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t004 ---- sensitive page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t004 - sensitive.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t005 - in and out links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t005 ---- has in link and points back to same page.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t005 ---- has in link and points back to same page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t005 ---- has in link and points back to same page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t005 - in and out links.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t005 - in and out links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/images-used-in-excalidraw/untracked-pink-flower.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from Excalidraw from a non-text element.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from Excalidraw that is not tracked.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from tracked sunflower image in Excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- meadow-flower-petals-ani.gif",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/t006 --- meadow-flower.excalidraw.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/images-used-in-excalidraw/untracked-pink-flower.png",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/page linked from Excalidraw from a non-text element.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/page linked from Excalidraw that is not tracked.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/page linked from tracked sunflower image in Excalidraw.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/t006 --- dup-linked-from-excalidraw.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t006/t006 --- linked-from-excalidraw.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/t006 --- meadow-flower.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/t006 --- meadow.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t006 - second directory/embedded in page in other t006 directory.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow-flower.svg",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006/t006 --- too-big.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t006 - embedded media.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006 - embedded media.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow-flower-petals-ani.gif",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow-flower.excalidraw.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow-flower.svg",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow.png",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- too-big.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t006/t006 --- meadow-flower.svg",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006 - second directory/embedded in page in other t006 directory.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t007 - blacklisted.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t007 ---- blacklisted image.png",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t007 ---- blacklisted page.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t007 ---- blacklisted image.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t007 - blacklisted.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t007 ---- blacklisted page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t007 ---- child of blacklisted page.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t007 - blacklisted.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t007 ---- child of blacklisted page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t008 - page conf do not include inlinks.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t008 ---- has in link to page conf test.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "t008 ---- has in link to page conf test.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t009 - page conf graph depth.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t009 ---- page conf graph depth 2.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t009 ---- page conf graph depth 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t009 ---- page conf graph depth 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 2
+      },
+      {
+        "path": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t010/t010 ---- same depth 4 - no connection.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t010 - linking in same depth.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t010 - linking in same depth.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 4 - no connection.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 --- pointed to by an escaped alias outside a table.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 --- table test row 1 column 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 --- table test row 1 column 3.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 --- table test row 2 column 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 --- table test row 2 column 3.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 ---- page name with special characters -- before dot . and after dot.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011/test.io which looks like a filename suffix.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t011 - special links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t011 - special links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t011/t011 ---- page name with special characters -- before dot . and after dot.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/test.io which looks like a filename suffix.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 --- pointed to by an escaped alias outside a table.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 --- table test row 1 column 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 --- table test row 1 column 3.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 --- table test row 2 column 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 --- table test row 2 column 3.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t012 - custom filters.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t012 ---- title with six numbers 123456.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t012 ---- title with six numbers 123456.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t012 - custom filters.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t013 - inlinks_depth.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t013 ---- inlinks_depth - branch 1 - depth 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t013 - inlinks_depth.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t013 ---- inlinks_depth - branch 1 - depth 2.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t013 - inlinks_depth.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t013 ---- inlinks_depth - branch 2 - depth 2 from outlink.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 2 - depth 2 from outlink.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t014/t014 ---- in-link in nested folder to main page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "t015 - block anchors.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t015 ---- page 1 with backlinks to block anchors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t015 ---- page 2 with backlinks to block anchors.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t015 ---- page 1 with backlinks to block anchors.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t015 - block anchors.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t015 ---- page 2 with backlinks to block anchors.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t015 - block anchors.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 - frontier.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t016 ---- level 2.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 ---- level 2.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t016 ---- level 3.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t016 - frontier.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 ---- level 3.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t016 ---- level 4.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t016 ---- level 2.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 ---- level 4.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t016 ---- level 5.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t016 ---- level 5 - frontier image.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t016 ---- level 3.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 ---- level 5 - frontier image.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t016 ---- level 4.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t016 ---- level 5.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t016 ---- level 6.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 2
+      },
+      {
+        "path": "t016 ---- level 7.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 3
+      },
+      {
+        "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 4.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017/t017 ---- deep transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 4.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/t017 ---- deep transclusion - level 5.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- block source.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t017/t017 ---- block transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- block transclusion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/t017 ---- block source.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017 - transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion - level 5.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion - level 6.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 2
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017 - transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- full page source.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t017/t017 ---- full page transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- full page transclusion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/t017 ---- full page source.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017 - transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- section source.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t017/t017 ---- section transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017/t017 ---- section transclusion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/t017 ---- section source.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017 - transclusion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017 - second directory/t017 ---- linked from within this second directory.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017 - second directory/t017 ---- linked from within this second directory.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t017 - transclusion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t017/t017 ---- full page transclusion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t017/t017 ---- section transclusion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t017/t017 ---- block transclusion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t017/t017 ---- deep transclusion.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t018/t018 ---- code blocks and inline code should not create tag links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t018 - tags.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t018/t018 ---- shared tags page 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t018 - tags.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t018/t018 ---- shared tags page 2.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t018 - tags.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t018/t018 ---- unique tags.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t018 - tags.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t018 - tags.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t018/t018 ---- unique tags.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t018/t018 ---- shared tags page 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t018/t018 ---- shared tags page 2.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t018/t018 ---- code blocks and inline code should not create tag links.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t019/t019 ---- mermaid.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t019 - embeds.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t019/t019 ---- typescript.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t019 - embeds.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t019 - embeds.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t019/t019 ---- mermaid.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t019/t019 ---- typescript.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t020/t020 ---- code blocks should end properly.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t020 - code blocks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t020/t020 ---- page links in code blocks should not become links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t020 - code blocks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t020/t020 ---- tags in code blocks should not become tag links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t020 - code blocks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t020 - code blocks.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t020/t020 ---- tags in code blocks should not become tag links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t020/t020 ---- page links in code blocks should not become links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t020/t020 ---- code blocks should end properly.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t021 - link gaps.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 1.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 2.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 3.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 4.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "t021/t021 ---- outlink gap.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 1.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 2.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 3.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 4.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t021 - link gaps.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t021 - link gaps.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t021/t021 ---- inlink gap.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t021/t021 ---- outlink gap.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t022/t022 ---- alpha cards.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t022/t022 ---- beta cards.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t022 - spaced repetition.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t022/t022 ---- beta cards.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t022/t022 ---- beta cards.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t022/t022 ---- alpha cards.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t022 - spaced repetition.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t022/t022 ---- alpha cards.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t022 - spaced repetition.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t022/t022 ---- alpha cards.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t022/t022 ---- beta cards.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t023/multiple_links/t023 ---- page a.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t023 - backlinks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t023/multiple_links/t023 ---- page b.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t023 - backlinks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t023/table/t023 ---- table row 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t023 - backlinks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t023/table/t023 ---- table row 2.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t023 - backlinks.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t023 - backlinks.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t023/multiple_links/t023 ---- page a.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t023/multiple_links/t023 ---- page b.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t023/table/t023 ---- table row 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t023/table/t023 ---- table row 2.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t024/deeper/t024 ---- deep page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/t024 ---- linked page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t024/t024 ---- inlink only.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t024/t024 ---- linked page.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/deeper/t024 ---- deep page.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t024/t024 ---- test image.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t024 - markdown links.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t024 - markdown links.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t024/t024 ---- linked page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/deeper/t024 ---- deep page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/t024 ---- inlink only.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/t024 ---- test image.png",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/t024 ---- linked page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t024/deeper/t024 ---- deep page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t025 - extended syntax.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/nested/t026 ---- nested markdown.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/t026 ---- first HTML page.html",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t026 - HTML node.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared behavior.js",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared image.svg",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared style.css",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t026 - HTML node.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared image.svg",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/t026 ---- second HTML page.html",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t026/nested/t026 ---- nested markdown.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared behavior.js",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared image.svg",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared style.css",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t026/nested/t026 ---- nested markdown.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- shared image.svg",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/t026 ---- shared behavior.js",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/t026 ---- shared image.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026/t026 ---- shared style.css",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- second HTML page.html",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t026 - HTML node.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t026/t026 ---- first HTML page.html",
+              "isInGraph": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "home_fixture_big_and_small/meadow-test-bundle-small",
+    "source": "sources/meadow-test-bundles-data",
+    "query": {
+      "starts": [
+        {
+          "path": "t001 - deeply nested.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 2147483647,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "t001 - deeply nested.md",
+          "stop": false
+        },
+        {
+          "path": "t001/t001 ---- child 1.md",
+          "stop": false
+        },
+        {
+          "path": "t001/deeper/t001 ---- child 2.md",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": [
+      {
+        "path": "main page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t001/deeper/t001 ---- child 2.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001/t001 ---- child 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001/t001 ---- child 3 in same dir as child 1.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t001/t001 ---- child 1.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "t001 - deeply nested.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "t001 - deeply nested.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "t001/t001 ---- child 1.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/deeper/t001 ---- child 2.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "main page.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "t002/extra nested/t002 ---- dup 2.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/extra nested/t002 ---- dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- dup 2.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- dup.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to extra nested dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to nested dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to nested png dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to root dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002/t002 ---- points to root png dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002 - dup pages and images.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002 ---- dup.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002 ---- dup.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t002 ---- points to png dup 2 with no path from root.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t003 - link to section.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t003 ---- page with section to link to.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t004 - sensitive.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t004 ---- sensitive page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t005 - in and out links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t005 ---- has in link and points back to same page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/images-used-in-excalidraw/untracked-pink-flower.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from Excalidraw from a non-text element.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from Excalidraw that is not tracked.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/page linked from tracked sunflower image in Excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- meadow-flower-petals-ani.gif",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- meadow-flower.excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- meadow-flower.svg",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- meadow.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006/t006 --- too-big.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006 - embedded media.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006 - second directory/embedded in page in other t006 directory.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t007 - blacklisted.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t007 ---- blacklisted image.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t007 ---- blacklisted page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t007 ---- child of blacklisted page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t008 - page conf do not include inlinks.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t008 ---- has in link to page conf test.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t009 - page conf graph depth.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t009 ---- page conf graph depth 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t009 ---- page conf graph depth 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010/t010 ---- same depth 4 - no connection.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t010 - linking in same depth.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 --- pointed to by an escaped alias outside a table.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 --- table test row 1 column 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 --- table test row 1 column 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 --- table test row 2 column 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 --- table test row 2 column 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 ---- page name with special characters -- before dot . and after dot.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011/test.io which looks like a filename suffix.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t011 - special links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t012 - custom filters.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t012 ---- title with six numbers 123456.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 - inlinks_depth.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 1 - depth 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t013 ---- inlinks_depth - branch 2 - depth 2 from outlink.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t014/t014 ---- in-link in nested folder to main page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t015 - block anchors.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t015 ---- page 1 with backlinks to block anchors.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t015 ---- page 2 with backlinks to block anchors.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 - frontier.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 4.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 5 - frontier image.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 5.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 6.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t016 ---- level 7.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/deep transclusion levels 3 and 4/t017 ---- deep transclusion - level 4.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- block source.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- block transclusion.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion - level 5.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion - level 6.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- deep transclusion.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- full page source.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- full page transclusion.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- section source.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017/t017 ---- section transclusion.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017 - second directory/t017 ---- linked from within this second directory.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t017 - transclusion.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t018/t018 ---- code blocks and inline code should not create tag links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t018/t018 ---- shared tags page 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t018/t018 ---- shared tags page 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t018/t018 ---- unique tags.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t018 - tags.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t019/t019 ---- mermaid.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t019/t019 ---- typescript.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t019 - embeds.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t020/t020 ---- code blocks should end properly.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t020/t020 ---- page links in code blocks should not become links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t020/t020 ---- tags in code blocks should not become tag links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t020 - code blocks.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- inlink gap.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 3.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- outlink gap pages/t021 ---- outlink target 4.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021/t021 ---- outlink gap.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t021 - link gaps.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t022/t022 ---- alpha cards.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t022/t022 ---- beta cards.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t022 - spaced repetition.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t023/multiple_links/t023 ---- page a.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t023/multiple_links/t023 ---- page b.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t023/table/t023 ---- table row 1.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t023/table/t023 ---- table row 2.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t023 - backlinks.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t024/deeper/t024 ---- deep page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t024/t024 ---- inlink only.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t024/t024 ---- linked page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t024/t024 ---- test image.png",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t024 - markdown links.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t025 - extended syntax.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/nested/t026 ---- nested markdown.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/t026 ---- first HTML page.html",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/t026 ---- second HTML page.html",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/t026 ---- shared behavior.js",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/t026 ---- shared image.svg",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026/t026 ---- shared style.css",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "t026 - HTML node.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      }
+    ]
+  },
+  {
+    "name": "home_fixture_example/example-bundle",
+    "source": "sources/example-bundle-data",
+    "query": {
+      "starts": [
+        {
+          "path": "Notable Mental Models.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 3,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "Sun Feb 01 2026 16:00:00 GMT-0800 (Pacific Standard Time).md",
+          "stop": true
+        },
+        {
+          "path": "Charlie Munger.md",
+          "stop": false
+        },
+        {
+          "path": "Circle of Competence.md",
+          "stop": false
+        },
+        {
+          "path": "Cognitive Biases.md",
+          "outlinks": 0,
+          "stop": false
+        },
+        {
+          "path": "First Principles Thinking.md",
+          "stop": false
+        },
+        {
+          "path": "Hanlon's Razor.md",
+          "stop": false
+        },
+        {
+          "path": "Howard Marks.md",
+          "stop": false
+        },
+        {
+          "path": "Inversion.md",
+          "stop": false
+        },
+        {
+          "path": "Latticework of Mental Models.md",
+          "stop": false
+        },
+        {
+          "path": "Man with a Hammer.md",
+          "stop": false
+        },
+        {
+          "path": "Margin of Safety.md",
+          "stop": false
+        },
+        {
+          "path": "images/Mental Models Diagram.svg",
+          "stop": false
+        },
+        {
+          "path": "Mental Models Overview.md",
+          "stop": false
+        },
+        {
+          "path": "Notable Mental Models.md",
+          "stop": false
+        },
+        {
+          "path": "Occam's Razor.md",
+          "stop": false
+        },
+        {
+          "path": "Probabilistic Thinking.md",
+          "stop": false
+        },
+        {
+          "path": "Razors.md",
+          "stop": false
+        },
+        {
+          "path": "Second Order Thinking.md",
+          "stop": false
+        },
+        {
+          "path": "Warren Buffett.md",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": [
+      {
+        "path": "2025 taxes.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "2026-02-02.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "2025 taxes.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "2026-02-10.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "2025 taxes.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Alfred Korzybski.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Anchoring Bias.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Availability Bias.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "Base Rates.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Availability Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Survivorship Bias.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "Benjamin Graham.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Charlie Munger.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Confirmation Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Circle of Competence.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Cognitive Biases.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Availability Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Confirmation Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Survivorship Bias.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Availability Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Confirmation Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Survivorship Bias.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "Confirmation Bias.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "Elon Musk.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Expected Value.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Feedback Loops.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "images/Feedback Loop Diagram.svg",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "First Principles Thinking.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-02.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Hanlon's Razor.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Howard Marks.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "images/Feedback Loop Diagram.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "images/Mental Models Diagram.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Inversion.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Confirmation Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Survivorship Bias.md",
+              "isInGraph": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "Latticework of Mental Models.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Man with a Hammer.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Man with a Hammer.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Map is Not the Territory.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Availability Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Margin of Safety.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Mental Models Overview.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Notable Mental Models.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "images/Mental Models Diagram.svg",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Occam's Razor.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alfred Korzybski.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Probabilistic Thinking.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "2026-02-10.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Anchoring Bias.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Availability Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Cognitive Biases.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Confirmation Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Latticework of Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Survivorship Bias.md",
+              "isInGraph": false
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Razors.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Base Rates.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Second Order Thinking.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Elon Musk.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Feedback Loops.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Howard Marks.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Mental Models Overview.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Survivorship Bias.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "Thoughts on Munger's Investment Portfolio.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Warren Buffett.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Probabilistic Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Second Order Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Benjamin Graham.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Charlie Munger.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Circle of Competence.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Expected Value.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Inversion.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Margin of Safety.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Notable Mental Models.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Warren Buffett.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "William of Ockham.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "First Principles Thinking.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Hanlon's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Map is Not the Territory.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Occam's Razor.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Razors.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "William of Ockham.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "home_fixture_folder_structure_multiple/ordered-folders",
+    "source": "sources/folder-structure-test",
+    "query": {
+      "starts": [
+        {
+          "path": "Beta",
+          "depths": {
+            "outlinks": 2,
+            "inlinks": 0
+          }
+        },
+        {
+          "path": "Alpha",
+          "depths": {
+            "outlinks": 2,
+            "inlinks": 0
+          }
+        }
+      ],
+      "depths": {
+        "outlinks": 2,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "Alpha",
+          "subtree": true,
+          "exclude": false
+        },
+        {
+          "path": "Beta",
+          "subtree": true,
+          "exclude": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": [
+      {
+        "path": "Alpha/Alpha note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Alpha/Nested/Nested note.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Outside/Outside note.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Alpha/Nested/Nested note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Alpha/Alpha note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Alpha/Visual map.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Beta/Beta note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Outside/Beyond outside.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Outside/Frontier image.png",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Outside/Frontier page.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Outside/Outside note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Outside/Frontier image.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Outside/Beyond outside.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Outside/Frontier page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "Outside/Outside note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Outside/Beyond outside.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alpha/Alpha note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "home_fixture_folder_structure_single/single-folder-bundle",
+    "source": "sources/folder-structure-test",
+    "query": {
+      "starts": [
+        {
+          "path": "Alpha",
+          "depths": {
+            "outlinks": 2,
+            "inlinks": 0
+          }
+        }
+      ],
+      "depths": {
+        "outlinks": 2,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "Alpha",
+          "subtree": true,
+          "exclude": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": [
+      {
+        "path": "Alpha/Alpha note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Alpha/Nested/Nested note.md",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Outside/Outside note.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Alpha/Nested/Nested note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Alpha/Alpha note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Alpha/Visual map.svg",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": []
+        }
+      },
+      {
+        "path": "Beta/Beta note.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": null
+      },
+      {
+        "path": "Outside/Beyond outside.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Outside/Frontier image.png",
+              "isInGraph": true
+            },
+            {
+              "linkPath": "Outside/Frontier page.md",
+              "isInGraph": false
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Outside/Outside note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Outside/Frontier image.png",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [],
+          "inlinks": [
+            {
+              "linkPath": "Outside/Beyond outside.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "Outside/Frontier page.md",
+        "isInWorkingGraph": false,
+        "frontierDepthOrNullForOrphan": 1
+      },
+      {
+        "path": "Outside/Outside note.md",
+        "isInWorkingGraph": true,
+        "links": {
+          "outlinks": [
+            {
+              "linkPath": "Outside/Beyond outside.md",
+              "isInGraph": true
+            }
+          ],
+          "inlinks": [
+            {
+              "linkPath": "Alpha/Alpha note.md",
+              "isInGraph": true
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "home_fixture_hooks/meadow-test-bundle-for-hooks",
+    "source": "sources/meadow-test-bundle-for-hooks",
+    "query": {
+      "starts": [
+        {
+          "path": "ai/V Dwarkesh and Anthropic CEO in 2023.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 4,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "ai/a race dynamic.md",
+          "stop": false
+        },
+        {
+          "path": "ai/activation function.md",
+          "stop": false
+        },
+        {
+          "path": "ai/active learning.md",
+          "stop": false
+        },
+        {
+          "path": "ai/AGI definition.md",
+          "stop": false
+        },
+        {
+          "path": "ai/AI research.md",
+          "stop": false
+        },
+        {
+          "path": "ai/alias - training loss = entropy.md",
+          "stop": false
+        },
+        {
+          "path": "ai/aligned by default.md",
+          "stop": false
+        },
+        {
+          "path": "ai/alternative attention mechanisms.md",
+          "stop": false
+        },
+        {
+          "path": "ai/architectural breakthrough.md",
+          "stop": false
+        },
+        {
+          "path": "ai/Artificial general intelligence - AGI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ASI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/automatic AI researcher.md",
+          "stop": false
+        },
+        {
+          "path": "ai/automatic domain randomization - ADR.md",
+          "stop": false
+        },
+        {
+          "path": "ai/b evals in phoenix.md",
+          "stop": false
+        },
+        {
+          "path": "ai/breakthrough.md",
+          "stop": false
+        },
+        {
+          "path": "ai/C how transformers work.md",
+          "stop": false
+        },
+        {
+          "path": "ai/c Statquest - transformer neural networks - ChatGPT's foundation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/C statquest long short term memory LSTM.md",
+          "stop": false
+        },
+        {
+          "path": "ai/C the attention mechanism demystified.md",
+          "stop": false
+        },
+        {
+          "path": "ai/C transformers from scratch.md",
+          "stop": false
+        },
+        {
+          "path": "ai/capacity.md",
+          "stop": false
+        },
+        {
+          "path": "ai/certainty.md",
+          "stop": false
+        },
+        {
+          "path": "ai/certainty, probability, and confidence.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat - dot product.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat - positional encoding values.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat - self-attention.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat - SSM architecture.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat - training generalization.md",
+          "stop": false
+        },
+        {
+          "path": "ai/chat – constitutional AI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/China.md",
+          "stop": false
+        },
+        {
+          "path": "ai/circuit.md",
+          "stop": false
+        },
+        {
+          "path": "ai/company - Anthropic.md",
+          "stop": false
+        },
+        {
+          "path": "ai/company - Google.md",
+          "stop": false
+        },
+        {
+          "path": "ai/company - OpenAI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/Company Goverance.md",
+          "stop": false
+        },
+        {
+          "path": "ai/compute multiplier - CM.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - AI can speed up AI research.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - AI secret technique proliferation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - arms-race dynamics.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - asking humans about areas of uncertainty.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - capabilities that you actually care about.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - Geo Hotz somehow knew the GPT4 architecture.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - in most places, AI is about as good as an intern.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - incentives can be so powerful that they override explicit governing structures.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - inference can be cheaper with one bit models.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - maybe we should train smaller models for longer.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - no binding international treaties.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - one million token context window.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - scaling plateaus before reaching human level intelligence.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - self improvement.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - smaller models cost less to run inference on.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - the data advantage is going to drive value creation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - the KV Cache is only used during inference because it is done serially.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - using bigger models to interpret smaller models.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - we don't need completely new capabilities.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - you should never train for interpretability.md",
+          "stop": false
+        },
+        {
+          "path": "ai/con - YouTube has a big data advantage.md",
+          "stop": false
+        },
+        {
+          "path": "ai/constitutional AI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/convergence.md",
+          "stop": false
+        },
+        {
+          "path": "ai/core metrics.md",
+          "stop": false
+        },
+        {
+          "path": "ai/cosine similarity.md",
+          "stop": false
+        },
+        {
+          "path": "create relevance and force curiosity.md",
+          "stop": false
+        },
+        {
+          "path": "ai/critical model size.md",
+          "stop": false
+        },
+        {
+          "path": "ai/cross-validation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/D all in 111 - Microsoft stake in open AI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - core metric like training loss vs. a capability that you actually care about.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - discovered vs. invented.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - empiricist vs. theoretician.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - fundamental theory vs. practical issue.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - model capacity vs. generalizability.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - open vs. closed models.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - training vs inference.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diff - vanishing vs. exploding gradient.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - capacity density.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - context window length.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - context window length -- long.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - inference cost.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - inference cost -- lower.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - inference speed -- faster.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - model capacity.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - model size.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - model size -- smaller.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - number of parameters.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - number of parameters -- higher.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - prediction generalizability.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - training time.md",
+          "stop": false
+        },
+        {
+          "path": "ai/dim - training time -- long.md",
+          "stop": false
+        },
+        {
+          "path": "ai/diminishing returns.md",
+          "stop": false
+        },
+        {
+          "path": "ai/discovery fiction.md",
+          "stop": false
+        },
+        {
+          "path": "ai/domain randomization.md",
+          "stop": false
+        },
+        {
+          "path": "ai/doomed by default.md",
+          "stop": false
+        },
+        {
+          "path": "ai/economically valuable.md",
+          "stop": false
+        },
+        {
+          "path": "ai/empiricist.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ensemble multiple attempts.md",
+          "stop": false
+        },
+        {
+          "path": "ai/entropy.md",
+          "stop": false
+        },
+        {
+          "path": "ai/evals.md",
+          "stop": false
+        },
+        {
+          "path": "ai/exploding gradient problem.md",
+          "stop": false
+        },
+        {
+          "path": "exponential progress.md",
+          "stop": false
+        },
+        {
+          "path": "exponential thinking.md",
+          "stop": false
+        },
+        {
+          "path": "ai/forward pass.md",
+          "stop": false
+        },
+        {
+          "path": "ai/frontier models.md",
+          "stop": false
+        },
+        {
+          "path": "ai/generalization.md",
+          "stop": false
+        },
+        {
+          "path": "ai/GPT-4.md",
+          "stop": false
+        },
+        {
+          "path": "ai/gradient descent.md",
+          "stop": false
+        },
+        {
+          "path": "ai/grokking.md",
+          "stop": false
+        },
+        {
+          "path": "ai/hold out.md",
+          "stop": false
+        },
+        {
+          "path": "ai/human.md",
+          "stop": false
+        },
+        {
+          "path": "ai/human in the loop - HITL.md",
+          "stop": false
+        },
+        {
+          "path": "hypothesis articulation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/identity function.md",
+          "stop": false
+        },
+        {
+          "path": "ai/inference.md",
+          "stop": false
+        },
+        {
+          "path": "ai/inference might cost more than training.md",
+          "stop": false
+        },
+        {
+          "path": "ai/information on constructing evals.md",
+          "stop": false
+        },
+        {
+          "path": "ai/input sequence.md",
+          "stop": false
+        },
+        {
+          "path": "ai/interpretability research.md",
+          "stop": false
+        },
+        {
+          "path": "knowledge schema.md",
+          "stop": false
+        },
+        {
+          "path": "ai/leakage.md",
+          "stop": false
+        },
+        {
+          "path": "ai/leave one out.md",
+          "stop": false
+        },
+        {
+          "path": "ai/loss function.md",
+          "stop": false
+        },
+        {
+          "path": "ai/LSTMs could not be trained in parallel.md",
+          "stop": false
+        },
+        {
+          "path": "ai/mechanistic interpretability.md",
+          "stop": false
+        },
+        {
+          "path": "ai/misuse.md",
+          "stop": false
+        },
+        {
+          "path": "ai/mixture of experts - MoE.md",
+          "stop": false
+        },
+        {
+          "path": "ai/moc - architectures.md",
+          "stop": false
+        },
+        {
+          "path": "ai/moc - plateaus.md",
+          "stop": false
+        },
+        {
+          "path": "ai/moc - scaling.md",
+          "stop": false
+        },
+        {
+          "path": "ai/model - o3.md",
+          "stop": false
+        },
+        {
+          "path": "ai/multiple models.md",
+          "stop": false
+        },
+        {
+          "path": "ai/narrow ASI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/new information.md",
+          "stop": false
+        },
+        {
+          "path": "ai/next token prediction.md",
+          "stop": false
+        },
+        {
+          "path": "ai/open model.md",
+          "stop": false
+        },
+        {
+          "path": "ai/P GPQA - A Graduate-Level Google-Proof Q&A Benchmark.md",
+          "stop": false
+        },
+        {
+          "path": "ai/performance benchmarks.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Albert Gu.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Alexander Rush.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Andrej Karpathy.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Chamath Palihapitiya.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Dario Amodei.md",
+          "stop": false
+        },
+        {
+          "path": "person - David Friedberg.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Dwarkesh Patel.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Geo Hotz.md",
+          "stop": false
+        },
+        {
+          "path": "person - Ilya Sutskever.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Michael Nielsen.md",
+          "stop": false
+        },
+        {
+          "path": "ai/person - Tri Dao.md",
+          "stop": false
+        },
+        {
+          "path": "ai/positional encoding.md",
+          "stop": false
+        },
+        {
+          "path": "ai/practical issue - it was hard to get data for robotics.md",
+          "stop": false
+        },
+        {
+          "path": "ai/practical issue - running out of data.md",
+          "stop": false
+        },
+        {
+          "path": "ai/practical issues.md",
+          "stop": false
+        },
+        {
+          "path": "ai/project - Claude.md",
+          "stop": false
+        },
+        {
+          "path": "ai/project - mamba.md",
+          "stop": false
+        },
+        {
+          "path": "ai/race with China.md",
+          "stop": false
+        },
+        {
+          "path": "ai/reasoning model.md",
+          "stop": false
+        },
+        {
+          "path": "ai/recurrent neural networks - RNN.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ref - mamba the easy way.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ref - mamba the hard way.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ref - statquest recurrent neural networks.md",
+          "stop": false
+        },
+        {
+          "path": "ai/ref- podcast-data-skeptic-cross-validation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/reinforcement learning - RL.md",
+          "stop": false
+        },
+        {
+          "path": "ai/reinforcement learning with human feedback - RLHF.md",
+          "stop": false
+        },
+        {
+          "path": "ai/risks.md",
+          "stop": false
+        },
+        {
+          "path": "ai/robotics.md",
+          "stop": false
+        },
+        {
+          "path": "ai/scaling problems.md",
+          "stop": false
+        },
+        {
+          "path": "ai/school - CMU.md",
+          "stop": false
+        },
+        {
+          "path": "ai/school - Princeton.md",
+          "stop": false
+        },
+        {
+          "path": "ai/self-attention.md",
+          "stop": false
+        },
+        {
+          "path": "ai/self-supervised learning - SSL.md",
+          "stop": false
+        },
+        {
+          "path": "ai/simulation.md",
+          "stop": false
+        },
+        {
+          "path": "ai/slang - groks.md",
+          "stop": false
+        },
+        {
+          "path": "ai/State Space Model - SSM architecture.md",
+          "stop": false
+        },
+        {
+          "path": "synthetic data.md",
+          "stop": false
+        },
+        {
+          "path": "ai/T ai government race to ASI.md",
+          "stop": false
+        },
+        {
+          "path": "T discovery fiction.md",
+          "stop": false
+        },
+        {
+          "path": "ai/T Geo Hotz what GPT-4 is.md",
+          "stop": false
+        },
+        {
+          "path": "ai/T the chinchilla trap.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--consumption-notes.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--flashcards.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--flashcards--transformers.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--podcast.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--podcast-data-skeptic.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--pub-to-machnotes.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--srs--ml.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--visualizations.md",
+          "stop": false
+        },
+        {
+          "path": "x-tagpages/tag--well-explained.md",
+          "stop": false
+        },
+        {
+          "path": "ai/test-time compute.md",
+          "stop": false
+        },
+        {
+          "path": "ai/the data wall.md",
+          "stop": false
+        },
+        {
+          "path": "ai/The OpenAI leadership drama and board turnover.md",
+          "stop": false
+        },
+        {
+          "path": "ai/token.md",
+          "stop": false
+        },
+        {
+          "path": "ai/trade secrets.md",
+          "stop": false
+        },
+        {
+          "path": "ai/training.md",
+          "stop": false
+        },
+        {
+          "path": "ai/training loss.md",
+          "stop": false
+        },
+        {
+          "path": "ai/training with inference efficiency as the goal.md",
+          "stop": false
+        },
+        {
+          "path": "ai/transformers.md",
+          "stop": false
+        },
+        {
+          "path": "ai/true AGI.md",
+          "stop": false
+        },
+        {
+          "path": "ai/V Dwarkesh and Anthropic CEO in 2023.md",
+          "stop": false
+        },
+        {
+          "path": "ai/V how a transformer is used at inference time versus training time.md",
+          "stop": false
+        },
+        {
+          "path": "ai/vanishing gradient problem.md",
+          "stop": false
+        },
+        {
+          "path": "ai/very hard challenge.md",
+          "stop": false
+        },
+        {
+          "path": "ai/X single head.md",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": null
+  },
+  {
+    "name": "home_fixture_nested/meadow-test-bundle-nested",
+    "source": "sources/meadow-test-bundles-data",
+    "query": {
+      "starts": [
+        {
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 4,
+        "inlinks": 1
+      },
+      "rules": [
+        {
+          "path": "t002 - dup pages and images.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- dup.png",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup.png",
+          "stop": false
+        },
+        {
+          "path": "t002/extra nested/t002 ---- dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- dup 2.png",
+          "stop": false
+        },
+        {
+          "path": "t002/extra nested/t002 ---- dup 2.png",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to extra nested dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to nested dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to nested png dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "stop": false
+        },
+        {
+          "path": "t002 ---- points to png dup 2 with no path from root.md",
+          "stop": false
+        },
+        {
+          "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to root dup.md",
+          "stop": false
+        },
+        {
+          "path": "t002/t002 ---- points to root png dup.md",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": null
+  },
+  {
+    "name": "home_fixture_srs/meadow-test-bundle-big",
+    "source": "sources/meadow-test-bundles-data",
+    "query": {
+      "starts": [
+        {
+          "path": "t022 - spaced repetition.md"
+        }
+      ],
+      "depths": {
+        "outlinks": 2147483647,
+        "inlinks": 0
+      },
+      "rules": [
+        {
+          "path": "t022 - spaced repetition.md",
+          "stop": false
+        },
+        {
+          "path": "t022/t022 ---- alpha cards.md",
+          "stop": false
+        },
+        {
+          "path": "t022/t022 ---- beta cards.md",
+          "stop": false
+        }
+      ],
+      "boundaryEmbedTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "adjacency": true
+    },
+    "expectations": null
+  }
+]

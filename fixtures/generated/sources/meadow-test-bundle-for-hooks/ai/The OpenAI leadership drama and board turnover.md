@@ -1,0 +1,3 @@
+[[company - OpenAI]]
+
+[[Company Goverance]]

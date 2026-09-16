@@ -1,0 +1,1 @@
+These are all related ideas: [[certainty]] [[probability]] and [[confidence score]]

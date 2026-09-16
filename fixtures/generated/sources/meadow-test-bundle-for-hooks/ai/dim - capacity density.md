@@ -1,0 +1,1 @@
+[[dim - model capacity]] related to [[dim - model size]]
