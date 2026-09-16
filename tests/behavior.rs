@@ -501,3 +501,19 @@ fn relative_links_cannot_escape_root_and_accidentally_resolve_to_a_root_file() {
     assert_eq!(paths(&response), ["A.md"]);
     assert!(response.links_by_source["A.md"][0].target.is_none());
 }
+
+#[test]
+fn equally_short_routes_preserve_discovery_order_for_stable_breadcrumbs() {
+    // Given two equal routes where the authored first branch sorts last.
+    let fixture = Fixture::new();
+    fixture.write("A.md", "[[Z]] [[B]]");
+    fixture.write("Z.md", "[[Target]]");
+    fixture.write("B.md", "[[Target]]");
+    fixture.write("Target.md", "");
+    // When the bounded graph is built, then the first discovered route wins.
+    let response = query(&fixture.request(&["A.md"], 2, 0)).unwrap();
+    assert_eq!(
+        node(&response, "Target.md").route,
+        vec!["A.md", "Z.md", "Target.md"]
+    );
+}

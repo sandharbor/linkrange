@@ -52,7 +52,7 @@ fn normalize(path: &str) -> Result<String> {
         .join("/"))
 }
 
-fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>, &Vec<usize>) {
+fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>) {
     let class = if state.out >= 0 {
         0
     } else if state.embedded {
@@ -66,7 +66,6 @@ fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>, &Ve
         state.depth,
         -state.out,
         std::cmp::Reverse(state.incoming),
-        &state.route,
     )
 }
 
@@ -91,7 +90,7 @@ fn enqueue(
             && state.incoming >= candidate.incoming
             && (state.out != candidate.out
                 || state.incoming != candidate.incoming
-                || (state.route.len(), &state.route) <= (candidate.route.len(), &candidate.route))
+                || state.route.len() <= candidate.route.len())
     }) {
         return;
     }
