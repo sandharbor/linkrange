@@ -205,7 +205,7 @@ pub fn parse_link_text(original_link_text: &str) -> LinkSemantics {
     }
 }
 
-/// Parses a standard markdown link href (e.g., `../dir/file.md#section`) into LinkSemantics.
+/// Parses a Markdown or HTML URL (e.g., `../dir/file.md#section`) into LinkSemantics.
 /// Unlike `parse_link_text` (which handles Obsidian wiki-link inner text with pipes, media sizes, etc.),
 /// this function handles explicit relative paths where the file extension is always present
 /// and display text / alias are provided separately by the caller.
@@ -224,6 +224,16 @@ pub fn parse_markdown_link_href(href: &str) -> LinkSemantics {
         final_anchor_type = Some(AnchorType::Section);
         path_portion = &path_portion[..pos];
     }
+
+    // Separate URL syntax before decoding so escaped '#' and '?' remain part
+    // of the filename. Decode once; '+' in a path is a literal plus, not a space.
+    path_portion = path_portion
+        .split_once('?')
+        .map_or(path_portion, |(path, _)| path);
+    let decoded = percent_encoding::percent_decode_str(path_portion)
+        .decode_utf8()
+        .unwrap_or(std::borrow::Cow::Borrowed(path_portion));
+    let path_portion = decoded.as_ref();
 
     // Split into directory prefix and filename
     let (parsed_prefix, filename) = if let Some(slash_idx) = path_portion.rfind('/') {
@@ -1044,12 +1054,19 @@ mod tests {
     fn test_md_href_url_encoded_spaces() {
         check_md_href(
             "name%20with%20spaces.md",
-            "name%20with%20spaces",
+            "name with spaces",
             "md",
             "",
             None,
             None,
         );
+    }
+
+    #[test]
+    fn test_md_href_invalid_escapes_do_not_change_the_filename() {
+        for filename in ["literal%", "literal%2", "literal%GG", "literal%FF"] {
+            check_md_href(&format!("{filename}.js"), filename, "js", "", None, None);
+        }
     }
 
     #[test]

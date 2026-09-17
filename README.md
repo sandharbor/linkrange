@@ -85,6 +85,10 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   where specified; otherwise root match, then linking-file directory, then
   shallowest candidate, then lexical order. Explicit directories also support
   suffix matching. `explainResolution` includes the winning reason and candidates.
+  Markdown and HTML/SVG URL paths are percent-decoded once (including `%20`
+  spaces) after separating query strings and fragments. Original URLs remain
+  in `link_original_text` for consumers that rewrite links; wikilinks keep their
+  existing literal filename semantics.
 - **Budgets:** Every traversed link decrements both remaining outgoing and incoming
   budgets; incoming clamps at zero. Incoming links additionally need incoming
   budget. Per-node overrides reset each independently when reached inside the

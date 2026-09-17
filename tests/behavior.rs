@@ -266,6 +266,93 @@ fn html_svg_and_html_inside_markdown_classify_elements_and_ignore_comments_and_c
 }
 
 #[test]
+fn encoded_html_asset_urls_resolve_with_or_without_dot_slash_and_survive_cache_reuse() {
+    let f = Fixture::new();
+    for prefix in ["", "./"] {
+        // Given the same stylesheet and deferred scripts with URL-encoded spaces.
+        f.write(
+            "site/page.html",
+            format!(
+                r#"
+            <link rel="stylesheet" href="{prefix}change%20matrix.css">
+            <script defer src="{prefix}change%20matrix.data.js"></script>
+            <script defer src="{prefix}change%20matrix.js"></script>
+        "#
+            ),
+        );
+        let assets = [
+            "change matrix.css",
+            "change matrix.data.js",
+            "change matrix.js",
+        ];
+        for asset in assets {
+            f.write(&format!("site/{asset}"), "");
+        }
+        let mut request = f.request(&["site/page.html"], 1, 0);
+        request.query.explain_resolution = true;
+        // When queried from a freshly scanned index and then the persisted cache.
+        for _ in 0..2 {
+            let result = query(&request).unwrap();
+            // Then all assets are included, retaining the original URL for rewriting.
+            assert_eq!(
+                paths(&result),
+                [
+                    "site/change matrix.css",
+                    "site/change matrix.data.js",
+                    "site/change matrix.js",
+                    "site/page.html"
+                ]
+            );
+            let links = &result.links_by_source["site/page.html"];
+            assert_eq!(links.len(), 3);
+            for asset in assets {
+                let raw = format!("{prefix}{}", asset.replace(' ', "%20"));
+                let link = links
+                    .iter()
+                    .find(|link| link.link_original_text == raw)
+                    .unwrap();
+                let target = format!("site/{asset}");
+                assert_eq!(link.target.as_deref(), Some(target.as_str()));
+                assert!(link.is_embedded);
+                assert_eq!(link.resolution.as_ref().unwrap().reason, "relativePath");
+            }
+        }
+        // The CLI exposes the same resolved graph.
+        let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+            .args(["query", "--source-root"])
+            .arg(f.root())
+            .args(["--start", "site/page.html", "--no-cache"])
+            .output()
+            .unwrap();
+        assert!(output.status.success());
+        let result: Response = serde_json::from_slice(&output.stdout).unwrap();
+        assert_eq!(paths(&result).len(), 4);
+    }
+}
+
+#[test]
+fn url_paths_decode_once_after_separating_query_and_fragment_in_all_markup_formats() {
+    let f = Fixture::new();
+    let href = "../assets%20dir/caf%C3%A9%23%3F%2520+file.svg?v=1#section";
+    let target = "assets dir/café#?%20+file.svg";
+    f.write(target, "");
+    for (source, content) in [
+        ("pages/A.md", format!("[asset]({href})")),
+        ("pages/B.md", format!("<img src='{href}'>")),
+        ("pages/C.html", format!("<img src='{href}'>")),
+        ("pages/D.svg", format!("<svg><image href='{href}'/></svg>")),
+    ] {
+        f.write(source, content);
+        let result = query(&f.request(&[source], 1, 0)).unwrap();
+        let link = &result.links_by_source[source][0];
+        assert_eq!(link.target.as_deref(), Some(target), "{source}");
+        assert_eq!(link.link_original_text, href);
+        assert_eq!(link.link_parsed_anchor.as_deref(), Some("section"));
+        assert!(paths(&result).contains(&target));
+    }
+}
+
+#[test]
 fn standard_markdown_reference_links_are_resolved() {
     let f = Fixture::new();
     f.write("A.md", "[Page][id]\n\n[id]: B.md\n");
