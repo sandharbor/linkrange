@@ -548,3 +548,108 @@ fn explicit_physical_excalidraw_filenames_resolve_in_wikilinks_and_markdown() {
         );
     }
 }
+
+#[test]
+fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_display_route() {
+    // Given Hub has a short arrival with no incoming budget, and a longer one
+    // through an override that permits Incoming -> Hub to be followed backwards.
+    let f = Fixture::new();
+    f.write("Start.md", "[[Taxonomy]] [[Hub]]");
+    f.write("Taxonomy.md", "[[Hub]]");
+    f.write("Hub.md", "");
+    f.write("Incoming.md", "[[Hub]] [[Target]]");
+    f.write("Target.md", "");
+    let mut request = f.request(&["Start.md"], 3, 1);
+    request.query.rules.push(Rule {
+        path: "Taxonomy.md".into(),
+        outlinks: Some(3),
+        inlinks: Some(2),
+        ..Default::default()
+    });
+    // When queried cold, warm, and through the CLI, the same route evidence survives.
+    let mut responses = vec![query(&request).unwrap(), query(&request).unwrap()];
+    let request_file = f.temp.path().join("request.json");
+    fs::write(&request_file, serde_json::to_vec(&request).unwrap()).unwrap();
+    let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .args(["query", "--request"])
+        .arg(&request_file)
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    responses.push(serde_json::from_slice(&output.stdout).unwrap());
+    for response in responses {
+        // Then Hub's own shortest explanation remains direct, with no incoming budget.
+        let hub = node(&response, "Hub.md");
+        assert_eq!(hub.route, ["Start.md", "Hub.md"]);
+        assert_eq!((hub.depth, hub.remaining_inlinks), (1, 0));
+        let target = node(&response, "Target.md");
+        assert_eq!(
+            target.route,
+            [
+                "Start.md",
+                "Taxonomy.md",
+                "Hub.md",
+                "Incoming.md",
+                "Target.md"
+            ]
+        );
+        let steps = &target.route_steps;
+        assert_eq!(
+            steps
+                .iter()
+                .map(|step| (
+                    step.depth,
+                    step.remaining_outlinks,
+                    step.remaining_inlinks,
+                    step.via.as_str()
+                ))
+                .collect::<Vec<_>>(),
+            [
+                (0, 3, 1, "start"),
+                (1, 3, 2, "outlink"),
+                (2, 2, 1, "outlink"),
+                (3, 1, 0, "inlink"),
+                (4, 0, 0, "outlink")
+            ]
+        );
+        assert_eq!(
+            steps[1].inherited,
+            Some(TraversalState {
+                remaining_outlinks: 2,
+                remaining_inlinks: 0
+            })
+        );
+        assert_eq!(
+            (steps[1].overridden_outlinks, steps[1].overridden_inlinks),
+            (Some(3), Some(2))
+        );
+        for n in &response.nodes {
+            assert_eq!(
+                n.route_steps
+                    .iter()
+                    .map(|step| step.path.clone())
+                    .collect::<Vec<_>>(),
+                n.route
+            );
+            let last = n.route_steps.last().unwrap();
+            assert_eq!(
+                (
+                    last.depth,
+                    last.remaining_outlinks,
+                    last.remaining_inlinks,
+                    last.inclusion
+                ),
+                (
+                    n.depth,
+                    n.remaining_outlinks,
+                    n.remaining_inlinks,
+                    n.inclusion
+                )
+            );
+        }
+    }
+}

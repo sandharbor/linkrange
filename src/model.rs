@@ -158,6 +158,22 @@ pub struct TraversalState {
     pub remaining_inlinks: u32,
 }
 
+/// One arrival on a node's selected route, including the budgets used to continue.
+/// These values can differ from the same page's independently selected arrival.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
+pub struct RouteStep {
+    pub path: String,
+    pub depth: u32,
+    pub remaining_outlinks: i64,
+    pub remaining_inlinks: u32,
+    pub via: String,
+    pub inclusion: Inclusion,
+    pub inherited: Option<TraversalState>,
+    pub overridden_outlinks: Option<u32>,
+    pub overridden_inlinks: Option<u32>,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Node {
@@ -167,6 +183,8 @@ pub struct Node {
     pub remaining_outlinks: i64,
     pub remaining_inlinks: u32,
     pub route: Vec<String>,
+    #[serde(default)]
+    pub route_steps: Vec<RouteStep>,
     pub via: String,
     pub inclusion: Inclusion,
     pub states: Vec<TraversalState>,

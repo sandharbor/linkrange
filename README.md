@@ -90,6 +90,10 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   budget. Per-node overrides reset each independently when reached inside the
   normal boundary. Multiple routes retain useful independent budget states;
   node display details describe a shortest valid arrival, not a synthetic merge.
+  Each node's `routeSteps` records the actual depth, direction, inherited and
+  overridden budgets, and inclusion at every step of its `route`. An intermediate
+  page's own shortest arrival may have different budgets; use `routeSteps` to
+  explain why traversal could continue along the selected route.
 - **Pruning:** `stop` includes a node but prevents expansion through it; `exclude`
   omits it entirely. `subtree` applies a rule to a directory's descendants. An
   independent allowed route can still reach a node beyond a stopped branch.

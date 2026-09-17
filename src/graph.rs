@@ -3,6 +3,7 @@ use anyhow::{Context, Result};
 use std::{
     collections::{BTreeMap, BTreeSet, HashMap, VecDeque},
     path::Path,
+    sync::Arc,
     time::Instant,
 };
 
@@ -20,12 +21,25 @@ struct State {
     out: i64,
     incoming: u32,
     depth: u32,
-    route: Vec<usize>,
+    // Share immutable arrivals so later dominance pruning cannot change a route.
+    previous: Option<Arc<State>>,
     via: &'static str,
     embedded: bool,
     inherited: Option<TraversalState>,
     override_out: Option<u32>,
     override_in: Option<u32>,
+}
+
+impl State {
+    fn inclusion(&self) -> Inclusion {
+        if self.out >= 0 {
+            Inclusion::Traversal
+        } else if self.embedded {
+            Inclusion::EmbeddedAsset
+        } else {
+            Inclusion::Frontier
+        }
+    }
 }
 
 #[derive(Default, Clone)]
@@ -71,10 +85,11 @@ fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>) {
 
 fn enqueue(
     candidate: State,
-    displays: &mut HashMap<usize, State>,
-    states: &mut HashMap<usize, Vec<State>>,
-    queue: &mut VecDeque<State>,
+    displays: &mut HashMap<usize, Arc<State>>,
+    states: &mut HashMap<usize, Vec<Arc<State>>>,
+    queue: &mut VecDeque<Arc<State>>,
 ) {
+    let candidate = Arc::new(candidate);
     // Keep the shortest valid arrival for presentation even when a longer route
     // has stronger budgets and dominates it for subsequent exploration.
     let display = displays
@@ -90,7 +105,7 @@ fn enqueue(
             && state.incoming >= candidate.incoming
             && (state.out != candidate.out
                 || state.incoming != candidate.incoming
-                || state.route.len() <= candidate.route.len())
+                || state.depth <= candidate.depth)
     }) {
         return;
     }
@@ -242,7 +257,7 @@ impl Graph {
                         out: policy.out.unwrap_or(depths.outlinks) as i64,
                         incoming: policy.incoming.unwrap_or(depths.inlinks),
                         depth: 0,
-                        route: vec![id],
+                        previous: None,
                         via: "start",
                         embedded: false,
                         inherited: None,
@@ -258,7 +273,7 @@ impl Graph {
         while let Some(current) = queue.pop_front() {
             if !states
                 .get(&current.id)
-                .is_some_and(|states| states.contains(&current))
+                .is_some_and(|states| states.iter().any(|state| Arc::ptr_eq(state, &current)))
             {
                 continue;
             }
@@ -286,8 +301,6 @@ impl Graph {
                     return;
                 }
                 let normal = next_out >= 0;
-                let mut route = current.route.clone();
-                route.push(target);
                 let inherited = Some(TraversalState {
                     remaining_outlinks: next_out,
                     remaining_inlinks: next_in,
@@ -299,7 +312,7 @@ impl Graph {
                     out: override_out.map_or(next_out, |n| n as i64),
                     incoming: override_in.unwrap_or(next_in),
                     depth: current.depth + 1,
-                    route,
+                    previous: Some(current.clone()),
                     via,
                     embedded: false,
                     inherited,
@@ -344,13 +357,24 @@ impl Graph {
         for &id in &ids {
             let states = &states[&id];
             let display = &displays[&id];
-            let inclusion = if display.out >= 0 {
-                Inclusion::Traversal
-            } else if display.embedded {
-                Inclusion::EmbeddedAsset
-            } else {
-                Inclusion::Frontier
-            };
+            let inclusion = display.inclusion();
+            let mut route_steps = Vec::with_capacity(display.depth as usize + 1);
+            let mut arrival = Some(display.as_ref());
+            while let Some(step) = arrival {
+                route_steps.push(RouteStep {
+                    path: self.index.files[step.id].file.path.clone(),
+                    depth: step.depth,
+                    remaining_outlinks: step.out,
+                    remaining_inlinks: step.incoming,
+                    via: step.via.into(),
+                    inclusion: step.inclusion(),
+                    inherited: step.inherited.clone(),
+                    overridden_outlinks: step.override_out,
+                    overridden_inlinks: step.override_in,
+                });
+                arrival = step.previous.as_deref();
+            }
+            route_steps.reverse();
             let mut summaries: Vec<_> = states
                 .iter()
                 .map(|state| TraversalState {
@@ -370,11 +394,8 @@ impl Graph {
                 depth: display.depth,
                 remaining_outlinks: display.out,
                 remaining_inlinks: display.incoming,
-                route: display
-                    .route
-                    .iter()
-                    .map(|id| self.index.files[*id].file.path.clone())
-                    .collect(),
+                route: route_steps.iter().map(|step| step.path.clone()).collect(),
+                route_steps,
                 via: display.via.into(),
                 inclusion,
                 states: summaries,
