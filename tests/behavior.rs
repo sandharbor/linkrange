@@ -667,6 +667,116 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
 }
 
 #[test]
+fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traversing_it() {
+    // Given a direct 2/0 arrival and a longer 2/1 arrival, both reset to 2/0 at Hub.
+    let f = Fixture::new();
+    f.write("Taxonomy.md", "[[Hub]]");
+    f.write("Hub.md", "[[Tail]]");
+    f.write("Tail.md", "");
+    f.write("Incoming.md", "[[Hub]] [[Target]]");
+    f.write("Target.md", "");
+    let mut request = f.request(&["Start.md"], 3, 1);
+    request.query.rules = vec![
+        Rule {
+            path: "Taxonomy.md".into(),
+            outlinks: Some(3),
+            inlinks: Some(2),
+            ..Default::default()
+        },
+        Rule {
+            path: "Hub.md".into(),
+            inlinks: Some(0),
+            ..Default::default()
+        },
+    ];
+    for links in ["[[Taxonomy]] [[Hub]]", "[[Hub]] [[Taxonomy]]"] {
+        f.write("Start.md", links);
+        // When the override collapses the arrivals to one useful traversal state.
+        let response = query(&request).unwrap();
+        let hub = node(&response, "Hub.md");
+        assert_eq!(hub.route, ["Start.md", "Hub.md"]);
+        assert_eq!(
+            hub.states,
+            [TraversalState {
+                remaining_outlinks: 2,
+                remaining_inlinks: 0
+            }]
+        );
+        // Then the longer route still explains the actual 1 -> 0 override.
+        assert_eq!(hub.alternative_routes.len(), 1);
+        let steps = &hub.alternative_routes[0];
+        assert_eq!(
+            steps.iter().map(|s| s.path.as_str()).collect::<Vec<_>>(),
+            ["Start.md", "Taxonomy.md", "Hub.md"]
+        );
+        let arrival = steps.last().unwrap();
+        assert_eq!(arrival.inherited.as_ref().unwrap().remaining_inlinks, 1);
+        assert_eq!(arrival.overridden_inlinks, Some(0));
+        assert_eq!(arrival.remaining_inlinks, 0);
+        // Explanation-only arrivals never revive incoming traversal or propagate duplicate routes.
+        assert!(!paths(&response).contains(&"Incoming.md"));
+        assert!(!paths(&response).contains(&"Target.md"));
+        assert!(node(&response, "Tail.md").alternative_routes.is_empty());
+    }
+}
+
+#[test]
+fn overrides_preserve_separate_pre_override_maxima_without_retaining_every_redundant_arrival() {
+    // Given three different inherited budget pairs that two overrides collapse to 2/0.
+    let f = Fixture::new();
+    for start in ["Out", "Balanced", "In"] {
+        f.write(&format!("{start}.md"), "[[Hub]]");
+    }
+    f.write("Hub.md", "[[Out]]");
+    let mut request = f.request(&["Out.md", "Balanced.md", "In.md"], 0, 0);
+    for (start, (outlinks, inlinks)) in
+        request
+            .query
+            .starts
+            .iter_mut()
+            .zip([(6, 1), (4, 3), (2, 5)])
+    {
+        start.depths = Some(Depths { outlinks, inlinks });
+    }
+    request.query.rules.push(Rule {
+        path: "Hub.md".into(),
+        outlinks: Some(2),
+        inlinks: Some(0),
+        ..Default::default()
+    });
+    // When querying a graph that also contains a cycle.
+    let response = query(&request).unwrap();
+    let hub = node(&response, "Hub.md");
+    let routes: Vec<_> = std::iter::once(&hub.route_steps)
+        .chain(&hub.alternative_routes)
+        .collect();
+    // Then each maximum has its real route, never a fabricated 5/4 inherited pair.
+    assert_eq!(
+        routes
+            .iter()
+            .map(|r| r.last().unwrap().inherited.clone().unwrap())
+            .collect::<Vec<_>>(),
+        [
+            TraversalState {
+                remaining_outlinks: 5,
+                remaining_inlinks: 0
+            },
+            TraversalState {
+                remaining_outlinks: 1,
+                remaining_inlinks: 4
+            },
+        ]
+    );
+    assert_eq!(
+        hub.states,
+        [TraversalState {
+            remaining_outlinks: 2,
+            remaining_inlinks: 0
+        }]
+    );
+}
+
+#[test]
 fn alternative_routes_preserve_every_useful_budget_pair_without_synthesizing_the_maxima() {
     // Given three starts supply Hub with 5/0, 3/2, and 1/4 remaining budgets.
     let f = Fixture::new();

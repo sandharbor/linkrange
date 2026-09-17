@@ -95,7 +95,11 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   page's own shortest arrival may have different budgets; use `routeSteps` to
   explain why traversal could continue along the selected route. `alternativeRoutes`
   supplies the other non-dominated arrivals with their complete steps, including
-  intermediate budget tradeoffs. Independent maxima are useful display summaries,
+  intermediate budget tradeoffs. It also preserves one route for the strongest
+  inherited budget in each overridden direction, even when overrides make those
+  routes redundant for traversal. This explains reductions such as 1 → 0 without
+  reviving traversal; `states` still contains only useful post-override budgets.
+  Independent maxima are useful display summaries,
   never a combined traversal state: arrivals with budgets 5/0 and 2/3 do not create 5/3.
 - **Pruning:** `stop` includes a node but prevents expansion through it; `exclude`
   omits it entirely. `subtree` applies a rule to a directory's descendants. An

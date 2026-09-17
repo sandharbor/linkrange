@@ -83,13 +83,66 @@ fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>) {
     )
 }
 
+#[derive(Default)]
+struct OverrideArrivals {
+    outlinks: Option<(i64, Arc<State>)>,
+    inlinks: Option<(i64, Arc<State>)>,
+}
+
+impl OverrideArrivals {
+    fn record(&mut self, candidate: &Arc<State>) {
+        let Some(inherited) = &candidate.inherited else {
+            return;
+        };
+        // At most one actual arrival per overridden dimension. These explain what
+        // the override replaced, but never enter the queue or traversal states.
+        for (overridden, budget, slot) in [
+            (
+                candidate.override_out.is_some(),
+                inherited.remaining_outlinks,
+                &mut self.outlinks,
+            ),
+            (
+                candidate.override_in.is_some(),
+                i64::from(inherited.remaining_inlinks),
+                &mut self.inlinks,
+            ),
+        ] {
+            if overridden
+                && slot.as_ref().is_none_or(|(maximum, existing)| {
+                    budget > *maximum
+                        || (budget == *maximum && display_key(candidate) < display_key(existing))
+                })
+            {
+                *slot = Some((budget, candidate.clone()));
+            }
+        }
+    }
+
+    fn routes(&self) -> impl Iterator<Item = &Arc<State>> {
+        self.outlinks
+            .iter()
+            .chain(&self.inlinks)
+            .map(|(_, state)| state)
+    }
+}
+
 fn enqueue(
     candidate: State,
     displays: &mut HashMap<usize, Arc<State>>,
     states: &mut HashMap<usize, Vec<Arc<State>>>,
+    override_arrivals: &mut HashMap<usize, OverrideArrivals>,
     queue: &mut VecDeque<Arc<State>>,
 ) {
     let candidate = Arc::new(candidate);
+    if candidate.inherited.is_some()
+        && (candidate.override_out.is_some() || candidate.override_in.is_some())
+    {
+        override_arrivals
+            .entry(candidate.id)
+            .or_default()
+            .record(&candidate);
+    }
     // Keep the shortest valid arrival for presentation even when a longer route
     // has stronger budgets and dominates it for subsequent exploration.
     let display = displays
@@ -244,6 +297,7 @@ impl Graph {
         let mut policies: HashMap<usize, Policy> = HashMap::new();
         let mut displays = HashMap::new();
         let mut states = HashMap::new();
+        let mut override_arrivals = HashMap::new();
         let mut queue = VecDeque::new();
         for start in &query.starts {
             let path = self.canonical_path(&start.path)?;
@@ -287,6 +341,7 @@ impl Graph {
                     },
                     &mut displays,
                     &mut states,
+                    &mut override_arrivals,
                     &mut queue,
                 );
             }
@@ -341,7 +396,13 @@ impl Graph {
                     override_in,
                 };
                 if next_out >= -(query.frontier_depth as i64) {
-                    enqueue(candidate.clone(), &mut displays, &mut states, &mut queue);
+                    enqueue(
+                        candidate.clone(),
+                        &mut displays,
+                        &mut states,
+                        &mut override_arrivals,
+                        &mut queue,
+                    );
                 }
                 if embedded {
                     enqueue(
@@ -351,6 +412,7 @@ impl Graph {
                         },
                         &mut displays,
                         &mut states,
+                        &mut override_arrivals,
                         &mut queue,
                     );
                 }
@@ -382,10 +444,19 @@ impl Graph {
             let route_steps = self.route_steps(display);
             let mut alternatives: Vec<_> = states
                 .iter()
+                .chain(
+                    override_arrivals
+                        .get(&id)
+                        .into_iter()
+                        .flat_map(OverrideArrivals::routes),
+                )
                 .filter(|state| !Arc::ptr_eq(state, display))
                 .collect();
             alternatives
                 .sort_by_key(|state| (-state.out, std::cmp::Reverse(state.incoming), state.depth));
+            // A state can supply both inherited maxima and remain active too.
+            let mut seen = std::collections::HashSet::new();
+            alternatives.retain(|state| seen.insert(Arc::as_ptr(state)));
             let alternative_routes = alternatives
                 .into_iter()
                 .map(|state| self.route_steps(state))

@@ -185,7 +185,8 @@ pub struct Node {
     pub route: Vec<String>,
     #[serde(default)]
     pub route_steps: Vec<RouteStep>,
-    /// Other non-dominated arrivals, each with its own paired budgets and provenance.
+    /// Other non-dominated arrivals and strongest inherited budgets replaced by overrides,
+    /// each with its own paired budgets and provenance. Override evidence is display-only.
     /// The primary route remains in `route_steps`; maxima must not be merged for traversal.
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub alternative_routes: Vec<Vec<RouteStep>>,
