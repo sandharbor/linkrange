@@ -171,7 +171,11 @@ fn enqueue(
 }
 
 impl Graph {
-    fn route_steps(&self, state: &State) -> Vec<RouteStep> {
+    fn route_steps(
+        &self,
+        state: &State,
+        retained: &HashMap<usize, Vec<Arc<State>>>,
+    ) -> Vec<RouteStep> {
         let mut steps = Vec::with_capacity(state.depth as usize + 1);
         let mut arrival = Some(state);
         while let Some(step) = arrival {
@@ -185,6 +189,11 @@ impl Graph {
                 inherited: step.inherited.clone(),
                 overridden_outlinks: step.override_out,
                 overridden_inlinks: step.override_in,
+                retained_for_traversal: Some(retained.get(&step.id).is_some_and(|states| {
+                    states
+                        .iter()
+                        .any(|state| std::ptr::eq(state.as_ref(), step))
+                })),
             });
             arrival = step.previous.as_deref();
         }
@@ -438,11 +447,11 @@ impl Graph {
         let ids: BTreeSet<_> = states.keys().copied().collect();
         let mut nodes = Vec::new();
         for &id in &ids {
-            let states = &states[&id];
+            let node_states = &states[&id];
             let display = &displays[&id];
             let inclusion = display.inclusion();
-            let route_steps = self.route_steps(display);
-            let mut alternatives: Vec<_> = states
+            let route_steps = self.route_steps(display, &states);
+            let mut alternatives: Vec<_> = node_states
                 .iter()
                 .chain(
                     override_arrivals
@@ -459,10 +468,10 @@ impl Graph {
             alternatives.retain(|state| seen.insert(Arc::as_ptr(state)));
             let alternative_routes = alternatives
                 .into_iter()
-                .map(|state| self.route_steps(state))
+                .map(|state| self.route_steps(state, &states))
                 .filter(|steps| steps != &route_steps)
                 .collect();
-            let mut summaries: Vec<_> = states
+            let mut summaries: Vec<_> = node_states
                 .iter()
                 .map(|state| TraversalState {
                     remaining_outlinks: state.out,
