@@ -118,6 +118,27 @@ fn enqueue(
 }
 
 impl Graph {
+    fn route_steps(&self, state: &State) -> Vec<RouteStep> {
+        let mut steps = Vec::with_capacity(state.depth as usize + 1);
+        let mut arrival = Some(state);
+        while let Some(step) = arrival {
+            steps.push(RouteStep {
+                path: self.index.files[step.id].file.path.clone(),
+                depth: step.depth,
+                remaining_outlinks: step.out,
+                remaining_inlinks: step.incoming,
+                via: step.via.into(),
+                inclusion: step.inclusion(),
+                inherited: step.inherited.clone(),
+                overridden_outlinks: step.override_out,
+                overridden_inlinks: step.override_in,
+            });
+            arrival = step.previous.as_deref();
+        }
+        steps.reverse();
+        steps
+    }
+
     pub fn open(root: &Path, options: &IndexOptions) -> Result<Self> {
         let root = root.canonicalize().context("Source root is unavailable")?;
         anyhow::ensure!(root.is_dir(), "Source root must be a directory");
@@ -358,23 +379,18 @@ impl Graph {
             let states = &states[&id];
             let display = &displays[&id];
             let inclusion = display.inclusion();
-            let mut route_steps = Vec::with_capacity(display.depth as usize + 1);
-            let mut arrival = Some(display.as_ref());
-            while let Some(step) = arrival {
-                route_steps.push(RouteStep {
-                    path: self.index.files[step.id].file.path.clone(),
-                    depth: step.depth,
-                    remaining_outlinks: step.out,
-                    remaining_inlinks: step.incoming,
-                    via: step.via.into(),
-                    inclusion: step.inclusion(),
-                    inherited: step.inherited.clone(),
-                    overridden_outlinks: step.override_out,
-                    overridden_inlinks: step.override_in,
-                });
-                arrival = step.previous.as_deref();
-            }
-            route_steps.reverse();
+            let route_steps = self.route_steps(display);
+            let mut alternatives: Vec<_> = states
+                .iter()
+                .filter(|state| !Arc::ptr_eq(state, display))
+                .collect();
+            alternatives
+                .sort_by_key(|state| (-state.out, std::cmp::Reverse(state.incoming), state.depth));
+            let alternative_routes = alternatives
+                .into_iter()
+                .map(|state| self.route_steps(state))
+                .filter(|steps| steps != &route_steps)
+                .collect();
             let mut summaries: Vec<_> = states
                 .iter()
                 .map(|state| TraversalState {
@@ -396,6 +412,7 @@ impl Graph {
                 remaining_inlinks: display.incoming,
                 route: route_steps.iter().map(|step| step.path.clone()).collect(),
                 route_steps,
+                alternative_routes,
                 via: display.via.into(),
                 inclusion,
                 states: summaries,

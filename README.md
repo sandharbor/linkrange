@@ -93,7 +93,10 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   Each node's `routeSteps` records the actual depth, direction, inherited and
   overridden budgets, and inclusion at every step of its `route`. An intermediate
   page's own shortest arrival may have different budgets; use `routeSteps` to
-  explain why traversal could continue along the selected route.
+  explain why traversal could continue along the selected route. `alternativeRoutes`
+  supplies the other non-dominated arrivals with their complete steps, including
+  intermediate budget tradeoffs. Independent maxima are useful display summaries,
+  never a combined traversal state: arrivals with budgets 5/0 and 2/3 do not create 5/3.
 - **Pruning:** `stop` includes a node but prevents expansion through it; `exclude`
   omits it entirely. `subtree` applies a rule to a directory's descendants. An
   independent allowed route can still reach a node beyond a stopped branch.

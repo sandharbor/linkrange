@@ -185,6 +185,10 @@ pub struct Node {
     pub route: Vec<String>,
     #[serde(default)]
     pub route_steps: Vec<RouteStep>,
+    /// Other non-dominated arrivals, each with its own paired budgets and provenance.
+    /// The primary route remains in `route_steps`; maxima must not be merged for traversal.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub alternative_routes: Vec<Vec<RouteStep>>,
     pub via: String,
     pub inclusion: Inclusion,
     pub states: Vec<TraversalState>,

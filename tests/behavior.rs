@@ -586,6 +586,18 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
         let hub = node(&response, "Hub.md");
         assert_eq!(hub.route, ["Start.md", "Hub.md"]);
         assert_eq!((hub.depth, hub.remaining_inlinks), (1, 0));
+        assert_eq!(hub.alternative_routes.len(), 1);
+        assert_eq!(
+            hub.alternative_routes[0]
+                .iter()
+                .map(|step| step.path.as_str())
+                .collect::<Vec<_>>(),
+            ["Start.md", "Taxonomy.md", "Hub.md"]
+        );
+        assert_eq!(
+            hub.alternative_routes[0].last().unwrap().remaining_inlinks,
+            1
+        );
         let target = node(&response, "Target.md");
         assert_eq!(
             target.route,
@@ -652,4 +664,57 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
             );
         }
     }
+}
+
+#[test]
+fn alternative_routes_preserve_every_useful_budget_pair_without_synthesizing_the_maxima() {
+    // Given three starts supply Hub with 5/0, 3/2, and 1/4 remaining budgets.
+    let f = Fixture::new();
+    for start in ["Out", "Balanced", "In"] {
+        f.write(&format!("{start}.md"), "[[Hub]]");
+    }
+    f.write("Hub.md", "");
+    f.write("Incoming1.md", "[[Hub]]");
+    f.write("Incoming2.md", "[[Incoming1]]");
+    f.write("Incoming3.md", "[[Incoming2]]");
+    let mut request = f.request(&["Out.md", "Balanced.md", "In.md"], 0, 0);
+    for (start, (outlinks, inlinks)) in
+        request
+            .query
+            .starts
+            .iter_mut()
+            .zip([(6, 1), (4, 3), (2, 5)])
+    {
+        start.depths = Some(Depths { outlinks, inlinks });
+    }
+    // When the graph is queried, each useful pair retains its own complete explanation.
+    let response = query(&request).unwrap();
+    let hub = node(&response, "Hub.md");
+    let routes: Vec<_> = std::iter::once(&hub.route_steps)
+        .chain(&hub.alternative_routes)
+        .collect();
+    assert_eq!(
+        routes
+            .iter()
+            .map(|route| {
+                let step = route.last().unwrap();
+                (step.remaining_outlinks, step.remaining_inlinks)
+            })
+            .collect::<Vec<_>>(),
+        [(5, 0), (3, 2), (1, 4)]
+    );
+    assert_eq!(
+        routes
+            .iter()
+            .map(|route| route[0].path.as_str())
+            .collect::<Vec<_>>(),
+        ["Out.md", "Balanced.md", "In.md"]
+    );
+    // Then the intermediate tradeoff is retained, and the synthetic 5/4 arrival does not exist.
+    assert!(paths(&response).contains(&"Incoming2.md"));
+    assert!(!paths(&response).contains(&"Incoming3.md"));
+    assert!(!hub
+        .states
+        .iter()
+        .any(|state| state.remaining_outlinks == 5 && state.remaining_inlinks == 4));
 }
