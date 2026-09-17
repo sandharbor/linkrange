@@ -174,6 +174,106 @@ fn boundary_embeds_are_terminal_and_only_selected_types_get_the_exception() {
 }
 
 #[test]
+fn html_boundary_embeds_are_included_without_following_hyperlinks_or_recursive_embeds() {
+    let f = Fixture::new();
+    // Given local assets, an embedded document with its own links, and ordinary hyperlinks.
+    f.write(
+        "page.html",
+        r#"
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <img src="image.webp">
+        <iframe src="embedded.html"></iframe>
+        <object data="document.pdf"></object>
+        <a href="linked.html">ordinary page</a><a href="linked.webp">ordinary image</a>
+    "#,
+    );
+    f.write(
+        "embedded.html",
+        "<img src='nested.png'><a href='Beyond.md'>Beyond</a>",
+    );
+    for path in [
+        "style.css",
+        "script.js",
+        "image.webp",
+        "document.pdf",
+        "linked.html",
+        "linked.webp",
+        "nested.png",
+        "Beyond.md",
+    ] {
+        f.write(path, "");
+    }
+    let mut request = f.request(&["page.html"], 0, 0);
+    assert_eq!(paths(&query(&request).unwrap()), ["page.html"]);
+    // When HTML sources are opted into the direct-embed exception.
+    request.query.boundary_embed_source_types = vec!["html".into()];
+    request.query.rules.push(Rule {
+        path: "embedded.html".into(),
+        outlinks: Some(100),
+        ..Default::default()
+    });
+    let response = query(&request).unwrap();
+    // Then every direct embed crosses the boundary, but neither recursion nor overrides expand it.
+    assert_eq!(
+        paths(&response),
+        [
+            "document.pdf",
+            "embedded.html",
+            "image.webp",
+            "page.html",
+            "script.js",
+            "style.css"
+        ]
+    );
+    for path in [
+        "document.pdf",
+        "embedded.html",
+        "image.webp",
+        "script.js",
+        "style.css",
+    ] {
+        assert_eq!(node(&response, path).inclusion, Inclusion::EmbeddedAsset);
+        assert_eq!(node(&response, path).remaining_outlinks, -1);
+    }
+    // The CLI exposes the same opt-in rule.
+    let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .args(["query", "--source-root"])
+        .arg(f.root())
+        .args([
+            "--start",
+            "page.html",
+            "--outlinks",
+            "0",
+            "--boundary-embed-source-type",
+            "html",
+            "--no-cache",
+        ])
+        .output()
+        .unwrap();
+    assert!(output.status.success());
+    let cli: Response = serde_json::from_slice(&output.stdout).unwrap();
+    assert_eq!(paths(&cli), paths(&response));
+    // Exclusions and stopping at the source still take priority over the exception.
+    request.query.rules.push(Rule {
+        path: "document.pdf".into(),
+        exclude: true,
+        ..Default::default()
+    });
+    assert!(!paths(&query(&request).unwrap()).contains(&"document.pdf"));
+    request.query.rules.push(Rule {
+        path: "page.html".into(),
+        stop: true,
+        ..Default::default()
+    });
+    assert_eq!(paths(&query(&request).unwrap()), ["page.html"]);
+    // Source-format opt-in doesn't broaden the caller's Markdown embedding policy.
+    f.write("note.md", "![[embedded.html]] ![[image.webp]]");
+    request.query.starts[0].path = "note.md".into();
+    assert_eq!(paths(&query(&request).unwrap()), ["note.md"]);
+}
+
+#[test]
 fn query_scoped_resolution_and_adjacency_include_outside_neighbors_without_admitting_them() {
     let f = Fixture::new();
     f.write("A.md", "[[B]] [[Missing]]");

@@ -42,6 +42,9 @@ enum Command {
         frontmatter: Vec<String>,
         #[arg(long)]
         boundary_embed_type: Vec<String>,
+        /// Include direct embeds from these source formats at the depth boundary.
+        #[arg(long)]
+        boundary_embed_source_type: Vec<String>,
         #[arg(long)]
         adjacency: bool,
         #[arg(long)]
@@ -66,6 +69,7 @@ fn run() -> anyhow::Result<()> {
                 follow_internal_symlinks,
                 frontmatter,
                 boundary_embed_type,
+                boundary_embed_source_type,
                 adjacency,
                 explain_resolution,
             },
@@ -109,6 +113,7 @@ fn run() -> anyhow::Result<()> {
                 depths: Depths { outlinks, inlinks },
                 frontier_depth,
                 boundary_embed_types: boundary_embed_type,
+                boundary_embed_source_types: boundary_embed_source_type,
                 adjacency,
                 explain_resolution,
                 ..Default::default()

@@ -81,6 +81,9 @@ pub struct Query {
     pub rules: Vec<Rule>,
     pub frontier_depth: u32,
     pub boundary_embed_types: Vec<String>,
+    /// Source formats whose directly embedded files may cross the boundary.
+    /// This complements the target-format selection in `boundary_embed_types`.
+    pub boundary_embed_source_types: Vec<String>,
     pub adjacency: bool,
     pub lookup_paths: Vec<String>,
     pub explain_resolution: bool,
@@ -97,6 +100,7 @@ impl Default for Query {
             rules: Vec::new(),
             frontier_depth: 0,
             boundary_embed_types: Vec::new(),
+            boundary_embed_source_types: Vec::new(),
             adjacency: false,
             lookup_paths: Vec::new(),
             explain_resolution: false,

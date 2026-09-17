@@ -120,7 +120,12 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   and the optional terminal `embeddedAsset` exception.
 - **Boundary embeds:** Caller-selected formats directly embedded at a normal
   boundary may be included without expanding through the asset. Ordinary links
-  do not receive this exception.
+  do not receive this exception. `boundaryEmbedTypes` selects target formats;
+  `boundaryEmbedSourceTypes` selects source formats whose resolved direct embeds receive
+  the exception regardless of target format. For example, `["html"]` preserves
+  a boundary HTML page's scripts, stylesheets, images, and embedded documents.
+  The CLI exposes this as `--boundary-embed-source-type html`. Both selections
+  default to empty; stop and exclude policies still apply.
 - **Query scope:** `nodes`, `edges`, and `linksBySource` describe the requested
   result, not the whole vault. For each returned source, `linksBySource` includes
   every parsed outgoing occurrence, even when its target is outside the result.

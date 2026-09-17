@@ -379,9 +379,12 @@ impl Graph {
                 let next_in = current.incoming.saturating_sub(1);
                 let embedded = current.out == 0
                     && embedded_link
-                    && query
+                    && (query
                         .boundary_embed_types
-                        .contains(&self.index.files[target].file.format);
+                        .contains(&self.index.files[target].file.format)
+                        || query
+                            .boundary_embed_source_types
+                            .contains(&self.index.files[current.id].file.format));
                 if next_out < -(query.frontier_depth as i64) && !embedded {
                     return;
                 }
