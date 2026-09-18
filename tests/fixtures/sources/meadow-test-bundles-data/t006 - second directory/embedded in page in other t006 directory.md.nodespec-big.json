@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t010/t010 ---- same depth 2 - 1 out 2 in.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t010/t010 ---- same depth 4 - no connection.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t010/t010 ---- same depth 5 - 1 out 0 in.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

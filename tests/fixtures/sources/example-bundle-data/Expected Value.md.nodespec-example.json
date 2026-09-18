@@ -1,0 +1,41 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

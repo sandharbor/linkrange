@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Alpha/Nested/Nested note.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Outside/Outside note.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": []
+  }
+}

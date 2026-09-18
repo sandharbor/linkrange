@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

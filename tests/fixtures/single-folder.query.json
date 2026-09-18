@@ -1,0 +1,28 @@
+{
+  "name": "single-folder",
+  "source": "sources/folder-structure-test",
+  "query": {
+    "starts": [
+      {
+        "path": "Alpha",
+        "depths": {
+          "outlinks": 2,
+          "inlinks": 0
+        }
+      }
+    ],
+    "depths": {
+      "outlinks": 2,
+      "inlinks": 0
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 8
+}

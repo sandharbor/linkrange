@@ -1,0 +1,41 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow-flower-petals-ani.gif",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow-flower.excalidraw.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow-flower.svg",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow.png",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- too-big.png",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow-flower.svg",
+        "isInGraph": true
+      }
+    ]
+  }
+}

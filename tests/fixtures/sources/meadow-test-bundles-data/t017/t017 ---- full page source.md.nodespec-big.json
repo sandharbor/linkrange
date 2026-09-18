@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t017/t017 ---- full page transclusion.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

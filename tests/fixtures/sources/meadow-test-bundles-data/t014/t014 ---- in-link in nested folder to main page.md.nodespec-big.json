@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": []
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t002/t002 ---- dup.png",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t002 - dup pages and images.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

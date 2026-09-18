@@ -1,0 +1,17 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t016 ---- level 4.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t016 ---- level 2.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Outside/Frontier image.png",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Outside/Frontier page.md",
+        "isInGraph": false
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Outside/Outside note.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

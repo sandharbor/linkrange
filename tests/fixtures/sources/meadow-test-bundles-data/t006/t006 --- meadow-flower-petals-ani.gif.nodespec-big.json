@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t006 - embedded media.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

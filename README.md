@@ -1,12 +1,13 @@
 # Linkrange
 
-A Rust library and CLI for bounded context graphs over linked files. Linkrange
+A Rust library and CLI for traversing and returning bounded context graphs over
+linked files (Markdown, but also HTML, SVG, Excalidraw, and more). Linkrange
 resolves links, indexes incoming relationships, and returns the neighborhood you
-ask for, with enough provenance for another tool to use the same resolutions.
+ask for, with enough provenance info for another tool to be able to use the data.
 
 Use it as a primitive for malleable software: assemble a context bundle for an
 agent, inspect a note's neighborhood, preview what lies beyond a traversal
-boundary, or feed a publishing pipeline.
+boundary (in the frontier), or feed a publishing pipeline.
 
 [Meadow](https://github.com/sandharbor/meadow)
 is the driving integration, but Linkrange stands alone.
@@ -114,6 +115,8 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
 - **Pruning:** `stop` includes a node but prevents expansion through it; `exclude`
   omits it entirely. `subtree` applies a rule to a directory's descendants. An
   independent allowed route can still reach a node beyond a stopped branch.
+  Rules are only needed for depth overrides, stops, or exclusions. Reachable
+  files need no individual rule; listing a path in a rule does not select it.
 - **Frontier:** `frontierDepth` extends the returned graph beyond its normal
   boundary. Overrides on frontier-only nodes are ignored, including zero
   overrides. The extension cannot revive exhausted incoming traversal. Stop and
@@ -183,6 +186,14 @@ queries, and expected results. `tests/query_fixtures.rs` checks graph membership
 frontier depths, and links through the public Rust API. Tests use the committed
 fixtures. Expected answers are authored; the engine never regenerates them from
 its own output.
+
+Each `<fixture>.query.json` defines one query, its source directory, and its
+expected number of node specifications (`null` for a completeness-only check).
+Node expectations sit beside the source file, for example
+`t002 ---- dup.md.nodespec-big.json` and `t002 ---- dup.md.nodespec-small.json`.
+The source extension is retained to distinguish files with the same stem.
+The test runner derives the node path from the sidecar filename and checks that
+every specification is used. JSON sidecars are not indexed as graph nodes.
 
 See [PERFORMANCE.md](PERFORMANCE.md) for the separate 500,000-file diagnostic and
 agent experiment protocol. Large performance runs are deliberately outside the

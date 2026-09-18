@@ -1,0 +1,29 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t023/multiple_links/t023 ---- page a.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t023/multiple_links/t023 ---- page b.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t023/table/t023 ---- table row 1.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t023/table/t023 ---- table row 2.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

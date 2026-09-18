@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t022/t022 ---- alpha cards.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t022/t022 ---- beta cards.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

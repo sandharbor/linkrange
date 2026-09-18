@@ -1,0 +1,29 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t018/t018 ---- unique tags.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t018/t018 ---- shared tags page 1.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t018/t018 ---- shared tags page 2.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t018/t018 ---- code blocks and inline code should not create tag links.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

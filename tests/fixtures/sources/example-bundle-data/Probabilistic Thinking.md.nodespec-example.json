@@ -1,0 +1,129 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "2026-02-10.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Anchoring Bias.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Availability Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Confirmation Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Razors.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Survivorship Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

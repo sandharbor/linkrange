@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t018 - tags.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

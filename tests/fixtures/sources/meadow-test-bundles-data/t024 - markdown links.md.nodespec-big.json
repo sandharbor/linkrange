@@ -1,0 +1,37 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t024/t024 ---- linked page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/deeper/t024 ---- deep page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/t024 ---- inlink only.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/t024 ---- test image.png",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/t024 ---- linked page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/deeper/t024 ---- deep page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

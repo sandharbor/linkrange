@@ -1,0 +1,69 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "2026-02-02.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Elon Musk.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "2026-02-02.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Elon Musk.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "William of Ockham.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

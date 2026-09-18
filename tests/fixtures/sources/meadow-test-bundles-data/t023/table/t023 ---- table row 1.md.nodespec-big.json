@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t023 - backlinks.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

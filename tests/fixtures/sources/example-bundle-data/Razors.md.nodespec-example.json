@@ -1,0 +1,53 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Razors.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "William of Ockham.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Razors.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

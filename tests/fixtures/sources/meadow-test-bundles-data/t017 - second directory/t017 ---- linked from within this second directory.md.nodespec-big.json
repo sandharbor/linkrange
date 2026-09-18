@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t002/t002 ---- points to root dup.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to nested dup.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to extra nested dup.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to root png dup.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to nested png dup.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

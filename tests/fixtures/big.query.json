@@ -1,0 +1,65 @@
+{
+  "name": "big",
+  "source": "sources/meadow-test-bundles-data",
+  "query": {
+    "starts": [
+      {
+        "path": "main page.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 4,
+      "inlinks": 100
+    },
+    "rules": [
+      {
+        "path": "t006 - second directory/embedded in page in other t006 directory.md",
+        "stop": true
+      },
+      {
+        "path": "t006/t006 --- meadow-flower.excalidraw.md",
+        "stop": true
+      },
+      {
+        "path": "t007 ---- blacklisted image.png",
+        "stop": true
+      },
+      {
+        "path": "t007 ---- blacklisted page.md",
+        "stop": true
+      },
+      {
+        "path": "t008 - page conf do not include inlinks.md",
+        "inlinks": 0
+      },
+      {
+        "path": "t009 - page conf graph depth.md",
+        "outlinks": 0
+      },
+      {
+        "path": "t013 - inlinks_depth.md",
+        "inlinks": 1
+      },
+      {
+        "path": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+        "outlinks": 1
+      },
+      {
+        "path": "t021/t021 ---- inlink gap.md",
+        "inlinks": 0
+      },
+      {
+        "path": "t021/t021 ---- outlink gap.md",
+        "outlinks": 0
+      }
+    ],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 146
+}

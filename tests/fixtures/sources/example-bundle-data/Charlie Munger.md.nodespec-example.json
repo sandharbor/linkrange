@@ -1,0 +1,105 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Man with a Hammer.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "2026-02-02.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "2026-02-10.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Alfred Korzybski.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Confirmation Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Man with a Hammer.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t024 - markdown links.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t024 - markdown links.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t024/t024 ---- linked page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

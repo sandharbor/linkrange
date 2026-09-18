@@ -1,0 +1,24 @@
+{
+  "name": "spaced-repetition",
+  "source": "sources/meadow-test-bundles-data",
+  "query": {
+    "starts": [
+      {
+        "path": "t022 - spaced repetition.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 2147483647,
+      "inlinks": 0
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": null
+}

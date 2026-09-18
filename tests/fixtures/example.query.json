@@ -1,0 +1,33 @@
+{
+  "name": "example",
+  "source": "sources/example-bundle-data",
+  "query": {
+    "starts": [
+      {
+        "path": "Notable Mental Models.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 3,
+      "inlinks": 0
+    },
+    "rules": [
+      {
+        "path": "Sun Feb 01 2026 16:00:00 GMT-0800 (Pacific Standard Time).md",
+        "stop": true
+      },
+      {
+        "path": "Cognitive Biases.md",
+        "outlinks": 0
+      }
+    ],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 35
+}

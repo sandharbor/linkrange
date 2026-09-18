@@ -1,0 +1,29 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t017/t017 ---- full page transclusion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t017/t017 ---- section transclusion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t017/t017 ---- block transclusion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t017/t017 ---- deep transclusion.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

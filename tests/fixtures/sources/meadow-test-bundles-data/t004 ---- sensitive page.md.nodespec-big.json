@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t004 - sensitive.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Razors.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "images/Mental Models Diagram.svg",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": []
+  }
+}

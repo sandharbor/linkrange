@@ -1,18 +1,24 @@
 //! Query results are checked against authored fixture expectations, never engine output.
 use linkrange::*;
-use serde::Deserialize;
-use std::{collections::BTreeSet, fs, path::Path};
+use serde::{de::DeserializeOwned, Deserialize};
+use std::{
+    collections::BTreeSet,
+    fs,
+    path::{Path, PathBuf},
+};
 
 #[derive(Deserialize)]
+#[serde(rename_all = "camelCase")]
 struct Case {
     name: String,
     source: String,
     query: Query,
-    expectations: Option<Vec<Expectation>>,
+    expectation_count: Option<usize>,
 }
 #[derive(Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct Expectation {
+    #[serde(skip)]
     path: String,
     is_in_working_graph: bool,
     frontier_depth_or_null_for_orphan: Option<i64>,
@@ -32,17 +38,83 @@ struct ExpectedLink {
     is_in_graph: bool,
 }
 
+fn files_under(directory: &Path) -> Vec<PathBuf> {
+    let mut files = Vec::new();
+    for entry in fs::read_dir(directory).unwrap() {
+        let entry = entry.unwrap();
+        if entry.file_type().unwrap().is_dir() {
+            files.extend(files_under(&entry.path()));
+        } else {
+            files.push(entry.path());
+        }
+    }
+    files.sort();
+    files
+}
+
+fn read_json<T: DeserializeOwned>(path: &Path) -> T {
+    let bytes = fs::read(path).unwrap_or_else(|error| panic!("{}: {error}", path.display()));
+    serde_json::from_slice(&bytes).unwrap_or_else(|error| panic!("{}: {error}", path.display()))
+}
+
 #[test]
 fn query_results_match_fixture_expectations() {
     let fixture = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures");
-    let cases: Vec<Case> =
-        serde_json::from_slice(&fs::read(fixture.join("cases.json")).unwrap()).unwrap();
+    let files = files_under(&fixture);
+    let query_files: Vec<_> = files
+        .iter()
+        .filter(|path| path.to_string_lossy().ends_with(".query.json"))
+        .collect();
+    assert!(!query_files.is_empty(), "No query fixtures were found");
     let cache = tempfile::tempdir().unwrap();
     let mut errors = Vec::new();
     let mut assertions = 0;
-    for case in cases {
+    let mut used_specs = BTreeSet::new();
+    let mut names = BTreeSet::new();
+    for query_file in query_files {
+        let case: Case = read_json(query_file);
+        assert!(
+            names.insert(case.name.clone()),
+            "Duplicate fixture: {}",
+            case.name
+        );
+        assert_eq!(
+            query_file.file_name().unwrap().to_str().unwrap(),
+            format!("{}.query.json", case.name),
+            "Query filename must match its fixture name"
+        );
+        let source = fixture.join(&case.source);
+        let suffix = format!(".nodespec-{}.json", case.name);
+        let mut expected = Vec::new();
+        for spec in files
+            .iter()
+            .filter(|path| path.starts_with(&source) && path.to_string_lossy().ends_with(&suffix))
+        {
+            let relative = spec
+                .strip_prefix(&source)
+                .unwrap()
+                .to_str()
+                .unwrap()
+                .replace('\\', "/");
+            let path = relative.strip_suffix(&suffix).unwrap();
+            assert!(
+                source.join(path).is_file(),
+                "{} has no source file",
+                spec.display()
+            );
+            let mut expectation: Expectation = read_json(spec);
+            expectation.path = path.into();
+            expected.push(expectation);
+            used_specs.insert(spec);
+        }
+        assert_eq!(
+            expected.len(),
+            case.expectation_count.unwrap_or(0),
+            "{}: node expectation count changed",
+            case.name
+        );
         let graph = Graph::open(
-            &fixture.join(&case.source),
+            &source,
             &IndexOptions {
                 cache_directory: Some(cache.path().into()),
                 ..Default::default()
@@ -50,10 +122,10 @@ fn query_results_match_fixture_expectations() {
         )
         .unwrap();
         let normal = graph.query(&case.query).unwrap();
-        let Some(expected) = case.expectations else {
+        if case.expectation_count.is_none() {
             assert!(normal.complete, "{}", case.name);
             continue;
-        };
+        }
         let actual: BTreeSet<_> = normal.nodes.iter().map(|n| n.file.path.clone()).collect();
         let wanted: BTreeSet<_> = expected
             .iter()
@@ -130,6 +202,16 @@ fn query_results_match_fixture_expectations() {
                     }
                 }
             }
+        }
+    }
+    for file in &files {
+        let name = file.file_name().unwrap().to_str().unwrap();
+        if name.contains(".nodespec-") && name.ends_with(".json") {
+            assert!(
+                used_specs.contains(file),
+                "Unused node expectation: {}",
+                file.display()
+            );
         }
     }
     assert!(assertions > 0, "No fixture expectations were exercised");

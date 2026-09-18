@@ -1,0 +1,41 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Map is Not the Territory.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "William of Ockham.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Occam's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Razors.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "William of Ockham.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

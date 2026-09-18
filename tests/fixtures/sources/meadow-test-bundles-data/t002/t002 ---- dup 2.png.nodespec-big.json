@@ -1,0 +1,20 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

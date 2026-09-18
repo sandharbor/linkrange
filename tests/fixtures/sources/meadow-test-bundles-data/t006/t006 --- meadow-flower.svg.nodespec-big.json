@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t006/t006 --- page that embeds Excalidraw in another directory.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006 - embedded media.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t006 - embedded media.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

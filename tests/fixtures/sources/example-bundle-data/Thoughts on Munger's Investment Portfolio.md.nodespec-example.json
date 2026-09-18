@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t005 ---- has in link and points back to same page.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t005 ---- has in link and points back to same page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

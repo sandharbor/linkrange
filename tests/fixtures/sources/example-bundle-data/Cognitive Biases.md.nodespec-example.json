@@ -1,0 +1,77 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Anchoring Bias.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Availability Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Confirmation Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Survivorship Bias.md",
+        "isInGraph": false
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Anchoring Bias.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Availability Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Confirmation Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "Man with a Hammer.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Survivorship Bias.md",
+        "isInGraph": false
+      }
+    ]
+  }
+}

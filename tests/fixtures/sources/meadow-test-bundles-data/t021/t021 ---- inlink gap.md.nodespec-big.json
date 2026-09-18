@@ -1,0 +1,24 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t021 - link gaps.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 1.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 2.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 3.md",
+        "isInGraph": false
+      }
+    ]
+  }
+}

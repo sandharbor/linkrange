@@ -1,0 +1,24 @@
+{
+  "name": "hooks",
+  "source": "sources/meadow-test-bundle-for-hooks",
+  "query": {
+    "starts": [
+      {
+        "path": "ai/V Dwarkesh and Anthropic CEO in 2023.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 4,
+      "inlinks": 0
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": null
+}

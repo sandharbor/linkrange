@@ -1,0 +1,25 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t020/t020 ---- tags in code blocks should not become tag links.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t020/t020 ---- page links in code blocks should not become links.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t020/t020 ---- code blocks should end properly.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t002/t002 ---- points to extra nested dup.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

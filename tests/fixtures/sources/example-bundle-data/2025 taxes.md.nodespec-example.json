@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "2026-02-02.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "2026-02-10.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t002/t002 ---- points to root png dup.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

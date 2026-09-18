@@ -1,0 +1,49 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

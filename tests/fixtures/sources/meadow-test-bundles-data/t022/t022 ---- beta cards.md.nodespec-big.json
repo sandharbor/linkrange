@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t022/t022 ---- alpha cards.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t022 - spaced repetition.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t022/t022 ---- alpha cards.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

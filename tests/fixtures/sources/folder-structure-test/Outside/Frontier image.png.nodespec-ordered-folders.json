@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "Outside/Beyond outside.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

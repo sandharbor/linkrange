@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t015 - block anchors.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

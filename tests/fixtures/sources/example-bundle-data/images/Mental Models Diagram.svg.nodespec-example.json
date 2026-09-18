@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/images-used-in-excalidraw/untracked-pink-flower.png",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/page linked from Excalidraw from a non-text element.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/page linked from Excalidraw that is not tracked.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/page linked from tracked sunflower image in Excalidraw.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/t006 --- dup-linked-from-excalidraw.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "t006/t006 --- linked-from-excalidraw.md",
+        "isInGraph": false
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t006 - embedded media.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "2026-02-10.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "2026-02-10.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Anchoring Bias.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Base Rates.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Charlie Munger.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Cognitive Biases.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Confirmation Bias.md",
+        "isInGraph": false
+      },
+      {
+        "linkPath": "First Principles Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Hanlon's Razor.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Man with a Hammer.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Second Order Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Survivorship Bias.md",
+        "isInGraph": false
+      }
+    ]
+  }
+}

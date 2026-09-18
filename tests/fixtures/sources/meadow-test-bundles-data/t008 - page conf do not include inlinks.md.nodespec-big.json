@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t008 ---- has in link to page conf test.md",
+        "isInGraph": false
+      }
+    ]
+  }
+}

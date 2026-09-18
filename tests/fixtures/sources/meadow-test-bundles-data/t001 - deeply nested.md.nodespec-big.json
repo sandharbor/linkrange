@@ -1,0 +1,25 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t001/t001 ---- child 1.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t001/deeper/t001 ---- child 2.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

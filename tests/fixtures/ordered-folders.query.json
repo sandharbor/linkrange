@@ -1,0 +1,35 @@
+{
+  "name": "ordered-folders",
+  "source": "sources/folder-structure-test",
+  "query": {
+    "starts": [
+      {
+        "path": "Beta",
+        "depths": {
+          "outlinks": 2,
+          "inlinks": 0
+        }
+      },
+      {
+        "path": "Alpha",
+        "depths": {
+          "outlinks": 2,
+          "inlinks": 0
+        }
+      }
+    ],
+    "depths": {
+      "outlinks": 2,
+      "inlinks": 0
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 8
+}

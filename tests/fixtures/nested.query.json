@@ -1,0 +1,24 @@
+{
+  "name": "nested",
+  "source": "sources/meadow-test-bundles-data",
+  "query": {
+    "starts": [
+      {
+        "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 4,
+      "inlinks": 1
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": null
+}

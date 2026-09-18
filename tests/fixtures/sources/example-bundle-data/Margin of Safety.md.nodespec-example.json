@@ -1,0 +1,89 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Elon Musk.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Feedback Loops.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "Benjamin Graham.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Circle of Competence.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Elon Musk.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Expected Value.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Feedback Loops.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Howard Marks.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Inversion.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Latticework of Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Margin of Safety.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Mental Models Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Notable Mental Models.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Probabilistic Thinking.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "Warren Buffett.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

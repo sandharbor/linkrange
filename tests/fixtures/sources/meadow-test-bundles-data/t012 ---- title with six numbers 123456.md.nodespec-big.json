@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t012 - custom filters.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t006 - second directory/embedded in page in other t006 directory.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t006 - embedded media.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t006/t006 --- meadow-flower.svg",
+        "isInGraph": true
+      }
+    ]
+  }
+}

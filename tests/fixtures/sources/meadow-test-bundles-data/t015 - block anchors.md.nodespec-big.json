@@ -1,0 +1,21 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t015 ---- page 1 with backlinks to block anchors.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t015 ---- page 2 with backlinks to block anchors.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "main page.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

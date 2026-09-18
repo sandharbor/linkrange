@@ -1,0 +1,41 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t026 - HTML node.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- second HTML page.html",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- shared behavior.js",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- shared image.svg",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- shared style.css",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t026 - HTML node.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- second HTML page.html",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t026/t026 ---- shared image.svg",
+        "isInGraph": true
+      }
+    ]
+  }
+}

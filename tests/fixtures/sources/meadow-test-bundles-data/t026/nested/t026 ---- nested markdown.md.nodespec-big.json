@@ -1,0 +1,17 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "t026/t026 ---- second HTML page.html",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "t026/t026 ---- second HTML page.html",
+        "isInGraph": true
+      }
+    ]
+  }
+}

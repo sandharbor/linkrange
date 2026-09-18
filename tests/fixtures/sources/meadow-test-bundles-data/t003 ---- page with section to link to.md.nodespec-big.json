@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t003 - link to section.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

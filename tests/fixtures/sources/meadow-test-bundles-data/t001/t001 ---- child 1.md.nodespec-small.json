@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t001 - deeply nested.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

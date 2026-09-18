@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t011 - special links.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "t010 - linking in same depth.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}
