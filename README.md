@@ -199,4 +199,4 @@ See [PERFORMANCE.md](PERFORMANCE.md) for the separate 500,000-file diagnostic an
 agent experiment protocol. Large performance runs are deliberately outside the
 curated suite and ordinary `cargo test`.
 
-Apache-2.0. Original parser and traversal work extracted from Meadow.
+Apache-2.0.

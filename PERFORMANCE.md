@@ -43,8 +43,8 @@ must also agree against the fixed baseline for the same scenario.
 Inspired by [autoresearch](https://github.com/karpathy/autoresearch): make one
 bounded change, measure it, retain or revert it, and record the evidence.
 
-1. Finish the initial extraction and pass Rust, Meadow quickcheck, and full E2E
-   gates before the optimization phase.
+1. Run `cargo fmt --check`, `cargo clippy --locked --all-targets -- -D warnings`,
+   and `cargo test --locked` before the optimization phase.
 2. Generate the full corpus once. Save baseline source revision, compiler,
    machine conditions, three samples per scenario, semantic hashes, and tests.
 3. For each of 25 experiments, record the hypothesis and exact diff before
