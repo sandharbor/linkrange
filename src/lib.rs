@@ -17,4 +17,5 @@ pub fn query(request: &Request) -> anyhow::Result<Response> {
 }
 
 #[cfg(test)]
+#[path = "../tests/unit/traversal_specs.rs"]
 mod traversal_specs;

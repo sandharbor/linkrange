@@ -6,8 +6,10 @@ ask for, with enough provenance for another tool to use the same resolutions.
 
 Use it as a primitive for malleable software: assemble a context bundle for an
 agent, inspect a note's neighborhood, preview what lies beyond a traversal
-boundary, or feed a publishing pipeline. [Meadow](https://github.com/sandharbor/meadow)
-is the driving integration. Linkrange has no Meadow application configuration.
+boundary, or feed a publishing pipeline.
+
+[Meadow](https://github.com/sandharbor/meadow)
+is the driving integration, but Linkrange stands alone.
 
 ## Library and CLI
 
@@ -44,8 +46,7 @@ requests use `linkrange query --request request.json` (or `-` for stdin):
 
 All paths in a query and response are physical source-root-relative paths using
 `/`. A folder start seeds its supported descendant files at depth zero. Files and
-folders may be mixed; no virtual collection node is inserted. Detected formats
-are separate from paths: `drawing.excalidraw.md` remains its physical path.
+folders may be mixed.
 
 Add the crate as a Git dependency pinned to a revision, then use the same API:
 
@@ -177,12 +178,11 @@ cargo test --locked
 
 Focused Rust scenarios assert each promised behavior through the API and CLI,
 using real temporary files for filesystem/cache/symlink cases. Mature parser and
-traversal regressions are retained. `fixtures/generated` is a fully replaceable
-export of public Meadow source graphs, authored sourcing expectations, and
-portable queries derived from home fixtures. Its manifest records input hashes.
-Tests use the committed snapshot and need no Meadow checkout or Node runtime.
-Expected answers are authored; the engine never regenerates them from its own
-output. Meadow's curation/generation specifications remain with Meadow.
+traversal regressions are retained. `tests/fixtures/` contains source graphs,
+queries, and expected results. `tests/query_fixtures.rs` checks graph membership,
+frontier depths, and links through the public Rust API. Tests use the committed
+fixtures. Expected answers are authored; the engine never regenerates them from
+its own output.
 
 See [PERFORMANCE.md](PERFORMANCE.md) for the separate 500,000-file diagnostic and
 agent experiment protocol. Large performance runs are deliberately outside the

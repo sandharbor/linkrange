@@ -1,4 +1,4 @@
-//! Expectations are exported from authored sourcing specs, never engine output.
+//! Query results are checked against authored fixture expectations, never engine output.
 use linkrange::*;
 use serde::Deserialize;
 use std::{collections::BTreeSet, fs, path::Path};
@@ -33,8 +33,8 @@ struct ExpectedLink {
 }
 
 #[test]
-fn exported_authored_sourcing_specs_hold_through_the_public_rust_api() {
-    let fixture = Path::new(env!("CARGO_MANIFEST_DIR")).join("fixtures/generated");
+fn query_results_match_fixture_expectations() {
+    let fixture = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures");
     let cases: Vec<Case> =
         serde_json::from_slice(&fs::read(fixture.join("cases.json")).unwrap()).unwrap();
     let cache = tempfile::tempdir().unwrap();
@@ -132,10 +132,10 @@ fn exported_authored_sourcing_specs_hold_through_the_public_rust_api() {
             }
         }
     }
-    assert!(assertions > 0, "No authored expectations were exercised");
+    assert!(assertions > 0, "No fixture expectations were exercised");
     assert!(
         errors.is_empty(),
-        "{} sourcing failures:\n{}",
+        "{} query fixture failures:\n{}",
         errors.len(),
         errors.join("\n")
     );
