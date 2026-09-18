@@ -328,6 +328,20 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
         assert_eq!(link.target.as_deref(), Some(expected));
         assert_eq!(link.link_parsed_alias.as_deref(), Some("display"));
         assert_eq!(link.resolution.as_ref().unwrap().reason, reason);
+        let expected_candidates: Vec<_> = [
+            "Idea.md",
+            "nested/Idea.md",
+            "aaa/Idea.md",
+            "zzz/Idea.md",
+            "deep/deeper/Idea.md",
+        ]
+        .into_iter()
+        .filter(|path| f.root().join(path).exists())
+        .collect();
+        assert_eq!(
+            link.resolution.as_ref().unwrap().candidates,
+            expected_candidates
+        );
     }
 }
 

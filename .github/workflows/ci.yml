@@ -21,4 +21,5 @@ jobs:
       - run: cargo fmt --check
       - run: cargo clippy --locked --all-targets -- -D warnings
       - run: cargo test --locked
+      - run: python3 -m unittest discover -s perf -p 'test_*.py'
       - run: cargo build --locked --release

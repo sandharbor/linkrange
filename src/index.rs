@@ -66,6 +66,13 @@ struct Cache {
     files: BTreeMap<String, Record>,
 }
 
+#[derive(Serialize)]
+struct CacheView<'a> {
+    version: &'a str,
+    fields: &'a [FrontmatterField],
+    files: &'a BTreeMap<String, Record>,
+}
+
 #[derive(Default, PartialEq, Eq)]
 struct Inventory {
     files: BTreeMap<String, Stamp>,
@@ -202,9 +209,19 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
             } else {
                 path
             };
-            if target.is_dir() {
+            let is_directory = if kind.is_symlink() {
+                target.is_dir()
+            } else {
+                kind.is_dir()
+            };
+            let is_file = if kind.is_symlink() {
+                target.is_file()
+            } else {
+                kind.is_file()
+            };
+            if is_directory {
                 walk(root, &target, options, result, active)?;
-            } else if target.is_file()
+            } else if is_file
                 && parser::is_supported_source_extension(
                     &target
                         .extension()
@@ -402,10 +419,10 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
             let mut writer = BufWriter::new(File::create(&staged)?);
             serde_json::to_writer(
                 &mut writer,
-                &Cache {
-                    version,
-                    fields,
-                    files: next.clone(),
+                &CacheView {
+                    version: &version,
+                    fields: &fields,
+                    files: &next,
                 },
             )?;
             writer.flush()?;

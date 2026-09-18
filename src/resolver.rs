@@ -93,7 +93,12 @@ impl Resolver {
         }
     }
 
-    fn matches(&self, link: &Link, source_directory: &str) -> (Vec<usize>, &'static str) {
+    fn matches(
+        &self,
+        link: &Link,
+        source_directory: &str,
+        explain: bool,
+    ) -> (Vec<usize>, &'static str) {
         let directory = link
             .link_parsed_directory
             .trim_end_matches('/')
@@ -145,7 +150,7 @@ impl Resolver {
         if candidates.is_empty() && !crate::parser::wiki_link_has_explicit_file_type(link) {
             candidates = ids.into_iter().filter(path_matches).collect();
         }
-        candidates.sort_by_key(|id| {
+        let key = |id: &usize| {
             let c = &self.candidates[*id];
             let priority = if !directory.is_empty() {
                 if c.directory == directory {
@@ -168,7 +173,13 @@ impl Resolver {
                 &c.format,
                 &c.path,
             )
-        });
+        };
+        if explain {
+            candidates.sort_by_key(key);
+        } else if let Some(best) = candidates.iter().min_by_key(|id| key(id)).copied() {
+            candidates.clear();
+            candidates.push(best);
+        }
         let reason = candidates.first().map_or("unresolved", |id| {
             let c = &self.candidates[*id];
             if !directory.is_empty() {
@@ -189,7 +200,7 @@ impl Resolver {
     }
 
     pub fn resolve(&self, link: &mut Link, source_directory: &str) {
-        let (matches, _) = self.matches(link, source_directory);
+        let (matches, _) = self.matches(link, source_directory, false);
         if let Some(id) = matches.first() {
             let c = &self.candidates[*id];
             link.target = Some(c.path.clone());
@@ -219,7 +230,7 @@ impl Resolver {
         } else {
             crate::links::parse_link_text(&link.link_original_text).file_type
         };
-        let (matches, reason) = self.matches(&original, source_directory);
+        let (matches, reason) = self.matches(&original, source_directory, true);
         let mut paths: Vec<_> = matches
             .into_iter()
             .map(|id| self.candidates[id].path.clone())

@@ -7,6 +7,10 @@ license = "Apache-2.0"
 description = "Bounded context graphs from linked files, as a Rust library and CLI"
 repository = "https://github.com/sandharbor/linkrange"
 
+[[example]]
+name = "performance"
+path = "perf/harness.rs"
+
 [dependencies]
 anyhow = "1"
 clap = { version = "4", features = ["derive"] }

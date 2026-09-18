@@ -213,8 +213,8 @@ change. To accept an intentional change, review the actual output and copy it
 over the corresponding expected output, then rerun the test. A snapshot update
 does not bypass the per-file assertions.
 
-See [PERFORMANCE.md](PERFORMANCE.md) for the separate 500,000-file diagnostic and
-agent experiment protocol. Large performance runs are deliberately outside the
+See [perf/](perf/README.md) for the performance harness, experiment runner, and
+500,000-file diagnostic. Large performance runs are deliberately outside the
 curated suite and ordinary `cargo test`.
 
 Apache-2.0.
