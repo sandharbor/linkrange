@@ -45,6 +45,12 @@ requests use `linkrange query --request request.json` (or `-` for stdin):
 }
 ```
 
+Responses omit metrics by default. Add `--metrics` to include timing, parsing,
+and cache measurements; this also works with `--request`. JSON requests can set
+`"metrics": true` inside `query`, and Rust callers can set `Query::metrics` to
+`true`. `Response::metrics` is `None` unless requested. `Graph::metrics()` provides
+explicit access to indexing measurements when inspecting an open graph.
+
 All paths in a query and response are physical source-root-relative paths using
 `/`. A folder start seeds its supported descendant files at depth zero. Files and
 folders may be mixed.
@@ -184,16 +190,28 @@ using real temporary files for filesystem/cache/symlink cases. Mature parser and
 traversal regressions are retained. `tests/fixtures/` contains source graphs,
 queries, and expected results. `tests/query_fixtures.rs` checks graph membership,
 frontier depths, and links through the public Rust API. Tests use the committed
-fixtures. Expected answers are authored; the engine never regenerates them from
-its own output.
+fixtures. Per-file expectations are authored and checked independently of the
+output snapshots.
 
 Each `<fixture>.query.json` defines one query, its source directory, and its
-expected number of node specifications (`null` for a completeness-only check).
+expected number of node specifications (`null` when there are no per-file expectations).
 Node expectations sit beside the source file, for example
 `t002 ---- dup.md.nodespec-big.json` and `t002 ---- dup.md.nodespec-small.json`.
 The source extension is retained to distinguish files with the same stem.
 The test runner derives the node path from the sidecar filename and checks that
 every specification is used. JSON sidecars are not indexed as graph nodes.
+
+`tests/fixtures/expected_outputs/<fixture>.json` contains the expected response
+for each query, including queries without per-file expectations. These snapshots
+record the complete ordinary response. Fixture queries leave metrics disabled,
+so the comparison removes no fields. The fixture test compares JSON values and
+checks all the per-file expectations as well. Tests never rewrite expected outputs.
+
+If a snapshot is missing or differs, the test fails and saves the actual response
+to `target/fixture_outputs/<fixture>.json`. Compare the files to investigate the
+change. To accept an intentional change, review the actual output and copy it
+over the corresponding expected output, then rerun the test. A snapshot update
+does not bypass the per-file assertions.
 
 See [PERFORMANCE.md](PERFORMANCE.md) for the separate 500,000-file diagnostic and
 agent experiment protocol. Large performance runs are deliberately outside the

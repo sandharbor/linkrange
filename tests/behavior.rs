@@ -491,9 +491,10 @@ fn frontmatter_parsing_requires_both_leading_delimiter_and_requested_substring()
     f.write("B.md", "---\nother: [ malformed\n---\ntracked: true");
     f.write("C.md", "---\ntracked: true\nother: value\n---\n");
     let mut request = f.request(&[""], 0, 0);
+    request.query.metrics = true;
     request.index.frontmatter = vec![field("tracked")];
     let response = query(&request).unwrap();
-    assert_eq!(response.metrics.yaml_parses, 1);
+    assert_eq!(response.metrics.as_ref().unwrap().yaml_parses, 1);
     assert!(response.diagnostics.is_empty());
     assert_eq!(node(&response, "C.md").file.metadata["tracked"], true);
     assert!(node(&response, "A.md").file.metadata.is_empty());
@@ -504,7 +505,7 @@ fn frontmatter_parsing_requires_both_leading_delimiter_and_requested_substring()
     assert_eq!(response.diagnostics[0].code, "malformedFrontmatter");
     request.index.frontmatter.clear();
     let response = query(&request).unwrap();
-    assert_eq!(response.metrics.yaml_parses, 0);
+    assert_eq!(response.metrics.as_ref().unwrap().yaml_parses, 0);
     assert!(response.diagnostics.is_empty());
 }
 
@@ -528,15 +529,24 @@ fn field_selection_changes_rescan_metadata_without_reparsing_unchanged_links() {
     f.write("A.md", "---\none: 1\ntwo: 2\n---\n[[B]]");
     f.write("B.md", "");
     let mut request = f.request(&["A.md"], 1, 0);
+    request.query.metrics = true;
     request.index.frontmatter = vec![field("one")];
-    assert_eq!(query(&request).unwrap().metrics.link_parses, 2);
+    assert_eq!(
+        query(&request)
+            .unwrap()
+            .metrics
+            .as_ref()
+            .unwrap()
+            .link_parses,
+        2
+    );
     let warm = query(&request).unwrap();
-    assert_eq!(warm.metrics.files_read, 0);
-    assert_eq!(warm.metrics.yaml_parses, 0);
+    assert_eq!(warm.metrics.as_ref().unwrap().files_read, 0);
+    assert_eq!(warm.metrics.as_ref().unwrap().yaml_parses, 0);
     request.index.frontmatter = vec![field("two")];
     let changed = query(&request).unwrap();
-    assert_eq!(changed.metrics.link_parses, 0);
-    assert_eq!(changed.metrics.files_read, 2);
+    assert_eq!(changed.metrics.as_ref().unwrap().link_parses, 0);
+    assert_eq!(changed.metrics.as_ref().unwrap().files_read, 2);
     assert_eq!(node(&changed, "A.md").file.metadata.len(), 1);
     assert_eq!(node(&changed, "A.md").file.metadata["two"], 2);
 }
@@ -547,11 +557,12 @@ fn cache_rebuild_and_no_cache_match_incremental_results_after_edits_additions_an
     f.write("A.md", "[[Idea]]");
     f.write("nested/Idea.md", "");
     let mut request = f.request(&["A.md"], 2, 1);
+    request.query.metrics = true;
     query(&request).unwrap();
     f.write("Idea.md", "[[A]]");
     f.write("Incoming.md", "[[A]]");
     let incremental = query(&request).unwrap();
-    assert_eq!(incremental.metrics.files_read, 2);
+    assert_eq!(incremental.metrics.as_ref().unwrap().files_read, 2);
     request.index.rebuild = true;
     let rebuilt = query(&request).unwrap();
     assert_eq!(paths(&incremental), paths(&rebuilt));
@@ -562,7 +573,7 @@ fn cache_rebuild_and_no_cache_match_incremental_results_after_edits_additions_an
     fs::remove_file(f.root().join("Idea.md")).unwrap();
     request.index.rebuild = false;
     let removed = query(&request).unwrap();
-    assert_eq!(removed.metrics.files_read, 0);
+    assert_eq!(removed.metrics.as_ref().unwrap().files_read, 0);
     request.index.no_cache = true;
     request.index.cache_directory = Some(f.temp.path().join("unused"));
     assert_eq!(paths(&removed), paths(&query(&request).unwrap()));
@@ -639,6 +650,92 @@ fn symlinks_are_skipped_by_default_and_opt_in_stays_inside_root_deduplicates_and
         ..Default::default()
     });
     assert_eq!(paths(&query(&request).unwrap()), ["A.md"]);
+}
+
+#[test]
+fn metrics_are_opt_in_without_changing_query_results() {
+    let f = Fixture::new();
+    f.write("A.md", "[[B]]");
+    f.write("B.md", "");
+    let mut request = f.request(&["A.md"], 1, 0);
+    let graph = Graph::open(&f.root(), &request.index).unwrap();
+    let normal = graph.query(&request.query).unwrap();
+    assert!(normal.metrics.is_none());
+    let normal_json = serde_json::to_value(&normal).unwrap();
+    assert!(normal_json.get("metrics").is_none());
+
+    request.query.metrics = true;
+    let measured = graph.query(&request.query).unwrap();
+    let metrics = measured.metrics.as_ref().unwrap();
+    assert_eq!(metrics.indexed_files, 2);
+    assert_eq!(metrics.files_read, 2);
+    assert!(metrics.phases_ms.contains_key("query"));
+    let mut measured_json = serde_json::to_value(&measured).unwrap();
+    measured_json.as_object_mut().unwrap().remove("metrics");
+    assert_eq!(measured_json, normal_json);
+
+    request.query.metrics = false;
+    assert_eq!(
+        serde_json::to_value(graph.query(&request.query).unwrap()).unwrap(),
+        normal_json
+    );
+}
+
+#[test]
+fn cli_metrics_are_opt_in_for_direct_and_json_requests() {
+    let f = Fixture::new();
+    f.write("A.md", "[[B]]");
+    f.write("B.md", "");
+    let mut request = f.request(&["A.md"], 1, 0);
+    request.index.no_cache = true;
+    let request_file = f.temp.path().join("request.json");
+    fs::write(&request_file, serde_json::to_vec(&request).unwrap()).unwrap();
+    let normal = serde_json::to_value(query(&request).unwrap()).unwrap();
+    for json_request in [false, true] {
+        for metrics in [false, true] {
+            let mut command = Command::new(env!("CARGO_BIN_EXE_linkrange"));
+            command.arg("query");
+            if json_request {
+                command.arg("--request").arg(&request_file);
+            } else {
+                command.arg("--source-root").arg(f.root());
+                command.args(["--start", "A.md", "--no-cache"]);
+            }
+            if metrics {
+                command.arg("--metrics");
+            }
+            let output = command.output().unwrap();
+            assert!(
+                output.status.success(),
+                "{}",
+                String::from_utf8_lossy(&output.stderr)
+            );
+            let mut response: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+            assert_eq!(response.get("metrics").is_some(), metrics);
+            if metrics {
+                assert_eq!(response["metrics"]["indexedFiles"], 2);
+                assert!(response["metrics"]["phasesMs"]["query"].is_number());
+                response.as_object_mut().unwrap().remove("metrics");
+            }
+            assert_eq!(response, normal);
+        }
+    }
+
+    // A JSON query can request metrics without the CLI flag.
+    request.query.metrics = true;
+    fs::write(&request_file, serde_json::to_vec(&request).unwrap()).unwrap();
+    let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .args(["query", "--request"])
+        .arg(&request_file)
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let response: Response = serde_json::from_slice(&output.stdout).unwrap();
+    assert_eq!(response.metrics.unwrap().indexed_files, 2);
 }
 
 #[test]

@@ -1,0 +1,352 @@
+{
+  "adjacency": {
+    "t022 - spaced repetition.md": {
+      "inlinks": [
+        "main page.md"
+      ],
+      "outlinks": [
+        "t022/t022 ---- alpha cards.md",
+        "t022/t022 ---- beta cards.md"
+      ]
+    },
+    "t022/t022 ---- alpha cards.md": {
+      "inlinks": [
+        "t022 - spaced repetition.md",
+        "t022/t022 ---- beta cards.md"
+      ],
+      "outlinks": [
+        "t022/t022 ---- beta cards.md"
+      ]
+    },
+    "t022/t022 ---- beta cards.md": {
+      "inlinks": [
+        "t022 - spaced repetition.md",
+        "t022/t022 ---- alpha cards.md"
+      ],
+      "outlinks": [
+        "t022/t022 ---- alpha cards.md"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022/t022 ---- alpha cards",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t022/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- alpha cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
+        "link_source_page_path": "t022 - spaced repetition.md",
+        "target": "t022/t022 ---- alpha cards.md"
+      },
+      "source": "t022 - spaced repetition.md",
+      "target": "t022/t022 ---- alpha cards.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022/t022 ---- beta cards",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t022/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- beta cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
+        "link_source_page_path": "t022 - spaced repetition.md",
+        "target": "t022/t022 ---- beta cards.md"
+      },
+      "source": "t022 - spaced repetition.md",
+      "target": "t022/t022 ---- beta cards.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022 ---- beta cards|the beta page",
+        "link_parsed_alias": "the beta page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- beta cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
+        "link_source_page_path": "t022/t022 ---- alpha cards.md",
+        "target": "t022/t022 ---- beta cards.md"
+      },
+      "source": "t022/t022 ---- alpha cards.md",
+      "target": "t022/t022 ---- beta cards.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022 ---- alpha cards|the alpha page",
+        "link_parsed_alias": "the alpha page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- alpha cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
+        "link_source_page_path": "t022/t022 ---- beta cards.md",
+        "target": "t022/t022 ---- alpha cards.md"
+      },
+      "source": "t022/t022 ---- beta cards.md",
+      "target": "t022/t022 ---- alpha cards.md"
+    }
+  ],
+  "linksBySource": {
+    "t022 - spaced repetition.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022/t022 ---- alpha cards",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t022/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- alpha cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
+        "link_source_page_path": "t022 - spaced repetition.md",
+        "target": "t022/t022 ---- alpha cards.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022/t022 ---- beta cards",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t022/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- beta cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
+        "link_source_page_path": "t022 - spaced repetition.md",
+        "target": "t022/t022 ---- beta cards.md"
+      }
+    ],
+    "t022/t022 ---- alpha cards.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022 ---- beta cards|the beta page",
+        "link_parsed_alias": "the beta page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- beta cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
+        "link_source_page_path": "t022/t022 ---- alpha cards.md",
+        "target": "t022/t022 ---- beta cards.md"
+      }
+    ],
+    "t022/t022 ---- beta cards.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t022 ---- alpha cards|the alpha page",
+        "link_parsed_alias": "the alpha page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t022 ---- alpha cards",
+        "link_resolved_target_directory": "t022",
+        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
+        "link_source_page_path": "t022/t022 ---- beta cards.md",
+        "target": "t022/t022 ---- alpha cards.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 0,
+      "digest": "5eb4017c6e3afca7784d8c2dab54e7262cf82d409527a6ab6b955dd395da3610",
+      "directory": "",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t022 - spaced repetition.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2147483647,
+      "route": [
+        "t022 - spaced repetition.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t022 - spaced repetition.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483647,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 143,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483647
+        }
+      ],
+      "title": "t022 - spaced repetition",
+      "via": "start"
+    },
+    {
+      "depth": 1,
+      "digest": "2e1d1abcc837433d1e0e355ff8beee5bff3e16f4b109733ec9eb8c3827b8dda7",
+      "directory": "t022",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2147483646
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t022/t022 ---- alpha cards.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2147483646,
+      "route": [
+        "t022 - spaced repetition.md",
+        "t022/t022 ---- alpha cards.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t022 - spaced repetition.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483647,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2147483646
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t022/t022 ---- alpha cards.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483646,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 483,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483646
+        }
+      ],
+      "title": "t022 ---- alpha cards",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "d3a82d25409cf7d48bc636c0d3c459436390b0aecbbba2f485d8767cf504cc3c",
+      "directory": "t022",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2147483646
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t022/t022 ---- beta cards.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2147483646,
+      "route": [
+        "t022 - spaced repetition.md",
+        "t022/t022 ---- beta cards.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t022 - spaced repetition.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483647,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2147483646
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t022/t022 ---- beta cards.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483646,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 581,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2147483646
+        }
+      ],
+      "title": "t022 ---- beta cards",
+      "via": "outlink"
+    }
+  ],
+  "schemaVersion": 1
+}

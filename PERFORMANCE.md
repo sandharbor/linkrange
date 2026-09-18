@@ -29,6 +29,8 @@ response bytes, graph sizes, semantic SHA-256, and correctness status. Each samp
 indexing, query, JSON serialization, and output transfer. Peak RSS comes from
 `/usr/bin/time` for that process (null when unavailable). Timing uses monotonic clocks. Cold means rebuilt index;
 OS filesystem caches are not flushed and must be reported as such.
+The harness explicitly requests query metrics. Ordinary CLI responses omit them;
+use `--metrics` when collecting measurements outside the harness.
 
 Scenarios: `cold`, `warm` (persisted-cache restart), `incremental` (one content
 edit), `add`, `delete`, `rename`, `metadata-change`, `no-cache`, and `wide`. Default queries stop at three

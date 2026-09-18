@@ -208,12 +208,9 @@ fn run_cli(
                 .map(|n| n * 1024)
         }
     });
-    Ok((
-        serde_json::from_slice(&output.stdout)?,
-        elapsed,
-        rss,
-        output.stdout.len(),
-    ))
+    let response: Response = serde_json::from_slice(&output.stdout)?;
+    anyhow::ensure!(response.metrics.is_some(), "CLI omitted requested metrics");
+    Ok((response, elapsed, rss, output.stdout.len()))
 }
 fn measure(directory: &Path, repeats: usize, selected: &str, cli: Option<PathBuf>) -> Result<()> {
     let corpus: Corpus = serde_json::from_slice(&fs::read(directory.join("corpus.json"))?)?;
@@ -251,6 +248,7 @@ fn measure(directory: &Path, repeats: usize, selected: &str, cli: Option<PathBuf
                 inlinks: 0,
             },
             adjacency: true,
+            metrics: true,
             ..Default::default()
         },
     };

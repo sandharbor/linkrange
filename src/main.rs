@@ -49,6 +49,9 @@ enum Command {
         adjacency: bool,
         #[arg(long)]
         explain_resolution: bool,
+        /// Include timing, parsing, and cache measurements in the response.
+        #[arg(long)]
+        metrics: bool,
     },
 }
 
@@ -72,9 +75,10 @@ fn run() -> anyhow::Result<()> {
                 boundary_embed_source_type,
                 adjacency,
                 explain_resolution,
+                metrics,
             },
     } = Cli::parse();
-    let request = if let Some(path) = request {
+    let mut request = if let Some(path) = request {
         let mut text = String::new();
         if path.as_os_str() == "-" {
             io::stdin().read_to_string(&mut text)?;
@@ -120,6 +124,7 @@ fn run() -> anyhow::Result<()> {
             },
         }
     };
+    request.query.metrics |= metrics;
     let result = linkrange::query(&request)?;
     let stdout = io::stdout();
     let mut stdout = stdout.lock();

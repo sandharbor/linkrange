@@ -556,10 +556,13 @@ impl Graph {
                 }
             }
         }
-        let mut metrics = self.index.metrics.clone();
-        metrics
-            .phases_ms
-            .insert("query".into(), timer.elapsed().as_secs_f64() * 1000.0);
+        let metrics = query.metrics.then(|| {
+            let mut metrics = self.index.metrics.clone();
+            metrics
+                .phases_ms
+                .insert("query".into(), timer.elapsed().as_secs_f64() * 1000.0);
+            metrics
+        });
         Ok(Response {
             schema_version: SCHEMA_VERSION,
             complete: self.index.complete,

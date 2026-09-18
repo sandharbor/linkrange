@@ -1,0 +1,2142 @@
+{
+  "adjacency": {
+    "t002 - dup pages and images.md": {
+      "inlinks": [
+        "main page.md"
+      ],
+      "outlinks": [
+        "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "t002 ---- points to png dup 2 with no path from root.md",
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002/t002 ---- points to extra nested dup.md",
+        "t002/t002 ---- points to nested dup.md",
+        "t002/t002 ---- points to nested png dup.md",
+        "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "t002/t002 ---- points to root dup.md",
+        "t002/t002 ---- points to root png dup.md"
+      ]
+    },
+    "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/t002 ---- dup 2.png"
+      ]
+    },
+    "t002 ---- dup.md": {
+      "inlinks": [
+        "t002/t002 ---- points to root dup.md"
+      ],
+      "outlinks": []
+    },
+    "t002 ---- dup.png": {
+      "inlinks": [
+        "t002/t002 ---- points to root png dup.md"
+      ],
+      "outlinks": []
+    },
+    "t002 ---- points to png dup 2 with no path from root.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/t002 ---- dup 2.png"
+      ]
+    },
+    "t002/extra nested/t002 ---- dup 2.png": {
+      "inlinks": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+      ],
+      "outlinks": []
+    },
+    "t002/extra nested/t002 ---- dup.md": {
+      "inlinks": [
+        "t002/t002 ---- points to extra nested dup.md"
+      ],
+      "outlinks": []
+    },
+    "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/extra nested/t002 ---- dup 2.png"
+      ]
+    },
+    "t002/t002 ---- dup 2.png": {
+      "inlinks": [
+        "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "t002 ---- points to png dup 2 with no path from root.md",
+        "t002/t002 ---- points to png dup 2 with no path from t002.md"
+      ],
+      "outlinks": []
+    },
+    "t002/t002 ---- dup.md": {
+      "inlinks": [
+        "t002/t002 ---- points to nested dup.md"
+      ],
+      "outlinks": []
+    },
+    "t002/t002 ---- dup.png": {
+      "inlinks": [
+        "t002/t002 ---- points to nested png dup.md"
+      ],
+      "outlinks": []
+    },
+    "t002/t002 ---- points to extra nested dup.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/extra nested/t002 ---- dup.md"
+      ]
+    },
+    "t002/t002 ---- points to nested dup.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/t002 ---- dup.md"
+      ]
+    },
+    "t002/t002 ---- points to nested png dup.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/t002 ---- dup.png"
+      ]
+    },
+    "t002/t002 ---- points to png dup 2 with no path from t002.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002/t002 ---- dup 2.png"
+      ]
+    },
+    "t002/t002 ---- points to root dup.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002 ---- dup.md"
+      ]
+    },
+    "t002/t002 ---- points to root png dup.md": {
+      "inlinks": [
+        "t002 - dup pages and images.md"
+      ],
+      "outlinks": [
+        "t002 ---- dup.png"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to root dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to root dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to root dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to root dup.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to root dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to nested dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to nested dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to nested dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to nested dup.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to nested dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to extra nested dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to extra nested dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to extra nested dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to extra nested dup.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to extra nested dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to root png dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to root png dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to root png dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to root png dup.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to root png dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to nested png dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to nested png dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to nested png dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to nested png dup.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to nested png dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from root",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from root",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- points to png dup 2 with no path from root.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002 ---- points to png dup 2 with no path from root.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002 ---- points to png dup 2 with no path from root.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from t002",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from t002",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to png dup 2 with no path from t002.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/t002 ---- points to png dup 2 with no path from t002.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from extra nested",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from extra nested",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from second directory",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from second directory",
+        "link_resolved_target_directory": "t002 - second directory",
+        "link_resolved_target_path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md"
+      },
+      "source": "t002 - dup pages and images.md",
+      "target": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "target": "t002/t002 ---- dup 2.png"
+      },
+      "source": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+      "target": "t002/t002 ---- dup 2.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup 2.png",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002 ---- points to png dup 2 with no path from root.md",
+        "target": "t002/t002 ---- dup 2.png"
+      },
+      "source": "t002 ---- points to png dup 2 with no path from root.md",
+      "target": "t002/t002 ---- dup 2.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- dup 2.png",
+        "link_source_page_path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "target": "t002/extra nested/t002 ---- dup 2.png"
+      },
+      "source": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+      "target": "t002/extra nested/t002 ---- dup 2.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/extra nested/t002 ---- dup|dup page",
+        "link_parsed_alias": "dup page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/extra nested/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to extra nested dup.md",
+        "target": "t002/extra nested/t002 ---- dup.md"
+      },
+      "source": "t002/t002 ---- points to extra nested dup.md",
+      "target": "t002/extra nested/t002 ---- dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup|dup page",
+        "link_parsed_alias": "dup page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to nested dup.md",
+        "target": "t002/t002 ---- dup.md"
+      },
+      "source": "t002/t002 ---- points to nested dup.md",
+      "target": "t002/t002 ---- dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup.png",
+        "link_source_page_path": "t002/t002 ---- points to nested png dup.md",
+        "target": "t002/t002 ---- dup.png"
+      },
+      "source": "t002/t002 ---- points to nested png dup.md",
+      "target": "t002/t002 ---- dup.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "target": "t002/t002 ---- dup 2.png"
+      },
+      "source": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+      "target": "t002/t002 ---- dup 2.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to root dup.md",
+        "target": "t002 ---- dup.md"
+      },
+      "source": "t002/t002 ---- points to root dup.md",
+      "target": "t002 ---- dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- dup.png",
+        "link_source_page_path": "t002/t002 ---- points to root png dup.md",
+        "target": "t002 ---- dup.png"
+      },
+      "source": "t002/t002 ---- points to root png dup.md",
+      "target": "t002 ---- dup.png"
+    }
+  ],
+  "linksBySource": {
+    "t002 - dup pages and images.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to root dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to root dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to root dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to root dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to nested dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to nested dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to nested dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to nested dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to extra nested dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to extra nested dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to extra nested dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to extra nested dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to root png dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to root png dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to root png dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to root png dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to nested png dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to nested png dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to nested png dup.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to nested png dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from root",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from root",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- points to png dup 2 with no path from root.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002 ---- points to png dup 2 with no path from root.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from t002",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from t002",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/t002 ---- points to png dup 2 with no path from t002.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from extra nested",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from extra nested",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- points to png dup 2 with no path from second directory",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- points to png dup 2 with no path from second directory",
+        "link_resolved_target_directory": "t002 - second directory",
+        "link_resolved_target_path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "link_source_page_path": "t002 - dup pages and images.md",
+        "target": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md"
+      }
+    ],
+    "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "target": "t002/t002 ---- dup 2.png"
+      }
+    ],
+    "t002 ---- dup.md": [],
+    "t002 ---- dup.png": [],
+    "t002 ---- points to png dup 2 with no path from root.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup 2.png",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002 ---- points to png dup 2 with no path from root.md",
+        "target": "t002/t002 ---- dup 2.png"
+      }
+    ],
+    "t002/extra nested/t002 ---- dup 2.png": [],
+    "t002/extra nested/t002 ---- dup.md": [],
+    "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- dup 2.png",
+        "link_source_page_path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "target": "t002/extra nested/t002 ---- dup 2.png"
+      }
+    ],
+    "t002/t002 ---- dup 2.png": [],
+    "t002/t002 ---- dup.md": [],
+    "t002/t002 ---- dup.png": [],
+    "t002/t002 ---- points to extra nested dup.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/extra nested/t002 ---- dup|dup page",
+        "link_parsed_alias": "dup page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/extra nested/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002/extra nested",
+        "link_resolved_target_path": "t002/extra nested/t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to extra nested dup.md",
+        "target": "t002/extra nested/t002 ---- dup.md"
+      }
+    ],
+    "t002/t002 ---- points to nested dup.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup|dup page",
+        "link_parsed_alias": "dup page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to nested dup.md",
+        "target": "t002/t002 ---- dup.md"
+      }
+    ],
+    "t002/t002 ---- points to nested png dup.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup.png",
+        "link_source_page_path": "t002/t002 ---- points to nested png dup.md",
+        "target": "t002/t002 ---- dup.png"
+      }
+    ],
+    "t002/t002 ---- points to png dup 2 with no path from t002.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002/t002 ---- dup 2.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t002/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup 2",
+        "link_resolved_target_directory": "t002",
+        "link_resolved_target_path": "t002/t002 ---- dup 2.png",
+        "link_source_page_path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "target": "t002/t002 ---- dup 2.png"
+      }
+    ],
+    "t002/t002 ---- points to root dup.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- dup.md",
+        "link_source_page_path": "t002/t002 ---- points to root dup.md",
+        "target": "t002 ---- dup.md"
+      }
+    ],
+    "t002/t002 ---- points to root png dup.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t002 ---- dup.png|300",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": 300,
+        "link_parsed_title": "t002 ---- dup",
+        "link_resolved_target_directory": "",
+        "link_resolved_target_path": "t002 ---- dup.png",
+        "link_source_page_path": "t002/t002 ---- points to root png dup.md",
+        "target": "t002 ---- dup.png"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 1,
+      "digest": "3b37f3e9d8fbd172834d837c4b0b11167e1dbb4df1f4c2c9668066b5b78974fe",
+      "directory": "",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002 - dup pages and images.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        }
+      ],
+      "size": 1315,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "t002 - dup pages and images",
+      "via": "inlink"
+    },
+    {
+      "depth": 2,
+      "digest": "95e7f63100bd0ff77d37a04b73cb83ab093ba5b9ed56cc8a37722c76b5b8fa2e",
+      "directory": "t002 - second directory",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 202,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to png dup 2 with no path from second directory",
+      "via": "outlink"
+    },
+    {
+      "depth": 3,
+      "digest": "831c468c7e0a5be03d4978d17eb873f1bd7ee62489e21cca62188afd17505a90",
+      "directory": "",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002 ---- dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to root dup.md",
+        "t002 ---- dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to root dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 ---- dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 125,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 3,
+      "digest": "3f2bf09fac493b073a802eebf9a37220a402283eb227c70c5f3e14eaa479f530",
+      "directory": "",
+      "format": "png",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002 ---- dup.png",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to root png dup.md",
+        "t002 ---- dup.png"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to root png dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 ---- dup.png",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 39647,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "f1e641d2a2b753639517ffa52cd7cf1e521c722f1d8488978c68d8511289b1b1",
+      "directory": "",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002 ---- points to png dup 2 with no path from root.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002 ---- points to png dup 2 with no path from root.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 ---- points to png dup 2 with no path from root.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 246,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to png dup 2 with no path from root",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "2687640c50eb5fbdcbf4156cd79057f709c971607c6f2be4f0bb6d5104d80777",
+      "directory": "t002/extra nested",
+      "format": "png",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/extra nested/t002 ---- dup 2.png",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002/extra nested/t002 ---- dup 2.png"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- dup 2.png",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 210788,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "t002 ---- dup 2",
+      "via": "outlink"
+    },
+    {
+      "depth": 3,
+      "digest": "05bd4a3fa2215f78d0970ba4d5dbc1f3485ec11c2c9da03d65f680160326e5d2",
+      "directory": "t002/extra nested",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/extra nested/t002 ---- dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to extra nested dup.md",
+        "t002/extra nested/t002 ---- dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to extra nested dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 134,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 0,
+      "digest": "b85ab19ed484c15df6750df19b85fad1c3b8f14af6fd99f660b0abbef698d8bd",
+      "directory": "t002/extra nested",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+      "remainingInlinks": 1,
+      "remainingOutlinks": 4,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 226,
+      "states": [
+        {
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4
+        }
+      ],
+      "title": "t002 ---- points to png dup 2 with no path from extra nested",
+      "via": "start"
+    },
+    {
+      "depth": 3,
+      "digest": "c506505fb13f0132ff7bd1d74d40af746f0b2fd07e9f3565bdf5a602614ce01b",
+      "directory": "t002",
+      "format": "png",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- dup 2.png",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002 ---- points to png dup 2 with no path from root.md",
+        "t002/t002 ---- dup 2.png"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 ---- points to png dup 2 with no path from root.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- dup 2.png",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 200762,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup 2",
+      "via": "outlink"
+    },
+    {
+      "depth": 3,
+      "digest": "4e906b34cf76d8e5c7799a12742a08f9cedb367232619f8e95b324a7118a1ce8",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to nested dup.md",
+        "t002/t002 ---- dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to nested dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 99,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 3,
+      "digest": "4ba1a687e610af0f7584f7d6bda6889c95a859bbfd23ee4b04dc32d77f92fb4a",
+      "directory": "t002",
+      "format": "png",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- dup.png",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to nested png dup.md",
+        "t002/t002 ---- dup.png"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to nested png dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- dup.png",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 43924,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t002 ---- dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "5fcf73880f476bd7f4d39e78bfbd683121fc63e53624fa8415560ae0e513aca7",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to extra nested dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to extra nested dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to extra nested dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 164,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to extra nested dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "409e386c1ac6e2ead1b288442fbb7651c289087847ed31bb03411b63ab1e8df7",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to nested dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to nested dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to nested dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 131,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to nested dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "1dfae70cf6edfcff80d4e9e390dabfa91a7a991551ae83fad687997d4a16b6b6",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to nested png dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to nested png dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to nested png dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 217,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to nested png dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "595216948a604dd3f6f88c144f33cb5d9b756dadd0cbfbd13564958a213ef7cf",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to png dup 2 with no path from t002.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 191,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to png dup 2 with no path from t002",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "2f70e5b677b8a730382174c1ea4f587ca6293c885497ae8f284781ee395fb098",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to root dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to root dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to root dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 223,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to root dup",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "c4c2877a860f151265079389e64a04ec9cfe53fbb9d27c232c48c1d6019c7956",
+      "directory": "t002",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "t002/t002 ---- points to root png dup.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 2,
+      "route": [
+        "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "t002 - dup pages and images.md",
+        "t002/t002 ---- points to root png dup.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002 - dup pages and images.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "t002/t002 ---- points to root png dup.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 98,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t002 ---- points to root png dup",
+      "via": "outlink"
+    }
+  ],
+  "schemaVersion": 1
+}

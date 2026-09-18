@@ -1,6 +1,7 @@
-//! Query results are checked against authored fixture expectations, never engine output.
+//! Query results are checked against per-file expectations and committed output snapshots.
 use linkrange::*;
 use serde::{de::DeserializeOwned, Deserialize};
+use serde_json::Value;
 use std::{
     collections::BTreeSet,
     fs,
@@ -57,9 +58,55 @@ fn read_json<T: DeserializeOwned>(path: &Path) -> T {
     serde_json::from_slice(&bytes).unwrap_or_else(|error| panic!("{}: {error}", path.display()))
 }
 
+fn compare_output(expected_path: &Path, actual_path: &Path, actual: &Value) -> Result<(), String> {
+    let problem = if expected_path.is_file() {
+        let expected: Value = read_json(expected_path);
+        if expected == *actual {
+            return Ok(());
+        }
+        "Output differs from"
+    } else {
+        "Missing expected output"
+    };
+    fs::create_dir_all(actual_path.parent().unwrap()).unwrap();
+    fs::write(
+        actual_path,
+        format!("{}\n", serde_json::to_string_pretty(actual).unwrap()),
+    )
+    .unwrap();
+    Err(format!(
+        "{problem} {}; actual output saved to {}",
+        expected_path.display(),
+        actual_path.display()
+    ))
+}
+
+#[test]
+fn output_comparison_detects_changes_without_rewriting_expected_outputs() {
+    let temp = tempfile::tempdir().unwrap();
+    let expected_path = temp.path().join("expected.json");
+    let actual_path = temp.path().join("actual/output.json");
+    let original = "{\"nodes\":[{\"path\":\"A.md\",\"depth\":0}]}\n";
+    let mut actual: Value = serde_json::from_str(original).unwrap();
+    fs::write(&expected_path, original).unwrap();
+    assert!(compare_output(&expected_path, &actual_path, &actual).is_ok());
+    assert!(!actual_path.exists());
+
+    actual["nodes"][0]["depth"] = 1.into();
+    assert!(compare_output(&expected_path, &actual_path, &actual).is_err());
+    assert_eq!(fs::read_to_string(&expected_path).unwrap(), original);
+    assert_eq!(read_json::<Value>(&actual_path), actual);
+
+    fs::remove_file(&expected_path).unwrap();
+    assert!(compare_output(&expected_path, &actual_path, &actual).is_err());
+    assert!(!expected_path.exists());
+}
+
 #[test]
 fn query_results_match_fixture_expectations() {
     let fixture = Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures");
+    let expected_outputs = fixture.join("expected_outputs");
+    let actual_outputs = Path::new(env!("CARGO_MANIFEST_DIR")).join("target/fixture_outputs");
     let files = files_under(&fixture);
     let query_files: Vec<_> = files
         .iter()
@@ -70,6 +117,7 @@ fn query_results_match_fixture_expectations() {
     let mut errors = Vec::new();
     let mut assertions = 0;
     let mut used_specs = BTreeSet::new();
+    let mut used_outputs = BTreeSet::new();
     let mut names = BTreeSet::new();
     for query_file in query_files {
         let case: Case = read_json(query_file);
@@ -122,6 +170,16 @@ fn query_results_match_fixture_expectations() {
         )
         .unwrap();
         let normal = graph.query(&case.query).unwrap();
+        let output = serde_json::to_value(&normal).unwrap();
+        let expected_output = expected_outputs.join(format!("{}.json", case.name));
+        if let Err(error) = compare_output(
+            &expected_output,
+            &actual_outputs.join(format!("{}.json", case.name)),
+            &output,
+        ) {
+            errors.push(format!("{}: {error}", case.name));
+        }
+        used_outputs.insert(expected_output);
         if case.expectation_count.is_none() {
             assert!(normal.complete, "{}", case.name);
             continue;
@@ -206,6 +264,13 @@ fn query_results_match_fixture_expectations() {
     }
     for file in &files {
         let name = file.file_name().unwrap().to_str().unwrap();
+        if file.starts_with(&expected_outputs) && name.ends_with(".json") {
+            assert!(
+                used_outputs.contains(file),
+                "Unused expected output: {}",
+                file.display()
+            );
+        }
         if name.contains(".nodespec-") && name.ends_with(".json") {
             assert!(
                 used_specs.contains(file),

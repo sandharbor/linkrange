@@ -87,6 +87,8 @@ pub struct Query {
     pub adjacency: bool,
     pub lookup_paths: Vec<String>,
     pub explain_resolution: bool,
+    /// Include indexing and query measurements in the response.
+    pub metrics: bool,
 }
 
 impl Default for Query {
@@ -104,6 +106,7 @@ impl Default for Query {
             adjacency: false,
             lookup_paths: Vec::new(),
             explain_resolution: false,
+            metrics: false,
         }
     }
 }
@@ -253,5 +256,7 @@ pub struct Response {
     #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
     pub adjacency: BTreeMap<String, Adjacency>,
     pub diagnostics: Vec<Diagnostic>,
-    pub metrics: Metrics,
+    /// Present only when the query requests metrics.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub metrics: Option<Metrics>,
 }
