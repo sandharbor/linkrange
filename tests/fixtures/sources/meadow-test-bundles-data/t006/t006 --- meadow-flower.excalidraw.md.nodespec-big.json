@@ -3,45 +3,45 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t006 - second directory/t006 --- dup-linked-from-excalidraw.md",
+        "linkPath": "source://source/t006%20-%20second%20directory/t006%20---%20dup-linked-from-excalidraw.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/images-used-in-excalidraw/tracked-sunflower.png",
+        "linkPath": "source://source/t006/images-used-in-excalidraw/tracked-sunflower.png",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/images-used-in-excalidraw/untracked-pink-flower.png",
+        "linkPath": "source://source/t006/images-used-in-excalidraw/untracked-pink-flower.png",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/page linked from Excalidraw from a non-text element.md",
+        "linkPath": "source://source/t006/page%20linked%20from%20Excalidraw%20from%20a%20non-text%20element.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/page linked from Excalidraw that is not tracked.md",
+        "linkPath": "source://source/t006/page%20linked%20from%20Excalidraw%20that%20is%20not%20tracked.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/page linked from tracked sunflower image in Excalidraw.md",
+        "linkPath": "source://source/t006/page%20linked%20from%20tracked%20sunflower%20image%20in%20Excalidraw.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/t006 - nested/t006 --- dup-linked-from-excalidraw.md",
+        "linkPath": "source://source/t006/t006%20-%20nested/t006%20---%20dup-linked-from-excalidraw.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/t006 --- dup-linked-from-excalidraw.md",
+        "linkPath": "source://source/t006/t006%20---%20dup-linked-from-excalidraw.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t006/t006 --- linked-from-excalidraw.md",
+        "linkPath": "source://source/t006/t006%20---%20linked-from-excalidraw.md",
         "isInGraph": false
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t006 - embedded media.md",
+        "linkPath": "source://source/t006%20-%20embedded%20media.md",
         "isInGraph": true
       }
     ]

@@ -3,41 +3,41 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       }
     ]

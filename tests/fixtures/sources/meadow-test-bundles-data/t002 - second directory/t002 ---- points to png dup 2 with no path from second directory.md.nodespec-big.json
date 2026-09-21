@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t002/t002 ---- dup 2.png",
+        "linkPath": "source://source/t002/t002%20----%20dup%202.png",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t002 - dup pages and images.md",
+        "linkPath": "source://source/t002%20-%20dup%20pages%20and%20images.md",
         "isInGraph": true
       }
     ]

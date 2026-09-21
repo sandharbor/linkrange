@@ -18,25 +18,26 @@ Build from source with stable Rust:
 
 ```sh
 cargo install --git https://github.com/sandharbor/linkrange --locked
-linkrange query --source-root ~/notes --start Projects --start Ideas.md \
+linkrange query --source notes=/absolute/path/to/notes \
+  --start source://notes/Projects --start source://notes/Ideas.md \
   --outlinks 2 --inlinks 1 --frontier-depth 1 --adjacency
 ```
 
 For reproducible installation add `--rev <full-commit-sha>`. The CLI prints one
-JSON response on stdout. Errors print JSON on stderr and exit nonzero. Complex
+JSON response on stdout. Query failures print JSON on stderr and exit nonzero. Complex
 requests use `linkrange query --request request.json` (or `-` for stdin):
 
 ```json
 {
-  "sourceRoot": "/absolute/path/to/notes",
+  "sources": [{"name": "notes", "directory": "/absolute/path/to/notes"}],
   "index": {
     "cacheDirectory": "/absolute/path/to/cache",
     "frontmatter": [{"key": "sensitive"}]
   },
   "query": {
-    "starts": [{"path": "Ideas.md"}, {"path": "Projects"}],
+    "starts": [{"path": "source://notes/Ideas.md"}, {"path": "source://notes/Projects"}],
     "depths": {"outlinks": 2, "inlinks": 1},
-    "rules": [{"path": "Archive", "subtree": true, "exclude": true}],
+    "rules": [{"path": "source://notes/Archive", "subtree": true, "exclude": true}],
     "frontierDepth": 1,
     "boundaryEmbedTypes": ["png", "svg"],
     "adjacency": true,
@@ -51,14 +52,15 @@ and cache measurements; this also works with `--request`. JSON requests can set
 `true`. `Response::metrics` is `None` unless requested. `Graph::metrics()` provides
 explicit access to indexing measurements when inspecting an open graph.
 
-In a legacy `sourceRoot` request, paths remain physical source-root-relative paths
-using `/`, and the response retains schema version 1. A folder start seeds its
-supported descendant files at depth zero. Files and folders may be mixed.
+Every request supplies a nonempty `sources` array, with one entry for each named
+directory. Starts, rules, and lookup paths use `source://name/path`, including
+when there is only one source. A folder start seeds its supported descendant
+files at depth zero. Files and folders may be mixed.
 
 ### Multiple sources
 
 An explicit source registry admits separate directories into one graph. Directories
-need not be repositories or vaults. Use `sources` instead of `sourceRoot`:
+need not be repositories or vaults. Add entries to the same `sources` array:
 
 ```json
 {
@@ -75,20 +77,20 @@ need not be repositories or vaults. Use `sources` instead of `sourceRoot`:
 }
 ```
 
-These responses use schema version 2 and return the canonicalized `sources`
-registry once. Every path-bearing identity—including file directories, route
+Every response returns the canonicalized `sources` registry once.
+Every path-bearing identity—including file directories, route
 steps, alternative routes, edge endpoints, diagnostic paths, adjacency keys and
 neighbors, lookup records, and resolution candidates—uses
 `source://<canonical-name>/<source-relative-path>`. Paths percent-encode reserved
 URL characters and Unicode bytes; a root directory is `source://notes/`.
 The public `source_locator` and `parse_source_locator` functions round-trip these
 identities. Queries accept aliases but results use canonical names. Unqualified
-selectors are rejected for an explicit registry, even with one source.
+selectors are rejected, even with one source.
 
-Rust callers can use `Graph::open_sources(&sources, &options)` and inspect
-`Graph::sources()`. `Request::source_root` and `Request::sources` are optional;
-exactly one must be supplied. Empty registries, conflicting request forms, and
-combining CLI `--request` with `--source-root` fail explicitly.
+Rust callers use `Graph::open(&sources, &options)` and can inspect
+`Graph::sources()`. CLI callers repeat `--source NAME=DIRECTORY` for each source;
+use a JSON request to also configure aliases. Combining `--request` with
+`--source` fails explicitly.
 
 Names and aliases are case-sensitive and match `[a-z][a-z0-9_-]{0,63}`. Every
 spelling must be unique, including aliases within an entry. Physical directories
@@ -100,8 +102,7 @@ source implicitly, even if that directory is separately registered.
 
 Wikilink targets reserve `::` for qualification, before any heading, block, alias,
 or image-size suffix: `[[Overview::research#Summary|Read more]]` and
-`![[diagram.png::papers|300]]`. Qualification is native syntax, including in
-legacy single-source requests. A legacy root has the deterministic name `source`.
+`![[diagram.png::papers|300]]`. Qualification uses the configured name or alias.
 `::` in an alias or anchor is ordinary text; literal `::` in a filename can be
 addressed through a URL instead of a wikilink.
 
@@ -145,13 +146,17 @@ explicitly diagnosed partial indexing inside available roots.
 Add the crate as a Git dependency pinned to a revision, then use the same API:
 
 ```rust
-use linkrange::{Graph, IndexOptions, Query, Start};
-use std::path::Path;
+use linkrange::{Graph, IndexOptions, Query, Source, Start};
 
 fn main() -> anyhow::Result<()> {
-    let graph = Graph::open(Path::new("notes"), &IndexOptions::default())?;
+    let sources = vec![Source {
+        name: "notes".into(),
+        directory: "notes".into(),
+        aliases: vec![],
+    }];
+    let graph = Graph::open(&sources, &IndexOptions::default())?;
     let result = graph.query(&Query {
-        starts: vec![Start { path: "Ideas.md".into(), depths: None }],
+        starts: vec![Start { path: "source://notes/Ideas.md".into(), depths: None }],
         adjacency: true,
         ..Query::default()
     })?;
@@ -280,8 +285,9 @@ frontier depths, and links through the public Rust API. Tests use the committed
 fixtures. Per-file expectations are authored and checked independently of the
 output snapshots.
 
-Each `<fixture>.query.json` defines one query, its source directory, and its
-expected number of node specifications (`null` when there are no per-file expectations).
+Each `<fixture>.query.json` defines one query, its `sources`, the
+`fixtureDirectory` containing its authored node specifications, and the expected
+number of those specifications (`null` when there are none).
 Node expectations sit beside the source file, for example
 `t002 ---- dup.md.nodespec-big.json` and `t002 ---- dup.md.nodespec-small.json`.
 The source extension is retained to distinguish files with the same stem.

@@ -1,10 +1,17 @@
 {
   "name": "single-folder",
-  "source": "sources/folder-structure-test",
+  "fixtureDirectory": "sources/folder-structure-test",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/folder-structure-test",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "Alpha",
+        "path": "source://source/Alpha",
         "depths": {
           "outlinks": 2,
           "inlinks": 0

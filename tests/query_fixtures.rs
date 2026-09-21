@@ -12,8 +12,8 @@ use std::{
 #[serde(rename_all = "camelCase")]
 struct Case {
     name: String,
-    source: String,
-    sources: Option<Vec<Source>>,
+    fixture_directory: String,
+    sources: Vec<Source>,
     query: Query,
     expectation_count: Option<usize>,
 }
@@ -132,16 +132,15 @@ fn query_results_match_fixture_expectations() {
             format!("{}.query.json", case.name),
             "Query filename must match its fixture name"
         );
-        let source = fixture.join(&case.source);
-        let sources = case.sources.as_ref().map(|sources| {
-            sources
-                .iter()
-                .map(|source| Source {
-                    directory: fixture.join(&source.directory),
-                    ..source.clone()
-                })
-                .collect::<Vec<_>>()
-        });
+        let source = fixture.join(&case.fixture_directory);
+        let sources = case
+            .sources
+            .iter()
+            .map(|source| Source {
+                directory: fixture.join(&source.directory),
+                ..source.clone()
+            })
+            .collect::<Vec<_>>();
         let suffix = format!(".nodespec-{}.json", case.name);
         let mut expected = Vec::new();
         for spec in files
@@ -161,25 +160,20 @@ fn query_results_match_fixture_expectations() {
                 spec.display()
             );
             let mut expectation: Expectation = read_json(spec);
-            expectation.path = if let Some(sources) = &sources {
-                let root = sources
-                    .iter()
-                    .find(|root| spec.starts_with(&root.directory))
-                    .expect("Expectation must belong to a configured source");
-                format!(
-                    "source://{}/{}",
-                    root.name,
-                    source
-                        .join(path)
-                        .strip_prefix(&root.directory)
-                        .unwrap()
-                        .to_str()
-                        .unwrap()
-                        .replace('\\', "/")
-                )
-            } else {
-                path.into()
-            };
+            let root = sources
+                .iter()
+                .find(|root| spec.starts_with(&root.directory))
+                .expect("Expectation must belong to a configured source");
+            expectation.path = source_locator(
+                &root.name,
+                &source
+                    .join(path)
+                    .strip_prefix(&root.directory)
+                    .unwrap()
+                    .to_str()
+                    .unwrap()
+                    .replace('\\', "/"),
+            );
             expected.push(expectation);
             used_specs.insert(spec);
         }
@@ -193,17 +187,11 @@ fn query_results_match_fixture_expectations() {
             cache_directory: Some(cache.path().into()),
             ..Default::default()
         };
-        let graph = match &sources {
-            Some(sources) => Graph::open_sources(sources, &options),
-            None => Graph::open(&source, &options),
-        }
-        .unwrap();
+        let graph = Graph::open(&sources, &options).unwrap();
         let normal = graph.query(&case.query).unwrap();
         let mut output = serde_json::to_value(&normal).unwrap();
         // Root locations are portable fixture inputs; all graph paths remain source-qualified.
-        if let Some(sources) = &case.sources {
-            output["sources"] = serde_json::to_value(sources).unwrap();
-        }
+        output["sources"] = serde_json::to_value(&case.sources).unwrap();
         let expected_output = expected_outputs.join(format!("{}.json", case.name));
         if let Err(error) = compare_output(
             &expected_output,

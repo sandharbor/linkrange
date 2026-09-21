@@ -3,33 +3,33 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "2025 taxes.md",
+        "linkPath": "source://source/2025%20taxes.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       }
     ]

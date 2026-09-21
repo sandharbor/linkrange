@@ -3,21 +3,21 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t026/t026 ---- first HTML page.html",
+        "linkPath": "source://source/t026/t026%20----%20first%20HTML%20page.html",
         "isInGraph": true
       },
       {
-        "linkPath": "t026/t026 ---- second HTML page.html",
+        "linkPath": "source://source/t026/t026%20----%20second%20HTML%20page.html",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t026/t026 ---- first HTML page.html",
+        "linkPath": "source://source/t026/t026%20----%20first%20HTML%20page.html",
         "isInGraph": true
       },
       {
-        "linkPath": "t026/t026 ---- second HTML page.html",
+        "linkPath": "source://source/t026/t026%20----%20second%20HTML%20page.html",
         "isInGraph": true
       }
     ]

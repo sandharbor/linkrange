@@ -1,34 +1,34 @@
 {
   "adjacency": {
-    "t001 - deeply nested.md": {
+    "source://source/t001%20-%20deeply%20nested.md": {
       "inlinks": [
-        "main page.md"
+        "source://source/main%20page.md"
       ],
       "outlinks": [
-        "t001/deeper/t001 ---- child 2.md",
-        "t001/t001 ---- child 1.md",
-        "t001/t001 ---- child 3 in same dir as child 1.md"
+        "source://source/t001/deeper/t001%20----%20child%202.md",
+        "source://source/t001/t001%20----%20child%201.md",
+        "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
       ]
     },
-    "t001/deeper/t001 ---- child 2.md": {
+    "source://source/t001/deeper/t001%20----%20child%202.md": {
       "inlinks": [
-        "t001 - deeply nested.md"
+        "source://source/t001%20-%20deeply%20nested.md"
       ],
       "outlinks": []
     },
-    "t001/t001 ---- child 1.md": {
+    "source://source/t001/t001%20----%20child%201.md": {
       "inlinks": [
-        "t001 - deeply nested.md",
-        "t001/t001 ---- child 3 in same dir as child 1.md"
+        "source://source/t001%20-%20deeply%20nested.md",
+        "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
       ],
       "outlinks": []
     },
-    "t001/t001 ---- child 3 in same dir as child 1.md": {
+    "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md": {
       "inlinks": [
-        "t001 - deeply nested.md"
+        "source://source/t001%20-%20deeply%20nested.md"
       ],
       "outlinks": [
-        "t001/t001 ---- child 1.md"
+        "source://source/t001/t001%20----%20child%201.md"
       ]
     }
   },
@@ -48,13 +48,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 1.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/t001 ---- child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/t001%20----%20child%201.md"
       },
-      "source": "t001 - deeply nested.md",
-      "target": "t001/t001 ---- child 1.md"
+      "source": "source://source/t001%20-%20deeply%20nested.md",
+      "target": "source://source/t001/t001%20----%20child%201.md"
     },
     {
       "bidirectional": false,
@@ -69,13 +71,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 2",
-        "link_resolved_target_directory": "t001/deeper",
-        "link_resolved_target_path": "t001/deeper/t001 ---- child 2.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/deeper/t001 ---- child 2.md"
+        "link_resolved_target_directory": "source://source/t001/deeper",
+        "link_resolved_target_path": "source://source/t001/deeper/t001%20----%20child%202.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/deeper/t001%20----%20child%202.md"
       },
-      "source": "t001 - deeply nested.md",
-      "target": "t001/deeper/t001 ---- child 2.md"
+      "source": "source://source/t001%20-%20deeply%20nested.md",
+      "target": "source://source/t001/deeper/t001%20----%20child%202.md"
     },
     {
       "bidirectional": false,
@@ -90,13 +94,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 3 in same dir as child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 3 in same dir as child 1.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/t001 ---- child 3 in same dir as child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
       },
-      "source": "t001 - deeply nested.md",
-      "target": "t001/t001 ---- child 3 in same dir as child 1.md"
+      "source": "source://source/t001%20-%20deeply%20nested.md",
+      "target": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
     },
     {
       "bidirectional": false,
@@ -111,17 +117,19 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 1.md",
-        "link_source_page_path": "t001/t001 ---- child 3 in same dir as child 1.md",
-        "target": "t001/t001 ---- child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
+        "target": "source://source/t001/t001%20----%20child%201.md"
       },
-      "source": "t001/t001 ---- child 3 in same dir as child 1.md",
-      "target": "t001/t001 ---- child 1.md"
+      "source": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
+      "target": "source://source/t001/t001%20----%20child%201.md"
     }
   ],
   "linksBySource": {
-    "t001 - deeply nested.md": [
+    "source://source/t001%20-%20deeply%20nested.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -133,10 +141,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 1.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/t001 ---- child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/t001%20----%20child%201.md"
       },
       {
         "is_embedded": false,
@@ -149,10 +159,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 2",
-        "link_resolved_target_directory": "t001/deeper",
-        "link_resolved_target_path": "t001/deeper/t001 ---- child 2.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/deeper/t001 ---- child 2.md"
+        "link_resolved_target_directory": "source://source/t001/deeper",
+        "link_resolved_target_path": "source://source/t001/deeper/t001%20----%20child%202.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/deeper/t001%20----%20child%202.md"
       },
       {
         "is_embedded": false,
@@ -165,15 +177,17 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 3 in same dir as child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 3 in same dir as child 1.md",
-        "link_source_page_path": "t001 - deeply nested.md",
-        "target": "t001/t001 ---- child 3 in same dir as child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001%20-%20deeply%20nested.md",
+        "target": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
       }
     ],
-    "t001/deeper/t001 ---- child 2.md": [],
-    "t001/t001 ---- child 1.md": [],
-    "t001/t001 ---- child 3 in same dir as child 1.md": [
+    "source://source/t001/deeper/t001%20----%20child%202.md": [],
+    "source://source/t001/t001%20----%20child%201.md": [],
+    "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -185,10 +199,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t001 ---- child 1",
-        "link_resolved_target_directory": "t001",
-        "link_resolved_target_path": "t001/t001 ---- child 1.md",
-        "link_source_page_path": "t001/t001 ---- child 3 in same dir as child 1.md",
-        "target": "t001/t001 ---- child 1.md"
+        "link_resolved_target_directory": "source://source/t001",
+        "link_resolved_target_path": "source://source/t001/t001%20----%20child%201.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
+        "target": "source://source/t001/t001%20----%20child%201.md"
       }
     ]
   },
@@ -196,18 +212,18 @@
     {
       "depth": 0,
       "digest": "cb6312a2064f651ffe09e5f3610408cccd0009013aa2d0f82d24c137df839ce7",
-      "directory": "",
+      "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t001 - deeply nested.md",
+      "path": "source://source/t001%20-%20deeply%20nested.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483647,
       "route": [
-        "t001 - deeply nested.md"
+        "source://source/t001%20-%20deeply%20nested.md"
       ],
       "routeSteps": [
         {
@@ -216,7 +232,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001 - deeply nested.md",
+          "path": "source://source/t001%20-%20deeply%20nested.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -236,7 +252,7 @@
     {
       "depth": 1,
       "digest": "e14fb8ffbc5990775a5625c7eb273105c5d8503f2b5b1a44e200b5a48c8f9a3f",
-      "directory": "t001/deeper",
+      "directory": "source://source/t001/deeper",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -246,12 +262,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t001/deeper/t001 ---- child 2.md",
+      "path": "source://source/t001/deeper/t001%20----%20child%202.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483646,
       "route": [
-        "t001 - deeply nested.md",
-        "t001/deeper/t001 ---- child 2.md"
+        "source://source/t001%20-%20deeply%20nested.md",
+        "source://source/t001/deeper/t001%20----%20child%202.md"
       ],
       "routeSteps": [
         {
@@ -260,7 +276,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001 - deeply nested.md",
+          "path": "source://source/t001%20-%20deeply%20nested.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -275,7 +291,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001/deeper/t001 ---- child 2.md",
+          "path": "source://source/t001/deeper/t001%20----%20child%202.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483646,
           "retainedForTraversal": true,
@@ -295,7 +311,7 @@
     {
       "depth": 1,
       "digest": "77555ed8d18b3855e1c231a3117aba3bbde8efafd81888e88c5b6a56a9c1d572",
-      "directory": "t001",
+      "directory": "source://source/t001",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -305,12 +321,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t001/t001 ---- child 1.md",
+      "path": "source://source/t001/t001%20----%20child%201.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483646,
       "route": [
-        "t001 - deeply nested.md",
-        "t001/t001 ---- child 1.md"
+        "source://source/t001%20-%20deeply%20nested.md",
+        "source://source/t001/t001%20----%20child%201.md"
       ],
       "routeSteps": [
         {
@@ -319,7 +335,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001 - deeply nested.md",
+          "path": "source://source/t001%20-%20deeply%20nested.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -334,7 +350,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001/t001 ---- child 1.md",
+          "path": "source://source/t001/t001%20----%20child%201.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483646,
           "retainedForTraversal": true,
@@ -354,7 +370,7 @@
     {
       "depth": 1,
       "digest": "e5774966b0e93e8f90ff51cc64656692f90e0442fa51bb580c82d399ef26fb53",
-      "directory": "t001",
+      "directory": "source://source/t001",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -364,12 +380,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t001/t001 ---- child 3 in same dir as child 1.md",
+      "path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483646,
       "route": [
-        "t001 - deeply nested.md",
-        "t001/t001 ---- child 3 in same dir as child 1.md"
+        "source://source/t001%20-%20deeply%20nested.md",
+        "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md"
       ],
       "routeSteps": [
         {
@@ -378,7 +394,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001 - deeply nested.md",
+          "path": "source://source/t001%20-%20deeply%20nested.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -393,7 +409,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t001/t001 ---- child 3 in same dir as child 1.md",
+          "path": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483646,
           "retainedForTraversal": true,
@@ -411,5 +427,11 @@
       "via": "outlink"
     }
   ],
-  "schemaVersion": 1
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/meadow-test-bundles-data",
+      "name": "source"
+    }
+  ]
 }

@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t021/t021 ---- inlink gap.md",
+        "linkPath": "source://source/t021/t021%20----%20inlink%20gap.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t021/t021 ---- outlink gap.md",
+        "linkPath": "source://source/t021/t021%20----%20outlink%20gap.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ]

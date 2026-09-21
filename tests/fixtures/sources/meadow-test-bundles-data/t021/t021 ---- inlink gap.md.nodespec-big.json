@@ -4,19 +4,19 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "t021 - link gaps.md",
+        "linkPath": "source://source/t021%20-%20link%20gaps.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 1.md",
+        "linkPath": "source://source/t021/t021%20----%20inlink%20gap%20pages/t021%20----%20inlink%20source%201.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 2.md",
+        "linkPath": "source://source/t021/t021%20----%20inlink%20gap%20pages/t021%20----%20inlink%20source%202.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t021/t021 ---- inlink gap pages/t021 ---- inlink source 3.md",
+        "linkPath": "source://source/t021/t021%20----%20inlink%20gap%20pages/t021%20----%20inlink%20source%203.md",
         "isInGraph": false
       }
     ]

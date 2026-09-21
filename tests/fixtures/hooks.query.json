@@ -1,10 +1,17 @@
 {
   "name": "hooks",
-  "source": "sources/meadow-test-bundle-for-hooks",
+  "fixtureDirectory": "sources/meadow-test-bundle-for-hooks",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/meadow-test-bundle-for-hooks",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "ai/V Dwarkesh and Anthropic CEO in 2023.md"
+        "path": "source://source/ai/V%20Dwarkesh%20and%20Anthropic%20CEO%20in%202023.md"
       }
     ],
     "depths": {

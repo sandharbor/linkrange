@@ -3,21 +3,21 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t020/t020 ---- tags in code blocks should not become tag links.md",
+        "linkPath": "source://source/t020/t020%20----%20tags%20in%20code%20blocks%20should%20not%20become%20tag%20links.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t020/t020 ---- page links in code blocks should not become links.md",
+        "linkPath": "source://source/t020/t020%20----%20page%20links%20in%20code%20blocks%20should%20not%20become%20links.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t020/t020 ---- code blocks should end properly.md",
+        "linkPath": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ]

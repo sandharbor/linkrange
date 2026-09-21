@@ -1,10 +1,17 @@
 {
   "name": "example",
-  "source": "sources/example-bundle-data",
+  "fixtureDirectory": "sources/example-bundle-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/example-bundle-data",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "Notable Mental Models.md"
+        "path": "source://source/Notable%20Mental%20Models.md"
       }
     ],
     "depths": {
@@ -13,11 +20,11 @@
     },
     "rules": [
       {
-        "path": "Sun Feb 01 2026 16:00:00 GMT-0800 (Pacific Standard Time).md",
+        "path": "source://source/Sun%20Feb%2001%202026%2016:00:00%20GMT-0800%20(Pacific%20Standard%20Time).md",
         "stop": true
       },
       {
-        "path": "Cognitive Biases.md",
+        "path": "source://source/Cognitive%20Biases.md",
         "outlinks": 0
       }
     ],

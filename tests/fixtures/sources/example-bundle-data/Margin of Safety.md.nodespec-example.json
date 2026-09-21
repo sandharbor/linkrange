@@ -3,85 +3,85 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Expected Value.md",
+        "linkPath": "source://source/Expected%20Value.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Howard Marks.md",
+        "linkPath": "source://source/Howard%20Marks.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ]

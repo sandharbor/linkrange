@@ -229,8 +229,11 @@ fn measure(directory: &Path, repeats: usize, selected: &str, cli: Option<PathBuf
     let root = directory.join("source");
     let request_path = directory.join("request.json");
     let request = Request {
-        source_root: Some(root.clone()),
-        sources: None,
+        sources: vec![linkrange::Source {
+            name: "corpus".into(),
+            directory: root.clone(),
+            aliases: Vec::new(),
+        }],
         index: IndexOptions {
             cache_directory: Some(directory.join("cache")),
             frontmatter: vec![FrontmatterField {
@@ -241,7 +244,7 @@ fn measure(directory: &Path, repeats: usize, selected: &str, cli: Option<PathBuf
         },
         query: Query {
             starts: vec![Start {
-                path: corpus.name(0),
+                path: linkrange::source_locator("corpus", &corpus.name(0)),
                 depths: None,
             }],
             depths: Depths {

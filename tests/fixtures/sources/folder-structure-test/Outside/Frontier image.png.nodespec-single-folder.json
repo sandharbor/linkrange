@@ -4,7 +4,7 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "Outside/Beyond outside.md",
+        "linkPath": "source://source/Outside/Beyond%20outside.md",
         "isInGraph": true
       }
     ]

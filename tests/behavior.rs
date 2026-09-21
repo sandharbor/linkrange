@@ -22,8 +22,11 @@ impl Fixture {
     }
     fn request(&self, starts: &[&str], outlinks: u32, inlinks: u32) -> Request {
         Request {
-            source_root: Some(self.root()),
-            sources: None,
+            sources: vec![Source {
+                name: "source".into(),
+                directory: self.root(),
+                aliases: Vec::new(),
+            }],
             index: IndexOptions {
                 cache_directory: Some(self.temp.path().join("cache")),
                 ..Default::default()
@@ -32,7 +35,7 @@ impl Fixture {
                 starts: starts
                     .iter()
                     .map(|path| Start {
-                        path: (*path).into(),
+                        path: locator(path),
                         depths: None,
                     })
                     .collect(),
@@ -42,15 +45,26 @@ impl Fixture {
         }
     }
 }
-fn paths(response: &Response) -> Vec<&str> {
+fn locator(path: &str) -> String {
+    source_locator("source", path)
+}
+fn paths(response: &Response) -> Vec<String> {
     response
         .nodes
         .iter()
-        .map(|node| node.file.path.as_str())
+        .map(|node| {
+            let (source, path) = parse_source_locator(&node.file.path).unwrap();
+            assert_eq!(source, "source");
+            path
+        })
         .collect()
 }
 fn node<'a>(response: &'a Response, path: &str) -> &'a Node {
-    response.nodes.iter().find(|n| n.file.path == path).unwrap()
+    response
+        .nodes
+        .iter()
+        .find(|n| n.file.path == locator(path))
+        .unwrap()
 }
 fn field(key: &str) -> FrontmatterField {
     FrontmatterField {
@@ -107,7 +121,7 @@ fn frontier_ignores_both_expansive_and_restrictive_overrides_and_remains_capped(
         let mut request = f.request(&["A.md"], 1, 0);
         request.query.frontier_depth = 2;
         request.query.rules.push(Rule {
-            path: "C.md".into(),
+            path: locator("C.md"),
             outlinks: Some(override_depth),
             inlinks: Some(100),
             ..Default::default()
@@ -133,7 +147,7 @@ fn stop_includes_a_node_exclude_omits_it_and_independent_routes_remain_valid() {
     f.write("D.md", "[[C]]");
     let mut request = f.request(&["A.md"], 3, 0);
     request.query.rules.push(Rule {
-        path: "B.md".into(),
+        path: locator("B.md"),
         stop: true,
         ..Default::default()
     });
@@ -144,7 +158,10 @@ fn stop_includes_a_node_exclude_omits_it_and_independent_routes_remain_valid() {
     request.query.rules[0].exclude = true;
     let response = query(&request).unwrap();
     assert_eq!(paths(&response), ["A.md", "C.md", "D.md"]);
-    assert_eq!(node(&response, "C.md").route, ["A.md", "D.md", "C.md"]);
+    assert_eq!(
+        node(&response, "C.md").route,
+        ["A.md", "D.md", "C.md"].map(locator)
+    );
     f.write("A.md", "[[B]]");
     request.query.rules[0].exclude = false;
     assert_eq!(paths(&query(&request).unwrap()), ["A.md", "B.md"]);
@@ -167,7 +184,7 @@ fn boundary_embeds_are_terminal_and_only_selected_types_get_the_exception() {
         Inclusion::EmbeddedAsset
     );
     request.query.rules.push(Rule {
-        path: "image.svg".into(),
+        path: locator("image.svg"),
         outlinks: Some(100),
         ..Default::default()
     });
@@ -210,7 +227,7 @@ fn html_boundary_embeds_are_included_without_following_hyperlinks_or_recursive_e
     // When HTML sources are opted into the direct-embed exception.
     request.query.boundary_embed_source_types = vec!["html".into()];
     request.query.rules.push(Rule {
-        path: "embedded.html".into(),
+        path: locator("embedded.html"),
         outlinks: Some(100),
         ..Default::default()
     });
@@ -239,11 +256,11 @@ fn html_boundary_embeds_are_included_without_following_hyperlinks_or_recursive_e
     }
     // The CLI exposes the same opt-in rule.
     let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
-        .args(["query", "--source-root"])
-        .arg(f.root())
+        .args(["query", "--source"])
+        .arg(format!("source={}", f.root().display()))
         .args([
             "--start",
-            "page.html",
+            "source://source/page.html",
             "--outlinks",
             "0",
             "--boundary-embed-source-type",
@@ -257,20 +274,20 @@ fn html_boundary_embeds_are_included_without_following_hyperlinks_or_recursive_e
     assert_eq!(paths(&cli), paths(&response));
     // Exclusions and stopping at the source still take priority over the exception.
     request.query.rules.push(Rule {
-        path: "document.pdf".into(),
+        path: locator("document.pdf"),
         exclude: true,
         ..Default::default()
     });
-    assert!(!paths(&query(&request).unwrap()).contains(&"document.pdf"));
+    assert!(!paths(&query(&request).unwrap()).contains(&"document.pdf".to_string()));
     request.query.rules.push(Rule {
-        path: "page.html".into(),
+        path: locator("page.html"),
         stop: true,
         ..Default::default()
     });
     assert_eq!(paths(&query(&request).unwrap()), ["page.html"]);
     // Source-format opt-in doesn't broaden the caller's Markdown embedding policy.
     f.write("note.md", "![[embedded.html]] ![[image.webp]]");
-    request.query.starts[0].path = "note.md".into();
+    request.query.starts[0].path = locator("note.md");
     assert_eq!(paths(&query(&request).unwrap()), ["note.md"]);
 }
 
@@ -285,14 +302,22 @@ fn query_scoped_resolution_and_adjacency_include_outside_neighbors_without_admit
     request.query.adjacency = true;
     let response = query(&request).unwrap();
     assert_eq!(paths(&response), ["A.md"]);
-    assert_eq!(response.adjacency["A.md"].inlinks, ["Outside.md"]);
-    assert_eq!(response.adjacency["A.md"].outlinks, ["B.md"]);
+    assert_eq!(
+        response.adjacency[&locator("A.md")].inlinks,
+        [locator("Outside.md")]
+    );
+    assert_eq!(
+        response.adjacency[&locator("A.md")].outlinks,
+        [locator("B.md")]
+    );
     assert_eq!(response.links_by_source.len(), 1);
     assert_eq!(
-        response.links_by_source["A.md"][0].target.as_deref(),
-        Some("B.md")
+        response.links_by_source[&locator("A.md")][0]
+            .target
+            .as_deref(),
+        Some(locator("B.md").as_str())
     );
-    assert_eq!(response.links_by_source["A.md"][1].target, None);
+    assert_eq!(response.links_by_source[&locator("A.md")][1].target, None);
     assert!(response.edges.is_empty());
 }
 
@@ -325,8 +350,8 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
             fs::remove_file(f.root().join(path)).unwrap();
         }
         let response = query(&request).unwrap();
-        let link = &response.links_by_source["nested/A.md"][0];
-        assert_eq!(link.target.as_deref(), Some(expected));
+        let link = &response.links_by_source[&locator("nested/A.md")][0];
+        assert_eq!(link.target.as_deref(), Some(locator(expected).as_str()));
         assert_eq!(link.link_parsed_alias.as_deref(), Some("display"));
         assert_eq!(link.resolution.as_ref().unwrap().reason, reason);
         let expected_candidates: Vec<_> = [
@@ -338,6 +363,7 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
         ]
         .into_iter()
         .filter(|path| f.root().join(path).exists())
+        .map(locator)
         .collect();
         assert_eq!(
             link.resolution.as_ref().unwrap().candidates,
@@ -362,19 +388,19 @@ fn html_svg_and_html_inside_markdown_classify_elements_and_ignore_comments_and_c
         paths(&response),
         ["A.md", "B.md", "image.svg", "page.html", "texture.png"]
     );
-    assert_eq!(response.links_by_source["A.md"].len(), 2);
-    assert_eq!(response.links_by_source["page.html"].len(), 2);
+    assert_eq!(response.links_by_source[&locator("A.md")].len(), 2);
+    assert_eq!(response.links_by_source[&locator("page.html")].len(), 2);
     assert!(
-        response.links_by_source["image.svg"]
+        response.links_by_source[&locator("image.svg")]
             .iter()
-            .find(|link| link.target.as_deref() == Some("texture.png"))
+            .find(|link| link.target.as_deref() == Some(locator("texture.png").as_str()))
             .unwrap()
             .is_embedded
     );
     assert!(
-        !response.links_by_source["image.svg"]
+        !response.links_by_source[&locator("image.svg")]
             .iter()
-            .find(|link| link.target.as_deref() == Some("B.md"))
+            .find(|link| link.target.as_deref() == Some(locator("B.md").as_str()))
             .unwrap()
             .is_embedded
     );
@@ -418,7 +444,7 @@ fn encoded_html_asset_urls_resolve_with_or_without_dot_slash_and_survive_cache_r
                     "site/page.html"
                 ]
             );
-            let links = &result.links_by_source["site/page.html"];
+            let links = &result.links_by_source[&locator("site/page.html")];
             assert_eq!(links.len(), 3);
             for asset in assets {
                 let raw = format!("{prefix}{}", asset.replace(' ', "%20"));
@@ -427,16 +453,16 @@ fn encoded_html_asset_urls_resolve_with_or_without_dot_slash_and_survive_cache_r
                     .find(|link| link.link_original_text == raw)
                     .unwrap();
                 let target = format!("site/{asset}");
-                assert_eq!(link.target.as_deref(), Some(target.as_str()));
+                assert_eq!(link.target.as_deref(), Some(locator(&target).as_str()));
                 assert!(link.is_embedded);
                 assert_eq!(link.resolution.as_ref().unwrap().reason, "relativePath");
             }
         }
         // The CLI exposes the same resolved graph.
         let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
-            .args(["query", "--source-root"])
-            .arg(f.root())
-            .args(["--start", "site/page.html", "--no-cache"])
+            .args(["query", "--source"])
+            .arg(format!("source={}", f.root().display()))
+            .args(["--start", "source://source/site/page.html", "--no-cache"])
             .output()
             .unwrap();
         assert!(output.status.success());
@@ -459,11 +485,15 @@ fn url_paths_decode_once_after_separating_query_and_fragment_in_all_markup_forma
     ] {
         f.write(source, content);
         let result = query(&f.request(&[source], 1, 0)).unwrap();
-        let link = &result.links_by_source[source][0];
-        assert_eq!(link.target.as_deref(), Some(target), "{source}");
+        let link = &result.links_by_source[&locator(source)][0];
+        assert_eq!(
+            link.target.as_deref(),
+            Some(locator(target).as_str()),
+            "{source}"
+        );
         assert_eq!(link.link_original_text, href);
         assert_eq!(link.link_parsed_anchor.as_deref(), Some("section"));
-        assert!(paths(&result).contains(&target));
+        assert!(paths(&result).contains(&target.to_string()));
     }
 }
 
@@ -494,8 +524,8 @@ fn excalidraw_keeps_physical_path_and_reports_detected_format() {
         "excalidraw"
     );
     assert_eq!(
-        response.links_by_source["Drawing.excalidraw.md"][0].link_source_page_path,
-        "Drawing.excalidraw.md"
+        response.links_by_source[&locator("Drawing.excalidraw.md")][0].link_source_page_path,
+        locator("Drawing.excalidraw.md")
     );
 }
 
@@ -614,7 +644,7 @@ fn strict_index_failure_preserves_cache_and_best_effort_is_explicitly_incomplete
     let partial = query(&request).unwrap();
     assert!(!partial.complete);
     assert_eq!(paths(&partial), ["A.md"]);
-    assert_eq!(partial.diagnostics[0].path, "Broken.md");
+    assert_eq!(partial.diagnostics[0].path, locator("Broken.md"));
     assert_eq!(before, fs::read(&cache).unwrap());
 }
 
@@ -659,7 +689,7 @@ fn symlinks_are_skipped_by_default_and_opt_in_stays_inside_root_deduplicates_and
         .iter()
         .any(|d| d.code == "symlinkCycle"));
     request.query.rules.push(Rule {
-        path: "inside".into(),
+        path: locator("inside"),
         subtree: true,
         exclude: true,
         ..Default::default()
@@ -673,7 +703,7 @@ fn metrics_are_opt_in_without_changing_query_results() {
     f.write("A.md", "[[B]]");
     f.write("B.md", "");
     let mut request = f.request(&["A.md"], 1, 0);
-    let graph = Graph::open(&f.root(), &request.index).unwrap();
+    let graph = Graph::open(&request.sources, &request.index).unwrap();
     let normal = graph.query(&request.query).unwrap();
     assert!(normal.metrics.is_none());
     let normal_json = serde_json::to_value(&normal).unwrap();
@@ -713,8 +743,10 @@ fn cli_metrics_are_opt_in_for_direct_and_json_requests() {
             if json_request {
                 command.arg("--request").arg(&request_file);
             } else {
-                command.arg("--source-root").arg(f.root());
-                command.args(["--start", "A.md", "--no-cache"]);
+                command
+                    .arg("--source")
+                    .arg(format!("source={}", f.root().display()));
+                command.args(["--start", "source://source/A.md", "--no-cache"]);
             }
             if metrics {
                 command.arg("--metrics");
@@ -778,9 +810,9 @@ fn cli_exercises_public_request_and_emits_json_and_structured_errors() {
     let response: Response = serde_json::from_slice(&output.stdout).unwrap();
     assert_eq!(paths(&response), ["A.md", "B.md"]);
     let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
-        .args(["query", "--source-root"])
-        .arg(f.root())
-        .args(["--start", "Missing.md"])
+        .args(["query", "--source"])
+        .arg(format!("source={}", f.root().display()))
+        .args(["--start", "source://source/Missing.md"])
         .output()
         .unwrap();
     assert!(!output.status.success());
@@ -798,7 +830,9 @@ fn relative_links_cannot_escape_root_and_accidentally_resolve_to_a_root_file() {
     f.write("B.md", "");
     let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
     assert_eq!(paths(&response), ["A.md"]);
-    assert!(response.links_by_source["A.md"][0].target.is_none());
+    assert!(response.links_by_source[&locator("A.md")][0]
+        .target
+        .is_none());
 }
 
 #[test]
@@ -813,7 +847,7 @@ fn equally_short_routes_preserve_discovery_order_for_stable_breadcrumbs() {
     let response = query(&fixture.request(&["A.md"], 2, 0)).unwrap();
     assert_eq!(
         node(&response, "Target.md").route,
-        vec!["A.md", "Z.md", "Target.md"]
+        ["A.md", "Z.md", "Target.md"].map(locator)
     );
 }
 
@@ -839,11 +873,14 @@ fn explicit_physical_excalidraw_filenames_resolve_in_wikilinks_and_markdown() {
         node(&response, "nested/drawing.excalidraw.md").file.format,
         "excalidraw"
     );
-    for link in &response.links_by_source["A.md"] {
-        assert_eq!(link.target.as_deref(), Some("nested/drawing.excalidraw.md"));
+    for link in &response.links_by_source[&locator("A.md")] {
+        assert_eq!(
+            link.target.as_deref(),
+            Some(locator("nested/drawing.excalidraw.md").as_str())
+        );
         assert_eq!(
             link.resolution.as_ref().unwrap().candidates,
-            vec!["nested/drawing.excalidraw.md"]
+            vec![locator("nested/drawing.excalidraw.md")]
         );
     }
 }
@@ -860,7 +897,7 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
     f.write("Target.md", "");
     let mut request = f.request(&["Start.md"], 3, 1);
     request.query.rules.push(Rule {
-        path: "Taxonomy.md".into(),
+        path: locator("Taxonomy.md"),
         outlinks: Some(3),
         inlinks: Some(2),
         ..Default::default()
@@ -883,7 +920,7 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
     for response in responses {
         // Then Hub's own shortest explanation remains direct, with no incoming budget.
         let hub = node(&response, "Hub.md");
-        assert_eq!(hub.route, ["Start.md", "Hub.md"]);
+        assert_eq!(hub.route, ["Start.md", "Hub.md"].map(locator));
         assert_eq!((hub.depth, hub.remaining_inlinks), (1, 0));
         assert_eq!(
             hub.route_steps.last().unwrap().retained_for_traversal,
@@ -902,7 +939,7 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
                 .iter()
                 .map(|step| step.path.as_str())
                 .collect::<Vec<_>>(),
-            ["Start.md", "Taxonomy.md", "Hub.md"]
+            ["Start.md", "Taxonomy.md", "Hub.md"].map(locator)
         );
         assert_eq!(
             hub.alternative_routes[0].last().unwrap().remaining_inlinks,
@@ -918,6 +955,7 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
                 "Incoming.md",
                 "Target.md"
             ]
+            .map(locator)
         );
         let steps = &target.route_steps;
         assert_eq!(
@@ -988,13 +1026,13 @@ fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traver
     let mut request = f.request(&["Start.md"], 3, 1);
     request.query.rules = vec![
         Rule {
-            path: "Taxonomy.md".into(),
+            path: locator("Taxonomy.md"),
             outlinks: Some(3),
             inlinks: Some(2),
             ..Default::default()
         },
         Rule {
-            path: "Hub.md".into(),
+            path: locator("Hub.md"),
             inlinks: Some(0),
             ..Default::default()
         },
@@ -1004,7 +1042,7 @@ fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traver
         // When the override collapses the arrivals to one useful traversal state.
         let response = query(&request).unwrap();
         let hub = node(&response, "Hub.md");
-        assert_eq!(hub.route, ["Start.md", "Hub.md"]);
+        assert_eq!(hub.route, ["Start.md", "Hub.md"].map(locator));
         assert_eq!(
             hub.states,
             [TraversalState {
@@ -1017,7 +1055,7 @@ fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traver
         let steps = &hub.alternative_routes[0];
         assert_eq!(
             steps.iter().map(|s| s.path.as_str()).collect::<Vec<_>>(),
-            ["Start.md", "Taxonomy.md", "Hub.md"]
+            ["Start.md", "Taxonomy.md", "Hub.md"].map(locator)
         );
         let arrival = steps.last().unwrap();
         assert_eq!(
@@ -1029,8 +1067,8 @@ fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traver
         assert_eq!(arrival.overridden_inlinks, Some(0));
         assert_eq!(arrival.remaining_inlinks, 0);
         // Explanation-only arrivals never revive incoming traversal or propagate duplicate routes.
-        assert!(!paths(&response).contains(&"Incoming.md"));
-        assert!(!paths(&response).contains(&"Target.md"));
+        assert!(!paths(&response).contains(&"Incoming.md".to_string()));
+        assert!(!paths(&response).contains(&"Target.md".to_string()));
         assert!(node(&response, "Tail.md").alternative_routes.is_empty());
     }
 }
@@ -1054,7 +1092,7 @@ fn overrides_preserve_separate_pre_override_maxima_without_retaining_every_redun
         start.depths = Some(Depths { outlinks, inlinks });
     }
     request.query.rules.push(Rule {
-        path: "Hub.md".into(),
+        path: locator("Hub.md"),
         outlinks: Some(2),
         inlinks: Some(0),
         ..Default::default()
@@ -1133,14 +1171,14 @@ fn alternative_routes_preserve_every_useful_budget_pair_without_synthesizing_the
             .iter()
             .map(|route| route[0].path.as_str())
             .collect::<Vec<_>>(),
-        ["Out.md", "Balanced.md", "In.md"]
+        ["Out.md", "Balanced.md", "In.md"].map(locator)
     );
     // Then the intermediate tradeoff is retained, and the synthetic 5/4 arrival does not exist.
     assert!(routes
         .iter()
         .all(|route| route.last().unwrap().retained_for_traversal == Some(true)));
-    assert!(paths(&response).contains(&"Incoming2.md"));
-    assert!(!paths(&response).contains(&"Incoming3.md"));
+    assert!(paths(&response).contains(&"Incoming2.md".to_string()));
+    assert!(!paths(&response).contains(&"Incoming3.md".to_string()));
     assert!(!hub
         .states
         .iter()

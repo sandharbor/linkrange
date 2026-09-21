@@ -1,10 +1,17 @@
 {
   "name": "big",
-  "source": "sources/meadow-test-bundles-data",
+  "fixtureDirectory": "sources/meadow-test-bundles-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/meadow-test-bundles-data",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "main page.md"
+        "path": "source://source/main%20page.md"
       }
     ],
     "depths": {
@@ -13,43 +20,43 @@
     },
     "rules": [
       {
-        "path": "t006 - second directory/embedded in page in other t006 directory.md",
+        "path": "source://source/t006%20-%20second%20directory/embedded%20in%20page%20in%20other%20t006%20directory.md",
         "stop": true
       },
       {
-        "path": "t006/t006 --- meadow-flower.excalidraw.md",
+        "path": "source://source/t006/t006%20---%20meadow-flower.excalidraw.md",
         "stop": true
       },
       {
-        "path": "t007 ---- blacklisted image.png",
+        "path": "source://source/t007%20----%20blacklisted%20image.png",
         "stop": true
       },
       {
-        "path": "t007 ---- blacklisted page.md",
+        "path": "source://source/t007%20----%20blacklisted%20page.md",
         "stop": true
       },
       {
-        "path": "t008 - page conf do not include inlinks.md",
+        "path": "source://source/t008%20-%20page%20conf%20do%20not%20include%20inlinks.md",
         "inlinks": 0
       },
       {
-        "path": "t009 - page conf graph depth.md",
+        "path": "source://source/t009%20-%20page%20conf%20graph%20depth.md",
         "outlinks": 0
       },
       {
-        "path": "t013 - inlinks_depth.md",
+        "path": "source://source/t013%20-%20inlinks_depth.md",
         "inlinks": 1
       },
       {
-        "path": "t017 - second directory/t017 ---- linked from deep transclusion level 3.md",
+        "path": "source://source/t017%20-%20second%20directory/t017%20----%20linked%20from%20deep%20transclusion%20level%203.md",
         "outlinks": 1
       },
       {
-        "path": "t021/t021 ---- inlink gap.md",
+        "path": "source://source/t021/t021%20----%20inlink%20gap.md",
         "inlinks": 0
       },
       {
-        "path": "t021/t021 ---- outlink gap.md",
+        "path": "source://source/t021/t021%20----%20outlink%20gap.md",
         "outlinks": 0
       }
     ],

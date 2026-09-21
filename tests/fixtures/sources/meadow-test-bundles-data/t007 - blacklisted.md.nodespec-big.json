@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t007 ---- blacklisted image.png",
+        "linkPath": "source://source/t007%20----%20blacklisted%20image.png",
         "isInGraph": true
       },
       {
-        "linkPath": "t007 ---- blacklisted page.md",
+        "linkPath": "source://source/t007%20----%20blacklisted%20page.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ]

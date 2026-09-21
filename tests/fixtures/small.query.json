@@ -1,10 +1,17 @@
 {
   "name": "small",
-  "source": "sources/meadow-test-bundles-data",
+  "fixtureDirectory": "sources/meadow-test-bundles-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/meadow-test-bundles-data",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "t001 - deeply nested.md"
+        "path": "source://source/t001%20-%20deeply%20nested.md"
       }
     ],
     "depths": {

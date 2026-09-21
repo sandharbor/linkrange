@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t007 ---- child of blacklisted page.md",
+        "linkPath": "source://source/t007%20----%20child%20of%20blacklisted%20page.md",
         "isInGraph": false
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t007 - blacklisted.md",
+        "linkPath": "source://source/t007%20-%20blacklisted.md",
         "isInGraph": true
       }
     ]

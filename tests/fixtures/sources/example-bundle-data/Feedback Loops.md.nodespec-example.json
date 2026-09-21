@@ -3,65 +3,65 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "images/Feedback Loop Diagram.svg",
+        "linkPath": "source://source/images/Feedback%20Loop%20Diagram.svg",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       }
     ]

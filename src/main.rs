@@ -1,5 +1,7 @@
 use clap::{Parser, Subcommand};
-use linkrange::{Depths, FrontmatterField, IndexOptions, Query, Request, Start, Symlinks};
+use linkrange::{
+    Depths, FrontmatterField, IndexOptions, Query, Request, Source, Start, Symlinks, SCHEMA_VERSION,
+};
 use std::{
     fs,
     io::{self, Read, Write},
@@ -16,10 +18,11 @@ struct Cli {
 enum Command {
     Query {
         /// Versioned query request JSON file; '-' reads standard input.
-        #[arg(long, conflicts_with = "source_root")]
+        #[arg(long, conflicts_with = "sources", required_unless_present = "sources")]
         request: Option<PathBuf>,
-        #[arg(long)]
-        source_root: Option<PathBuf>,
+        /// Named source directory, repeated for each source (NAME=DIRECTORY).
+        #[arg(long = "source", value_name = "NAME=DIRECTORY", value_parser = parse_source, required_unless_present = "request")]
+        sources: Vec<Source>,
         #[arg(long)]
         start: Vec<String>,
         #[arg(long, default_value_t = 1)]
@@ -55,12 +58,27 @@ enum Command {
     },
 }
 
+fn parse_source(value: &str) -> Result<Source, String> {
+    let (name, directory) = value
+        .split_once('=')
+        .ok_or("Expected NAME=DIRECTORY for --source")?;
+    linkrange::validate_source_name(name).map_err(|error| error.to_string())?;
+    if directory.is_empty() {
+        return Err("Source directory must not be empty".into());
+    }
+    Ok(Source {
+        name: name.into(),
+        directory: directory.into(),
+        aliases: Vec::new(),
+    })
+}
+
 fn run() -> anyhow::Result<()> {
     let Cli {
         command:
             Command::Query {
                 request,
-                source_root,
+                sources,
                 start,
                 outlinks,
                 inlinks,
@@ -88,11 +106,7 @@ fn run() -> anyhow::Result<()> {
         serde_json::from_str::<Request>(&text)?
     } else {
         Request {
-            source_root: Some(
-                source_root
-                    .ok_or_else(|| anyhow::anyhow!("--source-root or --request is required"))?,
-            ),
-            sources: None,
+            sources,
             index: IndexOptions {
                 cache_directory,
                 no_cache,
@@ -139,7 +153,7 @@ fn main() {
     if let Err(error) = run() {
         eprintln!(
             "{}",
-            serde_json::json!({"schemaVersion":1,"code":"queryFailed","message":format!("{error:#}")})
+            serde_json::json!({"schemaVersion":SCHEMA_VERSION,"code":"queryFailed","message":format!("{error:#}")})
         );
         std::process::exit(1);
     }

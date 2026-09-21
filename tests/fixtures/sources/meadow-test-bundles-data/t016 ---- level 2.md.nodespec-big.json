@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t016 ---- level 3.md",
+        "linkPath": "source://source/t016%20----%20level%203.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t016 - frontier.md",
+        "linkPath": "source://source/t016%20-%20frontier.md",
         "isInGraph": true
       }
     ]

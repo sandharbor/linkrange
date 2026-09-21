@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t011 - special links.md",
+        "linkPath": "source://source/t011%20-%20special%20links.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t011 - special links.md",
+        "linkPath": "source://source/t011%20-%20special%20links.md",
         "isInGraph": true
       }
     ]

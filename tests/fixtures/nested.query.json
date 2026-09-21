@@ -1,10 +1,17 @@
 {
   "name": "nested",
-  "source": "sources/meadow-test-bundles-data",
+  "fixtureDirectory": "sources/meadow-test-bundles-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/meadow-test-bundles-data",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md"
+        "path": "source://source/t002/extra%20nested/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20extra%20nested.md"
       }
     ],
     "depths": {

@@ -3,45 +3,45 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t011/t011 ---- page name with special characters -- before dot . and after dot.md",
+        "linkPath": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+        "linkPath": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/test.io which looks like a filename suffix.md",
+        "linkPath": "source://source/t011/test.io%20which%20looks%20like%20a%20filename%20suffix.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 --- pointed to by an escaped alias outside a table.md",
+        "linkPath": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 --- table test row 1 column 1.md",
+        "linkPath": "source://source/t011/t011%20---%20table%20test%20row%201%20column%201.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 --- table test row 1 column 3.md",
+        "linkPath": "source://source/t011/t011%20---%20table%20test%20row%201%20column%203.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 --- table test row 2 column 1.md",
+        "linkPath": "source://source/t011/t011%20---%20table%20test%20row%202%20column%201.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 --- table test row 2 column 3.md",
+        "linkPath": "source://source/t011/t011%20---%20table%20test%20row%202%20column%203.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t011/t011 ---- page name with special characters -- single quote ' in name.md",
+        "linkPath": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md",
         "isInGraph": true
       }
     ]

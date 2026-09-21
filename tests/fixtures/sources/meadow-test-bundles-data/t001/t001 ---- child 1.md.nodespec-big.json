@@ -4,11 +4,11 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "t001 - deeply nested.md",
+        "linkPath": "source://source/t001%20-%20deeply%20nested.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t001/t001 ---- child 3 in same dir as child 1.md",
+        "linkPath": "source://source/t001/t001%20----%20child%203%20in%20same%20dir%20as%20child%201.md",
         "isInGraph": true
       }
     ]

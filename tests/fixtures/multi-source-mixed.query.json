@@ -1,6 +1,6 @@
 {
   "name": "multi-source-mixed",
-  "source": "sources/multi-source",
+  "fixtureDirectory": "sources/multi-source",
   "sources": [
     {
       "name": "notes",

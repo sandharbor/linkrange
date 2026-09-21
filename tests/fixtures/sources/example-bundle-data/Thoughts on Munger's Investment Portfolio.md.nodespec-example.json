@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       }
     ]

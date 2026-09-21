@@ -3,65 +3,65 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Expected Value.md",
+        "linkPath": "source://source/Expected%20Value.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ]

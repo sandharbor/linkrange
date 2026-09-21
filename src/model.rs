@@ -1,8 +1,7 @@
 use serde::{Deserialize, Serialize};
 use std::{collections::BTreeMap, path::PathBuf};
 
-pub const SCHEMA_VERSION: u32 = 1;
-pub const MULTI_SOURCE_SCHEMA_VERSION: u32 = 2;
+pub const SCHEMA_VERSION: u32 = 2;
 
 /// One admitted filesystem boundary. Names and aliases are portable; directories are local.
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -125,10 +124,7 @@ impl Default for Query {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct Request {
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub source_root: Option<PathBuf>,
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub sources: Option<Vec<Source>>,
+    pub sources: Vec<Source>,
     #[serde(default)]
     pub index: IndexOptions,
     pub query: Query,
@@ -270,7 +266,6 @@ pub struct Edge {
 pub struct Response {
     pub schema_version: u32,
     pub complete: bool,
-    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub sources: Vec<Source>,
     pub nodes: Vec<Node>,
     pub edges: Vec<Edge>,

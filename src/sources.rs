@@ -175,11 +175,10 @@ pub(crate) fn url_target(href: &str) -> (String, Option<String>, Option<String>)
 pub(crate) struct RegistryResolver {
     resolvers: BTreeMap<String, Resolver>,
     names: BTreeMap<String, String>,
-    pub qualified: bool,
 }
 
 impl RegistryResolver {
-    pub fn new(indexes: &[(Source, index::Index)], qualified: bool) -> Self {
+    pub fn new(indexes: &[(Source, index::Index)]) -> Self {
         let resolvers = indexes
             .iter()
             .map(|(source, index)| {
@@ -200,11 +199,7 @@ impl RegistryResolver {
                     .map(|name| (name.clone(), source.name.clone()))
             })
             .collect();
-        Self {
-            resolvers,
-            names,
-            qualified,
-        }
+        Self { resolvers, names }
     }
 
     pub fn canonical_name(&self, name: &str) -> Result<&str> {
@@ -219,12 +214,8 @@ impl RegistryResolver {
             .link_requested_target_source
             .as_deref()
             .unwrap_or(source);
-        if self.qualified || link.link_requested_target_source.is_some() {
-            link.link_source_name = Some(source.into());
-        }
-        if self.qualified {
-            link.link_source_page_path = source_locator(source, &link.link_source_page_path);
-        }
+        link.link_source_name = Some(source.into());
+        link.link_source_page_path = source_locator(source, &link.link_source_page_path);
         if validate_source_name(requested).is_err() {
             link.link_source_error = Some("invalidSourceReference".into());
         }
@@ -243,21 +234,16 @@ impl RegistryResolver {
             return Some(diagnostic);
         }
         let selected = selected.unwrap();
-        if self.qualified || link.link_requested_target_source.is_some() {
-            link.link_resolved_target_source = Some(selected.clone());
-        }
+        link.link_resolved_target_source = Some(selected.clone());
         let context = if selected == source { directory } else { "" };
         self.resolvers[selected].resolve(link, context);
-        if self.qualified {
-            link.target = link
-                .target
-                .as_ref()
-                .map(|path| source_locator(selected, path));
-            link.link_resolved_target_path =
-                source_locator(selected, &link.link_resolved_target_path);
-            link.link_resolved_target_directory =
-                source_locator(selected, &link.link_resolved_target_directory);
-        }
+        link.target = link
+            .target
+            .as_ref()
+            .map(|path| source_locator(selected, path));
+        link.link_resolved_target_path = source_locator(selected, &link.link_resolved_target_path);
+        link.link_resolved_target_directory =
+            source_locator(selected, &link.link_resolved_target_directory);
         None
     }
 
@@ -268,20 +254,21 @@ impl RegistryResolver {
                 candidates: Vec::new(),
             };
         }
-        let source = link.link_source_name.as_deref().unwrap_or("source");
+        let source = link
+            .link_source_name
+            .as_deref()
+            .expect("Resolved link has a source");
         let target = link
             .link_resolved_target_source
             .as_deref()
             .unwrap_or(source);
         let mut explanation =
             self.resolvers[target].explain(link, if source == target { directory } else { "" });
-        if self.qualified {
-            explanation.candidates = explanation
-                .candidates
-                .iter()
-                .map(|p| source_locator(target, p))
-                .collect();
-        }
+        explanation.candidates = explanation
+            .candidates
+            .iter()
+            .map(|p| source_locator(target, p))
+            .collect();
         explanation
     }
 }

@@ -3,29 +3,29 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "2025 taxes.md",
+        "linkPath": "source://source/2025%20taxes.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       }
     ]

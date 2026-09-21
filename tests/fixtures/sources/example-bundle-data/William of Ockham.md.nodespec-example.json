@@ -3,37 +3,37 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Hanlon's Razor.md",
+        "linkPath": "source://source/Hanlon's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "William of Ockham.md",
+        "linkPath": "source://source/William%20of%20Ockham.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       },
       {
-        "linkPath": "William of Ockham.md",
+        "linkPath": "source://source/William%20of%20Ockham.md",
         "isInGraph": true
       }
     ]

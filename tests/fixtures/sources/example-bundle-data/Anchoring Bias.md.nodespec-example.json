@@ -3,45 +3,45 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "2026-02-02.md",
+        "linkPath": "source://source/2026-02-02.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "2026-02-02.md",
+        "linkPath": "source://source/2026-02-02.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       }
     ]

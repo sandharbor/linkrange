@@ -4,15 +4,15 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+        "linkPath": "source://source/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20root.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "linkPath": "source://source/t002%20-%20second%20directory/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20second%20directory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20t002.md",
         "isInGraph": true
       }
     ]

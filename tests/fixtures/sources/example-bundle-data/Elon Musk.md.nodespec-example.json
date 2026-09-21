@@ -3,37 +3,37 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       }
     ]

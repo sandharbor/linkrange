@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t017/t017 ---- section source.md",
+        "linkPath": "source://source/t017/t017%20----%20section%20source.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t017 - transclusion.md",
+        "linkPath": "source://source/t017%20-%20transclusion.md",
         "isInGraph": true
       }
     ]

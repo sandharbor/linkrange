@@ -3,125 +3,125 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Expected Value.md",
+        "linkPath": "source://source/Expected%20Value.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Howard Marks.md",
+        "linkPath": "source://source/Howard%20Marks.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "2026-02-10.md",
+        "linkPath": "source://source/2026-02-10.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Availability Bias.md",
+        "linkPath": "source://source/Availability%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Confirmation Bias.md",
+        "linkPath": "source://source/Confirmation%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Expected Value.md",
+        "linkPath": "source://source/Expected%20Value.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Hanlon's Razor.md",
+        "linkPath": "source://source/Hanlon's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Howard Marks.md",
+        "linkPath": "source://source/Howard%20Marks.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Second Order Thinking.md",
+        "linkPath": "source://source/Second%20Order%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Survivorship Bias.md",
+        "linkPath": "source://source/Survivorship%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ]

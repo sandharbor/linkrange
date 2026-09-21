@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t005 - in and out links.md",
+        "linkPath": "source://source/t005%20-%20in%20and%20out%20links.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t005 - in and out links.md",
+        "linkPath": "source://source/t005%20-%20in%20and%20out%20links.md",
         "isInGraph": true
       }
     ]

@@ -22,8 +22,7 @@ impl Fixture {
     }
     fn request(&self, sources: Vec<Source>, start: &str, outlinks: u32, inlinks: u32) -> Request {
         Request {
-            source_root: None,
-            sources: Some(sources),
+            sources,
             index: IndexOptions {
                 cache_directory: Some(self.0.path().join("cache")),
                 ..Default::default()
@@ -147,7 +146,7 @@ fn qualified_wikilinks_require_a_page_target() {
 }
 
 #[test]
-fn unknown_sources_are_query_scoped_occurrences_even_in_legacy_requests() {
+fn unknown_sources_are_query_scoped_occurrences_with_one_registered_source() {
     let f = Fixture::new();
     let notes = f.source("notes", &[]);
     f.write(
@@ -158,29 +157,29 @@ fn unknown_sources_are_query_scoped_occurrences_even_in_legacy_requests() {
     f.write(&notes, "Overview.md", "local namesake must not resolve");
     f.write(&notes, "Frontier.md", "[[Other::archive]]");
     f.write(&notes, "Unrelated.md", "[[Hidden::unrelated]]");
-    let mut request = f.request(vec![], "Start.md", 0, 0);
-    request.sources = None;
-    request.source_root = Some(notes.directory);
+    let mut request = f.request(vec![notes], "source://notes/Start.md", 0, 0);
     let normal = query(&request).unwrap();
-    assert_eq!(normal.schema_version, 1);
-    assert_eq!(paths(&normal), ["Start.md"]);
+    assert_eq!(normal.schema_version, SCHEMA_VERSION);
+    assert_eq!(paths(&normal), ["source://notes/Start.md"]);
     assert_eq!(normal.diagnostics.len(), 2);
     assert!(normal.diagnostics.iter().all(
         |d| d.code == "unregisteredSource" && d.requested_source.as_deref() == Some("research")
     ));
-    assert_eq!(normal.links_by_source["Start.md"].len(), 3);
-    assert!(normal.links_by_source["Start.md"][0].target.is_none());
+    assert_eq!(normal.links_by_source["source://notes/Start.md"].len(), 3);
+    assert!(normal.links_by_source["source://notes/Start.md"][0]
+        .target
+        .is_none());
     request.query.frontier_depth = 1;
     let frontier = query(&request).unwrap();
     assert_eq!(frontier.diagnostics.len(), 3);
     assert_eq!(
-        node(&frontier, "Frontier.md").inclusion,
+        node(&frontier, "source://notes/Frontier.md").inclusion,
         Inclusion::Frontier
     );
     request.query.depths.outlinks = 1;
     let traversed = query(&request).unwrap();
     assert_eq!(
-        node(&traversed, "Frontier.md").inclusion,
+        node(&traversed, "source://notes/Frontier.md").inclusion,
         Inclusion::Traversal
     );
     assert_eq!(traversed.diagnostics.len(), 3);
@@ -328,9 +327,7 @@ fn cache_reuse_is_independent_of_names_aliases_starts_and_selected_sources() {
     );
     let cold = query(&request).unwrap();
     assert_eq!(cold.metrics.unwrap().link_parses, 1);
-    request.sources.as_mut().unwrap()[1]
-        .aliases
-        .push("papers".into());
+    request.sources[1].aliases.push("papers".into());
     let registered = query(&request).unwrap();
     assert_eq!(registered.metrics.unwrap().link_parses, 0);
     assert!(registered.diagnostics.is_empty());
@@ -341,10 +338,8 @@ fn cache_reuse_is_independent_of_names_aliases_starts_and_selected_sources() {
     let added = query(&request).unwrap();
     assert_eq!(added.metrics.unwrap().link_parses, 1);
     assert_eq!(added.nodes.len(), 2);
-    request.sources.as_mut().unwrap()[1].name = "library".into();
-    request.sources.as_mut().unwrap()[1]
-        .aliases
-        .push("research".into());
+    request.sources[1].name = "library".into();
+    request.sources[1].aliases.push("research".into());
     let renamed = query(&request).unwrap();
     assert_eq!(renamed.metrics.unwrap().link_parses, 0);
     assert_eq!(
@@ -353,7 +348,7 @@ fn cache_reuse_is_independent_of_names_aliases_starts_and_selected_sources() {
             .as_deref(),
         Some("source://library/Target.md")
     );
-    request.sources.as_mut().unwrap().remove(1);
+    request.sources.remove(1);
     let removed = query(&request).unwrap();
     assert_eq!(removed.metrics.unwrap().link_parses, 0);
     assert_eq!(removed.diagnostics.len(), 1);
@@ -384,7 +379,7 @@ fn registry_validation_rejects_conflicts_overlap_and_unavailability_without_cach
     let before = cached();
     let check = |sources: Vec<Source>, message: &str| {
         let bad = Request {
-            sources: Some(sources),
+            sources,
             ..request.clone()
         };
         assert!(format!("{:#}", query(&bad).unwrap_err()).contains(message));
@@ -433,14 +428,7 @@ fn registry_validation_rejects_conflicts_overlap_and_unavailability_without_cach
     );
     fs::rename(&research.directory, f.0.path().join("disconnected")).unwrap();
     check(vec![notes, research], "unavailable");
-    let conflict = Request {
-        source_root: Some(f.0.path().into()),
-        ..request
-    };
-    assert!(query(&conflict)
-        .unwrap_err()
-        .to_string()
-        .contains("exactly one"));
+    check(vec![], "At least one source");
 }
 
 #[test]
@@ -468,11 +456,9 @@ fn cli_accepts_source_registry_and_rejects_conflicting_request_forms() {
             .len(),
         1
     );
-    let conflict = Request {
-        source_root: Some(notes.directory.clone()),
-        ..request
-    };
-    fs::write(&path, serde_json::to_vec(&conflict).unwrap()).unwrap();
+    let mut invalid = serde_json::to_value(&request).unwrap();
+    invalid["sourceRoot"] = serde_json::to_value(&notes.directory).unwrap();
+    fs::write(&path, serde_json::to_vec(&invalid).unwrap()).unwrap();
     let output = Command::new(env!("CARGO_BIN_EXE_linkrange"))
         .args(["query", "--request"])
         .arg(&path)
@@ -486,12 +472,100 @@ fn cli_accepts_source_registry_and_rejects_conflicting_request_forms() {
     assert!(!Command::new(env!("CARGO_BIN_EXE_linkrange"))
         .args(["query", "--request"])
         .arg(path)
-        .arg("--source-root")
-        .arg(notes.directory)
+        .arg("--source")
+        .arg(format!("notes={}", notes.directory.display()))
         .output()
         .unwrap()
         .status
         .success());
+}
+
+#[test]
+fn requests_require_sources_and_qualified_selectors_even_with_one_source() {
+    let f = Fixture::new();
+    let notes = f.source("notes", &[]);
+    f.write(&notes, "Start.md", "");
+    let request = f.request(vec![notes], "source://notes/Start.md", 0, 0);
+    let mut json = serde_json::to_value(&request).unwrap();
+    json.as_object_mut().unwrap().remove("sources");
+    assert!(serde_json::from_value::<Request>(json.clone()).is_err());
+    json["sourceRoot"] = f.0.path().to_string_lossy().into_owned().into();
+    assert!(serde_json::from_value::<Request>(json).is_err());
+    assert!(query(&Request {
+        sources: vec![],
+        ..request.clone()
+    })
+    .is_err());
+
+    for selector in ["start", "rule", "lookup"] {
+        let mut invalid = request.clone();
+        match selector {
+            "start" => invalid.query.starts[0].path = "Start.md".into(),
+            "rule" => invalid.query.rules.push(Rule {
+                path: "Start.md".into(),
+                stop: true,
+                ..Default::default()
+            }),
+            _ => invalid.query.lookup_paths.push("Start.md".into()),
+        }
+        assert!(
+            query(&invalid)
+                .unwrap_err()
+                .to_string()
+                .contains("Expected source://"),
+            "{selector}"
+        );
+    }
+}
+
+#[test]
+fn repeated_cli_sources_use_the_same_schema_as_json_for_one_or_many_sources() {
+    let f = Fixture::new();
+    let notes = f.source("notes", &[]);
+    let research = f.source("research", &[]);
+    f.write(&notes, "Start.md", "[[Overview::research]]");
+    f.write(&research, "Overview.md", "");
+    for sources in [vec![notes.clone()], vec![notes.clone(), research]] {
+        let mut request = f.request(sources.clone(), "source://notes/Start.md", 1, 0);
+        request.query.metrics = false;
+        let expected = serde_json::to_value(query(&request).unwrap()).unwrap();
+        let mut command = Command::new(env!("CARGO_BIN_EXE_linkrange"));
+        command.arg("query");
+        for source in sources {
+            command
+                .arg("--source")
+                .arg(format!("{}={}", source.name, source.directory.display()));
+        }
+        let output = command
+            .args([
+                "--start",
+                "source://notes/Start.md",
+                "--adjacency",
+                "--explain-resolution",
+                "--no-cache",
+            ])
+            .output()
+            .unwrap();
+        assert!(
+            output.status.success(),
+            "{}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        let actual: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+        assert_eq!(actual, expected);
+        assert_eq!(actual["schemaVersion"], SCHEMA_VERSION);
+        assert_eq!(
+            actual["sources"].as_array().unwrap().len(),
+            request.sources.len()
+        );
+    }
+    let removed_flag = Command::new(env!("CARGO_BIN_EXE_linkrange"))
+        .args(["query", "--source-root"])
+        .arg(&notes.directory)
+        .args(["--start", "Start.md"])
+        .output()
+        .unwrap();
+    assert!(!removed_flag.status.success());
 }
 
 #[cfg(unix)]

@@ -1,17 +1,24 @@
 {
   "name": "ordered-folders",
-  "source": "sources/folder-structure-test",
+  "fixtureDirectory": "sources/folder-structure-test",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/folder-structure-test",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "Beta",
+        "path": "source://source/Beta",
         "depths": {
           "outlinks": 2,
           "inlinks": 0
         }
       },
       {
-        "path": "Alpha",
+        "path": "source://source/Alpha",
         "depths": {
           "outlinks": 2,
           "inlinks": 0

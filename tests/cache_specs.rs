@@ -1,5 +1,13 @@
-use linkrange::{Graph, IndexOptions, Query, Start};
+use linkrange::{Graph, IndexOptions, Query, Source, Start};
 use std::{fs, path::Path};
+
+fn sources(root: &Path) -> Vec<Source> {
+    vec![Source {
+        name: "source".into(),
+        directory: root.into(),
+        aliases: Vec::new(),
+    }]
+}
 
 fn fixture() -> (tempfile::TempDir, IndexOptions) {
     let temp = tempfile::tempdir().unwrap();
@@ -22,24 +30,27 @@ fn incompatible_and_interrupted_caches_are_rebuilt_and_abandoned_staging_is_igno
     let (temp, options) = fixture();
     let root = temp.path().join("vault");
     fs::write(root.join("A.md"), "[[B]]").unwrap();
-    Graph::open(&root, &options).unwrap();
+    Graph::open(&sources(&root), &options).unwrap();
     let path = cache_file(options.cache_directory.as_ref().unwrap());
     let mut cache: serde_json::Value = serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
     cache["version"] = "incompatible".into();
     fs::write(&path, serde_json::to_vec(&cache).unwrap()).unwrap();
     assert!(
-        Graph::open(&root, &options)
+        Graph::open(&sources(&root), &options)
             .unwrap()
             .metrics()
             .cache_rebuilt
     );
     fs::write(&path, b"interrupted garbage").unwrap();
     assert_eq!(
-        Graph::open(&root, &options).unwrap().metrics().files_read,
+        Graph::open(&sources(&root), &options)
+            .unwrap()
+            .metrics()
+            .files_read,
         1
     );
     fs::write(path.with_extension("abandoned.tmp"), b"partial").unwrap();
-    let graph = Graph::open(&root, &options).unwrap();
+    let graph = Graph::open(&sources(&root), &options).unwrap();
     assert_eq!(graph.files().count(), 1);
     #[cfg(unix)]
     assert_eq!(graph.metrics().files_read, 0);
@@ -56,7 +67,7 @@ fn simultaneous_rebuilds_each_return_a_complete_index_and_publish_a_reusable_cac
             .map(|_| {
                 scope.spawn(|| {
                     Graph::open(
-                        &root,
+                        &sources(&root),
                         &IndexOptions {
                             rebuild: true,
                             ..options.clone()
@@ -72,7 +83,7 @@ fn simultaneous_rebuilds_each_return_a_complete_index_and_publish_a_reusable_cac
             assert_eq!(graph.metrics().files_read, 20);
         }
     });
-    let graph = Graph::open(&root, &options).unwrap();
+    let graph = Graph::open(&sources(&root), &options).unwrap();
     assert_eq!(graph.files().count(), 20);
     #[cfg(unix)]
     assert_eq!(graph.metrics().files_read, 0);
@@ -85,13 +96,13 @@ fn changed_time_detects_same_size_edits_even_when_modification_time_is_restored(
     let root = temp.path().join("vault");
     let path = root.join("A.md");
     fs::write(&path, "[[Alpha]]").unwrap();
-    let first = Graph::open(&root, &options).unwrap();
+    let first = Graph::open(&sources(&root), &options).unwrap();
     let modified = fs::metadata(&path).unwrap().modified().unwrap();
     std::thread::sleep(std::time::Duration::from_millis(5));
     let mut file = fs::OpenOptions::new().write(true).open(&path).unwrap();
     file.write_all(b"[[Bravo]]").unwrap();
     file.set_modified(modified).unwrap();
-    let next = Graph::open(&root, &options).unwrap();
+    let next = Graph::open(&sources(&root), &options).unwrap();
     assert_eq!(next.metrics().files_read, 1);
     assert_ne!(
         first.files().next().unwrap().digest,
@@ -100,14 +111,14 @@ fn changed_time_detects_same_size_edits_even_when_modification_time_is_restored(
     let response = next
         .query(&Query {
             starts: vec![Start {
-                path: "A.md".into(),
+                path: "source://source/A.md".into(),
                 depths: None,
             }],
             ..Default::default()
         })
         .unwrap();
     assert_eq!(
-        response.links_by_source["A.md"][0].link_original_text,
+        response.links_by_source["source://source/A.md"][0].link_original_text,
         "Bravo"
     );
 }
@@ -116,15 +127,15 @@ fn replacement_files_and_added_empty_directories_refresh_the_inventory() {
     let (temp, options) = fixture();
     let root = temp.path().join("vault");
     fs::write(root.join("A.md"), "[[Alpha]]").unwrap();
-    let old = Graph::open(&root, &options).unwrap();
+    let old = Graph::open(&sources(&root), &options).unwrap();
     fs::write(root.join("replacement.md"), "[[Bravo]]").unwrap();
     fs::rename(root.join("replacement.md"), root.join("A.md")).unwrap();
     fs::create_dir(root.join("empty")).unwrap();
-    let next = Graph::open(&root, &options).unwrap();
+    let next = Graph::open(&sources(&root), &options).unwrap();
     assert_eq!(next.metrics().files_read, 1);
     assert_ne!(
         old.files().next().unwrap().digest,
         next.files().next().unwrap().digest
     );
-    assert!(next.directories().contains("empty"));
+    assert!(next.directories().contains("source://source/empty"));
 }

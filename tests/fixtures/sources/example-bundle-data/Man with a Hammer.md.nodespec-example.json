@@ -3,41 +3,41 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Man with a Hammer.md",
+        "linkPath": "source://source/Man%20with%20a%20Hammer.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Man with a Hammer.md",
+        "linkPath": "source://source/Man%20with%20a%20Hammer.md",
         "isInGraph": true
       }
     ]

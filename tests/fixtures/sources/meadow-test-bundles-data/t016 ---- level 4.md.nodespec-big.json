@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t016 ---- level 5.md",
+        "linkPath": "source://source/t016%20----%20level%205.md",
         "isInGraph": false
       },
       {
-        "linkPath": "t016 ---- level 5 - frontier image.png",
+        "linkPath": "source://source/t016%20----%20level%205%20-%20frontier%20image.png",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t016 ---- level 3.md",
+        "linkPath": "source://source/t016%20----%20level%203.md",
         "isInGraph": true
       }
     ]

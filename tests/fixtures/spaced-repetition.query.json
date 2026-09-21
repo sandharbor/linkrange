@@ -1,10 +1,17 @@
 {
   "name": "spaced-repetition",
-  "source": "sources/meadow-test-bundles-data",
+  "fixtureDirectory": "sources/meadow-test-bundles-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/meadow-test-bundles-data",
+      "aliases": []
+    }
+  ],
   "query": {
     "starts": [
       {
-        "path": "t022 - spaced repetition.md"
+        "path": "source://source/t022%20-%20spaced%20repetition.md"
       }
     ],
     "depths": {

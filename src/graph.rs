@@ -1,12 +1,7 @@
-use crate::{
-    index,
-    sources::{normalize_relative, RegistryResolver},
-    *,
-};
+use crate::{index, sources::RegistryResolver, *};
 use anyhow::{Context, Result};
 use std::{
     collections::{BTreeMap, BTreeSet, HashMap, VecDeque},
-    path::Path,
     sync::Arc,
     time::Instant,
 };
@@ -194,14 +189,7 @@ impl Graph {
         steps
     }
 
-    pub fn open(root: &Path, options: &IndexOptions) -> Result<Self> {
-        let root = root.canonicalize().context("Source root is unavailable")?;
-        anyhow::ensure!(root.is_dir(), "Source root must be a directory");
-        let index = index::load(&root, options)?;
-        Self::from_index(index)
-    }
-
-    pub fn open_sources(sources: &[Source], options: &IndexOptions) -> Result<Self> {
+    pub fn open(sources: &[Source], options: &IndexOptions) -> Result<Self> {
         // Validate every physical boundary before loading or publishing any cache.
         let sources = crate::sources::validate_sources(sources)?;
         let indexes = sources
@@ -212,31 +200,13 @@ impl Graph {
                 Ok((source, index))
             })
             .collect::<Result<Vec<_>>>()?;
-        Self::from_indexes(indexes, true)
+        Self::from_indexes(indexes)
     }
 
-    pub(crate) fn from_index(index: index::Index) -> Result<Self> {
-        Self::from_indexes(
-            vec![(
-                Source {
-                    name: "source".into(),
-                    directory: Default::default(),
-                    aliases: Vec::new(),
-                },
-                index,
-            )],
-            false,
-        )
-    }
-
-    fn from_indexes(indexes: Vec<(Source, index::Index)>, qualified: bool) -> Result<Self> {
+    pub(crate) fn from_indexes(indexes: Vec<(Source, index::Index)>) -> Result<Self> {
         let timer = Instant::now();
-        let resolver = RegistryResolver::new(&indexes, qualified);
-        let sources = if qualified {
-            indexes.iter().map(|(source, _)| source.clone()).collect()
-        } else {
-            Vec::new()
-        };
+        let resolver = RegistryResolver::new(&indexes);
+        let sources = indexes.iter().map(|(source, _)| source.clone()).collect();
         let mut index = index::Index {
             files: Vec::new(),
             directories: BTreeSet::new(),
@@ -246,13 +216,7 @@ impl Graph {
             metrics: Metrics::default(),
         };
         for (source, mut local) in indexes {
-            let qualify = |path: &str| {
-                if qualified {
-                    source_locator(&source.name, path)
-                } else {
-                    path.into()
-                }
-            };
+            let qualify = |path: &str| source_locator(&source.name, path);
             for entry in &mut local.files {
                 for diagnostic in &mut entry.diagnostics {
                     diagnostic.path = qualify(&diagnostic.path);
@@ -339,17 +303,9 @@ impl Graph {
     }
 
     pub fn canonical_path(&self, path: &str) -> Result<String> {
-        let path = if self.resolver.qualified || path.starts_with("source://") {
-            let (name, relative) = parse_source_locator(path)?;
-            let canonical = self.resolver.canonical_name(&name)?;
-            if self.resolver.qualified {
-                source_locator(canonical, &relative)
-            } else {
-                relative
-            }
-        } else {
-            normalize_relative(path)?
-        };
+        let (name, relative) = parse_source_locator(path)?;
+        let canonical = self.resolver.canonical_name(&name)?;
+        let path = source_locator(canonical, &relative);
         let alias = self
             .index
             .aliases
@@ -651,11 +607,7 @@ impl Graph {
             metrics
         });
         Ok(Response {
-            schema_version: if self.sources.is_empty() {
-                SCHEMA_VERSION
-            } else {
-                MULTI_SOURCE_SCHEMA_VERSION
-            },
+            schema_version: SCHEMA_VERSION,
             sources: self.sources.clone(),
             complete: self.index.complete,
             nodes,

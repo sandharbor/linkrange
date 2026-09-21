@@ -3,65 +3,65 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "2026-02-02.md",
+        "linkPath": "source://source/2026-02-02.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "2026-02-02.md",
+        "linkPath": "source://source/2026-02-02.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Elon Musk.md",
+        "linkPath": "source://source/Elon%20Musk.md",
         "isInGraph": true
       },
       {
-        "linkPath": "First Principles Thinking.md",
+        "linkPath": "source://source/First%20Principles%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "William of Ockham.md",
+        "linkPath": "source://source/William%20of%20Ockham.md",
         "isInGraph": true
       }
     ]

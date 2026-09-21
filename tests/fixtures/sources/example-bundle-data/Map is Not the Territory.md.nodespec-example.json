@@ -3,61 +3,61 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Availability Bias.md",
+        "linkPath": "source://source/Availability%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "William of Ockham.md",
+        "linkPath": "source://source/William%20of%20Ockham.md",
         "isInGraph": true
       }
     ]

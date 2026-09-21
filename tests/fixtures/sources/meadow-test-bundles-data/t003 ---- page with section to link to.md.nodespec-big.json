@@ -4,7 +4,7 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "t003 - link to section.md",
+        "linkPath": "source://source/t003%20-%20link%20to%20section.md",
         "isInGraph": true
       }
     ]

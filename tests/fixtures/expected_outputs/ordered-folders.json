@@ -1,47 +1,47 @@
 {
   "adjacency": {
-    "Alpha/Alpha note.md": {
+    "source://source/Alpha/Alpha%20note.md": {
       "inlinks": [],
       "outlinks": [
-        "Alpha/Nested/Nested note.md",
-        "Outside/Outside note.md"
+        "source://source/Alpha/Nested/Nested%20note.md",
+        "source://source/Outside/Outside%20note.md"
       ]
     },
-    "Alpha/Nested/Nested note.md": {
+    "source://source/Alpha/Nested/Nested%20note.md": {
       "inlinks": [
-        "Alpha/Alpha note.md"
+        "source://source/Alpha/Alpha%20note.md"
       ],
       "outlinks": []
     },
-    "Alpha/Visual map.svg": {
+    "source://source/Alpha/Visual%20map.svg": {
       "inlinks": [],
       "outlinks": []
     },
-    "Beta/Beta note.md": {
+    "source://source/Beta/Beta%20note.md": {
       "inlinks": [],
       "outlinks": []
     },
-    "Outside/Beyond outside.md": {
+    "source://source/Outside/Beyond%20outside.md": {
       "inlinks": [
-        "Outside/Outside note.md"
+        "source://source/Outside/Outside%20note.md"
       ],
       "outlinks": [
-        "Outside/Frontier image.png",
-        "Outside/Frontier page.md"
+        "source://source/Outside/Frontier%20image.png",
+        "source://source/Outside/Frontier%20page.md"
       ]
     },
-    "Outside/Frontier image.png": {
+    "source://source/Outside/Frontier%20image.png": {
       "inlinks": [
-        "Outside/Beyond outside.md"
+        "source://source/Outside/Beyond%20outside.md"
       ],
       "outlinks": []
     },
-    "Outside/Outside note.md": {
+    "source://source/Outside/Outside%20note.md": {
       "inlinks": [
-        "Alpha/Alpha note.md"
+        "source://source/Alpha/Alpha%20note.md"
       ],
       "outlinks": [
-        "Outside/Beyond outside.md"
+        "source://source/Outside/Beyond%20outside.md"
       ]
     }
   },
@@ -61,13 +61,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Nested note",
-        "link_resolved_target_directory": "Alpha/Nested",
-        "link_resolved_target_path": "Alpha/Nested/Nested note.md",
-        "link_source_page_path": "Alpha/Alpha note.md",
-        "target": "Alpha/Nested/Nested note.md"
+        "link_resolved_target_directory": "source://source/Alpha/Nested",
+        "link_resolved_target_path": "source://source/Alpha/Nested/Nested%20note.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Alpha/Alpha%20note.md",
+        "target": "source://source/Alpha/Nested/Nested%20note.md"
       },
-      "source": "Alpha/Alpha note.md",
-      "target": "Alpha/Nested/Nested note.md"
+      "source": "source://source/Alpha/Alpha%20note.md",
+      "target": "source://source/Alpha/Nested/Nested%20note.md"
     },
     {
       "bidirectional": false,
@@ -82,13 +84,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Outside note",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Outside note.md",
-        "link_source_page_path": "Alpha/Alpha note.md",
-        "target": "Outside/Outside note.md"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Outside%20note.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Alpha/Alpha%20note.md",
+        "target": "source://source/Outside/Outside%20note.md"
       },
-      "source": "Alpha/Alpha note.md",
-      "target": "Outside/Outside note.md"
+      "source": "source://source/Alpha/Alpha%20note.md",
+      "target": "source://source/Outside/Outside%20note.md"
     },
     {
       "bidirectional": false,
@@ -103,13 +107,15 @@
         "link_parsed_file_type": "png",
         "link_parsed_media_size": null,
         "link_parsed_title": "Frontier image",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Frontier image.png",
-        "link_source_page_path": "Outside/Beyond outside.md",
-        "target": "Outside/Frontier image.png"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Frontier%20image.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Outside/Beyond%20outside.md",
+        "target": "source://source/Outside/Frontier%20image.png"
       },
-      "source": "Outside/Beyond outside.md",
-      "target": "Outside/Frontier image.png"
+      "source": "source://source/Outside/Beyond%20outside.md",
+      "target": "source://source/Outside/Frontier%20image.png"
     },
     {
       "bidirectional": false,
@@ -124,17 +130,19 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Beyond outside",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Beyond outside.md",
-        "link_source_page_path": "Outside/Outside note.md",
-        "target": "Outside/Beyond outside.md"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Beyond%20outside.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Outside/Outside%20note.md",
+        "target": "source://source/Outside/Beyond%20outside.md"
       },
-      "source": "Outside/Outside note.md",
-      "target": "Outside/Beyond outside.md"
+      "source": "source://source/Outside/Outside%20note.md",
+      "target": "source://source/Outside/Beyond%20outside.md"
     }
   ],
   "linksBySource": {
-    "Alpha/Alpha note.md": [
+    "source://source/Alpha/Alpha%20note.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -146,10 +154,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Nested note",
-        "link_resolved_target_directory": "Alpha/Nested",
-        "link_resolved_target_path": "Alpha/Nested/Nested note.md",
-        "link_source_page_path": "Alpha/Alpha note.md",
-        "target": "Alpha/Nested/Nested note.md"
+        "link_resolved_target_directory": "source://source/Alpha/Nested",
+        "link_resolved_target_path": "source://source/Alpha/Nested/Nested%20note.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Alpha/Alpha%20note.md",
+        "target": "source://source/Alpha/Nested/Nested%20note.md"
       },
       {
         "is_embedded": false,
@@ -162,16 +172,18 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Outside note",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Outside note.md",
-        "link_source_page_path": "Alpha/Alpha note.md",
-        "target": "Outside/Outside note.md"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Outside%20note.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Alpha/Alpha%20note.md",
+        "target": "source://source/Outside/Outside%20note.md"
       }
     ],
-    "Alpha/Nested/Nested note.md": [],
-    "Alpha/Visual map.svg": [],
-    "Beta/Beta note.md": [],
-    "Outside/Beyond outside.md": [
+    "source://source/Alpha/Nested/Nested%20note.md": [],
+    "source://source/Alpha/Visual%20map.svg": [],
+    "source://source/Beta/Beta%20note.md": [],
+    "source://source/Outside/Beyond%20outside.md": [
       {
         "is_embedded": true,
         "is_relative_path_link": false,
@@ -183,10 +195,12 @@
         "link_parsed_file_type": "png",
         "link_parsed_media_size": null,
         "link_parsed_title": "Frontier image",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Frontier image.png",
-        "link_source_page_path": "Outside/Beyond outside.md",
-        "target": "Outside/Frontier image.png"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Frontier%20image.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Outside/Beyond%20outside.md",
+        "target": "source://source/Outside/Frontier%20image.png"
       },
       {
         "is_embedded": false,
@@ -199,14 +213,16 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Frontier page",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Frontier page.md",
-        "link_source_page_path": "Outside/Beyond outside.md",
-        "target": "Outside/Frontier page.md"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Frontier%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Outside/Beyond%20outside.md",
+        "target": "source://source/Outside/Frontier%20page.md"
       }
     ],
-    "Outside/Frontier image.png": [],
-    "Outside/Outside note.md": [
+    "source://source/Outside/Frontier%20image.png": [],
+    "source://source/Outside/Outside%20note.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -218,10 +234,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "Beyond outside",
-        "link_resolved_target_directory": "Outside",
-        "link_resolved_target_path": "Outside/Beyond outside.md",
-        "link_source_page_path": "Outside/Outside note.md",
-        "target": "Outside/Beyond outside.md"
+        "link_resolved_target_directory": "source://source/Outside",
+        "link_resolved_target_path": "source://source/Outside/Beyond%20outside.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Outside/Outside%20note.md",
+        "target": "source://source/Outside/Beyond%20outside.md"
       }
     ]
   },
@@ -229,18 +247,18 @@
     {
       "depth": 0,
       "digest": "28799510dfd8488e486024aa98944b5525a2476a76415a9819ed9d0a73593b24",
-      "directory": "Alpha",
+      "directory": "source://source/Alpha",
       "format": "md",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Alpha/Alpha note.md",
+      "path": "source://source/Alpha/Alpha%20note.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2,
       "route": [
-        "Alpha/Alpha note.md"
+        "source://source/Alpha/Alpha%20note.md"
       ],
       "routeSteps": [
         {
@@ -249,7 +267,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Alpha note.md",
+          "path": "source://source/Alpha/Alpha%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -269,18 +287,18 @@
     {
       "depth": 0,
       "digest": "d5a8e13b20a1e6a755d0dec9854a399b3238166ba240f7cc666fc0f9c901d566",
-      "directory": "Alpha/Nested",
+      "directory": "source://source/Alpha/Nested",
       "format": "md",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Alpha/Nested/Nested note.md",
+      "path": "source://source/Alpha/Nested/Nested%20note.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2,
       "route": [
-        "Alpha/Nested/Nested note.md"
+        "source://source/Alpha/Nested/Nested%20note.md"
       ],
       "routeSteps": [
         {
@@ -289,7 +307,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Nested/Nested note.md",
+          "path": "source://source/Alpha/Nested/Nested%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -309,18 +327,18 @@
     {
       "depth": 0,
       "digest": "a473d8c02d0da49a7e126121c4efa1ba17baeaa01ee91d4f19ca5033f8d718c7",
-      "directory": "Alpha",
+      "directory": "source://source/Alpha",
       "format": "svg",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Alpha/Visual map.svg",
+      "path": "source://source/Alpha/Visual%20map.svg",
       "remainingInlinks": 0,
       "remainingOutlinks": 2,
       "route": [
-        "Alpha/Visual map.svg"
+        "source://source/Alpha/Visual%20map.svg"
       ],
       "routeSteps": [
         {
@@ -329,7 +347,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Visual map.svg",
+          "path": "source://source/Alpha/Visual%20map.svg",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -349,18 +367,18 @@
     {
       "depth": 0,
       "digest": "0807ee969bbb97a43efad6f673158b39deb5ed94d5edafc4656611fdff250d56",
-      "directory": "Beta",
+      "directory": "source://source/Beta",
       "format": "md",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Beta/Beta note.md",
+      "path": "source://source/Beta/Beta%20note.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2,
       "route": [
-        "Beta/Beta note.md"
+        "source://source/Beta/Beta%20note.md"
       ],
       "routeSteps": [
         {
@@ -369,7 +387,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Beta/Beta note.md",
+          "path": "source://source/Beta/Beta%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -389,7 +407,7 @@
     {
       "depth": 2,
       "digest": "141e6aac7994d8403baae0c689b19b893889200edf6da1243a3f3188c40b3b89",
-      "directory": "Outside",
+      "directory": "source://source/Outside",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -399,13 +417,13 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Outside/Beyond outside.md",
+      "path": "source://source/Outside/Beyond%20outside.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 0,
       "route": [
-        "Alpha/Alpha note.md",
-        "Outside/Outside note.md",
-        "Outside/Beyond outside.md"
+        "source://source/Alpha/Alpha%20note.md",
+        "source://source/Outside/Outside%20note.md",
+        "source://source/Outside/Beyond%20outside.md"
       ],
       "routeSteps": [
         {
@@ -414,7 +432,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Alpha note.md",
+          "path": "source://source/Alpha/Alpha%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -429,7 +447,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Outside note.md",
+          "path": "source://source/Outside/Outside%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 1,
           "retainedForTraversal": true,
@@ -444,7 +462,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Beyond outside.md",
+          "path": "source://source/Outside/Beyond%20outside.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 0,
           "retainedForTraversal": true,
@@ -464,7 +482,7 @@
     {
       "depth": 3,
       "digest": "f713dea78c073ababf04b9dfddfebb3f6ec5a916bbed30b58b0d7cee596c6bdf",
-      "directory": "Outside",
+      "directory": "source://source/Outside",
       "format": "png",
       "inclusion": "embeddedAsset",
       "inherited": {
@@ -474,14 +492,14 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Outside/Frontier image.png",
+      "path": "source://source/Outside/Frontier%20image.png",
       "remainingInlinks": 0,
       "remainingOutlinks": -1,
       "route": [
-        "Alpha/Alpha note.md",
-        "Outside/Outside note.md",
-        "Outside/Beyond outside.md",
-        "Outside/Frontier image.png"
+        "source://source/Alpha/Alpha%20note.md",
+        "source://source/Outside/Outside%20note.md",
+        "source://source/Outside/Beyond%20outside.md",
+        "source://source/Outside/Frontier%20image.png"
       ],
       "routeSteps": [
         {
@@ -490,7 +508,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Alpha note.md",
+          "path": "source://source/Alpha/Alpha%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -505,7 +523,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Outside note.md",
+          "path": "source://source/Outside/Outside%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 1,
           "retainedForTraversal": true,
@@ -520,7 +538,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Beyond outside.md",
+          "path": "source://source/Outside/Beyond%20outside.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 0,
           "retainedForTraversal": true,
@@ -535,7 +553,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Frontier image.png",
+          "path": "source://source/Outside/Frontier%20image.png",
           "remainingInlinks": 0,
           "remainingOutlinks": -1,
           "retainedForTraversal": true,
@@ -555,7 +573,7 @@
     {
       "depth": 1,
       "digest": "043c40a5ef0665cc95d6860d46d4ebf1fe9c8724c54cc4d9b4d301f6ae3056f8",
-      "directory": "Outside",
+      "directory": "source://source/Outside",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -565,12 +583,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "Outside/Outside note.md",
+      "path": "source://source/Outside/Outside%20note.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 1,
       "route": [
-        "Alpha/Alpha note.md",
-        "Outside/Outside note.md"
+        "source://source/Alpha/Alpha%20note.md",
+        "source://source/Outside/Outside%20note.md"
       ],
       "routeSteps": [
         {
@@ -579,7 +597,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Alpha/Alpha note.md",
+          "path": "source://source/Alpha/Alpha%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2,
           "retainedForTraversal": true,
@@ -594,7 +612,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "Outside/Outside note.md",
+          "path": "source://source/Outside/Outside%20note.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 1,
           "retainedForTraversal": true,
@@ -612,5 +630,11 @@
       "via": "outlink"
     }
   ],
-  "schemaVersion": 1
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/folder-structure-test",
+      "name": "source"
+    }
+  ]
 }

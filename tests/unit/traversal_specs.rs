@@ -2452,14 +2452,21 @@ fn run(
             diagnostics: Vec::new(),
         });
     }
-    let graph = crate::Graph::from_index(crate::index::Index {
-        files: records,
-        directories: BTreeSet::new(),
-        aliases: BTreeMap::new(),
-        diagnostics: Vec::new(),
-        complete: true,
-        metrics: Default::default(),
-    })
+    let graph = crate::Graph::from_indexes(vec![(
+        crate::Source {
+            name: "source".into(),
+            directory: Default::default(),
+            aliases: Vec::new(),
+        },
+        crate::index::Index {
+            files: records,
+            directories: BTreeSet::new(),
+            aliases: BTreeMap::new(),
+            diagnostics: Vec::new(),
+            complete: true,
+            metrics: Default::default(),
+        },
+    )])
     .unwrap();
     let mut rules = Vec::new();
     for config in configs {
@@ -2470,7 +2477,7 @@ fn run(
             ..
         } = config;
         rules.push(crate::Rule {
-            path: config.key().trim_start_matches('/').into(),
+            path: crate::source_locator("source", config.key().trim_start_matches('/')),
             outlinks: outlinks_depth.map(|n| n as u32),
             inlinks: inlinks_depth.map(|n| n as u32),
             stop: list_type == "blacklist",
@@ -2479,7 +2486,7 @@ fn run(
     }
     for path in blocked {
         rules.push(crate::Rule {
-            path: path.trim_start_matches('/').into(),
+            path: crate::source_locator("source", path.trim_start_matches('/')),
             exclude: true,
             ..Default::default()
         });
@@ -2488,7 +2495,7 @@ fn run(
         starts: seeds
             .iter()
             .map(|seed| crate::Start {
-                path: seed.file.key().trim_start_matches('/').into(),
+                path: crate::source_locator("source", seed.file.key().trim_start_matches('/')),
                 depths: Some(crate::Depths {
                     outlinks: seed.outlinks_depth as u32,
                     inlinks: seed.inlinks_depth as u32,
@@ -2505,9 +2512,10 @@ fn run(
         ..Default::default()
     };
     let response = graph.query(&query).unwrap();
-    let legacy_key = |path: &str| {
+    let fixture_key = |path: &str| {
+        let (_, path) = crate::parse_source_locator(path).unwrap();
         if path.contains('/') {
-            path.into()
+            path
         } else {
             format!("/{path}")
         }
@@ -2522,7 +2530,7 @@ fn run(
             .first()
             .is_some_and(|seed| seed.file.key() != focus.key())
     }) {
-        let focus = focus.key().trim_start_matches('/').to_string();
+        let focus = crate::source_locator("source", focus.key().trim_start_matches('/'));
         let min = response
             .nodes
             .iter()
@@ -2555,7 +2563,7 @@ fn run(
         .iter()
         .filter(|node| selected.contains(&node.file.path))
     {
-        let key = legacy_key(&node.file.path);
+        let key = fixture_key(&node.file.path);
         let mut file = files[&key].clone();
         for config in configs {
             if config.key() == key {
@@ -2577,7 +2585,7 @@ fn run(
             && edges.iter().any(|edge| {
                 edge.is_bidirectional
                     && edge.source.key() == key
-                    && edge.target.key() == legacy_key(&node.route[node.route.len() - 2])
+                    && edge.target.key() == fixture_key(&node.route[node.route.len() - 2])
             });
         let details = Details {
             outlinks_depth_set_first_time: node
@@ -2618,7 +2626,7 @@ fn run(
             depth: node.depth as i32,
             remaining_depth: node.remaining_outlinks as i32,
             remaining_inlinks_depth: node.remaining_inlinks as i32,
-            path: node.route.iter().map(|path| legacy_key(path)).collect(),
+            path: node.route.iter().map(|path| fixture_key(path)).collect(),
             traversal_details: Some(details),
             is_frontier_node: Some(node.inclusion == crate::Inclusion::Frontier),
             is_boundary_embed: Some(node.inclusion == crate::Inclusion::EmbeddedAsset),
@@ -2639,8 +2647,8 @@ fn run(
         if !selected.contains(&edge.source) || !selected.contains(&edge.target) {
             continue;
         }
-        let from = legacy_key(&edge.source);
-        let to = legacy_key(&edge.target);
+        let from = fixture_key(&edge.source);
+        let to = fixture_key(&edge.target);
         let pair = if edge.bidirectional && from > to {
             (to.clone(), from.clone())
         } else {

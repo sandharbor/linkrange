@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t013 - inlinks_depth.md",
+        "linkPath": "source://source/t013%20-%20inlinks_depth.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t013 ---- inlinks_depth - branch 1 - depth 2.md",
+        "linkPath": "source://source/t013%20----%20inlinks_depth%20-%20branch%201%20-%20depth%202.md",
         "isInGraph": false
       }
     ]

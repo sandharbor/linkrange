@@ -3,49 +3,49 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Benjamin Graham.md",
+        "linkPath": "source://source/Benjamin%20Graham.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Howard Marks.md",
+        "linkPath": "source://source/Howard%20Marks.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ]

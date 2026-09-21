@@ -4,15 +4,15 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t013 ---- inlinks_depth - branch 1 - depth 1.md",
+        "linkPath": "source://source/t013%20----%20inlinks_depth%20-%20branch%201%20-%20depth%201.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t013 ---- inlinks_depth - branch 2 - depth 1.md",
+        "linkPath": "source://source/t013%20----%20inlinks_depth%20-%20branch%202%20-%20depth%201.md",
         "isInGraph": true
       }
     ]

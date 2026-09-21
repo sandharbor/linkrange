@@ -3,45 +3,45 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t002/t002 ---- points to root dup.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20root%20dup.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to nested dup.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20nested%20dup.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to extra nested dup.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20extra%20nested%20dup.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to root png dup.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20root%20png%20dup.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to nested png dup.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20nested%20png%20dup.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002 ---- points to png dup 2 with no path from root.md",
+        "linkPath": "source://source/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20root.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/t002 ---- points to png dup 2 with no path from t002.md",
+        "linkPath": "source://source/t002/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20t002.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002/extra nested/t002 ---- points to png dup 2 with no path from extra nested.md",
+        "linkPath": "source://source/t002/extra%20nested/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20extra%20nested.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t002 - second directory/t002 ---- points to png dup 2 with no path from second directory.md",
+        "linkPath": "source://source/t002%20-%20second%20directory/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20second%20directory.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ]

@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t006 - second directory/embedded in page in other t006 directory.md",
+        "linkPath": "source://source/t006%20-%20second%20directory/embedded%20in%20page%20in%20other%20t006%20directory.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t006 - embedded media.md",
+        "linkPath": "source://source/t006%20-%20embedded%20media.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t006/t006 --- meadow-flower.svg",
+        "linkPath": "source://source/t006/t006%20---%20meadow-flower.svg",
         "isInGraph": true
       }
     ]

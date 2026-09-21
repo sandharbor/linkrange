@@ -3,13 +3,13 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Outside/Beyond outside.md",
+        "linkPath": "source://source/Outside/Beyond%20outside.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Alpha/Alpha note.md",
+        "linkPath": "source://source/Alpha/Alpha%20note.md",
         "isInGraph": true
       }
     ]

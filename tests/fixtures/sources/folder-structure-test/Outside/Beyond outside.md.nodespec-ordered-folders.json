@@ -3,17 +3,17 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Outside/Frontier image.png",
+        "linkPath": "source://source/Outside/Frontier%20image.png",
         "isInGraph": true
       },
       {
-        "linkPath": "Outside/Frontier page.md",
+        "linkPath": "source://source/Outside/Frontier%20page.md",
         "isInGraph": false
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Outside/Outside note.md",
+        "linkPath": "source://source/Outside/Outside%20note.md",
         "isInGraph": true
       }
     ]

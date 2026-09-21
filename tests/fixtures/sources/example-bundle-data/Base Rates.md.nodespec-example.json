@@ -3,57 +3,57 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Availability Bias.md",
+        "linkPath": "source://source/Availability%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Expected Value.md",
+        "linkPath": "source://source/Expected%20Value.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Survivorship Bias.md",
+        "linkPath": "source://source/Survivorship%20Bias.md",
         "isInGraph": false
       }
     ]

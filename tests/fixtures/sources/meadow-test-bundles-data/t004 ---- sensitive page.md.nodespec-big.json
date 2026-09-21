@@ -4,7 +4,7 @@
     "outlinks": [],
     "inlinks": [
       {
-        "linkPath": "t004 - sensitive.md",
+        "linkPath": "source://source/t004%20-%20sensitive.md",
         "isInGraph": true
       }
     ]

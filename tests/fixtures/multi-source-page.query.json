@@ -1,6 +1,6 @@
 {
   "name": "multi-source-page",
-  "source": "sources/multi-source",
+  "fixtureDirectory": "sources/multi-source",
   "sources": [
     {
       "name": "notes",

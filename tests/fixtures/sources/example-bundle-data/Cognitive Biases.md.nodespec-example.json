@@ -3,73 +3,73 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Availability Bias.md",
+        "linkPath": "source://source/Availability%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Confirmation Bias.md",
+        "linkPath": "source://source/Confirmation%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Inversion.md",
+        "linkPath": "source://source/Inversion.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Survivorship Bias.md",
+        "linkPath": "source://source/Survivorship%20Bias.md",
         "isInGraph": false
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Anchoring Bias.md",
+        "linkPath": "source://source/Anchoring%20Bias.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Availability Bias.md",
+        "linkPath": "source://source/Availability%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Cognitive Biases.md",
+        "linkPath": "source://source/Cognitive%20Biases.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Confirmation Bias.md",
+        "linkPath": "source://source/Confirmation%20Bias.md",
         "isInGraph": false
       },
       {
-        "linkPath": "Man with a Hammer.md",
+        "linkPath": "source://source/Man%20with%20a%20Hammer.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Survivorship Bias.md",
+        "linkPath": "source://source/Survivorship%20Bias.md",
         "isInGraph": false
       }
     ]

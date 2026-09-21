@@ -3,89 +3,89 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Margin of Safety.md",
+        "linkPath": "source://source/Margin%20of%20Safety.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "2026-02-02.md",
+        "linkPath": "source://source/2026-02-02.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Alfred Korzybski.md",
+        "linkPath": "source://source/Alfred%20Korzybski.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Charlie Munger.md",
+        "linkPath": "source://source/Charlie%20Munger.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Circle of Competence.md",
+        "linkPath": "source://source/Circle%20of%20Competence.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Feedback Loops.md",
+        "linkPath": "source://source/Feedback%20Loops.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Hanlon's Razor.md",
+        "linkPath": "source://source/Hanlon's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Howard Marks.md",
+        "linkPath": "source://source/Howard%20Marks.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Latticework of Mental Models.md",
+        "linkPath": "source://source/Latticework%20of%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Man with a Hammer.md",
+        "linkPath": "source://source/Man%20with%20a%20Hammer.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Map is Not the Territory.md",
+        "linkPath": "source://source/Map%20is%20Not%20the%20Territory.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Mental Models Overview.md",
+        "linkPath": "source://source/Mental%20Models%20Overview.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Thoughts on Munger's Investment Portfolio.md",
+        "linkPath": "source://source/Thoughts%20on%20Munger's%20Investment%20Portfolio.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Warren Buffett.md",
+        "linkPath": "source://source/Warren%20Buffett.md",
         "isInGraph": true
       }
     ]

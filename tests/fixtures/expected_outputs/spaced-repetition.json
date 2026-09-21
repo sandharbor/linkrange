@@ -1,30 +1,30 @@
 {
   "adjacency": {
-    "t022 - spaced repetition.md": {
+    "source://source/t022%20-%20spaced%20repetition.md": {
       "inlinks": [
-        "main page.md"
+        "source://source/main%20page.md"
       ],
       "outlinks": [
-        "t022/t022 ---- alpha cards.md",
-        "t022/t022 ---- beta cards.md"
+        "source://source/t022/t022%20----%20alpha%20cards.md",
+        "source://source/t022/t022%20----%20beta%20cards.md"
       ]
     },
-    "t022/t022 ---- alpha cards.md": {
+    "source://source/t022/t022%20----%20alpha%20cards.md": {
       "inlinks": [
-        "t022 - spaced repetition.md",
-        "t022/t022 ---- beta cards.md"
+        "source://source/t022%20-%20spaced%20repetition.md",
+        "source://source/t022/t022%20----%20beta%20cards.md"
       ],
       "outlinks": [
-        "t022/t022 ---- beta cards.md"
+        "source://source/t022/t022%20----%20beta%20cards.md"
       ]
     },
-    "t022/t022 ---- beta cards.md": {
+    "source://source/t022/t022%20----%20beta%20cards.md": {
       "inlinks": [
-        "t022 - spaced repetition.md",
-        "t022/t022 ---- alpha cards.md"
+        "source://source/t022%20-%20spaced%20repetition.md",
+        "source://source/t022/t022%20----%20alpha%20cards.md"
       ],
       "outlinks": [
-        "t022/t022 ---- alpha cards.md"
+        "source://source/t022/t022%20----%20alpha%20cards.md"
       ]
     }
   },
@@ -44,13 +44,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- alpha cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
-        "link_source_page_path": "t022 - spaced repetition.md",
-        "target": "t022/t022 ---- alpha cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022%20-%20spaced%20repetition.md",
+        "target": "source://source/t022/t022%20----%20alpha%20cards.md"
       },
-      "source": "t022 - spaced repetition.md",
-      "target": "t022/t022 ---- alpha cards.md"
+      "source": "source://source/t022%20-%20spaced%20repetition.md",
+      "target": "source://source/t022/t022%20----%20alpha%20cards.md"
     },
     {
       "bidirectional": false,
@@ -65,13 +67,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- beta cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
-        "link_source_page_path": "t022 - spaced repetition.md",
-        "target": "t022/t022 ---- beta cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022%20-%20spaced%20repetition.md",
+        "target": "source://source/t022/t022%20----%20beta%20cards.md"
       },
-      "source": "t022 - spaced repetition.md",
-      "target": "t022/t022 ---- beta cards.md"
+      "source": "source://source/t022%20-%20spaced%20repetition.md",
+      "target": "source://source/t022/t022%20----%20beta%20cards.md"
     },
     {
       "bidirectional": true,
@@ -86,13 +90,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- beta cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
-        "link_source_page_path": "t022/t022 ---- alpha cards.md",
-        "target": "t022/t022 ---- beta cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "target": "source://source/t022/t022%20----%20beta%20cards.md"
       },
-      "source": "t022/t022 ---- alpha cards.md",
-      "target": "t022/t022 ---- beta cards.md"
+      "source": "source://source/t022/t022%20----%20alpha%20cards.md",
+      "target": "source://source/t022/t022%20----%20beta%20cards.md"
     },
     {
       "bidirectional": true,
@@ -107,17 +113,19 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- alpha cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
-        "link_source_page_path": "t022/t022 ---- beta cards.md",
-        "target": "t022/t022 ---- alpha cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "target": "source://source/t022/t022%20----%20alpha%20cards.md"
       },
-      "source": "t022/t022 ---- beta cards.md",
-      "target": "t022/t022 ---- alpha cards.md"
+      "source": "source://source/t022/t022%20----%20beta%20cards.md",
+      "target": "source://source/t022/t022%20----%20alpha%20cards.md"
     }
   ],
   "linksBySource": {
-    "t022 - spaced repetition.md": [
+    "source://source/t022%20-%20spaced%20repetition.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -129,10 +137,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- alpha cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
-        "link_source_page_path": "t022 - spaced repetition.md",
-        "target": "t022/t022 ---- alpha cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022%20-%20spaced%20repetition.md",
+        "target": "source://source/t022/t022%20----%20alpha%20cards.md"
       },
       {
         "is_embedded": false,
@@ -145,13 +155,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- beta cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
-        "link_source_page_path": "t022 - spaced repetition.md",
-        "target": "t022/t022 ---- beta cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022%20-%20spaced%20repetition.md",
+        "target": "source://source/t022/t022%20----%20beta%20cards.md"
       }
     ],
-    "t022/t022 ---- alpha cards.md": [
+    "source://source/t022/t022%20----%20alpha%20cards.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -163,13 +175,15 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- beta cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- beta cards.md",
-        "link_source_page_path": "t022/t022 ---- alpha cards.md",
-        "target": "t022/t022 ---- beta cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "target": "source://source/t022/t022%20----%20beta%20cards.md"
       }
     ],
-    "t022/t022 ---- beta cards.md": [
+    "source://source/t022/t022%20----%20beta%20cards.md": [
       {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -181,10 +195,12 @@
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
         "link_parsed_title": "t022 ---- alpha cards",
-        "link_resolved_target_directory": "t022",
-        "link_resolved_target_path": "t022/t022 ---- alpha cards.md",
-        "link_source_page_path": "t022/t022 ---- beta cards.md",
-        "target": "t022/t022 ---- alpha cards.md"
+        "link_resolved_target_directory": "source://source/t022",
+        "link_resolved_target_path": "source://source/t022/t022%20----%20alpha%20cards.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t022/t022%20----%20beta%20cards.md",
+        "target": "source://source/t022/t022%20----%20alpha%20cards.md"
       }
     ]
   },
@@ -192,18 +208,18 @@
     {
       "depth": 0,
       "digest": "5eb4017c6e3afca7784d8c2dab54e7262cf82d409527a6ab6b955dd395da3610",
-      "directory": "",
+      "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
       "inherited": null,
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t022 - spaced repetition.md",
+      "path": "source://source/t022%20-%20spaced%20repetition.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483647,
       "route": [
-        "t022 - spaced repetition.md"
+        "source://source/t022%20-%20spaced%20repetition.md"
       ],
       "routeSteps": [
         {
@@ -212,7 +228,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t022 - spaced repetition.md",
+          "path": "source://source/t022%20-%20spaced%20repetition.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -232,7 +248,7 @@
     {
       "depth": 1,
       "digest": "2e1d1abcc837433d1e0e355ff8beee5bff3e16f4b109733ec9eb8c3827b8dda7",
-      "directory": "t022",
+      "directory": "source://source/t022",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -242,12 +258,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t022/t022 ---- alpha cards.md",
+      "path": "source://source/t022/t022%20----%20alpha%20cards.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483646,
       "route": [
-        "t022 - spaced repetition.md",
-        "t022/t022 ---- alpha cards.md"
+        "source://source/t022%20-%20spaced%20repetition.md",
+        "source://source/t022/t022%20----%20alpha%20cards.md"
       ],
       "routeSteps": [
         {
@@ -256,7 +272,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t022 - spaced repetition.md",
+          "path": "source://source/t022%20-%20spaced%20repetition.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -271,7 +287,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t022/t022 ---- alpha cards.md",
+          "path": "source://source/t022/t022%20----%20alpha%20cards.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483646,
           "retainedForTraversal": true,
@@ -291,7 +307,7 @@
     {
       "depth": 1,
       "digest": "d3a82d25409cf7d48bc636c0d3c459436390b0aecbbba2f485d8767cf504cc3c",
-      "directory": "t022",
+      "directory": "source://source/t022",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
@@ -301,12 +317,12 @@
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
-      "path": "t022/t022 ---- beta cards.md",
+      "path": "source://source/t022/t022%20----%20beta%20cards.md",
       "remainingInlinks": 0,
       "remainingOutlinks": 2147483646,
       "route": [
-        "t022 - spaced repetition.md",
-        "t022/t022 ---- beta cards.md"
+        "source://source/t022%20-%20spaced%20repetition.md",
+        "source://source/t022/t022%20----%20beta%20cards.md"
       ],
       "routeSteps": [
         {
@@ -315,7 +331,7 @@
           "inherited": null,
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t022 - spaced repetition.md",
+          "path": "source://source/t022%20-%20spaced%20repetition.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483647,
           "retainedForTraversal": true,
@@ -330,7 +346,7 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "t022/t022 ---- beta cards.md",
+          "path": "source://source/t022/t022%20----%20beta%20cards.md",
           "remainingInlinks": 0,
           "remainingOutlinks": 2147483646,
           "retainedForTraversal": true,
@@ -348,5 +364,11 @@
       "via": "outlink"
     }
   ],
-  "schemaVersion": 1
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/meadow-test-bundles-data",
+      "name": "source"
+    }
+  ]
 }

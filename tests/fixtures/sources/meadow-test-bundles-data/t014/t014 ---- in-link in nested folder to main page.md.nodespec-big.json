@@ -3,7 +3,7 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ],

@@ -3,49 +3,49 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Hanlon's Razor.md",
+        "linkPath": "source://source/Hanlon's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Probabilistic Thinking.md",
+        "linkPath": "source://source/Probabilistic%20Thinking.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       },
       {
-        "linkPath": "William of Ockham.md",
+        "linkPath": "source://source/William%20of%20Ockham.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "Base Rates.md",
+        "linkPath": "source://source/Base%20Rates.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Hanlon's Razor.md",
+        "linkPath": "source://source/Hanlon's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Notable Mental Models.md",
+        "linkPath": "source://source/Notable%20Mental%20Models.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Occam's Razor.md",
+        "linkPath": "source://source/Occam's%20Razor.md",
         "isInGraph": true
       },
       {
-        "linkPath": "Razors.md",
+        "linkPath": "source://source/Razors.md",
         "isInGraph": true
       }
     ]

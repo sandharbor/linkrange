@@ -3,25 +3,25 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t023/multiple_links/t023 ---- page a.md",
+        "linkPath": "source://source/t023/multiple_links/t023%20----%20page%20a.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t023/multiple_links/t023 ---- page b.md",
+        "linkPath": "source://source/t023/multiple_links/t023%20----%20page%20b.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t023/table/t023 ---- table row 1.md",
+        "linkPath": "source://source/t023/table/t023%20----%20table%20row%201.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t023/table/t023 ---- table row 2.md",
+        "linkPath": "source://source/t023/table/t023%20----%20table%20row%202.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "main page.md",
+        "linkPath": "source://source/main%20page.md",
         "isInGraph": true
       }
     ]

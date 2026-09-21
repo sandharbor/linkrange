@@ -3,21 +3,21 @@
   "links": {
     "outlinks": [
       {
-        "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+        "linkPath": "source://source/t010/t010%20----%20same%20depth%203%20-%201%20out%203%20in.md",
         "isInGraph": true
       }
     ],
     "inlinks": [
       {
-        "linkPath": "t010 - linking in same depth.md",
+        "linkPath": "source://source/t010%20-%20linking%20in%20same%20depth.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t010/t010 ---- same depth 1 - 2 out 0 in.md",
+        "linkPath": "source://source/t010/t010%20----%20same%20depth%201%20-%202%20out%200%20in.md",
         "isInGraph": true
       },
       {
-        "linkPath": "t010/t010 ---- same depth 3 - 1 out 3 in.md",
+        "linkPath": "source://source/t010/t010%20----%20same%20depth%203%20-%201%20out%203%20in.md",
         "isInGraph": true
       }
     ]
