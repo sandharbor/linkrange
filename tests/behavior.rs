@@ -922,17 +922,13 @@ fn route_steps_preserve_the_arrival_that_enabled_each_hop_despite_a_shorter_disp
         let hub = node(&response, "Hub.md");
         assert_eq!(hub.route, ["Start.md", "Hub.md"].map(locator));
         assert_eq!((hub.depth, hub.remaining_inlinks), (1, 0));
-        assert_eq!(
-            hub.route_steps.last().unwrap().retained_for_traversal,
-            Some(false)
-        );
+        assert!(!hub.route_steps.last().unwrap().retained_for_traversal);
         assert_eq!(hub.alternative_routes.len(), 1);
-        assert_eq!(
+        assert!(
             hub.alternative_routes[0]
                 .last()
                 .unwrap()
-                .retained_for_traversal,
-            Some(true)
+                .retained_for_traversal
         );
         assert_eq!(
             hub.alternative_routes[0]
@@ -1058,11 +1054,8 @@ fn a_zero_override_preserves_the_stronger_arrival_for_explanation_without_traver
             ["Start.md", "Taxonomy.md", "Hub.md"].map(locator)
         );
         let arrival = steps.last().unwrap();
-        assert_eq!(
-            hub.route_steps.last().unwrap().retained_for_traversal,
-            Some(true)
-        );
-        assert_eq!(arrival.retained_for_traversal, Some(false));
+        assert!(hub.route_steps.last().unwrap().retained_for_traversal);
+        assert!(!arrival.retained_for_traversal);
         assert_eq!(arrival.inherited.as_ref().unwrap().remaining_inlinks, 1);
         assert_eq!(arrival.overridden_inlinks, Some(0));
         assert_eq!(arrival.remaining_inlinks, 0);
@@ -1176,7 +1169,7 @@ fn alternative_routes_preserve_every_useful_budget_pair_without_synthesizing_the
     // Then the intermediate tradeoff is retained, and the synthetic 5/4 arrival does not exist.
     assert!(routes
         .iter()
-        .all(|route| route.last().unwrap().retained_for_traversal == Some(true)));
+        .all(|route| route.last().unwrap().retained_for_traversal));
     assert!(paths(&response).contains(&"Incoming2.md".to_string()));
     assert!(!paths(&response).contains(&"Incoming3.md".to_string()));
     assert!(!hub

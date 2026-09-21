@@ -206,8 +206,7 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   Each route step's `retainedForTraversal` identifies whether that exact arrival
   belongs to the final traversal states or is preserved only as explanation.
   Several arrivals may be retained when their budgets trade off; equal numeric
-  budgets alone do not establish which route is retained. Older responses omit
-  this field, meaning the status is unknown.
+  budgets alone do not establish which route is retained.
   Independent maxima are useful display summaries,
   never a combined traversal state: arrivals with budgets 5/0 and 2/3 do not create 5/3.
 - **Pruning:** `stop` includes a node but prevents expansion through it; `exclude`

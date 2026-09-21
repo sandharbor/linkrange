@@ -198,8 +198,7 @@ pub struct RouteStep {
     /// Whether this exact arrival is retained in the node's final traversal states.
     /// False means it is retained only as route evidence, even if its budgets equal
     /// another arrival's. This is not a history of which queue entries were expanded.
-    #[serde(default, skip_serializing_if = "Option::is_none")]
-    pub retained_for_traversal: Option<bool>,
+    pub retained_for_traversal: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]

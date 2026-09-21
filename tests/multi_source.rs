@@ -558,6 +558,16 @@ fn repeated_cli_sources_use_the_same_schema_as_json_for_one_or_many_sources() {
             actual["sources"].as_array().unwrap().len(),
             request.sources.len()
         );
+        assert!(serde_json::from_value::<Response>(actual.clone()).is_ok());
+        let mut missing_registry = actual.clone();
+        missing_registry.as_object_mut().unwrap().remove("sources");
+        assert!(serde_json::from_value::<Response>(missing_registry).is_err());
+        let mut missing_route_status = actual;
+        missing_route_status["nodes"][0]["routeSteps"][0]
+            .as_object_mut()
+            .unwrap()
+            .remove("retainedForTraversal");
+        assert!(serde_json::from_value::<Response>(missing_route_status).is_err());
     }
     let removed_flag = Command::new(env!("CARGO_BIN_EXE_linkrange"))
         .args(["query", "--source-root"])

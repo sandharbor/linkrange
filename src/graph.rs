@@ -177,11 +177,11 @@ impl Graph {
                 inherited: step.inherited.clone(),
                 overridden_outlinks: step.override_out,
                 overridden_inlinks: step.override_in,
-                retained_for_traversal: Some(retained.get(&step.id).is_some_and(|states| {
+                retained_for_traversal: retained.get(&step.id).is_some_and(|states| {
                     states
                         .iter()
                         .any(|state| std::ptr::eq(state.as_ref(), step))
-                })),
+                }),
             });
             arrival = step.previous.as_deref();
         }
