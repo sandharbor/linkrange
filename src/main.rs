@@ -16,7 +16,7 @@ struct Cli {
 enum Command {
     Query {
         /// Versioned query request JSON file; '-' reads standard input.
-        #[arg(long)]
+        #[arg(long, conflicts_with = "source_root")]
         request: Option<PathBuf>,
         #[arg(long)]
         source_root: Option<PathBuf>,
@@ -88,8 +88,11 @@ fn run() -> anyhow::Result<()> {
         serde_json::from_str::<Request>(&text)?
     } else {
         Request {
-            source_root: source_root
-                .ok_or_else(|| anyhow::anyhow!("--source-root or --request is required"))?,
+            source_root: Some(
+                source_root
+                    .ok_or_else(|| anyhow::anyhow!("--source-root or --request is required"))?,
+            ),
+            sources: None,
             index: IndexOptions {
                 cache_directory,
                 no_cache,

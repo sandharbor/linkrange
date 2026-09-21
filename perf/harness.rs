@@ -229,7 +229,8 @@ fn measure(directory: &Path, repeats: usize, selected: &str, cli: Option<PathBuf
     let root = directory.join("source");
     let request_path = directory.join("request.json");
     let request = Request {
-        source_root: root.clone(),
+        source_root: Some(root.clone()),
+        sources: None,
         index: IndexOptions {
             cache_directory: Some(directory.join("cache")),
             frontmatter: vec![FrontmatterField {

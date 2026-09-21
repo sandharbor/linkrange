@@ -20,6 +20,8 @@ impl fmt::Display for AnchorType {
 
 #[derive(Debug, PartialEq, Eq, Clone)]
 pub struct LinkSemantics {
+    pub requested_source: Option<String>,
+    pub source_error: Option<String>,
     pub title: String,
     pub target_path_prefix: String,
     pub alias: Option<String>,
@@ -94,10 +96,21 @@ fn is_image_extension(filename_candidate: &str) -> bool {
 }
 
 pub fn parse_link_text(original_link_text: &str) -> LinkSemantics {
+    let (unqualified, requested_source) = crate::sources::wiki_target(original_link_text);
+    let source_error = requested_source.as_ref().and_then(|name| {
+        (crate::validate_source_name(name).is_err()
+            || unqualified
+                .split(['#', '^', '|'])
+                .next()
+                .unwrap_or("")
+                .trim()
+                .is_empty())
+        .then(|| "invalidSourceReference".into())
+    });
     // Normalize escaped pipes (\|) to regular pipes (|).
     // In markdown tables, Obsidian escapes the alias pipe as \| to avoid
     // conflicting with the table cell separator.
-    let normalized = original_link_text.replace("\\|", "|");
+    let normalized = unqualified.replace("\\|", "|");
     let link_text = normalized.as_str();
 
     let mut text_for_path_and_title_and_anchor = link_text;
@@ -195,6 +208,8 @@ pub fn parse_link_text(original_link_text: &str) -> LinkSemantics {
     }
 
     LinkSemantics {
+        requested_source,
+        source_error,
         title: title_to_return,
         target_path_prefix: parsed_prefix,
         alias: parsed_alias,
@@ -210,7 +225,8 @@ pub fn parse_link_text(original_link_text: &str) -> LinkSemantics {
 /// this function handles explicit relative paths where the file extension is always present
 /// and display text / alias are provided separately by the caller.
 pub fn parse_markdown_link_href(href: &str) -> LinkSemantics {
-    let mut path_portion = href;
+    let (unqualified, requested_source, source_error) = crate::sources::url_target(href);
+    let mut path_portion = unqualified.as_str();
     let mut final_anchor: Option<String> = None;
     let mut final_anchor_type: Option<AnchorType> = None;
 
@@ -269,6 +285,8 @@ pub fn parse_markdown_link_href(href: &str) -> LinkSemantics {
     }
 
     LinkSemantics {
+        requested_source,
+        source_error,
         title,
         target_path_prefix: parsed_prefix,
         alias: None,
@@ -298,6 +316,8 @@ mod tests {
         assert_eq!(
             parse_link_text(original),
             LinkSemantics {
+                requested_source: None,
+                source_error: None,
                 title: expected_title.to_string(),
                 target_path_prefix: expected_prefix.to_string(),
                 alias: expected_alias.map(String::from),
@@ -969,6 +989,8 @@ mod tests {
         assert_eq!(
             parse_markdown_link_href(href),
             LinkSemantics {
+                requested_source: None,
+                source_error: None,
                 title: expected_title.to_string(),
                 target_path_prefix: expected_prefix.to_string(),
                 alias: None,

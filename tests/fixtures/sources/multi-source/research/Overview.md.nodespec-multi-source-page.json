@@ -1,0 +1,37 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://notes/Start.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Same/Inside.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://notes/diagram.svg",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "source://notes/Start.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Incoming.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Same/Inside.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://reference/Study.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

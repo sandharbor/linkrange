@@ -2,6 +2,17 @@ use serde::{Deserialize, Serialize};
 use std::{collections::BTreeMap, path::PathBuf};
 
 pub const SCHEMA_VERSION: u32 = 1;
+pub const MULTI_SOURCE_SCHEMA_VERSION: u32 = 2;
+
+/// One admitted filesystem boundary. Names and aliases are portable; directories are local.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase", deny_unknown_fields)]
+pub struct Source {
+    pub name: String,
+    pub directory: PathBuf,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub aliases: Vec<String>,
+}
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
@@ -114,7 +125,10 @@ impl Default for Query {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
 pub struct Request {
-    pub source_root: PathBuf,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_root: Option<PathBuf>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sources: Option<Vec<Source>>,
     #[serde(default)]
     pub index: IndexOptions,
     pub query: Query,
@@ -126,6 +140,10 @@ pub struct Diagnostic {
     pub path: String,
     pub code: String,
     pub message: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub requested_source: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub link_original_text: Option<String>,
 }
 
 impl Diagnostic {
@@ -134,6 +152,8 @@ impl Diagnostic {
             path: path.into(),
             code: code.into(),
             message: message.to_string(),
+            requested_source: None,
+            link_original_text: None,
         }
     }
 }
@@ -250,6 +270,8 @@ pub struct Edge {
 pub struct Response {
     pub schema_version: u32,
     pub complete: bool,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sources: Vec<Source>,
     pub nodes: Vec<Node>,
     pub edges: Vec<Edge>,
     pub links_by_source: BTreeMap<String, Vec<crate::Link>>,

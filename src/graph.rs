@@ -1,4 +1,8 @@
-use crate::{index, resolver::Resolver, *};
+use crate::{
+    index,
+    sources::{normalize_relative, RegistryResolver},
+    *,
+};
 use anyhow::{Context, Result};
 use std::{
     collections::{BTreeMap, BTreeSet, HashMap, VecDeque},
@@ -12,7 +16,8 @@ pub struct Graph {
     by_path: HashMap<String, usize>,
     outgoing: Vec<Vec<(usize, usize)>>,
     incoming: Vec<Vec<usize>>,
-    resolver: Resolver,
+    resolver: RegistryResolver,
+    sources: Vec<Source>,
 }
 
 #[derive(Clone, PartialEq, Eq)]
@@ -50,20 +55,8 @@ struct Policy {
     exclude: bool,
 }
 
-fn normalize(path: &str) -> Result<String> {
-    anyhow::ensure!(
-        !path.starts_with('/') && !path.contains('\\') && !path.contains('\0'),
-        "Expected source-root-relative path: {path}"
-    );
-    anyhow::ensure!(
-        !path.split('/').any(|segment| segment == ".."),
-        "Path must remain inside source root: {path}"
-    );
-    Ok(path
-        .split('/')
-        .filter(|segment| !segment.is_empty() && *segment != ".")
-        .collect::<Vec<_>>()
-        .join("/"))
+fn is_descendant(path: &str, parent: &str) -> bool {
+    parent.is_empty() || path.starts_with(&format!("{}/", parent.trim_end_matches('/')))
 }
 
 fn display_key(state: &State) -> (u8, i64, u32, i64, std::cmp::Reverse<u32>) {
@@ -208,12 +201,95 @@ impl Graph {
         Self::from_index(index)
     }
 
-    pub(crate) fn from_index(mut index: index::Index) -> Result<Self> {
+    pub fn open_sources(sources: &[Source], options: &IndexOptions) -> Result<Self> {
+        // Validate every physical boundary before loading or publishing any cache.
+        let sources = crate::sources::validate_sources(sources)?;
+        let indexes = sources
+            .into_iter()
+            .map(|source| {
+                let index = index::load(&source.directory, options)
+                    .with_context(|| format!("Could not index source {:?}", source.name))?;
+                Ok((source, index))
+            })
+            .collect::<Result<Vec<_>>>()?;
+        Self::from_indexes(indexes, true)
+    }
+
+    pub(crate) fn from_index(index: index::Index) -> Result<Self> {
+        Self::from_indexes(
+            vec![(
+                Source {
+                    name: "source".into(),
+                    directory: Default::default(),
+                    aliases: Vec::new(),
+                },
+                index,
+            )],
+            false,
+        )
+    }
+
+    fn from_indexes(indexes: Vec<(Source, index::Index)>, qualified: bool) -> Result<Self> {
         let timer = Instant::now();
-        let resolver = Resolver::new(
-            index.files.iter().map(|entry| &entry.scan.source_file),
-            &index.aliases,
-        );
+        let resolver = RegistryResolver::new(&indexes, qualified);
+        let sources = if qualified {
+            indexes.iter().map(|(source, _)| source.clone()).collect()
+        } else {
+            Vec::new()
+        };
+        let mut index = index::Index {
+            files: Vec::new(),
+            directories: BTreeSet::new(),
+            aliases: BTreeMap::new(),
+            diagnostics: Vec::new(),
+            complete: true,
+            metrics: Metrics::default(),
+        };
+        for (source, mut local) in indexes {
+            let qualify = |path: &str| {
+                if qualified {
+                    source_locator(&source.name, path)
+                } else {
+                    path.into()
+                }
+            };
+            for entry in &mut local.files {
+                for diagnostic in &mut entry.diagnostics {
+                    diagnostic.path = qualify(&diagnostic.path);
+                }
+                for link in &mut entry.scan.outgoing_links {
+                    if let Some(diagnostic) =
+                        resolver.resolve(link, &source.name, &entry.scan.source_file.directory)
+                    {
+                        entry.diagnostics.push(diagnostic);
+                    }
+                }
+                entry.file.path = qualify(&entry.file.path);
+                entry.file.directory = qualify(&entry.file.directory);
+            }
+            for diagnostic in &mut local.diagnostics {
+                diagnostic.path = qualify(&diagnostic.path);
+            }
+            index.files.extend(local.files);
+            index
+                .directories
+                .extend(local.directories.iter().map(|path| qualify(path)));
+            index
+                .aliases
+                .extend(local.aliases.iter().map(|(a, p)| (qualify(a), qualify(p))));
+            index.diagnostics.extend(local.diagnostics);
+            index.complete &= local.complete;
+            index.metrics.indexed_files += local.metrics.indexed_files;
+            index.metrics.files_read += local.metrics.files_read;
+            index.metrics.link_parses += local.metrics.link_parses;
+            index.metrics.yaml_parses += local.metrics.yaml_parses;
+            index.metrics.cache_bytes += local.metrics.cache_bytes;
+            index.metrics.cache_rebuilt |= local.metrics.cache_rebuilt;
+            for (phase, ms) in local.metrics.phases_ms {
+                *index.metrics.phases_ms.entry(phase).or_default() += ms;
+            }
+        }
+        index.files.sort_by(|a, b| a.file.path.cmp(&b.file.path));
         let by_path: HashMap<_, _> = index
             .files
             .iter()
@@ -224,7 +300,6 @@ impl Graph {
         let mut incoming = vec![Vec::new(); index.files.len()];
         for (id, entry) in index.files.iter_mut().enumerate() {
             for (link_id, link) in entry.scan.outgoing_links.iter_mut().enumerate() {
-                resolver.resolve(link, &entry.file.directory);
                 if let Some(target) = link.target.as_ref().and_then(|path| by_path.get(path)) {
                     outgoing[id].push((*target, link_id));
                     incoming[*target].push(id);
@@ -245,6 +320,7 @@ impl Graph {
             outgoing,
             incoming,
             resolver,
+            sources,
         })
     }
 
@@ -258,9 +334,22 @@ impl Graph {
     pub fn metrics(&self) -> &Metrics {
         &self.index.metrics
     }
+    pub fn sources(&self) -> &[Source] {
+        &self.sources
+    }
 
     pub fn canonical_path(&self, path: &str) -> Result<String> {
-        let path = normalize(path)?;
+        let path = if self.resolver.qualified || path.starts_with("source://") {
+            let (name, relative) = parse_source_locator(path)?;
+            let canonical = self.resolver.canonical_name(&name)?;
+            if self.resolver.qualified {
+                source_locator(canonical, &relative)
+            } else {
+                relative
+            }
+        } else {
+            normalize_relative(path)?
+        };
         let alias = self
             .index
             .aliases
@@ -287,10 +376,7 @@ impl Graph {
         let policy_for = |path: &str| {
             let mut policy = Policy::default();
             for (selector, rule) in &rules {
-                if path == selector
-                    || (rule.subtree
-                        && (selector.is_empty() || path.starts_with(&format!("{selector}/"))))
-                {
+                if path == selector || (rule.subtree && is_descendant(path, selector)) {
                     if rule.outlinks.is_some() {
                         policy.out = rule.outlinks;
                     }
@@ -321,9 +407,7 @@ impl Graph {
                     .files
                     .iter()
                     .enumerate()
-                    .filter(|(_, entry)| {
-                        path.is_empty() || entry.file.path.starts_with(&format!("{path}/"))
-                    })
+                    .filter(|(_, entry)| is_descendant(&entry.file.path, &path))
                     .map(|(id, _)| id)
                     .collect()
             };
@@ -522,7 +606,10 @@ impl Graph {
             let mut links = entry.scan.outgoing_links.clone();
             if query.explain_resolution {
                 for link in &mut links {
-                    link.resolution = Some(self.resolver.explain(link, &entry.file.directory));
+                    link.resolution = Some(
+                        self.resolver
+                            .explain(link, &entry.scan.source_file.directory),
+                    );
                 }
             }
             links_by_source.insert(entry.file.path.clone(), links);
@@ -564,7 +651,12 @@ impl Graph {
             metrics
         });
         Ok(Response {
-            schema_version: SCHEMA_VERSION,
+            schema_version: if self.sources.is_empty() {
+                SCHEMA_VERSION
+            } else {
+                MULTI_SOURCE_SCHEMA_VERSION
+            },
+            sources: self.sources.clone(),
             complete: self.index.complete,
             nodes,
             edges,

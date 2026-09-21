@@ -22,7 +22,8 @@ impl Fixture {
     }
     fn request(&self, starts: &[&str], outlinks: u32, inlinks: u32) -> Request {
         Request {
-            source_root: self.root(),
+            source_root: Some(self.root()),
+            sources: None,
             index: IndexOptions {
                 cache_directory: Some(self.temp.path().join("cache")),
                 ..Default::default()

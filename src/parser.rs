@@ -12,6 +12,14 @@ pub(crate) struct FileIdentifier {
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Link {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub link_source_name: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub link_requested_target_source: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub link_resolved_target_source: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub link_source_error: Option<String>,
     pub link_original_text: String,
     pub link_source_page_path: String,
 
@@ -202,7 +210,9 @@ fn extract_links(content: &str) -> Vec<ExtractedLink> {
                         .strip_prefix("[[")
                         .and_then(|s| s.strip_suffix("]]"))
                         .unwrap_or(&dest_url);
-                    if !is_internal_html_target(inner) {
+                    if !is_internal_html_target(inner)
+                        && crate::sources::wiki_target(inner).1.is_none()
+                    {
                         continue;
                     }
                     ExtractedLink::Wiki(inner.into())
@@ -279,6 +289,9 @@ fn extract_links(content: &str) -> Vec<ExtractedLink> {
 
 pub(crate) fn is_internal_html_target(target: &str) -> bool {
     let target = target.trim();
+    if target.starts_with("source://") {
+        return true;
+    }
     if target.is_empty() || target.starts_with('#') || target.starts_with("//") {
         return false;
     }
@@ -380,6 +393,10 @@ fn parse_out_link(inner_link_text: &str, source_page: &FileIdentifier) -> Link {
     let semantics = parse_link_text(inner_link_text);
 
     Link {
+        link_source_name: None,
+        link_requested_target_source: semantics.requested_source,
+        link_resolved_target_source: None,
+        link_source_error: semantics.source_error,
         link_original_text: inner_link_text.to_string(),
         link_source_page_path: make_source_page_path(source_page),
         link_parsed_directory: semantics.target_path_prefix,
@@ -444,6 +461,10 @@ fn parse_out_markdown_link(display_text: &str, href: &str, source_page: &FileIde
     semantics.alias = Some(display_text.to_string());
 
     Link {
+        link_source_name: None,
+        link_requested_target_source: semantics.requested_source,
+        link_resolved_target_source: None,
+        link_source_error: semantics.source_error,
         link_original_text: href.to_string(),
         link_source_page_path: make_source_page_path(source_page),
         link_parsed_directory: normalized_dir,
@@ -504,7 +525,8 @@ pub(crate) fn wiki_link_has_explicit_file_type(link: &Link) -> bool {
         return true;
     }
 
-    let target_text = target_text_without_alias_or_size(&link.link_original_text);
+    let (unqualified, _) = crate::sources::wiki_target(&link.link_original_text);
+    let target_text = target_text_without_alias_or_size(&unqualified);
     let filename = target_text
         .rsplit('/')
         .next()
@@ -879,6 +901,10 @@ mod tests {
             is_embedded: false,
             target: None,
             resolution: None,
+            link_source_name: None,
+            link_requested_target_source: None,
+            link_resolved_target_source: None,
+            link_source_error: None,
         }
     }
 
@@ -899,6 +925,10 @@ mod tests {
             is_embedded: false,
             target: None,
             resolution: None,
+            link_source_name: None,
+            link_requested_target_source: None,
+            link_resolved_target_source: None,
+            link_source_error: None,
         }
     }
 

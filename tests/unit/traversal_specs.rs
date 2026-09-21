@@ -2420,6 +2420,10 @@ fn run(
                     is_embedded: edge.is_embedded,
                     target: None,
                     resolution: None,
+                    link_source_name: None,
+                    link_requested_target_source: None,
+                    link_resolved_target_source: None,
+                    link_source_error: None,
                 });
             }
         }

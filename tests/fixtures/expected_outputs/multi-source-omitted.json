@@ -1,0 +1,192 @@
+{
+  "adjacency": {
+    "source://notes/Start.md": {
+      "inlinks": [
+        "source://research/Incoming.md",
+        "source://research/Overview.md"
+      ],
+      "outlinks": [
+        "source://notes/Frontier.md",
+        "source://notes/Overview.md",
+        "source://notes/Same/Inside.md",
+        "source://research/Overview.md",
+        "source://research/Report.html",
+        "source://research/diagram.svg"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [],
+  "linksBySource": {
+    "source://notes/Start.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Overview.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview::papers|research overview",
+        "link_parsed_alias": "research overview",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "papers",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Overview.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Same/Inside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Same/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Inside",
+        "link_resolved_target_directory": "source://notes/Same",
+        "link_resolved_target_path": "source://notes/Same/Inside.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Same/Inside.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Frontier",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Frontier",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Frontier.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Frontier.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://research/Report.html#findings",
+        "link_parsed_alias": "Research report",
+        "link_parsed_anchor": "findings",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "html",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Report",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Report.html",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Report.html"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "diagram.svg::research",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/diagram.svg",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/diagram.svg"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 0,
+      "digest": "0764a28be843fd8884edbf3d754ec3f4c647c447d87522e29549f95e5c1665ac",
+      "directory": "source://notes/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/Start.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://notes/Start.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 399,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "Start",
+      "via": "start"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/multi-source/notes",
+      "name": "notes"
+    },
+    {
+      "aliases": [
+        "papers"
+      ],
+      "directory": "sources/multi-source/research",
+      "name": "research"
+    }
+  ]
+}

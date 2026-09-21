@@ -1,0 +1,38 @@
+{
+  "name": "multi-source-omitted",
+  "source": "sources/multi-source",
+  "sources": [
+    {
+      "name": "notes",
+      "directory": "sources/multi-source/notes",
+      "aliases": []
+    },
+    {
+      "name": "research",
+      "directory": "sources/multi-source/research",
+      "aliases": [
+        "papers"
+      ]
+    }
+  ],
+  "query": {
+    "starts": [
+      {
+        "path": "source://notes/Start.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 0,
+      "inlinks": 0
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 11
+}

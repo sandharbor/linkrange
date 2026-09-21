@@ -1,0 +1,1848 @@
+{
+  "adjacency": {
+    "source://notes/Frontier.md": {
+      "inlinks": [
+        "source://notes/Start.md"
+      ],
+      "outlinks": [
+        "source://reference/Appendix.md",
+        "source://reference/Study.md"
+      ]
+    },
+    "source://notes/Overview.md": {
+      "inlinks": [
+        "source://notes/Start.md",
+        "source://notes/diagram.svg",
+        "source://research/Report.html",
+        "source://research/diagram.svg"
+      ],
+      "outlinks": [
+        "source://notes/diagram.svg"
+      ]
+    },
+    "source://notes/Same/Inside.md": {
+      "inlinks": [
+        "source://notes/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://notes/Start.md": {
+      "inlinks": [
+        "source://research/Incoming.md",
+        "source://research/Overview.md"
+      ],
+      "outlinks": [
+        "source://notes/Frontier.md",
+        "source://notes/Overview.md",
+        "source://notes/Same/Inside.md",
+        "source://research/Overview.md",
+        "source://research/Report.html",
+        "source://research/diagram.svg"
+      ]
+    },
+    "source://notes/diagram.svg": {
+      "inlinks": [
+        "source://notes/Overview.md",
+        "source://research/Overview.md"
+      ],
+      "outlinks": [
+        "source://notes/Overview.md"
+      ]
+    },
+    "source://reference/Appendix.md": {
+      "inlinks": [
+        "source://notes/Frontier.md",
+        "source://reference/Study.md"
+      ],
+      "outlinks": []
+    },
+    "source://reference/Study.md": {
+      "inlinks": [
+        "source://notes/Frontier.md",
+        "source://research/Report.html"
+      ],
+      "outlinks": [
+        "source://reference/Appendix.md",
+        "source://research/Overview.md"
+      ]
+    },
+    "source://research/Incoming.md": {
+      "inlinks": [],
+      "outlinks": [
+        "source://notes/Start.md",
+        "source://research/Overview.md"
+      ]
+    },
+    "source://research/Overview.md": {
+      "inlinks": [
+        "source://notes/Start.md",
+        "source://reference/Study.md",
+        "source://research/Incoming.md",
+        "source://research/Same/Inside.md"
+      ],
+      "outlinks": [
+        "source://notes/Start.md",
+        "source://notes/diagram.svg",
+        "source://research/Same/Inside.md"
+      ]
+    },
+    "source://research/Report.html": {
+      "inlinks": [
+        "source://notes/Start.md"
+      ],
+      "outlinks": [
+        "source://notes/Overview.md",
+        "source://reference/Study.md",
+        "source://research/diagram.svg"
+      ]
+    },
+    "source://research/Same/Inside.md": {
+      "inlinks": [
+        "source://research/Overview.md"
+      ],
+      "outlinks": [
+        "source://research/Overview.md"
+      ]
+    },
+    "source://research/diagram.svg": {
+      "inlinks": [
+        "source://notes/Start.md",
+        "source://research/Report.html"
+      ],
+      "outlinks": [
+        "source://notes/Overview.md"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Study::reference",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Study",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Study.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Frontier.md",
+        "target": "source://reference/Study.md"
+      },
+      "source": "source://notes/Frontier.md",
+      "target": "source://reference/Study.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Appendix::reference",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Appendix",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Appendix.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Frontier.md",
+        "target": "source://reference/Appendix.md"
+      },
+      "source": "source://notes/Frontier.md",
+      "target": "source://reference/Appendix.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "diagram.svg",
+        "link_parsed_alias": "Notebook diagram",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/diagram.svg",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Overview.md",
+        "target": "source://notes/diagram.svg"
+      },
+      "source": "source://notes/Overview.md",
+      "target": "source://notes/diagram.svg"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Overview.md"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://notes/Overview.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview::papers|research overview",
+        "link_parsed_alias": "research overview",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "papers",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Overview.md"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://research/Overview.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Same/Inside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Same/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Inside",
+        "link_resolved_target_directory": "source://notes/Same",
+        "link_resolved_target_path": "source://notes/Same/Inside.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Same/Inside.md"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://notes/Same/Inside.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Frontier",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Frontier",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Frontier.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Frontier.md"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://notes/Frontier.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://research/Report.html#findings",
+        "link_parsed_alias": "Research report",
+        "link_parsed_anchor": "findings",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "html",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Report",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Report.html",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Report.html"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://research/Report.html"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "diagram.svg::research",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/diagram.svg",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/diagram.svg"
+      },
+      "source": "source://notes/Start.md",
+      "target": "source://research/diagram.svg"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/diagram.svg",
+        "target": "source://notes/Overview.md"
+      },
+      "source": "source://notes/diagram.svg",
+      "target": "source://notes/Overview.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Appendix",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Appendix",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Appendix.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "reference",
+        "link_source_page_path": "source://reference/Study.md",
+        "target": "source://reference/Appendix.md"
+      },
+      "source": "source://reference/Study.md",
+      "target": "source://reference/Appendix.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview::research",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "reference",
+        "link_source_page_path": "source://reference/Study.md",
+        "target": "source://research/Overview.md"
+      },
+      "source": "source://reference/Study.md",
+      "target": "source://research/Overview.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Start::notes",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Start",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Start.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Incoming.md",
+        "target": "source://notes/Start.md"
+      },
+      "source": "source://research/Incoming.md",
+      "target": "source://notes/Start.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Incoming.md",
+        "target": "source://research/Overview.md"
+      },
+      "source": "source://research/Incoming.md",
+      "target": "source://research/Overview.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Start::notes",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Start",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Start.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://notes/Start.md"
+      },
+      "source": "source://research/Overview.md",
+      "target": "source://notes/Start.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Same/Inside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Same/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Inside",
+        "link_resolved_target_directory": "source://research/Same",
+        "link_resolved_target_path": "source://research/Same/Inside.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://research/Same/Inside.md"
+      },
+      "source": "source://research/Overview.md",
+      "target": "source://research/Same/Inside.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/diagram.svg",
+        "link_parsed_alias": "Notebook diagram",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/diagram.svg",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://notes/diagram.svg"
+      },
+      "source": "source://research/Overview.md",
+      "target": "source://notes/diagram.svg"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://notes/Overview.md"
+      },
+      "source": "source://research/Report.html",
+      "target": "source://notes/Overview.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "source://research/diagram.svg",
+        "link_parsed_alias": "source://research/diagram.svg",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/diagram.svg",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://research/diagram.svg"
+      },
+      "source": "source://research/Report.html",
+      "target": "source://research/diagram.svg"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://reference/Study.md",
+        "link_parsed_alias": "source://reference/Study.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Study",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Study.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://reference/Study.md"
+      },
+      "source": "source://research/Report.html",
+      "target": "source://reference/Study.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Same/Inside.md",
+        "target": "source://research/Overview.md"
+      },
+      "source": "source://research/Same/Inside.md",
+      "target": "source://research/Overview.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/diagram.svg",
+        "target": "source://notes/Overview.md"
+      },
+      "source": "source://research/diagram.svg",
+      "target": "source://notes/Overview.md"
+    }
+  ],
+  "linksBySource": {
+    "source://notes/Frontier.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Study::reference",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Study",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Study.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Frontier.md",
+        "target": "source://reference/Study.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Appendix::reference",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Appendix",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Appendix.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Frontier.md",
+        "target": "source://reference/Appendix.md"
+      }
+    ],
+    "source://notes/Overview.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "diagram.svg",
+        "link_parsed_alias": "Notebook diagram",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/diagram.svg",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Overview.md",
+        "target": "source://notes/diagram.svg"
+      }
+    ],
+    "source://notes/Same/Inside.md": [],
+    "source://notes/Start.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Overview.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview::papers|research overview",
+        "link_parsed_alias": "research overview",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "papers",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Overview.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Same/Inside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Same/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Inside",
+        "link_resolved_target_directory": "source://notes/Same",
+        "link_resolved_target_path": "source://notes/Same/Inside.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Same/Inside.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Frontier",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Frontier",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Frontier.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://notes/Frontier.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://research/Report.html#findings",
+        "link_parsed_alias": "Research report",
+        "link_parsed_anchor": "findings",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "html",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Report",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Report.html",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/Report.html"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "diagram.svg::research",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/diagram.svg",
+        "link_resolved_target_source": "research",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/Start.md",
+        "target": "source://research/diagram.svg"
+      }
+    ],
+    "source://notes/diagram.svg": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "notes",
+        "link_source_page_path": "source://notes/diagram.svg",
+        "target": "source://notes/Overview.md"
+      }
+    ],
+    "source://reference/Appendix.md": [],
+    "source://reference/Study.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Appendix",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Appendix",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Appendix.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "reference",
+        "link_source_page_path": "source://reference/Study.md",
+        "target": "source://reference/Appendix.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview::research",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "reference",
+        "link_source_page_path": "source://reference/Study.md",
+        "target": "source://research/Overview.md"
+      }
+    ],
+    "source://research/Incoming.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Start::notes",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Start",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Start.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Incoming.md",
+        "target": "source://notes/Start.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Incoming.md",
+        "target": "source://research/Overview.md"
+      }
+    ],
+    "source://research/Overview.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Start::notes",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Start",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Start.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://notes/Start.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Same/Inside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Same/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Inside",
+        "link_resolved_target_directory": "source://research/Same",
+        "link_resolved_target_path": "source://research/Same/Inside.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://research/Same/Inside.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/diagram.svg",
+        "link_parsed_alias": "Notebook diagram",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/diagram.svg",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Overview.md",
+        "target": "source://notes/diagram.svg"
+      }
+    ],
+    "source://research/Report.html": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://notes/Overview.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "source://research/diagram.svg",
+        "link_parsed_alias": "source://research/diagram.svg",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "svg",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "diagram",
+        "link_requested_target_source": "research",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/diagram.svg",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://research/diagram.svg"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://reference/Study.md",
+        "link_parsed_alias": "source://reference/Study.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Study",
+        "link_requested_target_source": "reference",
+        "link_resolved_target_directory": "source://reference/",
+        "link_resolved_target_path": "source://reference/Study.md",
+        "link_resolved_target_source": "reference",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Report.html",
+        "target": "source://reference/Study.md"
+      }
+    ],
+    "source://research/Same/Inside.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Overview",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_resolved_target_directory": "source://research/",
+        "link_resolved_target_path": "source://research/Overview.md",
+        "link_resolved_target_source": "research",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/Same/Inside.md",
+        "target": "source://research/Overview.md"
+      }
+    ],
+    "source://research/diagram.svg": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "source://notes/Overview.md",
+        "link_parsed_alias": "source://notes/Overview.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Overview",
+        "link_requested_target_source": "notes",
+        "link_resolved_target_directory": "source://notes/",
+        "link_resolved_target_path": "source://notes/Overview.md",
+        "link_resolved_target_source": "notes",
+        "link_source_name": "research",
+        "link_source_page_path": "source://research/diagram.svg",
+        "target": "source://notes/Overview.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 1,
+      "digest": "777e641219bb9bb26d7df2f767a122af9de807ae7367a57ba57d9b500a6677b8",
+      "directory": "source://notes/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/Frontier.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Frontier.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Frontier.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 168,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Frontier",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "9fe2d5fac19e232b0c50c0d9692c2c5aa48e1a1638501f4cf712529d4f0936b7",
+      "directory": "source://notes/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/Overview.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Overview.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Overview.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 125,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Overview",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "b181368ca5f3838d2c8d1e169320c003beed470e1fdf02c10c9aecedd6337845",
+      "directory": "source://notes/Same",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/Same/Inside.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Same/Inside.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Same/Inside.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 91,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Inside",
+      "via": "outlink"
+    },
+    {
+      "depth": 0,
+      "digest": "0764a28be843fd8884edbf3d754ec3f4c647c447d87522e29549f95e5c1665ac",
+      "directory": "source://notes/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/Start.md",
+      "remainingInlinks": 1,
+      "remainingOutlinks": 2,
+      "route": [
+        "source://notes/Start.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 399,
+      "states": [
+        {
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "Start",
+      "via": "start"
+    },
+    {
+      "depth": 2,
+      "digest": "b228f7fe1342bff444aa22be7e1dc0f51cc28bc82422802a551e1d90869f5040",
+      "directory": "source://notes/",
+      "format": "svg",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 0
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://notes/diagram.svg",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Overview.md",
+        "source://notes/diagram.svg"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Overview.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 0
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/diagram.svg",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 255,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "diagram",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "d96ce01dbf10f7c053a59fe67134665e89e821312365c071af701761b0070cc5",
+      "directory": "source://reference/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 0
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://reference/Appendix.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Frontier.md",
+        "source://reference/Appendix.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Frontier.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 0
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://reference/Appendix.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 104,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "Appendix",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "da9ec22a527626c1ca385b44d780fdb629f68088b99ced5e8daf74812d2336cd",
+      "directory": "source://reference/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 0
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://reference/Study.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://notes/Start.md",
+        "source://notes/Frontier.md",
+        "source://reference/Study.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Frontier.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 0
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://reference/Study.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 164,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "Study",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "bd1559ea5ee7d07e7d2ab652d83426dc4c43393639abaf65e206e264e76194fb",
+      "directory": "source://research/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://research/Incoming.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://research/Incoming.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/Incoming.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "inlink"
+        }
+      ],
+      "size": 152,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Incoming",
+      "via": "inlink"
+    },
+    {
+      "depth": 1,
+      "digest": "a7e5eeecc7318f5a833f020fd1b5f142d711e7b2d0d41bb6f1fbc1eebc0854ca",
+      "directory": "source://research/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://research/Overview.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://research/Overview.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/Overview.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 202,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Overview",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "05e3361fa042fac7dca493d67d46b9db5772b329a78c6cc20d80e605b63a87d9",
+      "directory": "source://research/",
+      "format": "html",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://research/Report.html",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://research/Report.html"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/Report.html",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 359,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Report",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "18f8ae5bd4f835ffe2146f960a41979d99a33ee142a96694041c7fe1cdd16aeb",
+      "directory": "source://research/Same",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 0
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://research/Same/Inside.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://notes/Start.md",
+        "source://research/Overview.md",
+        "source://research/Same/Inside.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/Overview.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 0
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/Same/Inside.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 125,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "Inside",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "c0e58d2ac2aea3c20411394aacb91ceaa112cdb3004397d8f7c4abd4f4889d6f",
+      "directory": "source://research/",
+      "format": "svg",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://research/diagram.svg",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://notes/Start.md",
+        "source://research/diagram.svg"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://notes/Start.md",
+          "remainingInlinks": 1,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://research/diagram.svg",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 255,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "diagram",
+      "via": "outlink"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/multi-source/notes",
+      "name": "notes"
+    },
+    {
+      "aliases": [
+        "papers"
+      ],
+      "directory": "sources/multi-source/research",
+      "name": "research"
+    },
+    {
+      "directory": "sources/multi-source/reference",
+      "name": "reference"
+    }
+  ]
+}

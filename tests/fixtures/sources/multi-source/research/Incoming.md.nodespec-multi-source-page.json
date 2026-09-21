@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://notes/Start.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Overview.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": []
+  }
+}

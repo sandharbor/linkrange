@@ -51,9 +51,96 @@ and cache measurements; this also works with `--request`. JSON requests can set
 `true`. `Response::metrics` is `None` unless requested. `Graph::metrics()` provides
 explicit access to indexing measurements when inspecting an open graph.
 
-All paths in a query and response are physical source-root-relative paths using
-`/`. A folder start seeds its supported descendant files at depth zero. Files and
-folders may be mixed.
+In a legacy `sourceRoot` request, paths remain physical source-root-relative paths
+using `/`, and the response retains schema version 1. A folder start seeds its
+supported descendant files at depth zero. Files and folders may be mixed.
+
+### Multiple sources
+
+An explicit source registry admits separate directories into one graph. Directories
+need not be repositories or vaults. Use `sources` instead of `sourceRoot`:
+
+```json
+{
+  "sources": [
+    {"name": "notes", "directory": "/local/notes"},
+    {"name": "research", "directory": "/local/research", "aliases": ["papers"]}
+  ],
+  "query": {
+    "starts": [{"path": "source://notes/Overview.md"}],
+    "depths": {"outlinks": 2, "inlinks": 1},
+    "rules": [{"path": "source://papers/Archive", "subtree": true, "exclude": true}],
+    "adjacency": true
+  }
+}
+```
+
+These responses use schema version 2 and return the canonicalized `sources`
+registry once. Every path-bearing identity—including file directories, route
+steps, alternative routes, edge endpoints, diagnostic paths, adjacency keys and
+neighbors, lookup records, and resolution candidates—uses
+`source://<canonical-name>/<source-relative-path>`. Paths percent-encode reserved
+URL characters and Unicode bytes; a root directory is `source://notes/`.
+The public `source_locator` and `parse_source_locator` functions round-trip these
+identities. Queries accept aliases but results use canonical names. Unqualified
+selectors are rejected for an explicit registry, even with one source.
+
+Rust callers can use `Graph::open_sources(&sources, &options)` and inspect
+`Graph::sources()`. `Request::source_root` and `Request::sources` are optional;
+exactly one must be supplied. Empty registries, conflicting request forms, and
+combining CLI `--request` with `--source-root` fail explicitly.
+
+Names and aliases are case-sensitive and match `[a-z][a-z0-9_-]{0,63}`. Every
+spelling must be unique, including aliases within an entry. Physical directories
+must be distinct and non-overlapping after filesystem canonicalization. Registry
+validation checks all roots before loading caches. A symlink never admits another
+source implicitly, even if that directory is separately registered.
+
+### Source-qualified links
+
+Wikilink targets reserve `::` for qualification, before any heading, block, alias,
+or image-size suffix: `[[Overview::research#Summary|Read more]]` and
+`![[diagram.png::papers|300]]`. Qualification is native syntax, including in
+legacy single-source requests. A legacy root has the deterministic name `source`.
+`::` in an alias or anchor is ordinary text; literal `::` in a filename can be
+addressed through a URL instead of a wikilink.
+
+Markdown and HTML/SVG support `source://research/Overview.md`, including images,
+objects, SVG `use`, and the other supported link/embed attributes. URL paths start
+at the selected source root, regardless of the referring file's directory. They
+are percent-decoded once, after separating queries and fragments. Queries do not
+affect file identity; fragments retain the existing heading/block semantics.
+Original spelling remains available for rewriting generated links. Empty paths,
+malformed escapes, invalid names, backslashes, and parent-directory segments in
+source URLs remain unresolved with `invalidSourceReference` diagnostics. Request
+locators cannot contain raw queries or fragments: encode literal filename
+characters such as `#`, `?`, and `%`.
+
+Unqualified links resolve only within their referring source. Qualified wikilinks
+use the existing ranking within the selected source, with root/shallowest/lexical
+ranking when crossing sources; they never borrow the origin's directory. An alias
+selecting the referring source retains ordinary same-source ranking. A recognized
+source with a missing file is distinct from an unknown source: the former has a
+selected canonical source and a null target; the latter has `unregisteredSource`
+diagnostics and never falls back to a local namesake.
+
+Links expose `link_source_name`, `link_requested_target_source`,
+`link_resolved_target_source`, and, on invalid or unknown references,
+`link_source_error`. Diagnostics include `requestedSource` and `linkOriginalText`.
+Source diagnostics follow the existing query scope: returned and lookup files
+contribute occurrences; unrelated inventory files do not. Frontier occurrences
+remain inspectable and their referring node's `inclusion` distinguishes them from
+normal traversal.
+
+All configured sources are indexed before resolution, including sources reached
+only through incoming links. Crossing a source boundary consumes the ordinary
+link budgets, preserves overrides and arrival provenance, and does not restart
+traversal. Adding a source does not add a start or include its whole inventory.
+Caches remain per physical directory: names, aliases, selected source sets, and
+starts do not cause unchanged files to be reparsed. Newly appearing targets can
+resolve previously cached links. An unavailable configured root fails the request
+without turning its inventory into deletions; `bestEffort` still only permits
+explicitly diagnosed partial indexing inside available roots.
 
 Add the crate as a Git dependency pinned to a revision, then use the same API:
 

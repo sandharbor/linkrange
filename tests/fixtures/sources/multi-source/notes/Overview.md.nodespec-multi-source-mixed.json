@@ -1,0 +1,29 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://notes/diagram.svg",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "source://notes/Start.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://notes/diagram.svg",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Report.html",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/diagram.svg",
+        "isInGraph": true
+      }
+    ]
+  }
+}

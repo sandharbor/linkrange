@@ -1,0 +1,43 @@
+{
+  "name": "multi-source-page",
+  "source": "sources/multi-source",
+  "sources": [
+    {
+      "name": "notes",
+      "directory": "sources/multi-source/notes",
+      "aliases": []
+    },
+    {
+      "name": "research",
+      "directory": "sources/multi-source/research",
+      "aliases": [
+        "papers"
+      ]
+    },
+    {
+      "name": "reference",
+      "directory": "sources/multi-source/reference",
+      "aliases": []
+    }
+  ],
+  "query": {
+    "starts": [
+      {
+        "path": "source://notes/Start.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 2,
+      "inlinks": 1
+    },
+    "rules": [],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": 13
+}

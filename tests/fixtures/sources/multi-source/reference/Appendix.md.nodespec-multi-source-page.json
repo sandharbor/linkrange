@@ -1,0 +1,16 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "source://notes/Frontier.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://reference/Study.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

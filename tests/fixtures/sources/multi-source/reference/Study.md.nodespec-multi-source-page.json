@@ -1,0 +1,25 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://reference/Appendix.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Overview.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "source://notes/Frontier.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Report.html",
+        "isInGraph": true
+      }
+    ]
+  }
+}

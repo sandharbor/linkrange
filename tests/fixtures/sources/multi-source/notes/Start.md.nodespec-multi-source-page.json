@@ -1,0 +1,41 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://notes/Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://notes/Same/Inside.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://notes/Frontier.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Report.html",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/diagram.svg",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "source://research/Overview.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://research/Incoming.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}
