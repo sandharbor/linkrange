@@ -23,6 +23,10 @@
     "app/shared_data/home_fixtures/home_fixture_multi_source/bundles/multi-source-page/config/bundle_node_config.yaml": "591b694ecc696c3aca4fc1b44d0079044e22db45f8dc68efcf6c31ec365d3c1d",
     "app/shared_data/home_fixtures/home_fixture_nested/bundles/meadow-test-bundle-nested/config/bundle_config.yaml": "b55a4d57055e7e739885213bcdb41d0c6e1c249dd61237929dcdcf4a5cc6ced5",
     "app/shared_data/home_fixtures/home_fixture_nested/bundles/meadow-test-bundle-nested/config/bundle_node_config.yaml": "2457a6105efb4cefdf448871c0a4cd1d6256e5956ce11ca3d26ce571905f4881",
+    "app/shared_data/home_fixtures/home_fixture_sourcing_review/bundles/sourcing-folders/config/bundle_config.yaml": "8828c55a6ff8070ba32b88f2424efd7571b6b855d6946d9c8e36a3a2fa4cbfb4",
+    "app/shared_data/home_fixtures/home_fixture_sourcing_review/bundles/sourcing-folders/config/bundle_node_config.yaml": "48aaf2fd24b7cd392202e80b1f09d9b3f909a59ea04ce6a641169ee262084907",
+    "app/shared_data/home_fixtures/home_fixture_sourcing_review/bundles/sourcing-review/config/bundle_config.yaml": "007057b487ce90e1e97813756f447c7feab813c8b90623e9138f832da2aa16bb",
+    "app/shared_data/home_fixtures/home_fixture_sourcing_review/bundles/sourcing-review/config/bundle_node_config.yaml": "f625b20dd26f9f3033c4294a3068ea12e134405b47d94dc1ca2a0b9708b42a58",
     "app/shared_data/home_fixtures/home_fixture_srs/bundles/meadow-test-bundle-big/config/bundle_config.yaml": "f04a5a906e2768baca0d5f333893fb86d5fc7c128350ece40c3eedc07d6cc350",
     "app/shared_data/home_fixtures/home_fixture_srs/bundles/meadow-test-bundle-big/config/bundle_node_config.yaml": "331338bae44d0fbc6082bc51742ef34bd370f898213f70163d358057b59b3323",
     "app/shared_data/source_graphs/example-bundle-data/2025 taxes.md": "82af68943ecc35ef748c306aba6089a256d8731b39b400313d3894ba65eb3e31",
@@ -621,6 +625,18 @@
     "app/shared_data/source_graphs/multi-source/research/Report.html": "05e3361fa042fac7dca493d67d46b9db5772b329a78c6cc20d80e605b63a87d9",
     "app/shared_data/source_graphs/multi-source/research/Report.html.nodespec.yaml": "5955287946b3596d27b76ad531524b7712e2fc2ae7c4dd2008f50a27417ac733",
     "app/shared_data/source_graphs/multi-source/research/Same/Inside.md": "18f8ae5bd4f835ffe2146f960a41979d99a33ee142a96694041c7fe1cdd16aeb",
-    "app/shared_data/source_graphs/multi-source/research/Same/Inside.md.nodespec.yaml": "4b4e656c557eb07ab3c9631d8885963f605366ba8af7cd6ca60dd7e7ada832bc"
+    "app/shared_data/source_graphs/multi-source/research/Same/Inside.md.nodespec.yaml": "4b4e656c557eb07ab3c9631d8885963f605366ba8af7cd6ca60dd7e7ada832bc",
+    "app/shared_data/source_graphs/sourcing-review-data/Additions/Policy Draft.md": "f0e4587c05e912eaa7cebc432125633ff7a6a585a41fac8628ad69ddb5fc9507",
+    "app/shared_data/source_graphs/sourcing-review-data/Additions/Safe One.md": "09030387c9f28b7f9c728d4e9d6a3e28e5b6f7c64784236276db3287504ca3d4",
+    "app/shared_data/source_graphs/sourcing-review-data/Additions/Safe Two.md": "33e25171f4de892a0b31f1ecc62fc3428574a0c27a8bb79be72d5cb7b831beda",
+    "app/shared_data/source_graphs/sourcing-review-data/Additions/Secret.md": "07ee107dc3e1d3a29eb766e39253455b4b3583aa88059d27c7e4c57bb6c2b931",
+    "app/shared_data/source_graphs/sourcing-review-data/Departing.md": "77fd037ea850ae00cee031c72c015b435be124a55f9d5ca3738e943d1896f950",
+    "app/shared_data/source_graphs/sourcing-review-data/Leaf.md": "8c2867a2c7d832164464054f9ceadf10c582548295909a733280753129f24da8",
+    "app/shared_data/source_graphs/sourcing-review-data/Outside.md": "a97104b7905aae279da6b4b393bfc3a388babe918e6bb688cd508130d0a62297",
+    "app/shared_data/source_graphs/sourcing-review-data/Retained.md": "96bbb844d337e182451b5dd8d37c1cc49c7062a70a9b832e892bd3c3a369717c",
+    "app/shared_data/source_graphs/sourcing-review-data/Routes/Branch/Bridge.md": "32e60def1ef66bd99b30fcef6099626d8e88a480842eb6747940b3a1dfd531ed",
+    "app/shared_data/source_graphs/sourcing-review-data/Routes/Empty/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app/shared_data/source_graphs/sourcing-review-data/Routes/Reference.md": "e5507d89f3eca5c4ffe971ceccbc5ac91f13f4f785ca139a4440ac486c0496d9",
+    "app/shared_data/source_graphs/sourcing-review-data/Start.md": "feb8370226d27eb1b7f8b53e46d8f64a47ae5bc0fc4569a73ba38a28537e8482"
   }
 }

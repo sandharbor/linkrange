@@ -1,0 +1,36 @@
+{
+  "name": "home_fixture_sourcing_review--sourcing-review",
+  "fixtureDirectory": "sources/sourcing-review-data",
+  "sources": [
+    {
+      "name": "source",
+      "directory": "sources/sourcing-review-data",
+      "aliases": []
+    }
+  ],
+  "query": {
+    "starts": [
+      {
+        "path": "source://source/Start.md"
+      }
+    ],
+    "depths": {
+      "outlinks": 4,
+      "inlinks": 0
+    },
+    "rules": [
+      {
+        "path": "source://source/Departing.md",
+        "outlinks": 1
+      }
+    ],
+    "boundaryEmbedTypes": [
+      "png",
+      "jpg",
+      "jpeg",
+      "gif"
+    ],
+    "adjacency": true
+  },
+  "expectationCount": null
+}

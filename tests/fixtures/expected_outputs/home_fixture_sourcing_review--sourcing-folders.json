@@ -1,0 +1,502 @@
+{
+  "adjacency": {
+    "source://source/Departing.md": {
+      "inlinks": [
+        "source://source/Routes/Branch/Bridge.md"
+      ],
+      "outlinks": [
+        "source://source/Outside.md"
+      ]
+    },
+    "source://source/Outside.md": {
+      "inlinks": [
+        "source://source/Departing.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Retained.md": {
+      "inlinks": [
+        "source://source/Routes/Branch/Bridge.md",
+        "source://source/Routes/Reference.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Routes/Branch/Bridge.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": [
+        "source://source/Departing.md",
+        "source://source/Retained.md"
+      ]
+    },
+    "source://source/Routes/Reference.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": [
+        "source://source/Retained.md"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Outside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Outside",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Outside.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Departing.md",
+        "target": "source://source/Outside.md"
+      },
+      "source": "source://source/Departing.md",
+      "target": "source://source/Outside.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Departing",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Departing",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Departing.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Branch/Bridge.md",
+        "target": "source://source/Departing.md"
+      },
+      "source": "source://source/Routes/Branch/Bridge.md",
+      "target": "source://source/Departing.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Retained",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Retained",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Retained.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Branch/Bridge.md",
+        "target": "source://source/Retained.md"
+      },
+      "source": "source://source/Routes/Branch/Bridge.md",
+      "target": "source://source/Retained.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Retained",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Retained",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Retained.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Reference.md",
+        "target": "source://source/Retained.md"
+      },
+      "source": "source://source/Routes/Reference.md",
+      "target": "source://source/Retained.md"
+    }
+  ],
+  "linksBySource": {
+    "source://source/Departing.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Outside",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Outside",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Outside.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Departing.md",
+        "target": "source://source/Outside.md"
+      }
+    ],
+    "source://source/Outside.md": [],
+    "source://source/Retained.md": [],
+    "source://source/Routes/Branch/Bridge.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Departing",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Departing",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Departing.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Branch/Bridge.md",
+        "target": "source://source/Departing.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Retained",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Retained",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Retained.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Branch/Bridge.md",
+        "target": "source://source/Retained.md"
+      }
+    ],
+    "source://source/Routes/Reference.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Retained",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Retained",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Retained.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Routes/Reference.md",
+        "target": "source://source/Retained.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 1,
+      "digest": "77fd037ea850ae00cee031c72c015b435be124a55f9d5ca3738e943d1896f950",
+      "directory": "source://source/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": 1,
+      "path": "source://source/Departing.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://source/Routes/Branch/Bridge.md",
+        "source://source/Departing.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Routes/Branch/Bridge.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": 1,
+          "path": "source://source/Departing.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 107,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "Departing",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "a97104b7905aae279da6b4b393bfc3a388babe918e6bb688cd508130d0a62297",
+      "directory": "source://source/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 0
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Outside.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 0,
+      "route": [
+        "source://source/Routes/Branch/Bridge.md",
+        "source://source/Departing.md",
+        "source://source/Outside.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Routes/Branch/Bridge.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": 1,
+          "path": "source://source/Departing.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 0
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Outside.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 96,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 0
+        }
+      ],
+      "title": "Outside",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "96bbb844d337e182451b5dd8d37c1cc49c7062a70a9b832e892bd3c3a369717c",
+      "directory": "source://source/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Retained.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Routes/Branch/Bridge.md",
+        "source://source/Retained.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Routes/Branch/Bridge.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Retained.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 87,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Retained",
+      "via": "outlink"
+    },
+    {
+      "depth": 0,
+      "digest": "32e60def1ef66bd99b30fcef6099626d8e88a480842eb6747940b3a1dfd531ed",
+      "directory": "source://source/Routes/Branch",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Routes/Branch/Bridge.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 4,
+      "route": [
+        "source://source/Routes/Branch/Bridge.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Routes/Branch/Bridge.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 135,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4
+        }
+      ],
+      "title": "Bridge",
+      "via": "start"
+    },
+    {
+      "depth": 0,
+      "digest": "e5507d89f3eca5c4ffe971ceccbc5ac91f13f4f785ca139a4440ac486c0496d9",
+      "directory": "source://source/Routes",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Routes/Reference.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 4,
+      "route": [
+        "source://source/Routes/Reference.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Routes/Reference.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 102,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4
+        }
+      ],
+      "title": "Reference",
+      "via": "start"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/sourcing-review-data",
+      "name": "source"
+    }
+  ]
+}
