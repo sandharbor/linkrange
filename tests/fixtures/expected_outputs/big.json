@@ -8074,7 +8074,7 @@
     },
     {
       "depth": 2,
-      "digest": "e14fb8ffbc5990775a5625c7eb273105c5d8503f2b5b1a44e200b5a48c8f9a3f",
+      "digest": "76aa61bcca700ee9956b5ce73814c8e13c0ea6013686d56eae81c60bb07d1183",
       "directory": "source://source/t001/deeper",
       "format": "md",
       "inclusion": "traversal",
@@ -8137,7 +8137,7 @@
           "via": "outlink"
         }
       ],
-      "size": 11,
+      "size": 161,
       "states": [
         {
           "remainingInlinks": 98,
@@ -8149,7 +8149,7 @@
     },
     {
       "depth": 2,
-      "digest": "77555ed8d18b3855e1c231a3117aba3bbde8efafd81888e88c5b6a56a9c1d572",
+      "digest": "3a350c9df0bbdc81a5e3432be1b3b05b71a4df3dbc09c52abd4489c61ae91e67",
       "directory": "source://source/t001",
       "format": "md",
       "inclusion": "traversal",
@@ -8212,7 +8212,7 @@
           "via": "outlink"
         }
       ],
-      "size": 11,
+      "size": 159,
       "states": [
         {
           "remainingInlinks": 98,
