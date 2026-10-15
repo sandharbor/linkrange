@@ -8,7 +8,7 @@ use sha2::{Digest, Sha256};
 use std::{
     collections::{BTreeMap, BTreeSet},
     fs::{self, File, OpenOptions},
-    io::{BufReader, BufWriter, Write},
+    io::{BufWriter, Write},
     path::{Path, PathBuf},
     time::Instant,
 };
@@ -115,6 +115,34 @@ fn relative(root: &Path, path: &Path) -> Result<String> {
         .replace('\\', "/"))
 }
 
+/// File metadata dominates a large inventory, and each read is independent.
+/// Results keep the order of `files`.
+fn read_stamps(files: &[(String, PathBuf)]) -> Vec<Result<Stamp>> {
+    let threads = std::thread::available_parallelism()
+        .map_or(1, |count| count.get())
+        .min(8);
+    if threads < 2 || files.len() < 512 {
+        return files.iter().map(|(_, path)| Stamp::read(path)).collect();
+    }
+    let chunk = files.len().div_ceil(threads);
+    std::thread::scope(|scope| {
+        let workers: Vec<_> = files
+            .chunks(chunk)
+            .map(|part| {
+                scope.spawn(move || {
+                    part.iter()
+                        .map(|(_, path)| Stamp::read(path))
+                        .collect::<Vec<_>>()
+                })
+            })
+            .collect();
+        workers
+            .into_iter()
+            .flat_map(|worker| worker.join().expect("metadata reader panicked"))
+            .collect()
+    })
+}
+
 fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
     fn walk(
         root: &Path,
@@ -122,6 +150,7 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
         options: &IndexOptions,
         result: &mut Inventory,
         active: &mut BTreeSet<PathBuf>,
+        pending: &mut Vec<(String, PathBuf)>,
     ) -> Result<()> {
         let relative_dir = relative(root, dir)?;
         if !result.directories.insert(relative_dir.clone()) {
@@ -220,7 +249,7 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
                 kind.is_file()
             };
             if is_directory {
-                walk(root, &target, options, result, active)?;
+                walk(root, &target, options, result, active, pending)?;
             } else if is_file
                 && parser::is_supported_source_extension(
                     &target
@@ -230,19 +259,33 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
                         .to_ascii_lowercase(),
                 )
             {
-                match Stamp::read(&target) {
-                    Ok(stamp) => {
-                        result.files.insert(relative(root, &target)?, stamp);
-                    }
-                    Err(error) => fail_or_record(options, result, &name, error)?,
-                }
+                pending.push((name, target));
             }
         }
         active.remove(dir);
         Ok(())
     }
     let mut result = Inventory::default();
-    walk(root, root, options, &mut result, &mut BTreeSet::new())?;
+    let mut pending = Vec::new();
+    let walked = walk(
+        root,
+        root,
+        options,
+        &mut result,
+        &mut BTreeSet::new(),
+        &mut pending,
+    );
+    // Every deferred file precedes anything the walk stopped on, so apply them first.
+    let stamps = read_stamps(&pending);
+    for ((name, target), stamp) in pending.iter().zip(stamps) {
+        match stamp {
+            Ok(stamp) => {
+                result.files.insert(relative(root, target)?, stamp);
+            }
+            Err(error) => fail_or_record(options, &mut result, name, error)?,
+        }
+    }
+    walked?;
     result
         .diagnostics
         .sort_by(|a, b| (&a.path, &a.code).cmp(&(&b.path, &b.code)));
@@ -306,8 +349,8 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
     } else {
         filename
             .as_ref()
-            .and_then(|path| File::open(path).ok())
-            .and_then(|file| serde_json::from_reader::<_, Cache>(BufReader::new(file)).ok())
+            .and_then(|path| fs::read(path).ok())
+            .and_then(|bytes| serde_json::from_slice::<Cache>(&bytes).ok())
             .filter(|cache| cache.version == version)
     };
     metrics.cache_rebuilt = previous.is_none();
