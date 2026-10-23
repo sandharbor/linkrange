@@ -16061,7 +16061,7 @@
     },
     {
       "depth": 1,
-      "digest": "47d8a46f62e6888b30a2e6ab1979765ed680e75d6ef8a6dff182f9e0531cf629",
+      "digest": "d56fbdc5b0cb67b5628258532c726909da98817b00265fc32cdddcb7f882d220",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -16108,7 +16108,7 @@
           "via": "outlink"
         }
       ],
-      "size": 411,
+      "size": 777,
       "states": [
         {
           "remainingInlinks": 99,
