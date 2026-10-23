@@ -373,6 +373,32 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
 }
 
 #[test]
+fn wikilinks_resolve_regardless_of_letter_case_and_unicode_normalization() {
+    let f = Fixture::new();
+    // "Café" is written once with a precomposed é (as most editors save it)
+    // and once as e plus a combining accent (as some file systems and tools do).
+    f.write("A.md", "[[readme]]\n\n[[Cafe\u{301}]]\n\n[[Idea]]\n");
+    f.write("README.md", "");
+    f.write("Caf\u{e9}.md", "");
+    // An exact-case match anywhere wins over a match that differs only in case.
+    f.write("idea.md", "");
+    f.write("nested/Idea.md", "");
+    let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
+    let targets: Vec<_> = response.links_by_source[&locator("A.md")]
+        .iter()
+        .map(|link| link.target.clone())
+        .collect();
+    assert_eq!(
+        targets,
+        [
+            Some(locator("README.md")),
+            Some(locator("Caf\u{e9}.md")),
+            Some(locator("nested/Idea.md")),
+        ]
+    );
+}
+
+#[test]
 fn html_svg_and_html_inside_markdown_classify_elements_and_ignore_comments_and_code() {
     let f = Fixture::new();
     f.write("A.md", "<img src='image.svg'>\n\n```html\n<img src='missing.png'>\n```\n\n<!-- <img src='missing.png'> -->\n\n[Page](page.html)");

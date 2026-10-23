@@ -3025,6 +3025,29 @@
       "link": {
         "is_embedded": false,
         "is_relative_path_link": false,
+        "link_original_text": "T011 ---- Page Name With Special Characters -- Before Dot . And After Dot",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "T011 ---- Page Name With Special Characters -- Before Dot . And After Dot",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md"
+      },
+      "source": "source://source/t011%20-%20special%20links.md",
+      "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
         "link_original_text": "t011/t011 --- pointed to by an escaped alias outside a table\\|link with an escaped alias works outside a table",
         "link_parsed_alias": "link with an escaped alias works outside a table",
         "link_parsed_anchor": null,
@@ -6677,6 +6700,24 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t011%20-%20special%20links.md",
         "target": "source://source/t011/test.io%20which%20looks%20like%20a%20filename%20suffix.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "T011 ---- Page Name With Special Characters -- Before Dot . And After Dot",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "T011 ---- Page Name With Special Characters -- Before Dot . And After Dot",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md"
       },
       {
         "is_embedded": false,
@@ -11724,7 +11765,7 @@
     },
     {
       "depth": 1,
-      "digest": "3f141636861991a361b915da8608bd32970b177be081e422fa59a652540441f4",
+      "digest": "a7d560948e289c73b0ad39862249d155163811c3d8796152eebd16fad0768928",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -11771,7 +11812,7 @@
           "via": "outlink"
         }
       ],
-      "size": 876,
+      "size": 1042,
       "states": [
         {
           "remainingInlinks": 99,

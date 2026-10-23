@@ -3,6 +3,7 @@ use crate::{
     ResolutionExplanation,
 };
 use std::collections::{BTreeMap, HashMap};
+use unicode_normalization::UnicodeNormalization;
 
 #[derive(Clone)]
 struct Candidate {
@@ -16,6 +17,16 @@ pub(crate) struct Resolver {
     candidates: Vec<Candidate>,
     by_title: HashMap<String, Vec<usize>>,
     by_path: HashMap<String, usize>,
+    by_folded_title: HashMap<String, Vec<usize>>,
+    by_folded_path: HashMap<String, Vec<usize>>,
+}
+
+/// Link text and file names also match regardless of letter case and of
+/// Unicode normalization (`é` precomposed, or `e` plus a combining accent),
+/// as in Obsidian. An exact match is always preferred: folded names are
+/// only consulted when nothing matches exactly.
+fn fold(text: &str) -> String {
+    text.nfc().collect::<String>().to_lowercase()
 }
 
 fn rank(format: &str) -> usize {
@@ -86,11 +97,37 @@ impl Resolver {
                 .or_default()
                 .push(id);
         }
+        let mut by_folded_title: HashMap<String, Vec<usize>> = HashMap::new();
+        let mut by_folded_path: HashMap<String, Vec<usize>> = HashMap::new();
+        for (path, id) in &by_path {
+            by_folded_path.entry(fold(path)).or_default().push(*id);
+        }
+        for ids in by_folded_path.values_mut() {
+            ids.sort_by(|a, b| candidates[*a].path.cmp(&candidates[*b].path));
+        }
+        for (id, candidate) in candidates.iter().enumerate() {
+            by_folded_title
+                .entry(fold(&candidate.title))
+                .or_default()
+                .push(id);
+        }
         Self {
             candidates,
             by_path,
             by_title,
+            by_folded_title,
+            by_folded_path,
         }
+    }
+
+    /// The candidate at exactly `path`, or else the first one whose path
+    /// differs only in letter case or Unicode normalization.
+    fn by_path_or_folded(&self, path: &str) -> Option<usize> {
+        self.by_path.get(path).copied().or_else(|| {
+            self.by_folded_path
+                .get(&fold(path))
+                .and_then(|ids| ids.first().copied())
+        })
     }
 
     fn matches(
@@ -116,51 +153,37 @@ impl Resolver {
         };
         if link.is_relative_path_link {
             return (
-                self.by_path.get(&requested).copied().into_iter().collect(),
+                self.by_path_or_folded(&requested).into_iter().collect(),
                 "relativePath",
             );
         }
         // An explicit physical filename remains valid even when its detected
         // format differs from its suffix (notably Excalidraw Markdown).
         if crate::parser::wiki_link_has_explicit_file_type(link) {
-            if let Some(id) = self.by_path.get(&requested) {
-                if self.candidates[*id].format != link.link_parsed_file_type {
-                    return (vec![*id], "exactPath");
+            if let Some(id) = self.by_path_or_folded(&requested) {
+                if self.candidates[id].format != link.link_parsed_file_type {
+                    return (vec![id], "exactPath");
                 }
             }
         }
-        let ids = self
-            .by_title
-            .get(&link.link_parsed_title)
-            .cloned()
-            .unwrap_or_default();
-        let path_matches = |id: &usize| {
-            directory.is_empty()
-                || self.candidates[*id].directory == directory
-                || self.candidates[*id]
-                    .directory
-                    .ends_with(&format!("/{directory}"))
-        };
-        let mut candidates: Vec<usize> = ids
-            .iter()
-            .copied()
-            .filter(path_matches)
-            .filter(|id| self.candidates[*id].format == link.link_parsed_file_type)
-            .collect();
-        if candidates.is_empty() && !crate::parser::wiki_link_has_explicit_file_type(link) {
-            candidates = ids.into_iter().filter(path_matches).collect();
+        let mut folded = false;
+        let mut candidates = self.title_candidates(link, directory, folded);
+        if candidates.is_empty() {
+            folded = true;
+            candidates = self.title_candidates(link, directory, folded);
         }
+        let same_directory = |a: &str, b: &str| if folded { fold(a) == fold(b) } else { a == b };
         let key = |id: &usize| {
             let c = &self.candidates[*id];
             let priority = if !directory.is_empty() {
-                if c.directory == directory {
+                if same_directory(&c.directory, directory) {
                     0
                 } else {
                     1
                 }
             } else if c.directory.is_empty() {
                 0
-            } else if c.directory == source_directory {
+            } else if same_directory(&c.directory, source_directory) {
                 1
             } else {
                 2
@@ -183,20 +206,51 @@ impl Resolver {
         let reason = candidates.first().map_or("unresolved", |id| {
             let c = &self.candidates[*id];
             if !directory.is_empty() {
-                if c.directory == directory {
+                if same_directory(&c.directory, directory) {
                     "exactPath"
                 } else {
                     "directorySuffix"
                 }
             } else if c.directory.is_empty() {
                 "sourceRoot"
-            } else if c.directory == source_directory {
+            } else if same_directory(&c.directory, source_directory) {
                 "sourceDirectory"
             } else {
                 "shallowestThenLexical"
             }
         });
         (candidates, reason)
+    }
+
+    /// Candidates with the link's title, in the link's directory if it names
+    /// one, preferring the link's file type. With `folded`, titles and
+    /// directories match regardless of letter case and Unicode normalization.
+    fn title_candidates(&self, link: &Link, directory: &str, folded: bool) -> Vec<usize> {
+        let ids = if folded {
+            self.by_folded_title.get(&fold(&link.link_parsed_title))
+        } else {
+            self.by_title.get(&link.link_parsed_title)
+        }
+        .cloned()
+        .unwrap_or_default();
+        let comparable = |text: &str| if folded { fold(text) } else { text.to_string() };
+        let wanted = comparable(directory);
+        let path_matches = |id: &usize| {
+            let candidate_directory = comparable(&self.candidates[*id].directory);
+            directory.is_empty()
+                || candidate_directory == wanted
+                || candidate_directory.ends_with(&format!("/{wanted}"))
+        };
+        let candidates: Vec<usize> = ids
+            .iter()
+            .copied()
+            .filter(path_matches)
+            .filter(|id| self.candidates[*id].format == link.link_parsed_file_type)
+            .collect();
+        if candidates.is_empty() && !crate::parser::wiki_link_has_explicit_file_type(link) {
+            return ids.into_iter().filter(path_matches).collect();
+        }
+        candidates
     }
 
     pub fn resolve(&self, link: &mut Link, source_directory: &str) {

@@ -4,6 +4,8 @@
 
 [[test.io which looks like a filename suffix]]
 
+A link whose letter case differs from the page name, which should still find the page: [[T011 ---- Page Name With Special Characters -- Before Dot . And After Dot]]
+
 ### Links in a table with escaped aliases
 
 First, before we get into the table, let's just do one _outside_ the table:
