@@ -2125,6 +2125,29 @@
       "link": {
         "is_embedded": false,
         "is_relative_path_link": false,
+        "link_original_text": "t003 ---- page with section to link to#Section 2|the second section",
+        "link_parsed_alias": "the second section",
+        "link_parsed_anchor": "Section 2",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t003 ---- page with section to link to",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t003%20-%20link%20to%20section.md",
+        "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+      },
+      "source": "source://source/t003%20-%20link%20to%20section.md",
+      "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
         "link_original_text": "t004 ---- sensitive page",
         "link_parsed_alias": null,
         "link_parsed_anchor": null,
@@ -5554,6 +5577,24 @@
         "link_parsed_alias": null,
         "link_parsed_anchor": "a-block",
         "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t003 ---- page with section to link to",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t003%20-%20link%20to%20section.md",
+        "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t003 ---- page with section to link to#Section 2|the second section",
+        "link_parsed_alias": "the second section",
+        "link_parsed_anchor": "Section 2",
+        "link_parsed_anchor_type": "section",
         "link_parsed_directory": "",
         "link_parsed_file_type": "md",
         "link_parsed_media_size": null,
@@ -9752,7 +9793,7 @@
     },
     {
       "depth": 1,
-      "digest": "d6c4a2ae671b1df87cfae2dd57c1dbf8f5f40e69b6ee753c81c453c868037e5a",
+      "digest": "134fe153b5408c748b7f2cc0388c97c81079f676bf565d975905957470e43645",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -9799,7 +9840,7 @@
           "via": "outlink"
         }
       ],
-      "size": 339,
+      "size": 493,
       "states": [
         {
           "remainingInlinks": 99,
