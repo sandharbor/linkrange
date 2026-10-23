@@ -731,7 +731,8 @@
     },
     "source://source/t020%20-%20code%20blocks.md": {
       "inlinks": [
-        "source://source/main%20page.md"
+        "source://source/main%20page.md",
+        "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md"
       ],
       "outlinks": [
         "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
@@ -743,7 +744,9 @@
       "inlinks": [
         "source://source/t020%20-%20code%20blocks.md"
       ],
-      "outlinks": []
+      "outlinks": [
+        "source://source/t020%20-%20code%20blocks.md"
+      ]
     },
     "source://source/t020/t020%20----%20page%20links%20in%20code%20blocks%20should%20not%20become%20links.md": {
       "inlinks": [
@@ -3915,7 +3918,7 @@
       "target": "source://source/t020/t020%20----%20page%20links%20in%20code%20blocks%20should%20not%20become%20links.md"
     },
     {
-      "bidirectional": false,
+      "bidirectional": true,
       "link": {
         "is_embedded": false,
         "is_relative_path_link": false,
@@ -3936,6 +3939,29 @@
       },
       "source": "source://source/t020%20-%20code%20blocks.md",
       "target": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t020 - code blocks",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t020 - code blocks",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t020%20-%20code%20blocks.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
+        "target": "source://source/t020%20-%20code%20blocks.md"
+      },
+      "source": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
+      "target": "source://source/t020%20-%20code%20blocks.md"
     },
     {
       "bidirectional": false,
@@ -7405,7 +7431,26 @@
         "target": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md"
       }
     ],
-    "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md": [],
+    "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t020 - code blocks",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t020 - code blocks",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t020%20-%20code%20blocks.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
+        "target": "source://source/t020%20-%20code%20blocks.md"
+      }
+    ],
     "source://source/t020/t020%20----%20page%20links%20in%20code%20blocks%20should%20not%20become%20links.md": [],
     "source://source/t020/t020%20----%20tags%20in%20code%20blocks%20should%20not%20become%20tag%20links.md": [],
     "source://source/t021%20-%20link%20gaps.md": [
@@ -15059,7 +15104,7 @@
     },
     {
       "depth": 2,
-      "digest": "ae970a146ab965c3b9a5eb54a9c62c80856e1b2abab99ff73cf4ac38fd1242a3",
+      "digest": "c9a526c3568e0301c29b2feda2802ccdd8e4f1232702d82287daf907a0d99523",
       "directory": "source://source/t020",
       "format": "md",
       "inclusion": "traversal",
@@ -15122,7 +15167,7 @@
           "via": "outlink"
         }
       ],
-      "size": 298,
+      "size": 538,
       "states": [
         {
           "remainingInlinks": 98,
@@ -15134,7 +15179,7 @@
     },
     {
       "depth": 2,
-      "digest": "3dbe5a00d998ad4e020891350255002242e74e78270dea9d4d3bc92f790c9bba",
+      "digest": "94f46fe6f57b971db4f20a98696e3f38347d8a37c3ba746f9f09c8e8e00e1e7b",
       "directory": "source://source/t020",
       "format": "md",
       "inclusion": "traversal",
@@ -15197,7 +15242,7 @@
           "via": "outlink"
         }
       ],
-      "size": 162,
+      "size": 409,
       "states": [
         {
           "remainingInlinks": 98,
@@ -15209,7 +15254,7 @@
     },
     {
       "depth": 2,
-      "digest": "02289a98f485ec6e435be859255542fea115184df26900662eaa4f4d1d7aa3cf",
+      "digest": "6721f010139b433831cb13e700f18e5566cc0215e7984c140ce73979dcfa67f9",
       "directory": "source://source/t020",
       "format": "md",
       "inclusion": "traversal",
@@ -15272,7 +15317,7 @@
           "via": "outlink"
         }
       ],
-      "size": 168,
+      "size": 312,
       "states": [
         {
           "remainingInlinks": 98,

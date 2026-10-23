@@ -1,7 +1,12 @@
 {
   "isInWorkingGraph": true,
   "links": {
-    "outlinks": [],
+    "outlinks": [
+      {
+        "linkPath": "source://source/t020%20-%20code%20blocks.md",
+        "isInGraph": true
+      }
+    ],
     "inlinks": [
       {
         "linkPath": "source://source/t020%20-%20code%20blocks.md",

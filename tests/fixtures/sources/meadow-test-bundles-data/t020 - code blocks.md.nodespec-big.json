@@ -19,6 +19,10 @@
       {
         "linkPath": "source://source/main%20page.md",
         "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t020/t020%20----%20code%20blocks%20should%20end%20properly.md",
+        "isInGraph": true
       }
     ]
   }

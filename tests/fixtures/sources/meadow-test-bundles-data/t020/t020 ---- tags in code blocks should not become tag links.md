@@ -6,3 +6,13 @@ Inline code: `#tag-inside-code-ticks`
 #tag-inside-fenced-code-block
 some other text
 ```
+
+A code block fenced with tildes:
+
+~~~txt
+#tag-inside-tilde-fenced-code-block
+~~~
+
+An indented code block:
+
+    #tag-inside-indented-code-block
