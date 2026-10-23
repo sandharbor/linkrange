@@ -4198,6 +4198,75 @@
       "link": {
         "is_embedded": false,
         "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      "source": "source://source/t024%20-%20markdown%20links.md",
+      "target": "source://source/t024/t024%20----%20linked%20page.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      "source": "source://source/t024%20-%20markdown%20links.md",
+      "target": "source://source/t024/t024%20----%20linked%20page.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      "source": "source://source/t024%20-%20markdown%20links.md",
+      "target": "source://source/t024/t024%20----%20linked%20page.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
         "link_original_text": "./t024/t024 ---- linked page.md",
         "link_parsed_alias": "Linked Page",
         "link_parsed_anchor": null,
@@ -7726,6 +7795,24 @@
       {
         "is_embedded": false,
         "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
         "link_original_text": "../../../somewhere/else.md",
         "link_parsed_alias": "Outside",
         "link_parsed_anchor": null,
@@ -7740,6 +7827,42 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
         "target": null
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "./t024/t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t024/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
       },
       {
         "is_embedded": false,
@@ -16106,7 +16229,7 @@
     },
     {
       "depth": 1,
-      "digest": "d56fbdc5b0cb67b5628258532c726909da98817b00265fc32cdddcb7f882d220",
+      "digest": "4ac8e855e544988d328789f6eed76407374f95252f85475b40b49dbb12e6c74c",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -16153,7 +16276,7 @@
           "via": "outlink"
         }
       ],
-      "size": 777,
+      "size": 1278,
       "states": [
         {
           "remainingInlinks": 99,

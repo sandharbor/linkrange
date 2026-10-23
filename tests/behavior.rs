@@ -509,6 +509,26 @@ fn standard_markdown_reference_links_are_resolved() {
 }
 
 #[test]
+fn markdown_links_with_titles_or_angle_brackets_are_resolved() {
+    let f = Fixture::new();
+    f.write(
+        "A.md",
+        "[titled](B.md \"A title\")\n\n[angle](<My Page.md>)\n",
+    );
+    f.write("B.md", "");
+    f.write("My Page.md", "");
+    let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
+    assert_eq!(paths(&response), ["A.md", "B.md", "My Page.md"]);
+    let texts: Vec<_> = response.links_by_source[&locator("A.md")]
+        .iter()
+        .map(|link| link.link_original_text.as_str())
+        .collect();
+    // The destination without its title or angle brackets, as a Markdown
+    // renderer reports it.
+    assert_eq!(texts, ["B.md", "My Page.md"]);
+}
+
+#[test]
 fn excalidraw_keeps_physical_path_and_reports_detected_format() {
     let f = Fixture::new();
     f.write("A.md", "![[Drawing]]");
