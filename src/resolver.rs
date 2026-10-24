@@ -187,9 +187,13 @@ impl Resolver {
         };
         let key = |id: &usize| {
             let c = &self.candidates[*id];
-            let priority = if !directory.is_empty() && same_directory(&c.directory, directory) {
-                0
-            } else if directory.is_empty() && c.directory.is_empty() {
+            // An exact path from the root: the link's directory, or the root itself.
+            let exact = if directory.is_empty() {
+                c.directory.is_empty()
+            } else {
+                same_directory(&c.directory, directory)
+            };
+            let priority = if exact {
                 0
             } else if in_source_folder(c) {
                 1
