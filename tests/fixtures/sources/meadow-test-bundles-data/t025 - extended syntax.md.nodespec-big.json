@@ -1,7 +1,12 @@
 {
   "isInWorkingGraph": true,
   "links": {
-    "outlinks": [],
+    "outlinks": [
+      {
+        "linkPath": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md",
+        "isInGraph": true
+      }
+    ],
     "inlinks": [
       {
         "linkPath": "source://source/main%20page.md",

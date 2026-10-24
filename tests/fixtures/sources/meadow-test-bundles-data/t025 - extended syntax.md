@@ -215,6 +215,10 @@ Comments inside code blocks should be preserved:
 
 Inline code too: `%%also preserved%%`
 
+Two percent signs written with a backslash are text, not a comment: \%%this stays visible\%%
+
+A comment can contain a link. As in Obsidian, the link still counts, so the linked page lists this page among its backlinks, but the comment's text must not appear here or in that page's backlinks.%%A private note about [[t003 ---- page with section to link to]]%%
+
 ### LaTeX Math
 
 Inline math: $E = mc^2$
@@ -288,3 +292,10 @@ graph TD
     B -->|Yes| C[OK]
     B -->|No| D[Cancel]
 ```
+
+### Unclosed Comment
+
+A comment that is never closed hides the rest of the note, as in Obsidian. The line after this one opens such a comment, so nothing after it should appear on the page.
+
+%%
+This text follows a comment that is never closed, so it must not appear on the page.

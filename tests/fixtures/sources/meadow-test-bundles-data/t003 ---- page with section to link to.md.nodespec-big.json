@@ -6,6 +6,10 @@
       {
         "linkPath": "source://source/t003%20-%20link%20to%20section.md",
         "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t025%20-%20extended%20syntax.md",
+        "isInGraph": true
       }
     ]
   }

@@ -205,7 +205,8 @@
     },
     "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md": {
       "inlinks": [
-        "source://source/t003%20-%20link%20to%20section.md"
+        "source://source/t003%20-%20link%20to%20section.md",
+        "source://source/t025%20-%20extended%20syntax.md"
       ],
       "outlinks": []
     },
@@ -903,7 +904,9 @@
       "inlinks": [
         "source://source/main%20page.md"
       ],
-      "outlinks": []
+      "outlinks": [
+        "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+      ]
     },
     "source://source/t026%20-%20HTML%20node.md": {
       "inlinks": [
@@ -4565,6 +4568,29 @@
       },
       "source": "source://source/t024/t024%20----%20linked%20page.md",
       "target": "source://source/t024/deeper/t024%20----%20deep%20page.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t003 ---- page with section to link to",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t003 ---- page with section to link to",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t025%20-%20extended%20syntax.md",
+        "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+      },
+      "source": "source://source/t025%20-%20extended%20syntax.md",
+      "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
     },
     {
       "bidirectional": true,
@@ -8249,7 +8275,26 @@
       }
     ],
     "source://source/t024/t024%20----%20test%20image.png": [],
-    "source://source/t025%20-%20extended%20syntax.md": [],
+    "source://source/t025%20-%20extended%20syntax.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t003 ---- page with section to link to",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t003 ---- page with section to link to",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t025%20-%20extended%20syntax.md",
+        "target": "source://source/t003%20----%20page%20with%20section%20to%20link%20to.md"
+      }
+    ],
     "source://source/t026%20-%20HTML%20node.md": [
       {
         "is_embedded": false,
@@ -14520,7 +14565,7 @@
     },
     {
       "depth": 3,
-      "digest": "b211812220bc4ebe58af2606239daff3aa32338642d29a69e59d2533fea735a2",
+      "digest": "86f6f1213eea4a4dfc46585ef7c1d5dea5f10a473015861a31ffad94e301a91e",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14599,7 +14644,7 @@
           "via": "outlink"
         }
       ],
-      "size": 728,
+      "size": 866,
       "states": [
         {
           "remainingInlinks": 97,
@@ -16840,7 +16885,7 @@
     },
     {
       "depth": 1,
-      "digest": "4bdbcaf8bf3ff8f89cf02cd3bfe65da5b94a8328c5d8b6975d0f9ed491b1100a",
+      "digest": "f243d443fbb6b4579e2c8737ede76f892ce4d5f08c09ebd9cf1dd7db8bc82cf1",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -16887,7 +16932,7 @@
           "via": "outlink"
         }
       ],
-      "size": 5766,
+      "size": 6406,
       "states": [
         {
           "remainingInlinks": 99,
