@@ -118,7 +118,7 @@ locators cannot contain raw queries or fragments: encode literal filename
 characters such as `#`, `?`, and `%`.
 
 Unqualified links resolve only within their referring source. Qualified wikilinks
-use the existing ranking within the selected source, with root/shallowest/lexical
+use the existing ranking within the selected source, with root/shortest/lexical
 ranking when crossing sources; they never borrow the origin's directory. An alias
 selecting the referring source retains ordinary same-source ranking. A recognized
 source with a missing file is distinct from an unknown source: the former has a
@@ -181,10 +181,11 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   This is local-file discovery, not a browser dependency crawler: CSS URLs,
   JavaScript imports, `srcset`, and HTML `base` URL semantics are not implemented.
   Remote URLs and same-file HTML fragments are not graph edges.
-- **Resolution:** Preserve the empirically observed Obsidian rules: exact path
-  where specified; otherwise root match, then linking-file directory, then
-  shallowest candidate, then lexical order. Explicit directories also support
-  suffix matching. `explainResolution` includes the winning reason and candidates.
+- **Resolution:** Follow Obsidian's rules (`MetadataCache.getLinkpathDest`):
+  an exact path from the root first; then candidates inside the linking file's
+  folder, at any depth; then the rest. Each group is ordered shortest path
+  first, then lexically. Explicit directories also support suffix matching.
+  `explainResolution` includes the winning reason and candidates.
   Markdown and HTML/SVG URL paths are percent-decoded once (including `%20`
   spaces) after separating query strings and fragments. Original URLs remain
   in `link_original_text` for consumers that rewrite links; wikilinks keep their

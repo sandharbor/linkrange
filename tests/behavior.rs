@@ -322,7 +322,7 @@ fn query_scoped_resolution_and_adjacency_include_outside_neighbors_without_admit
 }
 
 #[test]
-fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() {
+fn wikilink_resolution_preserves_root_folder_shortest_and_lexical_precedence() {
     let f = Fixture::new();
     f.write("nested/A.md", "[[Idea|display]]");
     for name in [
@@ -338,13 +338,13 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
     request.query.explain_resolution = true;
     for (remove, expected, reason) in [
         (None, "Idea.md", "sourceRoot"),
-        (Some("Idea.md"), "nested/Idea.md", "sourceDirectory"),
+        (Some("Idea.md"), "nested/Idea.md", "sourceFolder"),
         (
             Some("nested/Idea.md"),
             "aaa/Idea.md",
-            "shallowestThenLexical",
+            "shortestPath",
         ),
-        (Some("aaa/Idea.md"), "zzz/Idea.md", "shallowestThenLexical"),
+        (Some("aaa/Idea.md"), "zzz/Idea.md", "shortestPath"),
     ] {
         if let Some(path) = remove {
             fs::remove_file(f.root().join(path)).unwrap();
@@ -370,6 +370,42 @@ fn wikilink_resolution_preserves_root_local_shallowest_and_lexical_precedence() 
             expected_candidates
         );
     }
+}
+
+#[test]
+fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
+    // Obsidian's MetadataCache.getLinkpathDest (1.14): after an exact path
+    // from the root, candidates inside the linking note's folder (at any
+    // depth) come first, then the rest; each group shortest path first.
+    let f = Fixture::new();
+    f.write("nested/A.md", "[[Idea]]\n\n[[Plan]]\n\n[[sub/Topic]]\n");
+    for name in [
+        // Inside the linking note's folder, though deeper than other/.
+        "nested/deep/Idea.md",
+        "other/Idea.md",
+        // A long folder name at depth 1 against a short path at depth 2.
+        "aaaaaaaaaaaa/Plan.md",
+        "b/c/Plan.md",
+        // Suffix matches for an explicit directory: the one inside the
+        // linking note's folder wins over a shorter one elsewhere.
+        "nested/far/below/sub/Topic.md",
+        "x/sub/Topic.md",
+    ] {
+        f.write(name, "");
+    }
+    let response = query(&f.request(&["nested/A.md"], 1, 0)).unwrap();
+    let targets: Vec<_> = response.links_by_source[&locator("nested/A.md")]
+        .iter()
+        .map(|link| link.target.clone())
+        .collect();
+    assert_eq!(
+        targets,
+        [
+            Some(locator("nested/deep/Idea.md")),
+            Some(locator("b/c/Plan.md")),
+            Some(locator("nested/far/below/sub/Topic.md")),
+        ]
+    );
 }
 
 #[test]

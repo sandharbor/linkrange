@@ -173,24 +173,34 @@ impl Resolver {
             candidates = self.title_candidates(link, directory, folded);
         }
         let same_directory = |a: &str, b: &str| if folded { fold(a) == fold(b) } else { a == b };
+        // Obsidian (MetadataCache.getLinkpathDest) prefers candidates inside
+        // the linking note's folder, at any depth, over those elsewhere. (For
+        // a note at the root, every candidate is elsewhere: the order is the same.)
+        let in_source_folder = |c: &Candidate| {
+            !source_directory.is_empty()
+                && (same_directory(&c.directory, source_directory)
+                    || if folded {
+                        fold(&c.directory).starts_with(&format!("{}/", fold(source_directory)))
+                    } else {
+                        c.directory.starts_with(&format!("{source_directory}/"))
+                    })
+        };
         let key = |id: &usize| {
             let c = &self.candidates[*id];
-            let priority = if !directory.is_empty() {
-                if same_directory(&c.directory, directory) {
-                    0
-                } else {
-                    1
-                }
-            } else if c.directory.is_empty() {
+            let priority = if !directory.is_empty() && same_directory(&c.directory, directory) {
                 0
-            } else if same_directory(&c.directory, source_directory) {
+            } else if directory.is_empty() && c.directory.is_empty() {
+                0
+            } else if in_source_folder(c) {
                 1
             } else {
                 2
             };
+            // Then the shortest path, as Obsidian sorts; the note name is the
+            // same for every candidate, so this is the shortest folder path.
             (
                 priority,
-                c.directory.split('/').filter(|s| !s.is_empty()).count(),
+                c.directory.chars().count(),
                 &c.directory,
                 rank(&c.format),
                 &c.format,
@@ -213,10 +223,10 @@ impl Resolver {
                 }
             } else if c.directory.is_empty() {
                 "sourceRoot"
-            } else if same_directory(&c.directory, source_directory) {
-                "sourceDirectory"
+            } else if in_source_folder(c) {
+                "sourceFolder"
             } else {
-                "shallowestThenLexical"
+                "shortestPath"
             }
         });
         (candidates, reason)

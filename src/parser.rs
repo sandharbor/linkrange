@@ -972,8 +972,8 @@ mod tests {
     }
 
     #[test]
-    fn test_resolve_wiki_link_with_prefix_suffix_match_prefers_shallowest() {
-        // Two candidates both end with `/sub`: shallowest wins.
+    fn test_resolve_wiki_link_with_prefix_suffix_match_prefers_shortest() {
+        // Two candidates both end with `/sub`: the shorter path wins.
         let source = make_page("", "src", "md");
         let shallow = make_page("shallow/sub", "foo", "png");
         let deep = make_page("deep/extra/sub", "foo", "png");
