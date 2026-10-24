@@ -339,11 +339,7 @@ fn wikilink_resolution_preserves_root_folder_shortest_and_lexical_precedence() {
     for (remove, expected, reason) in [
         (None, "Idea.md", "sourceRoot"),
         (Some("Idea.md"), "nested/Idea.md", "sourceFolder"),
-        (
-            Some("nested/Idea.md"),
-            "aaa/Idea.md",
-            "shortestPath",
-        ),
+        (Some("nested/Idea.md"), "aaa/Idea.md", "shortestPath"),
         (Some("aaa/Idea.md"), "zzz/Idea.md", "shortestPath"),
     ] {
         if let Some(path) = remove {
