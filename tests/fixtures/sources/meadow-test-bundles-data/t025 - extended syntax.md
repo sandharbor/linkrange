@@ -82,6 +82,11 @@ Third **Term**
 - [ ] Update the website
 - [ ] Contact the media
 
+Obsidian treats any single character between the brackets as a completed task, such as a question or a cancelled item:
+
+- [?] Ask about the venue
+- [-] Book the old hall
+
 ## Emoji (Copy and Paste)
 
 Gone camping! ⛺ Be back soon.
@@ -93,6 +98,8 @@ That is so funny! 😂
 Gone camping! :tent: Be back soon.
 
 That is so funny! :joy:
+
+Colons that do not form a known emoji stay as written: 12:30:45 and :not-an-emoji:. A shortcode inside a link's address is part of the address, not an emoji: [a link with :tent: in its address](https://example.com/camp:tent:site)
 
 ## Highlight
 
@@ -308,6 +315,14 @@ graph TD
     B -->|Yes| C[OK]
     B -->|No| D[Cancel]
 ```
+
+### Repeated Heading
+
+Two headings with the same text get different ids, the first `repeated-heading` and the second `repeated-heading-1`, so each can be linked to.
+
+### Repeated Heading
+
+The second heading with the same text.
 
 ### Unclosed Comment
 
