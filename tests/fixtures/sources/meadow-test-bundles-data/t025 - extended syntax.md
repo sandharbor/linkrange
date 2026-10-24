@@ -54,6 +54,8 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
     Add as many paragraphs as you like.
 
+Obsidian also writes a footnote inline, where it is referenced.^[This footnote was written inline, inside the paragraph.] It is numbered and listed with the others.
+
 ## Heading IDs
 
 ### My Great Heading {#custom-id}
@@ -66,6 +68,9 @@ First Term
 Second Term
 : This is one definition of the second term.
 : This is another definition of the second term.
+
+Third **Term**
+: A definition with **bold**, `code`, and [an external link](https://example.com/definition), all rendered as Markdown.
 
 ## Strikethrough
 
@@ -218,6 +223,17 @@ Inline code too: `%%also preserved%%`
 Two percent signs written with a backslash are text, not a comment: \%%this stays visible\%%
 
 A comment can contain a link. As in Obsidian, the link still counts, so the linked page lists this page among its backlinks, but the comment's text must not appear here or in that page's backlinks.%%A private note about [[t003 ---- page with section to link to]]%%
+
+### Escaping
+
+A backslash before a character shows that character instead of its Markdown meaning. None of these should become a link, a tag, math, or formatting:
+
+- Not a link: \[[main page]]
+- Not an embed: !\[[main page]]
+- Not a tag: \#t025-not-a-tag
+- Not math: \$5 and \$10
+- Not italic: \*not italic\*
+- Not a table separator: a \| b
 
 ### LaTeX Math
 

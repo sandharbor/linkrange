@@ -2297,6 +2297,52 @@
       "link": {
         "is_embedded": true,
         "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- meadow.png|100x50",
+        "link_parsed_alias": "100x50",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- meadow",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20meadow.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20meadow.png"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20meadow.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "t006/t006%20---%20meadow.png",
+        "link_parsed_alias": "A meadow|80",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- meadow",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20meadow.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20meadow.png"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20meadow.png"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
         "link_original_text": "t006/t006 --- meadow-flower-petals-ani.gif",
         "link_parsed_alias": null,
         "link_parsed_anchor": null,
@@ -3726,6 +3772,29 @@
         "link_original_text": "t017 ---- block source#^second-item",
         "link_parsed_alias": null,
         "link_parsed_anchor": "second-item",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20block%20transclusion.md",
+      "target": "source://source/t017/t017%20----%20block%20source.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^a-table",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "a-table",
         "link_parsed_anchor_type": "block",
         "link_parsed_directory": "",
         "link_parsed_file_type": "md",
@@ -5991,6 +6060,42 @@
       {
         "is_embedded": true,
         "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- meadow.png|100x50",
+        "link_parsed_alias": "100x50",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- meadow",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20meadow.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20meadow.png"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": true,
+        "link_original_text": "t006/t006%20---%20meadow.png",
+        "link_parsed_alias": "A meadow|80",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "png",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- meadow",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20meadow.png",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20meadow.png"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
         "link_original_text": "t006/t006 --- meadow-flower-petals-ani.gif",
         "link_parsed_alias": null,
         "link_parsed_anchor": null,
@@ -7474,6 +7579,24 @@
         "link_original_text": "t017 ---- block source#^second-item",
         "link_parsed_alias": null,
         "link_parsed_anchor": "second-item",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^a-table",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "a-table",
         "link_parsed_anchor_type": "block",
         "link_parsed_directory": "",
         "link_parsed_file_type": "md",
@@ -10660,7 +10783,7 @@
     },
     {
       "depth": 1,
-      "digest": "a08d50da747e15e04c5d8ca5c0923274be8a40e567efced7c8dff2cc06db4a2f",
+      "digest": "ac98a75e3c50c49a87d119b8dd9fbc7090d36392e538bc4cd4e008f8d3f38956",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -10707,7 +10830,7 @@
           "via": "outlink"
         }
       ],
-      "size": 1605,
+      "size": 2056,
       "states": [
         {
           "remainingInlinks": 99,
@@ -14324,7 +14447,7 @@
     },
     {
       "depth": 3,
-      "digest": "8eefec8386498d0d2d35400df4c85031921b0b1a3c1bb0989fed7a87b5ea979a",
+      "digest": "0ab17a0cf4895a7cc078824d1d4dd04d1e71deb1bd3214b382cc15348d5ede85",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14403,7 +14526,7 @@
           "via": "outlink"
         }
       ],
-      "size": 659,
+      "size": 906,
       "states": [
         {
           "remainingInlinks": 97,
@@ -14415,7 +14538,7 @@
     },
     {
       "depth": 2,
-      "digest": "3642d1f83d8ff835168e4f49e892cb17845d039f0fdb4c4a6aac9744cb50c4e9",
+      "digest": "e35775cc34ed87b4a4db4a7e9685edadf03dd2ca2a82493f66e80ac1d025a42f",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14478,7 +14601,7 @@
           "via": "outlink"
         }
       ],
-      "size": 679,
+      "size": 786,
       "states": [
         {
           "remainingInlinks": 98,
@@ -16885,7 +17008,7 @@
     },
     {
       "depth": 1,
-      "digest": "f243d443fbb6b4579e2c8737ede76f892ce4d5f08c09ebd9cf1dd7db8bc82cf1",
+      "digest": "5150a7876a0d8bcc8a80f202c400abffdb2d452466a38c5a465b2b11e8da93c3",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -16932,7 +17055,7 @@
           "via": "outlink"
         }
       ],
-      "size": 6406,
+      "size": 7050,
       "states": [
         {
           "remainingInlinks": 99,

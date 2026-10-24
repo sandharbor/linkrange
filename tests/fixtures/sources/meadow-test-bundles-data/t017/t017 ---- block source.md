@@ -19,3 +19,14 @@ A list where only the second item has an identifier:
 - The first item.
 - The second item, which has its own identifier. ^second-item
 - The third item.
+
+A caret in the middle of a sentence, as in 2 ^10, is not a block identifier.
+
+A table, followed by an identifier on its own line, which names the whole table:
+
+| Column | Value |
+| ------ | ----- |
+| a      | 1     |
+| b      | 2     |
+
+^a-table

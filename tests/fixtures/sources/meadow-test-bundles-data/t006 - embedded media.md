@@ -8,6 +8,20 @@
 | ---------------------------------- |
 | ![[t006/t006 --- meadow.png\|100]] |
 
+## Image Sizes
+
+Obsidian sizes an image with a width (`|100`, above) or a width and height (`|100x50`, here):
+
+![[t006/t006 --- meadow.png|100x50]]
+
+In Markdown image syntax the size goes where the alt text goes, optionally after the alt text and a `|`. A local image, 80 pixels wide, with alt text:
+
+![A meadow|80](t006/t006%20---%20meadow.png)
+
+An external image, 250 pixels wide, with no alt text:
+
+![250](https://example.com/meadow-external.png)
+
 ## Animated GIF
 
 ![[t006/t006 --- meadow-flower-petals-ani.gif]]
