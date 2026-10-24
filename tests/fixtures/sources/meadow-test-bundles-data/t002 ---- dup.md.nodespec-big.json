@@ -4,6 +4,10 @@
     "outlinks": [],
     "inlinks": [
       {
+        "linkPath": "source://source/t002%20-%20dup%20pages%20and%20images.md",
+        "isInGraph": true
+      },
+      {
         "linkPath": "source://source/t002/t002%20----%20points%20to%20root%20dup.md",
         "isInGraph": true
       }

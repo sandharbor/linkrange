@@ -15,6 +15,10 @@
         "isInGraph": true
       },
       {
+        "linkPath": "source://source/t002%20----%20dup.md",
+        "isInGraph": true
+      },
+      {
         "linkPath": "source://source/t002/t002%20----%20points%20to%20root%20png%20dup.md",
         "isInGraph": true
       },

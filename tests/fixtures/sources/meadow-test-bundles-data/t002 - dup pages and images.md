@@ -9,6 +9,8 @@ it would be a good idea to have them in different folders.
 
 [[t002 ---- points to extra nested dup]]
 
+A link straight to a dup, written in different letter case. It finds the root one (Obsidian looks at the root first), so the root dup should list this page among its backlinks: [[T002 ---- DUP]]
+
 ### test of first image dup
 
 The title of this image is the same as the duplicate pages... `t002 ---- dup`.  It is also in the same directories as those duplicate pages.  The `file_type` is png, though.

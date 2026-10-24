@@ -6,6 +6,7 @@
       ],
       "outlinks": [
         "source://source/t002%20-%20second%20directory/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20second%20directory.md",
+        "source://source/t002%20----%20dup.md",
         "source://source/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20root.md",
         "source://source/t002/extra%20nested/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20extra%20nested.md",
         "source://source/t002/t002%20----%20points%20to%20extra%20nested%20dup.md",
@@ -26,6 +27,7 @@
     },
     "source://source/t002%20----%20dup.md": {
       "inlinks": [
+        "source://source/t002%20-%20dup%20pages%20and%20images.md",
         "source://source/t002/t002%20----%20points%20to%20root%20dup.md"
       ],
       "outlinks": []
@@ -204,6 +206,29 @@
       },
       "source": "source://source/t002%20-%20dup%20pages%20and%20images.md",
       "target": "source://source/t002/t002%20----%20points%20to%20extra%20nested%20dup.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "T002 ---- DUP",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "T002 ---- DUP",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t002%20----%20dup.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t002%20-%20dup%20pages%20and%20images.md",
+        "target": "source://source/t002%20----%20dup.md"
+      },
+      "source": "source://source/t002%20-%20dup%20pages%20and%20images.md",
+      "target": "source://source/t002%20----%20dup.md"
     },
     {
       "bidirectional": false,
@@ -610,6 +635,24 @@
       {
         "is_embedded": false,
         "is_relative_path_link": false,
+        "link_original_text": "T002 ---- DUP",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "T002 ---- DUP",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/t002%20----%20dup.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t002%20-%20dup%20pages%20and%20images.md",
+        "target": "source://source/t002%20----%20dup.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
         "link_original_text": "t002 ---- points to root png dup",
         "link_parsed_alias": null,
         "link_parsed_anchor": null,
@@ -907,7 +950,7 @@
   "nodes": [
     {
       "depth": 1,
-      "digest": "3b37f3e9d8fbd172834d837c4b0b11167e1dbb4df1f4c2c9668066b5b78974fe",
+      "digest": "67f60a9ed33a9966b0320685c672fe284581d3fc4262b0b57ac8a695dabb8690",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -954,7 +997,7 @@
           "via": "inlink"
         }
       ],
-      "size": 1315,
+      "size": 1511,
       "states": [
         {
           "remainingInlinks": 0,
@@ -1040,25 +1083,24 @@
       "via": "outlink"
     },
     {
-      "depth": 3,
+      "depth": 2,
       "digest": "831c468c7e0a5be03d4978d17eb873f1bd7ee62489e21cca62188afd17505a90",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
       "inherited": {
         "remainingInlinks": 0,
-        "remainingOutlinks": 1
+        "remainingOutlinks": 2
       },
       "metadata": {},
       "overriddenInlinks": null,
       "overriddenOutlinks": null,
       "path": "source://source/t002%20----%20dup.md",
       "remainingInlinks": 0,
-      "remainingOutlinks": 1,
+      "remainingOutlinks": 2,
       "route": [
         "source://source/t002/extra%20nested/t002%20----%20points%20to%20png%20dup%202%20with%20no%20path%20from%20extra%20nested.md",
         "source://source/t002%20-%20dup%20pages%20and%20images.md",
-        "source://source/t002/t002%20----%20points%20to%20root%20dup.md",
         "source://source/t002%20----%20dup.md"
       ],
       "routeSteps": [
@@ -1098,24 +1140,9 @@
           },
           "overriddenInlinks": null,
           "overriddenOutlinks": null,
-          "path": "source://source/t002/t002%20----%20points%20to%20root%20dup.md",
-          "remainingInlinks": 0,
-          "remainingOutlinks": 2,
-          "retainedForTraversal": true,
-          "via": "outlink"
-        },
-        {
-          "depth": 3,
-          "inclusion": "traversal",
-          "inherited": {
-            "remainingInlinks": 0,
-            "remainingOutlinks": 1
-          },
-          "overriddenInlinks": null,
-          "overriddenOutlinks": null,
           "path": "source://source/t002%20----%20dup.md",
           "remainingInlinks": 0,
-          "remainingOutlinks": 1,
+          "remainingOutlinks": 2,
           "retainedForTraversal": true,
           "via": "outlink"
         }
@@ -1124,7 +1151,7 @@
       "states": [
         {
           "remainingInlinks": 0,
-          "remainingOutlinks": 1
+          "remainingOutlinks": 2
         }
       ],
       "title": "t002 ---- dup",
