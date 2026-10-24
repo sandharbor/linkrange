@@ -242,6 +242,25 @@ A backslash before a character shows that character instead of its Markdown mean
 - Not italic: \*not italic\*
 - Not a table separator: a \| b
 
+### Line Breaks
+
+A single line break inside a paragraph
+does not start a new line: these two lines render as one paragraph, as in standard Markdown and in Obsidian with "Strict line breaks" on.
+
+### Raw HTML
+
+HTML in a note is kept, except what would run a script: `<script>` elements, event-handler attributes such as `onclick`, and `javascript:` addresses. Obsidian's reading view removes the same things, so the note's author never saw them run. Interactive content belongs in an HTML file, whose scripts are kept.
+
+<details><summary>Kept: a details element</summary>Its content is shown when opened.</details>
+
+<button onclick="document.title = 'should not run'">Kept: a button, without its onclick</button>
+
+<a href="javascript:document.title = 'should not run'">Kept: a link's text, without its javascript: address</a>
+
+<script>document.title = 'This script should not be in the page';</script>
+
+<iframe src="https://example.com/embedded" title="Kept: an iframe"></iframe>
+
 ### LaTeX Math
 
 Inline math: $E = mc^2$
