@@ -19,6 +19,8 @@ pub(crate) struct Resolver {
     by_path: HashMap<String, usize>,
     by_folded_title: HashMap<String, Vec<usize>>,
     by_folded_path: HashMap<String, Vec<usize>>,
+    /// Notes by folded frontmatter alias.
+    by_alias: HashMap<String, Vec<usize>>,
 }
 
 /// Link text and file names also match regardless of letter case and of
@@ -46,7 +48,15 @@ impl Resolver {
         files: impl Iterator<Item = &'a FileIdentifier>,
         aliases: &BTreeMap<String, String>,
     ) -> Self {
+        let mut by_alias: HashMap<String, Vec<usize>> = HashMap::new();
         let mut candidates: Vec<_> = files
+            .enumerate()
+            .map(|(id, f)| {
+                for alias in &f.note_aliases {
+                    by_alias.entry(fold(alias)).or_default().push(id);
+                }
+                f
+            })
             .map(|f| Candidate {
                 path: f.path.clone(),
                 directory: f.directory.clone(),
@@ -117,6 +127,7 @@ impl Resolver {
             by_title,
             by_folded_title,
             by_folded_path,
+            by_alias,
         }
     }
 
@@ -172,6 +183,12 @@ impl Resolver {
             folded = true;
             candidates = self.title_candidates(link, directory, folded);
         }
+        let via_alias = candidates.is_empty();
+        if via_alias {
+            candidates = self.alias_candidates(link);
+        }
+        // A note found by alias is ranked as if the link named no folder.
+        let directory = if via_alias { "" } else { directory };
         let same_directory = |a: &str, b: &str| if folded { fold(a) == fold(b) } else { a == b };
         // Obsidian (MetadataCache.getLinkpathDest) prefers candidates inside
         // the linking note's folder, at any depth, over those elsewhere. (For
@@ -219,7 +236,9 @@ impl Resolver {
         }
         let reason = candidates.first().map_or("unresolved", |id| {
             let c = &self.candidates[*id];
-            if !directory.is_empty() {
+            if via_alias {
+                "alias"
+            } else if !directory.is_empty() {
                 if same_directory(&c.directory, directory) {
                     "exactPath"
                 } else {
@@ -234,6 +253,20 @@ impl Resolver {
             }
         });
         (candidates, reason)
+    }
+
+    /// Notes with the link's path as a frontmatter alias, in any letter case,
+    /// or else its last segment, as Obsidian Publish falls back to aliases
+    /// when no file has the link's name.
+    fn alias_candidates(&self, link: &Link) -> Vec<usize> {
+        let (path, _) = crate::sources::wiki_target(&link.link_original_text);
+        let path = path.trim();
+        let name = path.rsplit('/').next().unwrap_or(path);
+        self.by_alias
+            .get(&fold(path))
+            .or_else(|| self.by_alias.get(&fold(name)))
+            .cloned()
+            .unwrap_or_default()
     }
 
     /// Candidates with the link's title, in the link's directory if it names
@@ -268,7 +301,8 @@ impl Resolver {
     }
 
     pub fn resolve(&self, link: &mut Link, source_directory: &str) {
-        let (matches, _) = self.matches(link, source_directory, false);
+        let (matches, reason) = self.matches(link, source_directory, false);
+        link.link_resolved_by_alias = reason == "alias";
         if let Some(id) = matches.first() {
             let c = &self.candidates[*id];
             link.target = Some(c.path.clone());

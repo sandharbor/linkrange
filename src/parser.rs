@@ -8,6 +8,9 @@ pub(crate) struct FileIdentifier {
     pub title: String,
     pub file_type: String,
     pub path: String, // no leading "/" (matches fs_search `path`)
+    /// Frontmatter `aliases` of a Markdown note.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub note_aliases: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -33,6 +36,10 @@ pub struct Link {
 
     pub link_resolved_target_directory: String,
     pub link_resolved_target_path: String,
+    /// True when no file has the link's name and a note's frontmatter
+    /// alias supplied the target.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub link_resolved_by_alias: bool,
 
     /// True for standard markdown links `[text](href)` where paths are relative to the source file.
     /// False for wiki-links `[[inner]]` where paths are resolved by fuzzy search.
@@ -130,6 +137,7 @@ fn extract_page_identifier(path: &std::path::Path, base_dir: &std::path::Path) -
         title,
         file_type: file_type_str,
         path,
+        note_aliases: Vec::new(),
     }
 }
 
@@ -411,6 +419,7 @@ fn parse_out_link(inner_link_text: &str, source_page: &FileIdentifier) -> Link {
         is_relative_path_link: false,
         is_embedded: false,
         target: None,
+        link_resolved_by_alias: false,
         resolution: None,
     }
 }
@@ -479,6 +488,7 @@ fn parse_out_markdown_link(display_text: &str, href: &str, source_page: &FileIde
         is_relative_path_link: true,
         is_embedded: false,
         target: None,
+        link_resolved_by_alias: false,
         resolution: None,
     }
 }
@@ -545,6 +555,7 @@ pub(crate) fn scan_file(path: &Path, graph_root: &Path, bytes: &[u8]) -> ScanRes
     let mut outgoing_links = Vec::new();
     if let Ok(content) = std::str::from_utf8(bytes) {
         if source_file.file_type == "md" {
+            source_file.note_aliases = crate::metadata::note_aliases(content);
             if is_excalidraw_markdown(content) {
                 source_file.file_type = "excalidraw".to_string();
                 if let Some(title) = source_file.title.strip_suffix(".excalidraw") {
@@ -881,6 +892,7 @@ mod tests {
             title: title.to_string(),
             file_type: file_type.to_string(),
             path,
+            note_aliases: Vec::new(),
         }
     }
 
@@ -900,6 +912,7 @@ mod tests {
             is_relative_path_link: false,
             is_embedded: false,
             target: None,
+            link_resolved_by_alias: false,
             resolution: None,
             link_source_name: None,
             link_requested_target_source: None,
@@ -924,6 +937,7 @@ mod tests {
             is_relative_path_link: false,
             is_embedded: false,
             target: None,
+            link_resolved_by_alias: false,
             resolution: None,
             link_source_name: None,
             link_requested_target_source: None,

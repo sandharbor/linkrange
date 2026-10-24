@@ -3121,6 +3121,30 @@
       "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md"
     },
     {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "the page with a quote",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "the page with a quote",
+        "link_resolved_by_alias": true,
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md"
+      },
+      "source": "source://source/t011%20-%20special%20links.md",
+      "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md"
+    },
+    {
       "bidirectional": false,
       "link": {
         "is_embedded": false,
@@ -7056,6 +7080,25 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t011%20-%20special%20links.md",
         "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20before%20dot%20.%20and%20after%20dot.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "the page with a quote",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "the page with a quote",
+        "link_resolved_by_alias": true,
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20----%20page%20name%20with%20special%20characters%20--%20single%20quote%20'%20in%20name.md"
       },
       {
         "is_embedded": false,
@@ -12267,7 +12310,7 @@
     },
     {
       "depth": 1,
-      "digest": "a7d560948e289c73b0ad39862249d155163811c3d8796152eebd16fad0768928",
+      "digest": "ebb59ef22f5e1ffbfb24b2ef2a8493f041939c749bb4affe50f5645ea00cd982",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -12314,7 +12357,7 @@
           "via": "outlink"
         }
       ],
-      "size": 1042,
+      "size": 1278,
       "states": [
         {
           "remainingInlinks": 99,
@@ -12776,7 +12819,7 @@
     },
     {
       "depth": 2,
-      "digest": "5214d403ef63a7def95176d84986d78f63a3b694100d6424c7c5a1399f9709fa",
+      "digest": "b4e48be4e811fa00c7df1beaa25577ec0c59e7535ef7f607f499791d6bbd04ca",
       "directory": "source://source/t011",
       "format": "md",
       "inclusion": "traversal",
@@ -12839,7 +12882,7 @@
           "via": "outlink"
         }
       ],
-      "size": 145,
+      "size": 186,
       "states": [
         {
           "remainingInlinks": 98,

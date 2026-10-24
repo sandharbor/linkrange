@@ -2419,6 +2419,7 @@ fn run(
                     is_relative_path_link: false,
                     is_embedded: edge.is_embedded,
                     target: None,
+                    link_resolved_by_alias: false,
                     resolution: None,
                     link_source_name: None,
                     link_requested_target_source: None,
@@ -2441,6 +2442,7 @@ fn run(
             title: file.name.clone(),
             file_type: file.file_type.clone(),
             path,
+            note_aliases: Vec::new(),
         };
         records.push(crate::index::Record {
             stamp: Default::default(),

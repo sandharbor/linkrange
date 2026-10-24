@@ -405,6 +405,46 @@ fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
 }
 
 #[test]
+fn wikilinks_fall_back_to_frontmatter_aliases_as_obsidian_publish_does() {
+    // Obsidian Publish's getLinkpathDest (1.14): when no file has the
+    // link's name, a note whose `aliases` names it (in any letter case) is
+    // the target; a link with folders falls back to its last segment.
+    let f = Fixture::new();
+    f.write(
+        "A.md",
+        "[[3 laws]]\n\n[[Plan]]\n\n[[Solo]]\n\n[[somewhere/3 Laws]]\n\n[[Shared]]\n\n[[Nobody]]\n",
+    );
+    f.write("physics/Newton.md", "---\naliases: [3 Laws, \" \"]\n---\n");
+    // A file with the name wins over a note with it as an alias.
+    f.write("Plan.md", "");
+    f.write("Roadmap.md", "---\naliases:\n  - Plan\n---\n");
+    // The key in any letter case; a single string is one alias.
+    f.write("One.md", "---\nAliases: Solo\n---\n");
+    // Two notes with one alias: the same order as two files with one name.
+    f.write("deep/er/Shared one.md", "---\naliases: [Shared]\n---\n");
+    f.write("Shared two.md", "---\naliases: [Shared]\n---\n");
+    let mut request = f.request(&["A.md"], 1, 0);
+    request.query.explain_resolution = true;
+    let response = query(&request).unwrap();
+    let links = &response.links_by_source[&locator("A.md")];
+    let targets: Vec<_> = links.iter().map(|link| link.target.clone()).collect();
+    assert_eq!(
+        targets,
+        [
+            Some(locator("physics/Newton.md")),
+            Some(locator("Plan.md")),
+            Some(locator("One.md")),
+            Some(locator("physics/Newton.md")),
+            Some(locator("Shared two.md")),
+            None,
+        ]
+    );
+    assert_eq!(links[0].resolution.as_ref().unwrap().reason, "alias");
+    assert!(links[0].link_resolved_by_alias);
+    assert!(!links[1].link_resolved_by_alias);
+}
+
+#[test]
 fn wikilinks_resolve_regardless_of_letter_case_and_unicode_normalization() {
     let f = Fixture::new();
     // "Café" is written once with a precomposed é (as most editors save it)
