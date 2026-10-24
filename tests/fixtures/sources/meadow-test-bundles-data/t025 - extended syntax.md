@@ -159,6 +159,32 @@ Visit http://www.example.com or https://www.markdownguide.org for more.
 > [!note]- Collapsed by Default
 > This foldable callout starts collapsed.
 
+### Nested Callouts
+
+> [!question] Outer callout
+> The outer callout's body.
+> > [!todo] Inner callout
+> > The inner callout's body, one level deeper.
+
+### Callout Title With Markdown
+
+> [!tip] A **bold** title with [a link](https://example.com/callout-title)
+> The title is rendered like other inline Markdown.
+
+### Callout Without a Space After `>`
+
+>[!note]
+>A callout whose lines have no space after the `>` is still a callout.
+
+### Callout Type Containing Quotes
+
+The odd-looking callout below is deliberate. Its type, between `[!` and `]`, is the text `note" data-injected="yes`. The type is copied into the callout's HTML `class` attribute, so if its quotes were not escaped they would close that attribute early and add a separate `data-injected="yes"` attribute to the page. That is how a note could inject HTML.
+
+Rendered correctly, the callout below has no `data-injected` attribute. Its title shows the type exactly as written, because a callout without a title shows its type, and it uses the default callout style, because the type is not one of the known callout types.
+
+> [!note" data-injected="yes]
+> Yes, this title is meant to look strange: it is the type text, shown as plain text. See the explanation above.
+
 ### Comments
 
 There is a comment below this line that you will not see in the rendered output.
