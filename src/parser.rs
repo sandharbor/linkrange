@@ -218,8 +218,10 @@ fn extract_links(content: &str) -> Vec<ExtractedLink> {
                         .strip_prefix("[[")
                         .and_then(|s| s.strip_suffix("]]"))
                         .unwrap_or(&dest_url);
-                    if !is_internal_html_target(inner)
-                        && crate::sources::wiki_target(inner).1.is_none()
+                    // Obsidian ends a wikilink at the first `]]` on its line.
+                    if inner.contains('\n')
+                        || (!is_internal_html_target(inner)
+                            && crate::sources::wiki_target(inner).1.is_none())
                     {
                         continue;
                     }
@@ -636,6 +638,18 @@ mod tests {
         let content = "Inline `[[a]]` and fenced:\n```\n[[b]]\n```\nReal [[c]]";
         let links = extract_links(content);
         assert_eq!(links, vec![ExtractedLink::Wiki("c".to_string())]);
+    }
+
+    #[test]
+    fn test_extract_links_wiki_stays_on_one_line() {
+        // Obsidian finds a wikilink from `[[` to the first `]]` on the same
+        // line, so a single `]` may appear inside but a line break may not.
+        let content = "[[split\nacross lines]] and [[page|text with a ] in it]]";
+        let links = extract_links(content);
+        assert_eq!(
+            links,
+            vec![ExtractedLink::Wiki("page|text with a ] in it".to_string())]
+        );
     }
 
     #[test]

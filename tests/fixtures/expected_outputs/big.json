@@ -3260,6 +3260,52 @@
       "target": "source://source/t011/t011%20---%20table%20test%20row%202%20column%203.md"
     },
     {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t011/t011 --- pointed to by an escaped alias outside a table|the escaped-alias page",
+        "link_parsed_alias": "the escaped-alias page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t011/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t011 --- pointed to by an escaped alias outside a table",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
+      },
+      "source": "source://source/t011%20-%20special%20links.md",
+      "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t011/t011 --- pointed to by an escaped alias outside a table|display text with a ] in it",
+        "link_parsed_alias": "display text with a ] in it",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t011/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t011 --- pointed to by an escaped alias outside a table",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
+      },
+      "source": "source://source/t011%20-%20special%20links.md",
+      "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
+    },
+    {
       "bidirectional": true,
       "link": {
         "is_embedded": false,
@@ -7189,6 +7235,42 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t011%20-%20special%20links.md",
         "target": "source://source/t011/t011%20---%20table%20test%20row%202%20column%203.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t011/t011 --- pointed to by an escaped alias outside a table|the escaped-alias page",
+        "link_parsed_alias": "the escaped-alias page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t011/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t011 --- pointed to by an escaped alias outside a table",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "t011/t011 --- pointed to by an escaped alias outside a table|display text with a ] in it",
+        "link_parsed_alias": "display text with a ] in it",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t011/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t011 --- pointed to by an escaped alias outside a table",
+        "link_resolved_target_directory": "source://source/t011",
+        "link_resolved_target_path": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t011%20-%20special%20links.md",
+        "target": "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md"
       }
     ],
     "source://source/t011/t011%20---%20pointed%20to%20by%20an%20escaped%20alias%20outside%20a%20table.md": [],
@@ -12310,7 +12392,7 @@
     },
     {
       "depth": 1,
-      "digest": "ebb59ef22f5e1ffbfb24b2ef2a8493f041939c749bb4affe50f5645ea00cd982",
+      "digest": "3641bb3560f00dc08d3cdb3a699eafbef10587ea16d69ce19c4d261fad54f48b",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -12357,7 +12439,7 @@
           "via": "outlink"
         }
       ],
-      "size": 1278,
+      "size": 2048,
       "states": [
         {
           "remainingInlinks": 99,
