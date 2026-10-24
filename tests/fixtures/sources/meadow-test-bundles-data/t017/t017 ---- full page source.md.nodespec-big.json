@@ -1,7 +1,16 @@
 {
   "isInWorkingGraph": true,
   "links": {
-    "outlinks": [],
+    "outlinks": [
+      {
+        "linkPath": "source://source/t017/t017%20----%20block%20source.md",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t017/t017%20----%20section%20source.md",
+        "isInGraph": true
+      }
+    ],
     "inlinks": [
       {
         "linkPath": "source://source/t017/t017%20----%20full%20page%20transclusion.md",

@@ -625,7 +625,8 @@
     },
     "source://source/t017/t017%20----%20block%20source.md": {
       "inlinks": [
-        "source://source/t017/t017%20----%20block%20transclusion.md"
+        "source://source/t017/t017%20----%20block%20transclusion.md",
+        "source://source/t017/t017%20----%20full%20page%20source.md"
       ],
       "outlinks": []
     },
@@ -649,7 +650,10 @@
       "inlinks": [
         "source://source/t017/t017%20----%20full%20page%20transclusion.md"
       ],
-      "outlinks": []
+      "outlinks": [
+        "source://source/t017/t017%20----%20block%20source.md",
+        "source://source/t017/t017%20----%20section%20source.md"
+      ]
     },
     "source://source/t017/t017%20----%20full%20page%20transclusion.md": {
       "inlinks": [
@@ -661,6 +665,7 @@
     },
     "source://source/t017/t017%20----%20section%20source.md": {
       "inlinks": [
+        "source://source/t017/t017%20----%20full%20page%20source.md",
         "source://source/t017/t017%20----%20section%20transclusion.md"
       ],
       "outlinks": []
@@ -3692,6 +3697,52 @@
       "link": {
         "is_embedded": true,
         "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^key",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "key",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20block%20transclusion.md",
+      "target": "source://source/t017/t017%20----%20block%20source.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^second-item",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "second-item",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20block%20transclusion.md",
+      "target": "source://source/t017/t017%20----%20block%20source.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
         "link_original_text": "t017 ---- deep transclusion - level 3",
         "link_parsed_alias": null,
         "link_parsed_anchor": null,
@@ -3709,6 +3760,75 @@
       },
       "source": "source://source/t017/t017%20----%20deep%20transclusion.md",
       "target": "source://source/t017/deep%20transclusion%20levels%203%20and%204/t017%20----%20deep%20transclusion%20-%20level%203.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^f4c4d5",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "f4c4d5",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20full%20page%20source.md",
+      "target": "source://source/t017/t017%20----%20block%20source.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^f4c4d5",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "f4c4d5",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20full%20page%20source.md",
+      "target": "source://source/t017/t017%20----%20block%20source.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "t017%20----%20section%20source.md",
+        "link_parsed_alias": "the section source",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t017/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- section source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20section%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20section%20source.md"
+      },
+      "source": "source://source/t017/t017%20----%20full%20page%20source.md",
+      "target": "source://source/t017/t017%20----%20section%20source.md"
     },
     {
       "bidirectional": false,
@@ -7303,6 +7423,42 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
         "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^key",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "key",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^second-item",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "second-item",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20block%20transclusion.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
       }
     ],
     "source://source/t017/t017%20----%20deep%20transclusion.md": [
@@ -7325,7 +7481,62 @@
         "target": "source://source/t017/deep%20transclusion%20levels%203%20and%204/t017%20----%20deep%20transclusion%20-%20level%203.md"
       }
     ],
-    "source://source/t017/t017%20----%20full%20page%20source.md": [],
+    "source://source/t017/t017%20----%20full%20page%20source.md": [
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^f4c4d5",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "f4c4d5",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t017 ---- block source#^f4c4d5",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "f4c4d5",
+        "link_parsed_anchor_type": "block",
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- block source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20block%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20block%20source.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
+        "link_original_text": "t017%20----%20section%20source.md",
+        "link_parsed_alias": "the section source",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t017/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t017 ---- section source",
+        "link_resolved_target_directory": "source://source/t017",
+        "link_resolved_target_path": "source://source/t017/t017%20----%20section%20source.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t017/t017%20----%20full%20page%20source.md",
+        "target": "source://source/t017/t017%20----%20section%20source.md"
+      }
+    ],
     "source://source/t017/t017%20----%20full%20page%20transclusion.md": [
       {
         "is_embedded": true,
@@ -14068,7 +14279,7 @@
     },
     {
       "depth": 3,
-      "digest": "cdaedd7ac62c0212465759325d626cc5630fdd29627af494dba641abd65e624b",
+      "digest": "8eefec8386498d0d2d35400df4c85031921b0b1a3c1bb0989fed7a87b5ea979a",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14147,7 +14358,7 @@
           "via": "outlink"
         }
       ],
-      "size": 411,
+      "size": 659,
       "states": [
         {
           "remainingInlinks": 97,
@@ -14159,7 +14370,7 @@
     },
     {
       "depth": 2,
-      "digest": "fd6cee33fbdda90f44f24fed0658cad17bfaba34ae46887c0a4b42ede0e6d508",
+      "digest": "3642d1f83d8ff835168e4f49e892cb17845d039f0fdb4c4a6aac9744cb50c4e9",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14222,7 +14433,7 @@
           "via": "outlink"
         }
       ],
-      "size": 398,
+      "size": 679,
       "states": [
         {
           "remainingInlinks": 98,
@@ -14309,7 +14520,7 @@
     },
     {
       "depth": 3,
-      "digest": "666ee12f9a5329f8c0ceef48244a58efb517ea60436b978dbf3e852287f5bfb0",
+      "digest": "b211812220bc4ebe58af2606239daff3aa32338642d29a69e59d2533fea735a2",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14388,7 +14599,7 @@
           "via": "outlink"
         }
       ],
-      "size": 277,
+      "size": 728,
       "states": [
         {
           "remainingInlinks": 97,
@@ -14475,7 +14686,7 @@
     },
     {
       "depth": 3,
-      "digest": "a93c81674b0b32b226ab54cd2667d3582f7693358b01e3939cda56c5caed988e",
+      "digest": "8ccc7baf0a6d5f94155998bb7eb2bfa3ca6a605e967a70181874af74baba1733",
       "directory": "source://source/t017",
       "format": "md",
       "inclusion": "traversal",
@@ -14554,7 +14765,7 @@
           "via": "outlink"
         }
       ],
-      "size": 395,
+      "size": 616,
       "states": [
         {
           "remainingInlinks": 97,
