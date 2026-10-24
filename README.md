@@ -185,6 +185,8 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   an exact path from the root first; then candidates inside the linking file's
   folder, at any depth; then the rest. Each group is ordered shortest path
   first, then lexically. Explicit directories also support suffix matching.
+  A wikilink without an extension names `title.md`, a note or a drawing saved
+  as plain Markdown; other files need their extension, as in Obsidian.
   `explainResolution` includes the winning reason and candidates.
   Markdown and HTML/SVG URL paths are percent-decoded once (including `%20`
   spaces) after separating query strings and fragments. Original URLs remain

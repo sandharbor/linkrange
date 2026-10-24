@@ -405,6 +405,40 @@ fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
 }
 
 #[test]
+fn extensionless_wikilinks_find_only_a_file_named_with_md_as_obsidian_does() {
+    // Obsidian (MetadataCache.getLinkpathDest) looks for `name.md` when a
+    // link has no extension: a note, or a drawing saved as plain Markdown.
+    let f = Fixture::new();
+    f.write(
+        "A.md",
+        "[[Report]]\n\n[[Page]]\n\n[[Pic]]\n\n[[Sketch]]\n\n[[Sketch.excalidraw]]\n\n[[Plain drawing]]\n\n[[Report.pdf]]\n",
+    );
+    f.write("Report.pdf", "%PDF-1.4");
+    f.write("Page.html", "<p>page</p>");
+    f.write("Pic.png", "");
+    let drawing = "---\nexcalidraw-plugin: parsed\n---\n";
+    f.write("Sketch.excalidraw.md", drawing);
+    f.write("Plain drawing.md", drawing);
+    let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
+    let targets: Vec<_> = response.links_by_source[&locator("A.md")]
+        .iter()
+        .map(|link| link.target.clone())
+        .collect();
+    assert_eq!(
+        targets,
+        [
+            None,
+            None,
+            None,
+            None,
+            Some(locator("Sketch.excalidraw.md")),
+            Some(locator("Plain drawing.md")),
+            Some(locator("Report.pdf")),
+        ]
+    );
+}
+
+#[test]
 fn wikilinks_fall_back_to_frontmatter_aliases_as_obsidian_publish_does() {
     // Obsidian Publish's getLinkpathDest (1.14): when no file has the
     // link's name, a note whose `aliases` names it (in any letter case) is
@@ -629,7 +663,7 @@ fn markdown_links_with_titles_or_angle_brackets_are_resolved() {
 #[test]
 fn excalidraw_keeps_physical_path_and_reports_detected_format() {
     let f = Fixture::new();
-    f.write("A.md", "![[Drawing]]");
+    f.write("A.md", "![[Drawing.excalidraw]]");
     f.write(
         "Drawing.excalidraw.md",
         "---\nexcalidraw-plugin: parsed\n---\n[[B]]",

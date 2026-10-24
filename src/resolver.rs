@@ -295,7 +295,19 @@ impl Resolver {
             .filter(|id| self.candidates[*id].format == link.link_parsed_file_type)
             .collect();
         if candidates.is_empty() && !crate::parser::wiki_link_has_explicit_file_type(link) {
-            return ids.into_iter().filter(path_matches).collect();
+            // A link without an extension names `title.md`, as in Obsidian: a
+            // note, or a drawing saved as plain Markdown, but not
+            // `title.excalidraw.md`, `title.pdf`, or `title.html`.
+            let named_md = |id: &usize| {
+                let c = &self.candidates[*id];
+                let file_name = c.path.rsplit('/').next().unwrap_or(&c.path);
+                file_name == format!("{}.md", c.title)
+            };
+            return ids
+                .into_iter()
+                .filter(path_matches)
+                .filter(named_md)
+                .collect();
         }
         candidates
     }

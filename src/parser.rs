@@ -1048,9 +1048,14 @@ mod tests {
     }
 
     #[test]
-    fn test_resolve_extensionless_wiki_link_can_target_excalidraw() {
+    fn test_resolve_extensionless_wiki_link_can_target_excalidraw_saved_as_md() {
+        // A drawing detected by its content keeps its `.md` file name, which
+        // is the file an extensionless link names.
         let source = make_page("t006", "embedding page", "md");
-        let target = make_page("t006 - second directory", "embedded drawing", "excalidraw");
+        let target = FileIdentifier {
+            path: "t006 - second directory/embedded drawing.md".to_string(),
+            ..make_page("t006 - second directory", "embedded drawing", "excalidraw")
+        };
         let link = extensionless_wiki_link("", "embedded drawing", &source);
         let out = resolve_links(vec![page_with_link(source, link), page_only(target)]);
         let resolved = &out[0].outgoing_links[0];
@@ -1061,7 +1066,7 @@ mod tests {
         );
         assert_eq!(
             resolved.link_resolved_target_path,
-            "t006 - second directory/embedded drawing.excalidraw"
+            "t006 - second directory/embedded drawing.md"
         );
     }
 
