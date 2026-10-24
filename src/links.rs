@@ -142,36 +142,42 @@ pub fn parse_link_text(original_link_text: &str) -> LinkSemantics {
         }
     }
 
-    let parsed_prefix: String;
-    let title_part_with_potential_anchor: String;
+    // As in Obsidian, the note is everything before the first `#`, and the
+    // rest is the anchor: `#^block`, or a heading or chain of headings
+    // (`#Heading#Subheading`), which may itself contain `/`.
+    let (target_text, hash_anchor) = match text_for_path_and_title_and_anchor.find('#') {
+        Some(pos) => (
+            &text_for_path_and_title_and_anchor[..pos],
+            Some(&text_for_path_and_title_and_anchor[pos + 1..]),
+        ),
+        None => (text_for_path_and_title_and_anchor, None),
+    };
 
-    if text_for_path_and_title_and_anchor.is_empty() {
-        parsed_prefix = "".to_string();
-        title_part_with_potential_anchor = "".to_string();
-    } else if let Some(slash_idx) = text_for_path_and_title_and_anchor.rfind('/') {
-        parsed_prefix = text_for_path_and_title_and_anchor[..=slash_idx].to_string();
-        title_part_with_potential_anchor =
-            text_for_path_and_title_and_anchor[slash_idx + 1..].to_string();
+    let parsed_prefix: String;
+    let mut final_title: String;
+
+    if let Some(slash_idx) = target_text.rfind('/') {
+        parsed_prefix = target_text[..=slash_idx].to_string();
+        final_title = target_text[slash_idx + 1..].to_string();
     } else {
         parsed_prefix = "".to_string();
-        title_part_with_potential_anchor = text_for_path_and_title_and_anchor.to_string();
+        final_title = target_text.to_string();
     }
 
-    let mut final_title = title_part_with_potential_anchor.clone();
     let mut final_anchor: Option<String> = None;
     let mut final_anchor_type: Option<AnchorType> = None;
 
-    if let Some(pos) = final_title.rfind("#^") {
-        final_anchor = Some(final_title[pos + 2..].to_string());
-        final_anchor_type = Some(AnchorType::Block);
-        final_title = final_title[..pos].to_string();
+    if let Some(anchor) = hash_anchor {
+        if let Some(block) = anchor.strip_prefix('^') {
+            final_anchor = Some(block.to_string());
+            final_anchor_type = Some(AnchorType::Block);
+        } else {
+            final_anchor = Some(anchor.to_string());
+            final_anchor_type = Some(AnchorType::Section);
+        }
     } else if let Some(pos) = final_title.rfind('^') {
         final_anchor = Some(final_title[pos + 1..].to_string());
         final_anchor_type = Some(AnchorType::Block);
-        final_title = final_title[..pos].to_string();
-    } else if let Some(pos) = final_title.rfind('#') {
-        final_anchor = Some(final_title[pos + 1..].to_string());
-        final_anchor_type = Some(AnchorType::Section);
         final_title = final_title[..pos].to_string();
     }
 
@@ -633,6 +639,36 @@ mod tests {
             None,
             Some("block"),
             Some(AnchorType::Block),
+        );
+    }
+
+    #[test]
+    fn test_page_with_heading_chain() {
+        // The note is everything before the first `#`; a chain of headings
+        // (`#Heading#Subheading`) is the anchor.
+        check(
+            "Page#Heading#Subheading",
+            "Page",
+            "md",
+            "",
+            None,
+            None,
+            Some("Heading#Subheading"),
+            Some(AnchorType::Section),
+        );
+    }
+
+    #[test]
+    fn test_path_to_page_with_slash_in_heading() {
+        check(
+            "dir/Page#Either/Or",
+            "Page",
+            "md",
+            "dir/",
+            None,
+            None,
+            Some("Either/Or"),
+            Some(AnchorType::Section),
         );
     }
 

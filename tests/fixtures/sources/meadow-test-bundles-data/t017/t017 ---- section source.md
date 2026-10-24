@@ -21,4 +21,8 @@ This line comes after the code block and is still part of the Details section.
 
 ### Conclusion
 
-This is the conclusion section. It should also not be transcluded.
+This is the conclusion section. It is not part of the Details section.
+
+### Appendix ###
+
+A heading may be written with closing hashes; its text is still `Appendix`.
