@@ -1,4 +1,10 @@
+---
+description: Every extended Markdown syntax that this page tests.
+...
 This page is a comprehensive enumeration of every extended markdown syntax variation from https://www.markdownguide.org/extended-syntax/. Some features (tables, fenced code blocks) are duplicated in other tests; this page is the single source of truth for the complete extended-syntax set.
+
+This page starts with frontmatter that ends with a `...` line instead of `---`, which YAML also allows. Like any frontmatter, it should not appear anywhere on the rendered page.
+
 
 ## Tables
 
