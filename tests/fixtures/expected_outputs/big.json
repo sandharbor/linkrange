@@ -12419,7 +12419,7 @@
     },
     {
       "depth": 1,
-      "digest": "3641bb3560f00dc08d3cdb3a699eafbef10587ea16d69ce19c4d261fad54f48b",
+      "digest": "5c5229f792ba72b27c8e6104c118f15e3f252042651ce728906dcec9358b79fe",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -12466,7 +12466,7 @@
           "via": "outlink"
         }
       ],
-      "size": 2048,
+      "size": 2088,
       "states": [
         {
           "remainingInlinks": 99,

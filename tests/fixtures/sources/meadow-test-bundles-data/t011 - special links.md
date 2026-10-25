@@ -30,8 +30,9 @@ A link whose display text has a single `]`, which is fine because the link ends 
 A link split across two lines, which is not a link, so it should stay as plain text: [[t011/t011 --- pointed to by an escaped alias
 outside a table]]
 
-A link inside an HTML block, where Markdown isn't rendered, so it should stay as plain text:
+A link and a tag inside an HTML block, where Markdown isn't rendered, so both should stay as plain text:
 
 <div>
 [[t011/t011 --- pointed to by an escaped alias outside a table]]
+#t011-not-a-tag-inside-html
 </div>
