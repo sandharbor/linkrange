@@ -1,0 +1,12 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [],
+    "inlinks": [
+      {
+        "linkPath": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "isInGraph": true
+      }
+    ]
+  }
+}

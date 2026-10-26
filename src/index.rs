@@ -312,6 +312,7 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
                 include_str!("links.rs"),
                 include_str!("sources.rs"),
                 include_str!("markup.rs"),
+                include_str!("pdf.rs"),
                 include_str!("metadata.rs"),
                 include_str!("index.rs")
             )

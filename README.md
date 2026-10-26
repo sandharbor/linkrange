@@ -172,8 +172,8 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
 ## Behavioral contract
 
 - **Links:** Markdown inline/reference links and images, Obsidian wikilinks with
-  aliases/headings/blocks, Excalidraw links, native HTML and SVG, and HTML markup
-  inside Markdown. Markdown code examples and HTML comments do not create links.
+  aliases/headings/blocks, Excalidraw links, native HTML and SVG, PDF link
+  annotations, and HTML markup inside Markdown. Markdown code examples and HTML comments do not create links.
   Obsidian-style inline destinations containing spaces are accepted.
 - **HTML/SVG:** Element-aware `href`, `xlink:href`, `src`, `poster`, and object
   `data` attributes distinguish anchors from embedded resources. SVG `image`
@@ -181,6 +181,12 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   This is local-file discovery, not a browser dependency crawler: CSS URLs,
   JavaScript imports, `srcset`, and HTML `base` URL semantics are not implemented.
   Remote URLs and same-file HTML fragments are not graph edges.
+- **PDF:** Link annotations are links: a URI, or the file a `GoToR` or `Launch`
+  action opens, relative to the PDF as an HTML URL is. Web addresses and
+  absolute file paths are not graph edges; an unreadable PDF has no links.
+- **Media:** The audio (mp3, wav, m4a, 3gp, flac, ogg, oga, opus), video (mp4,
+  webm, ogv, mov, mkv), and image (including bmp and avif) formats Obsidian
+  embeds are files of the graph, each with its extension as its format.
 - **Resolution:** Follow Obsidian's rules (`MetadataCache.getLinkpathDest`):
   an exact path from the root first; then candidates inside the linking file's
   folder, at any depth; then the rest. Each group is ordered shortest path

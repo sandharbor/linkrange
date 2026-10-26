@@ -249,11 +249,14 @@
         "source://source/t006/t006%20---%20meadow-flower.svg"
       ],
       "outlinks": [
+        "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
         "source://source/t006/t006%20---%20meadow-flower-petals-ani.gif",
         "source://source/t006/t006%20---%20meadow-flower.excalidraw.md",
         "source://source/t006/t006%20---%20meadow-flower.svg",
         "source://source/t006/t006%20---%20meadow.png",
         "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md",
+        "source://source/t006/t006%20---%20short%20clip.mp4",
+        "source://source/t006/t006%20---%20short%20tone.mp3",
         "source://source/t006/t006%20---%20too-big.png"
       ]
     },
@@ -262,6 +265,14 @@
         "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md"
       ],
       "outlinks": []
+    },
+    "source://source/t006/t006%20---%20document%20with%20a%20link.pdf": {
+      "inlinks": [
+        "source://source/t006%20-%20embedded%20media.md"
+      ],
+      "outlinks": [
+        "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md"
+      ]
     },
     "source://source/t006/t006%20---%20meadow-flower-petals-ani.gif": {
       "inlinks": [
@@ -300,6 +311,12 @@
       ],
       "outlinks": []
     },
+    "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md": {
+      "inlinks": [
+        "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+      ],
+      "outlinks": []
+    },
     "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md": {
       "inlinks": [
         "source://source/t006%20-%20embedded%20media.md",
@@ -308,6 +325,18 @@
       "outlinks": [
         "source://source/t006%20-%20second%20directory/embedded%20in%20page%20in%20other%20t006%20directory.md"
       ]
+    },
+    "source://source/t006/t006%20---%20short%20clip.mp4": {
+      "inlinks": [
+        "source://source/t006%20-%20embedded%20media.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/t006/t006%20---%20short%20tone.mp3": {
+      "inlinks": [
+        "source://source/t006%20-%20embedded%20media.md"
+      ],
+      "outlinks": []
     },
     "source://source/t006/t006%20---%20too-big.png": {
       "inlinks": [
@@ -2707,6 +2736,122 @@
       },
       "source": "source://source/t006%20-%20embedded%20media.md",
       "target": "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- short tone.mp3",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "mp3",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- short tone",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20short%20tone.mp3",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20short%20tone.mp3"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20short%20tone.mp3"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- short clip.mp4",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "mp4",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- short clip",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20short%20clip.mp4",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20short%20clip.mp4"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20short%20clip.mp4"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- document with a link.pdf#page=1&height=200",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "page=1&height=200",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "pdf",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- document with a link",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- document with a link.pdf#height=160",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "height=160",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "pdf",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- document with a link",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+      },
+      "source": "source://source/t006%20-%20embedded%20media.md",
+      "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_markup_link": true,
+        "is_relative_path_link": true,
+        "link_original_text": "t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_parsed_alias": "t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- page linked from a pdf",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "target": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md"
+      },
+      "source": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+      "target": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md"
     },
     {
       "bidirectional": false,
@@ -6581,9 +6726,102 @@
         "link_source_name": "source",
         "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
         "target": "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- short tone.mp3",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "mp3",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- short tone",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20short%20tone.mp3",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20short%20tone.mp3"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- short clip.mp4",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "mp4",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- short clip",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20short%20clip.mp4",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20short%20clip.mp4"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- document with a link.pdf#page=1&height=200",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "page=1&height=200",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "pdf",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- document with a link",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+      },
+      {
+        "is_embedded": true,
+        "is_relative_path_link": false,
+        "link_original_text": "t006/t006 --- document with a link.pdf#height=160",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": "height=160",
+        "link_parsed_anchor_type": "section",
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "pdf",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- document with a link",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006%20-%20embedded%20media.md",
+        "target": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
       }
     ],
     "source://source/t006%20-%20second%20directory/embedded%20in%20page%20in%20other%20t006%20directory.md": [],
+    "source://source/t006/t006%20---%20document%20with%20a%20link.pdf": [
+      {
+        "is_embedded": false,
+        "is_markup_link": true,
+        "is_relative_path_link": true,
+        "link_original_text": "t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_parsed_alias": "t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "t006/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t006 --- page linked from a pdf",
+        "link_resolved_target_directory": "source://source/t006",
+        "link_resolved_target_path": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "target": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md"
+      }
+    ],
     "source://source/t006/t006%20---%20meadow-flower-petals-ani.gif": [],
     "source://source/t006/t006%20---%20meadow-flower.excalidraw.md": [
       {
@@ -6844,6 +7082,7 @@
       }
     ],
     "source://source/t006/t006%20---%20meadow.png": [],
+    "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md": [],
     "source://source/t006/t006%20---%20page%20that%20embeds%20Excalidraw%20in%20another%20directory.md": [
       {
         "is_embedded": true,
@@ -6864,6 +7103,8 @@
         "target": "source://source/t006%20-%20second%20directory/embedded%20in%20page%20in%20other%20t006%20directory.md"
       }
     ],
+    "source://source/t006/t006%20---%20short%20clip.mp4": [],
+    "source://source/t006/t006%20---%20short%20tone.mp3": [],
     "source://source/t006/t006%20---%20too-big.png": [],
     "source://source/t007%20-%20blacklisted.md": [
       {
@@ -11127,7 +11368,7 @@
     },
     {
       "depth": 1,
-      "digest": "ac98a75e3c50c49a87d119b8dd9fbc7090d36392e538bc4cd4e008f8d3f38956",
+      "digest": "4c600c3e9b2bb0b9d2390b8e4a53a84924cb77d602adc5ccfad7046340104fa9",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -11174,7 +11415,7 @@
           "via": "outlink"
         }
       ],
-      "size": 2056,
+      "size": 2734,
       "states": [
         {
           "remainingInlinks": 99,
@@ -11273,6 +11514,81 @@
         }
       ],
       "title": "embedded in page in other t006 directory",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "f9e46aa792d506f11d25b2e9cf1c27c9d935b42f4f840f21ad41a96675146cd6",
+      "directory": "source://source/t006",
+      "format": "pdf",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 98,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+      "remainingInlinks": 98,
+      "remainingOutlinks": 2,
+      "route": [
+        "source://source/main%20page.md",
+        "source://source/t006%20-%20embedded%20media.md",
+        "source://source/t006/t006%20---%20document%20with%20a%20link.pdf"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/main%20page.md",
+          "remainingInlinks": 100,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 99,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006%20-%20embedded%20media.md",
+          "remainingInlinks": 99,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 98,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 1180,
+      "states": [
+        {
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t006 --- document with a link",
       "via": "outlink"
     },
     {
@@ -11576,6 +11892,97 @@
       "via": "outlink"
     },
     {
+      "depth": 3,
+      "digest": "7861a52a216a53e22471decf359f623bb8e24fe8f9d17f86628a09f74ed671f9",
+      "directory": "source://source/t006",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 97,
+        "remainingOutlinks": 1
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md",
+      "remainingInlinks": 97,
+      "remainingOutlinks": 1,
+      "route": [
+        "source://source/main%20page.md",
+        "source://source/t006%20-%20embedded%20media.md",
+        "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/main%20page.md",
+          "remainingInlinks": 100,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 99,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006%20-%20embedded%20media.md",
+          "remainingInlinks": 99,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 98,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 3,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 97,
+            "remainingOutlinks": 1
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md",
+          "remainingInlinks": 97,
+          "remainingOutlinks": 1,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 112,
+      "states": [
+        {
+          "remainingInlinks": 97,
+          "remainingOutlinks": 1
+        }
+      ],
+      "title": "t006 --- page linked from a pdf",
+      "via": "outlink"
+    },
+    {
       "depth": 2,
       "digest": "b9bccb3f71981728c4863443df78990f2cf123c8002d129a26060da226dc6b02",
       "directory": "source://source/t006",
@@ -11648,6 +12055,156 @@
         }
       ],
       "title": "t006 --- page that embeds Excalidraw in another directory",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "0955162c64e405d6c8a28dd27705685abd524fd0b84c07e49bb2a06581b86a9f",
+      "directory": "source://source/t006",
+      "format": "mp4",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 98,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/t006/t006%20---%20short%20clip.mp4",
+      "remainingInlinks": 98,
+      "remainingOutlinks": 2,
+      "route": [
+        "source://source/main%20page.md",
+        "source://source/t006%20-%20embedded%20media.md",
+        "source://source/t006/t006%20---%20short%20clip.mp4"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/main%20page.md",
+          "remainingInlinks": 100,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 99,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006%20-%20embedded%20media.md",
+          "remainingInlinks": 99,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 98,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006/t006%20---%20short%20clip.mp4",
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 1514,
+      "states": [
+        {
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t006 --- short clip",
+      "via": "outlink"
+    },
+    {
+      "depth": 2,
+      "digest": "e5158e3dba38337bb0987651ff4626fecae3dc88455a71c7109b257786d36486",
+      "directory": "source://source/t006",
+      "format": "mp3",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 98,
+        "remainingOutlinks": 2
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/t006/t006%20---%20short%20tone.mp3",
+      "remainingInlinks": 98,
+      "remainingOutlinks": 2,
+      "route": [
+        "source://source/main%20page.md",
+        "source://source/t006%20-%20embedded%20media.md",
+        "source://source/t006/t006%20---%20short%20tone.mp3"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/main%20page.md",
+          "remainingInlinks": 100,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 99,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006%20-%20embedded%20media.md",
+          "remainingInlinks": 99,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        },
+        {
+          "depth": 2,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 98,
+            "remainingOutlinks": 2
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/t006/t006%20---%20short%20tone.mp3",
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 668,
+      "states": [
+        {
+          "remainingInlinks": 98,
+          "remainingOutlinks": 2
+        }
+      ],
+      "title": "t006 --- short tone",
       "via": "outlink"
     },
     {

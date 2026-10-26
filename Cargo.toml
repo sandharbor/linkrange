@@ -23,6 +23,7 @@ pulldown-cmark = "0.13"
 html5ever = "0.40"
 percent-encoding = "2.3"
 unicode-normalization = "0.1"
+lopdf = { version = "0.38.0", default-features = false }
 
 [dev-dependencies]
 tempfile = "3"

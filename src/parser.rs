@@ -74,13 +74,29 @@ pub(crate) struct ScanResult {
     pub outgoing_links: Vec<Link>,
 }
 
-const IMAGE_EXTENSIONS_MAIN: &[&str] = &["jpg", "jpeg", "png", "gif", "svg", "webp", "excalidraw"];
+const IMAGE_EXTENSIONS_MAIN: &[&str] = &[
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "svg",
+    "webp",
+    "bmp",
+    "avif",
+    "excalidraw",
+];
+/// The audio and video formats Obsidian embeds, which a note embeds as media.
+pub(crate) const AUDIO_EXTENSIONS: &[&str] =
+    &["mp3", "wav", "m4a", "3gp", "flac", "ogg", "oga", "opus"];
+pub(crate) const VIDEO_EXTENSIONS: &[&str] = &["mp4", "webm", "ogv", "mov", "mkv"];
 const TEXT_SOURCE_EXTENSIONS: &[&str] = &["md", "html", "css", "js"];
 
 pub(crate) fn is_supported_source_extension(extension: &str) -> bool {
     TEXT_SOURCE_EXTENSIONS.contains(&extension)
         || extension == "pdf"
         || IMAGE_EXTENSIONS_MAIN.contains(&extension)
+        || AUDIO_EXTENSIONS.contains(&extension)
+        || VIDEO_EXTENSIONS.contains(&extension)
 }
 
 /// Detects whether a markdown file is an Obsidian Excalidraw drawing by content.
@@ -121,7 +137,9 @@ fn extract_page_identifier(path: &std::path::Path, base_dir: &std::path::Path) -
 
         if !(KNOWN_PARSEABLE_EXTENSIONS.contains(&ext.as_str())
             || KNOWN_OTHER_DOCUMENT_EXTENSIONS.contains(&ext.as_str())
-            || IMAGE_EXTENSIONS_MAIN.contains(&ext.as_str()))
+            || IMAGE_EXTENSIONS_MAIN.contains(&ext.as_str())
+            || AUDIO_EXTENSIONS.contains(&ext.as_str())
+            || VIDEO_EXTENSIONS.contains(&ext.as_str()))
         {
             ext = "other".to_string();
         }
@@ -571,7 +589,12 @@ pub(crate) fn wiki_link_has_explicit_file_type(link: &Link) -> bool {
 pub(crate) fn scan_file(path: &Path, graph_root: &Path, bytes: &[u8]) -> ScanResult {
     let mut source_file = extract_page_identifier(path, graph_root);
     let mut outgoing_links = Vec::new();
-    if let Ok(content) = std::str::from_utf8(bytes) {
+    if source_file.file_type == "pdf" {
+        outgoing_links = crate::pdf::extract_links(bytes)
+            .into_iter()
+            .map(|link| parse_extracted_link(link, &source_file))
+            .collect();
+    } else if let Ok(content) = std::str::from_utf8(bytes) {
         if source_file.file_type == "md" {
             source_file.note_aliases = crate::metadata::note_aliases(content);
             if is_excalidraw_markdown(content) {

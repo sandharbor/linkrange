@@ -40,7 +40,7 @@ fn rank(format: &str) -> usize {
         "html" => 1,
         "excalidraw" => 2,
         "css" | "js" => 3,
-        "png" | "jpg" | "jpeg" | "gif" | "svg" | "webp" => 4,
+        "png" | "jpg" | "jpeg" | "gif" | "svg" | "webp" | "bmp" | "avif" => 4,
         "pdf" | "txt" => 5,
         _ => 6,
     }

@@ -1,0 +1,17 @@
+{
+  "isInWorkingGraph": true,
+  "links": {
+    "outlinks": [
+      {
+        "linkPath": "source://source/t006/t006%20---%20page%20linked%20from%20a%20pdf.md",
+        "isInGraph": true
+      }
+    ],
+    "inlinks": [
+      {
+        "linkPath": "source://source/t006%20-%20embedded%20media.md",
+        "isInGraph": true
+      }
+    ]
+  }
+}

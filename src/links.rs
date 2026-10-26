@@ -38,6 +38,8 @@ const IMAGE_EXTENSIONS: &[&str] = &[
     ".gif",
     ".svg",
     ".webp",
+    ".bmp",
+    ".avif",
     ".excalidraw",
 ];
 
@@ -54,9 +56,24 @@ pub const KNOWN_FILE_TYPE_EXTENSIONS: &[&str] = &[
     "gif",
     "svg",
     "webp",
+    "bmp",
+    "avif",
     "pdf",
     "txt",
     "excalidraw",
+    "mp3",
+    "wav",
+    "m4a",
+    "3gp",
+    "flac",
+    "ogg",
+    "oga",
+    "opus",
+    "mp4",
+    "webm",
+    "ogv",
+    "mov",
+    "mkv",
 ];
 
 // Helper to strip anchor markers for robust extension checking

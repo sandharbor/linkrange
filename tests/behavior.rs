@@ -404,6 +404,107 @@ fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
     );
 }
 
+/// A one-page PDF whose link annotations go to `uris` and, with `S /GoToR`,
+/// to the file `other`, saved as most tools write PDFs today: its objects
+/// compressed into object streams.
+fn pdf_with_links(uris: &[&str], other: &str) -> Vec<u8> {
+    use lopdf::{dictionary, Document, Object, SaveOptions};
+    let mut doc = Document::with_version("1.5");
+    let pages_id = doc.new_object_id();
+    let rect = || vec![0.into(), 0.into(), 10.into(), 10.into()];
+    let mut annots: Vec<Object> = uris
+        .iter()
+        .map(|uri| {
+            doc.add_object(dictionary! {
+                "Type" => "Annot", "Subtype" => "Link", "Rect" => rect(),
+                "A" => dictionary! { "S" => "URI", "URI" => Object::string_literal(*uri) },
+            })
+            .into()
+        })
+        .collect();
+    annots.push(
+        doc.add_object(dictionary! {
+            "Type" => "Annot", "Subtype" => "Link", "Rect" => rect(),
+            "A" => dictionary! { "S" => "GoToR", "F" => Object::string_literal(other), "D" => vec![0.into()] },
+        })
+        .into(),
+    );
+    let page_id = doc.add_object(dictionary! {
+        "Type" => "Page", "Parent" => pages_id,
+        "MediaBox" => vec![0.into(), 0.into(), 100.into(), 100.into()], "Annots" => annots,
+    });
+    doc.objects.insert(
+        pages_id,
+        Object::Dictionary(
+            dictionary! { "Type" => "Pages", "Kids" => vec![page_id.into()], "Count" => 1 },
+        ),
+    );
+    let catalog_id = doc.add_object(dictionary! { "Type" => "Catalog", "Pages" => pages_id });
+    doc.trailer.set("Root", catalog_id);
+    let mut bytes = Vec::new();
+    doc.save_with_options(
+        &mut bytes,
+        SaveOptions::builder()
+            .use_object_streams(true)
+            .use_xref_streams(true)
+            .build(),
+    )
+    .unwrap();
+    bytes
+}
+
+#[test]
+fn audio_video_and_pdfs_are_embedded_and_a_pdfs_links_are_part_of_the_graph() {
+    // Obsidian embeds the audio, video, image, and PDF formats it lists (mp3,
+    // mp4, avif, pdf among them). A PDF's link annotations are links from the
+    // PDF, relative to it, as an HTML page's are; web addresses are not.
+    let f = Fixture::new();
+    f.write(
+        "A.md",
+        "![[tone.mp3]]\n\n![[clip.mp4]]\n\n![[photo.avif]]\n\n![[docs/doc.pdf#page=2&height=300]]\n",
+    );
+    f.write("tone.mp3", "");
+    f.write("clip.mp4", "");
+    f.write("photo.avif", "");
+    f.write(
+        "docs/doc.pdf",
+        pdf_with_links(
+            &["../notes/Target.md", "https://example.com/", "Missing.md"],
+            "Other.pdf",
+        ),
+    );
+    f.write("docs/Other.pdf", pdf_with_links(&[], "Missing.pdf"));
+    f.write("notes/Target.md", "");
+    let response = query(&f.request(&["A.md"], 2, 0)).unwrap();
+    assert_eq!(
+        paths(&response),
+        [
+            "A.md",
+            "clip.mp4",
+            "docs/Other.pdf",
+            "docs/doc.pdf",
+            "notes/Target.md",
+            "photo.avif",
+            "tone.mp3"
+        ]
+    );
+    assert_eq!(node(&response, "tone.mp3").file.format, "mp3");
+    assert_eq!(node(&response, "clip.mp4").file.format, "mp4");
+    assert_eq!(node(&response, "photo.avif").file.format, "avif");
+    let pdf_links: Vec<_> = response.links_by_source[&locator("docs/doc.pdf")]
+        .iter()
+        .map(|link| (link.target.clone(), link.is_embedded))
+        .collect();
+    assert_eq!(
+        pdf_links,
+        [
+            (Some(locator("notes/Target.md")), false),
+            (None, false),
+            (Some(locator("docs/Other.pdf")), false),
+        ]
+    );
+}
+
 #[test]
 fn wikilinks_with_an_extension_find_a_drawing_by_its_file_name_as_obsidian_does() {
     // Obsidian (MetadataCache.getLinkpathDest) looks a link with an extension

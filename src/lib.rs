@@ -7,6 +7,7 @@ mod markup;
 mod metadata;
 mod model;
 mod parser;
+mod pdf;
 mod resolver;
 mod sources;
 pub use graph::Graph;

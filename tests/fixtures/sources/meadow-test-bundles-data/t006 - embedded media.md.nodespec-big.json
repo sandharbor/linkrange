@@ -25,6 +25,18 @@
       {
         "linkPath": "source://source/t006/t006%20---%20too-big.png",
         "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t006/t006%20---%20short%20tone.mp3",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t006/t006%20---%20short%20clip.mp4",
+        "isInGraph": true
+      },
+      {
+        "linkPath": "source://source/t006/t006%20---%20document%20with%20a%20link.pdf",
+        "isInGraph": true
       }
     ],
     "inlinks": [
