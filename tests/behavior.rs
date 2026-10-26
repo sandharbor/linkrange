@@ -405,6 +405,34 @@ fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
 }
 
 #[test]
+fn wikilinks_with_an_extension_find_a_drawing_by_its_file_name_as_obsidian_does() {
+    // Obsidian (MetadataCache.getLinkpathDest) looks a link with an extension
+    // up by its file name, so `[[name.md]]` finds a drawing saved as
+    // `name.md`, and `[[name.excalidraw.md]]` one saved under that name.
+    let f = Fixture::new();
+    f.write(
+        "A.md",
+        "[[Plain drawing.md]]\n\n[[Sketch.excalidraw.md]]\n\n[[Plain drawing.excalidraw]]\n",
+    );
+    let drawing = "---\nexcalidraw-plugin: parsed\n---\n";
+    f.write("deep/Plain drawing.md", drawing);
+    f.write("deep/Sketch.excalidraw.md", drawing);
+    let response = query(&f.request(&["A.md"], 1, 0)).unwrap();
+    let targets: Vec<_> = response.links_by_source[&locator("A.md")]
+        .iter()
+        .map(|link| link.target.clone())
+        .collect();
+    assert_eq!(
+        targets,
+        [
+            Some(locator("deep/Plain drawing.md")),
+            Some(locator("deep/Sketch.excalidraw.md")),
+            None,
+        ]
+    );
+}
+
+#[test]
 fn markdown_link_paths_resolve_as_obsidian_resolves_them() {
     // Obsidian (MetadataCache.getLinkpathDest) resolves a Markdown link's
     // path as it does a wikilink's: `./` and `../` from the linking note's

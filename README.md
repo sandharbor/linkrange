@@ -186,7 +186,9 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   folder, at any depth; then the rest. Each group is ordered shortest path
   first, then lexically. Explicit directories also support suffix matching.
   A wikilink without an extension names `title.md`, a note or a drawing saved
-  as plain Markdown; other files need their extension, as in Obsidian.
+  as plain Markdown; other files need their extension, as in Obsidian. A link
+  with an extension names the file of that name, or that name with `.md`, so
+  `[[Drawing.excalidraw]]` finds `Drawing.excalidraw.md`.
   A Markdown link's path resolves the same way unless it starts with `./` or
   `../` (from the linking file) or `/` (from the root); HTML and SVG URLs are
   relative to their file, as in a browser.

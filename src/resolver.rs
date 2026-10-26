@@ -21,6 +21,9 @@ pub(crate) struct Resolver {
     by_folded_path: HashMap<String, Vec<usize>>,
     /// Notes by folded frontmatter alias.
     by_alias: HashMap<String, Vec<usize>>,
+    /// Files by name (`Sketch.excalidraw.md`), exactly and folded.
+    by_file_name: HashMap<String, Vec<usize>>,
+    by_folded_file_name: HashMap<String, Vec<usize>>,
 }
 
 /// Link text and file names also match regardless of letter case and of
@@ -121,6 +124,13 @@ impl Resolver {
                 .or_default()
                 .push(id);
         }
+        let mut by_file_name: HashMap<String, Vec<usize>> = HashMap::new();
+        let mut by_folded_file_name: HashMap<String, Vec<usize>> = HashMap::new();
+        for (id, candidate) in candidates.iter().enumerate() {
+            let name = candidate.path.rsplit('/').next().unwrap_or(&candidate.path);
+            by_file_name.entry(name.to_string()).or_default().push(id);
+            by_folded_file_name.entry(fold(name)).or_default().push(id);
+        }
         Self {
             candidates,
             by_path,
@@ -128,6 +138,8 @@ impl Resolver {
             by_folded_title,
             by_folded_path,
             by_alias,
+            by_file_name,
+            by_folded_file_name,
         }
     }
 
@@ -280,17 +292,11 @@ impl Resolver {
             .unwrap_or_default()
     }
 
-    /// Candidates with the link's title, in the link's directory if it names
-    /// one, preferring the link's file type. With `folded`, titles and
-    /// directories match regardless of letter case and Unicode normalization.
+    /// Candidates for the link, in its directory if it names one: the file it
+    /// names with its extension, or else files with its title of its file
+    /// type. With `folded`, names and directories match regardless of letter
+    /// case and Unicode normalization.
     fn title_candidates(&self, link: &Link, directory: &str, folded: bool) -> Vec<usize> {
-        let ids = if folded {
-            self.by_folded_title.get(&fold(&link.link_parsed_title))
-        } else {
-            self.by_title.get(&link.link_parsed_title)
-        }
-        .cloned()
-        .unwrap_or_default();
         let comparable = |text: &str| if folded { fold(text) } else { text.to_string() };
         let wanted = comparable(directory);
         let path_matches = |id: &usize| {
@@ -299,13 +305,39 @@ impl Resolver {
                 || candidate_directory == wanted
                 || candidate_directory.ends_with(&format!("/{wanted}"))
         };
+        if crate::parser::wiki_link_has_explicit_file_type(link) {
+            // A link with an extension names a file, as in Obsidian: `name`,
+            // or else `name.md`, so `[[Drawing.excalidraw]]` finds
+            // `Drawing.excalidraw.md` and `[[Plain drawing.md]]` a drawing
+            // saved as `Plain drawing.md`.
+            let name = format!("{}.{}", link.link_parsed_title, link.link_parsed_file_type);
+            let by_name = |name: &str| {
+                if folded {
+                    self.by_folded_file_name.get(&fold(name))
+                } else {
+                    self.by_file_name.get(name)
+                }
+                .cloned()
+                .unwrap_or_default()
+            };
+            let mut ids = by_name(&name);
+            ids.extend(by_name(&format!("{name}.md")));
+            return ids.into_iter().filter(path_matches).collect();
+        }
+        let ids = if folded {
+            self.by_folded_title.get(&fold(&link.link_parsed_title))
+        } else {
+            self.by_title.get(&link.link_parsed_title)
+        }
+        .cloned()
+        .unwrap_or_default();
         let candidates: Vec<usize> = ids
             .iter()
             .copied()
             .filter(path_matches)
             .filter(|id| self.candidates[*id].format == link.link_parsed_file_type)
             .collect();
-        if candidates.is_empty() && !crate::parser::wiki_link_has_explicit_file_type(link) {
+        if candidates.is_empty() {
             // A link without an extension names `title.md`, as in Obsidian: a
             // note, or a drawing saved as plain Markdown, but not
             // `title.excalidraw.md`, `title.pdf`, or `title.html`.
