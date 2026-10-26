@@ -405,6 +405,45 @@ fn ambiguous_wikilinks_follow_obsidians_folder_then_shortest_path_order() {
 }
 
 #[test]
+fn markdown_link_paths_resolve_as_obsidian_resolves_them() {
+    // Obsidian (MetadataCache.getLinkpathDest) resolves a Markdown link's
+    // path as it does a wikilink's: `./` and `../` from the linking note's
+    // folder, `/` from the root, and anything else as an exact path from the
+    // root, then by name, preferring the linking note's folder.
+    let f = Fixture::new();
+    f.write(
+        "nested/A.md",
+        "[r](Rootonly.md)\n\n[b](Both.md)\n\n[f](Far.md)\n\n[d](sub/Deep.md)\n\n[s](./Both.md)\n\n[u](../Rootonly.md)\n\n[a](/Far.md)\n",
+    );
+    for name in [
+        "Rootonly.md",
+        "Both.md",
+        "nested/Both.md",
+        "other/Far.md",
+        "nested/sub/Deep.md",
+    ] {
+        f.write(name, "");
+    }
+    let response = query(&f.request(&["nested/A.md"], 1, 0)).unwrap();
+    let targets: Vec<_> = response.links_by_source[&locator("nested/A.md")]
+        .iter()
+        .map(|link| link.target.clone())
+        .collect();
+    assert_eq!(
+        targets,
+        [
+            Some(locator("Rootonly.md")),
+            Some(locator("Both.md")),
+            Some(locator("other/Far.md")),
+            Some(locator("nested/sub/Deep.md")),
+            Some(locator("nested/Both.md")),
+            Some(locator("Rootonly.md")),
+            None,
+        ]
+    );
+}
+
+#[test]
 fn extensionless_wikilinks_find_only_a_file_named_with_md_as_obsidian_does() {
     // Obsidian (MetadataCache.getLinkpathDest) looks for `name.md` when a
     // link has no extension: a note, or a drawing saved as plain Markdown.

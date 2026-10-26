@@ -187,6 +187,9 @@ Reopen to observe filesystem changes. Rustdoc exposes the request/response types
   first, then lexically. Explicit directories also support suffix matching.
   A wikilink without an extension names `title.md`, a note or a drawing saved
   as plain Markdown; other files need their extension, as in Obsidian.
+  A Markdown link's path resolves the same way unless it starts with `./` or
+  `../` (from the linking file) or `/` (from the root); HTML and SVG URLs are
+  relative to their file, as in a browser.
   `explainResolution` includes the winning reason and candidates.
   Markdown and HTML/SVG URL paths are percent-decoded once (including `%20`
   spaces) after separating query strings and fragments. Original URLs remain

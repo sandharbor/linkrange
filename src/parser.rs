@@ -41,9 +41,14 @@ pub struct Link {
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub link_resolved_by_alias: bool,
 
-    /// True for standard markdown links `[text](href)` where paths are relative to the source file.
+    /// True for standard markdown links `[text](href)` and HTML or SVG URLs.
     /// False for wiki-links `[[inner]]` where paths are resolved by fuzzy search.
     pub is_relative_path_link: bool,
+    /// True for an HTML or SVG `href` or `src`, whose path is relative to its
+    /// file, as in a browser. A Markdown link's path resolves as Obsidian
+    /// resolves it.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_markup_link: bool,
     pub is_embedded: bool,
     #[serde(default)]
     pub target: Option<String>,
@@ -55,7 +60,12 @@ pub struct Link {
 pub(crate) enum ExtractedLink {
     Wiki(String),
     Embedded(Box<ExtractedLink>),
-    Markdown { text: String, href: String },
+    Markdown {
+        text: String,
+        href: String,
+    },
+    /// An HTML or SVG `href` or `src`.
+    Markup(String),
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -182,6 +192,10 @@ fn parse_extracted_link(link: ExtractedLink, source: &FileIdentifier) -> Link {
     match link {
         ExtractedLink::Wiki(inner) => parse_out_link(&inner, source),
         ExtractedLink::Markdown { text, href } => parse_out_markdown_link(&text, &href, source),
+        ExtractedLink::Markup(href) => Link {
+            is_markup_link: true,
+            ..parse_out_markdown_link(&href, &href, source)
+        },
         ExtractedLink::Embedded(inner) => {
             let mut link = parse_extracted_link(*inner, source);
             link.is_embedded = true;
@@ -422,6 +436,7 @@ fn parse_out_link(inner_link_text: &str, source_page: &FileIdentifier) -> Link {
         is_embedded: false,
         target: None,
         link_resolved_by_alias: false,
+        is_markup_link: false,
         resolution: None,
     }
 }
@@ -491,6 +506,7 @@ fn parse_out_markdown_link(display_text: &str, href: &str, source_page: &FileIde
         is_embedded: false,
         target: None,
         link_resolved_by_alias: false,
+        is_markup_link: false,
         resolution: None,
     }
 }
@@ -675,22 +691,14 @@ mod tests {
         assert_eq!(
             extract_markup_links(content),
             vec![
-                ExtractedLink::Embedded(Box::new(ExtractedLink::Markdown {
-                    text: "./shared.css".to_string(),
-                    href: "./shared.css".to_string(),
-                })),
-                ExtractedLink::Markdown {
-                    text: "../note.md".to_string(),
-                    href: "../note.md".to_string(),
-                },
-                ExtractedLink::Embedded(Box::new(ExtractedLink::Markdown {
-                    text: "./image.svg".to_string(),
-                    href: "./image.svg".to_string(),
-                })),
-                ExtractedLink::Embedded(Box::new(ExtractedLink::Markdown {
-                    text: "./behavior.js".to_string(),
-                    href: "./behavior.js".to_string(),
-                })),
+                ExtractedLink::Embedded(Box::new(ExtractedLink::Markup(
+                    "./shared.css".to_string()
+                ))),
+                ExtractedLink::Markup("../note.md".to_string()),
+                ExtractedLink::Embedded(Box::new(ExtractedLink::Markup("./image.svg".to_string()))),
+                ExtractedLink::Embedded(Box::new(ExtractedLink::Markup(
+                    "./behavior.js".to_string()
+                ))),
             ]
         );
     }
@@ -703,10 +711,7 @@ mod tests {
             <a HREF="./page.html">Page</a>"##;
         assert_eq!(
             extract_markup_links(content),
-            vec![ExtractedLink::Markdown {
-                text: "./page.html".to_string(),
-                href: "./page.html".to_string(),
-            }]
+            vec![ExtractedLink::Markup("./page.html".to_string())]
         );
     }
 
@@ -720,14 +725,10 @@ mod tests {
         assert_eq!(
             extract_markup_links(content),
             vec![
-                ExtractedLink::Markdown {
-                    text: "../page.md".to_string(),
-                    href: "../page.md".to_string(),
-                },
-                ExtractedLink::Embedded(Box::new(ExtractedLink::Markdown {
-                    text: "./texture.png".to_string(),
-                    href: "./texture.png".to_string(),
-                })),
+                ExtractedLink::Markup("../page.md".to_string()),
+                ExtractedLink::Embedded(Box::new(ExtractedLink::Markup(
+                    "./texture.png".to_string()
+                ))),
             ]
         );
     }
@@ -927,6 +928,7 @@ mod tests {
             is_embedded: false,
             target: None,
             link_resolved_by_alias: false,
+            is_markup_link: false,
             resolution: None,
             link_source_name: None,
             link_requested_target_source: None,
@@ -952,6 +954,7 @@ mod tests {
             is_embedded: false,
             target: None,
             link_resolved_by_alias: false,
+            is_markup_link: false,
             resolution: None,
             link_source_name: None,
             link_requested_target_source: None,

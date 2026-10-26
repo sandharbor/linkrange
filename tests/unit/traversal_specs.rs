@@ -2420,6 +2420,7 @@ fn run(
                     is_embedded: edge.is_embedded,
                     target: None,
                     link_resolved_by_alias: false,
+                    is_markup_link: false,
                     resolution: None,
                     link_source_name: None,
                     link_requested_target_source: None,

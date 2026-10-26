@@ -2712,6 +2712,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t006 --- page that embeds Excalidraw in another directory.md",
         "link_parsed_alias": "./t006 --- page that embeds Excalidraw in another directory.md",
@@ -2735,6 +2736,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "../t006 - embedded media.md",
         "link_parsed_alias": "../t006 - embedded media.md",
@@ -4669,6 +4671,29 @@
       "link": {
         "is_embedded": false,
         "is_relative_path_link": true,
+        "link_original_text": "t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      "source": "source://source/t024%20-%20markdown%20links.md",
+      "target": "source://source/t024/t024%20----%20linked%20page.md"
+    },
+    {
+      "bidirectional": true,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": true,
         "link_original_text": "./t024/deeper/t024 ---- deep page.md",
         "link_parsed_alias": "Deep Page",
         "link_parsed_anchor": null,
@@ -4875,6 +4900,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared style.css",
         "link_parsed_alias": "./t026 ---- shared style.css",
@@ -4898,6 +4924,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared image.svg",
         "link_parsed_alias": "./t026 ---- shared image.svg",
@@ -4921,6 +4948,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "../t026 - HTML node.md",
         "link_parsed_alias": "../t026 - HTML node.md",
@@ -4944,6 +4972,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- second HTML page.html",
         "link_parsed_alias": "./t026 ---- second HTML page.html",
@@ -4967,6 +4996,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared behavior.js",
         "link_parsed_alias": "./t026 ---- shared behavior.js",
@@ -4990,6 +5020,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared style.css",
         "link_parsed_alias": "./t026 ---- shared style.css",
@@ -5013,6 +5044,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared image.svg",
         "link_parsed_alias": "./t026 ---- shared image.svg",
@@ -5036,6 +5068,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- first HTML page.html",
         "link_parsed_alias": "./t026 ---- first HTML page.html",
@@ -5059,6 +5092,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./nested/t026 ---- nested markdown.md",
         "link_parsed_alias": "./nested/t026 ---- nested markdown.md",
@@ -5082,6 +5116,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared behavior.js",
         "link_parsed_alias": "./t026 ---- shared behavior.js",
@@ -5105,6 +5140,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "t026 ---- first HTML page.html",
         "link_parsed_alias": "t026 ---- first HTML page.html",
@@ -5128,6 +5164,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "t026 ---- second HTML page.html",
         "link_parsed_alias": "t026 ---- second HTML page.html",
@@ -6769,6 +6806,7 @@
     "source://source/t006/t006%20---%20meadow-flower.svg": [
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t006 --- page that embeds Excalidraw in another directory.md",
         "link_parsed_alias": "./t006 --- page that embeds Excalidraw in another directory.md",
@@ -6787,6 +6825,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "../t006 - embedded media.md",
         "link_parsed_alias": "../t006 - embedded media.md",
@@ -8577,6 +8616,24 @@
       {
         "is_embedded": false,
         "is_relative_path_link": true,
+        "link_original_text": "t024%20----%20linked%20page.md",
+        "link_parsed_alias": "Linked Page",
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "t024 ---- linked page",
+        "link_resolved_target_directory": "source://source/t024",
+        "link_resolved_target_path": "source://source/t024/t024%20----%20linked%20page.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/t024%20-%20markdown%20links.md",
+        "target": "source://source/t024/t024%20----%20linked%20page.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": true,
         "link_original_text": "./t024/deeper/t024 ---- deep page.md",
         "link_parsed_alias": "Deep Page",
         "link_parsed_anchor": null,
@@ -8752,6 +8809,7 @@
     "source://source/t026/t026%20----%20first%20HTML%20page.html": [
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared style.css",
         "link_parsed_alias": "./t026 ---- shared style.css",
@@ -8770,6 +8828,7 @@
       },
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared image.svg",
         "link_parsed_alias": "./t026 ---- shared image.svg",
@@ -8788,6 +8847,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "../t026 - HTML node.md",
         "link_parsed_alias": "../t026 - HTML node.md",
@@ -8806,6 +8866,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- second HTML page.html",
         "link_parsed_alias": "./t026 ---- second HTML page.html",
@@ -8824,6 +8885,7 @@
       },
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared behavior.js",
         "link_parsed_alias": "./t026 ---- shared behavior.js",
@@ -8844,6 +8906,7 @@
     "source://source/t026/t026%20----%20second%20HTML%20page.html": [
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared style.css",
         "link_parsed_alias": "./t026 ---- shared style.css",
@@ -8862,6 +8925,7 @@
       },
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared image.svg",
         "link_parsed_alias": "./t026 ---- shared image.svg",
@@ -8880,6 +8944,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- first HTML page.html",
         "link_parsed_alias": "./t026 ---- first HTML page.html",
@@ -8898,6 +8963,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./nested/t026 ---- nested markdown.md",
         "link_parsed_alias": "./nested/t026 ---- nested markdown.md",
@@ -8916,6 +8982,7 @@
       },
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "./t026 ---- shared behavior.js",
         "link_parsed_alias": "./t026 ---- shared behavior.js",
@@ -8937,6 +9004,7 @@
     "source://source/t026/t026%20----%20shared%20image.svg": [
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "t026 ---- first HTML page.html",
         "link_parsed_alias": "t026 ---- first HTML page.html",
@@ -8955,6 +9023,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "t026 ---- second HTML page.html",
         "link_parsed_alias": "t026 ---- second HTML page.html",
@@ -16924,7 +16993,7 @@
     },
     {
       "depth": 1,
-      "digest": "4ac8e855e544988d328789f6eed76407374f95252f85475b40b49dbb12e6c74c",
+      "digest": "eeb9de5ab124714f4271a117529d41640b3f033ee3252dbc403a18aa1ca5daaa",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -16971,7 +17040,7 @@
           "via": "outlink"
         }
       ],
-      "size": 1278,
+      "size": 1429,
       "states": [
         {
           "remainingInlinks": 99,

@@ -45,10 +45,7 @@ impl TokenSink for Sink {
                 };
                 let href = attr.value.trim();
                 if is_internal_html_target(href) {
-                    let link = ExtractedLink::Markdown {
-                        text: href.into(),
-                        href: href.into(),
-                    };
+                    let link = ExtractedLink::Markup(href.into());
                     self.0.borrow_mut().push(if embedded {
                         ExtractedLink::Embedded(Box::new(link))
                     } else {

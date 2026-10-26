@@ -333,6 +333,7 @@
       "bidirectional": true,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",
@@ -522,6 +523,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",
@@ -546,6 +548,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://research/diagram.svg",
         "link_parsed_alias": "source://research/diagram.svg",
@@ -570,6 +573,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://reference/Study.md",
         "link_parsed_alias": "source://reference/Study.md",
@@ -617,6 +621,7 @@
       "bidirectional": false,
       "link": {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",
@@ -816,6 +821,7 @@
     "source://notes/diagram.svg": [
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",
@@ -974,6 +980,7 @@
     "source://research/Report.html": [
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",
@@ -993,6 +1000,7 @@
       },
       {
         "is_embedded": true,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://research/diagram.svg",
         "link_parsed_alias": "source://research/diagram.svg",
@@ -1012,6 +1020,7 @@
       },
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://reference/Study.md",
         "link_parsed_alias": "source://reference/Study.md",
@@ -1053,6 +1062,7 @@
     "source://research/diagram.svg": [
       {
         "is_embedded": false,
+        "is_markup_link": true,
         "is_relative_path_link": true,
         "link_original_text": "source://notes/Overview.md",
         "link_parsed_alias": "source://notes/Overview.md",

@@ -24,4 +24,6 @@ A link with a title: [Linked Page](./t024/t024%20----%20linked%20page.md "The li
 
 A link whose destination is in angle brackets, which allows spaces: [Linked Page](<./t024/t024 ---- linked page.md>)
 
+A link with the page's file name and no folder, which Obsidian finds in whatever folder the page is in: [Linked Page](t024%20----%20linked%20page.md)
+
 [linked page]: ./t024/t024%20----%20linked%20page.md

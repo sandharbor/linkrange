@@ -147,8 +147,19 @@ impl Resolver {
         source_directory: &str,
         explain: bool,
     ) -> (Vec<usize>, &'static str) {
-        let directory = link
-            .link_parsed_directory
+        // Obsidian resolves a Markdown link's path as it does a wikilink's,
+        // unless it starts from the linking note (`./`, `../`) or the root
+        // (`/`). An HTML or SVG URL is relative to its file, as in a browser.
+        let obsidian_path = (link.is_relative_path_link && !link.is_markup_link)
+            .then(|| {
+                crate::links::parse_markdown_link_href(&link.link_original_text).target_path_prefix
+            })
+            .filter(|prefix| {
+                !(prefix.starts_with("./") || prefix.starts_with("../") || prefix.starts_with('/'))
+            });
+        let directory = obsidian_path
+            .as_deref()
+            .unwrap_or(&link.link_parsed_directory)
             .trim_end_matches('/')
             .trim_start_matches('/');
         if directory.split('/').any(|part| part == "..") {
@@ -162,7 +173,7 @@ impl Resolver {
                 link.link_parsed_title, link.link_parsed_file_type
             )
         };
-        if link.is_relative_path_link {
+        if link.is_relative_path_link && obsidian_path.is_none() {
             return (
                 self.by_path_or_folded(&requested).into_iter().collect(),
                 "relativePath",
