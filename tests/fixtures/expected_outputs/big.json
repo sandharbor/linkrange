@@ -2765,8 +2765,8 @@
       "link": {
         "is_embedded": true,
         "is_relative_path_link": false,
-        "link_original_text": "t006/t006 --- short clip.mp4",
-        "link_parsed_alias": null,
+        "link_original_text": "t006/t006 --- short clip.mp4|320x180",
+        "link_parsed_alias": "320x180",
         "link_parsed_anchor": null,
         "link_parsed_anchor_type": null,
         "link_parsed_directory": "t006/",
@@ -6748,8 +6748,8 @@
       {
         "is_embedded": true,
         "is_relative_path_link": false,
-        "link_original_text": "t006/t006 --- short clip.mp4",
-        "link_parsed_alias": null,
+        "link_original_text": "t006/t006 --- short clip.mp4|320x180",
+        "link_parsed_alias": "320x180",
         "link_parsed_anchor": null,
         "link_parsed_anchor_type": null,
         "link_parsed_directory": "t006/",
@@ -11368,7 +11368,7 @@
     },
     {
       "depth": 1,
-      "digest": "4c600c3e9b2bb0b9d2390b8e4a53a84924cb77d602adc5ccfad7046340104fa9",
+      "digest": "3ca95c453566fc9cf5dbe01a364dc58071e19e0bff301a2c4a9836ee1a402dc4",
       "directory": "source://source/",
       "format": "md",
       "inclusion": "traversal",
@@ -11415,7 +11415,7 @@
           "via": "outlink"
         }
       ],
-      "size": 2734,
+      "size": 2814,
       "states": [
         {
           "remainingInlinks": 99,
@@ -12059,7 +12059,7 @@
     },
     {
       "depth": 2,
-      "digest": "0955162c64e405d6c8a28dd27705685abd524fd0b84c07e49bb2a06581b86a9f",
+      "digest": "9a35aab54c59534ac863869923193218884a64db765de239408aa230ff8ab073",
       "directory": "source://source/t006",
       "format": "mp4",
       "inclusion": "traversal",
@@ -12122,7 +12122,7 @@
           "via": "outlink"
         }
       ],
-      "size": 1514,
+      "size": 2934,
       "states": [
         {
           "remainingInlinks": 98,
