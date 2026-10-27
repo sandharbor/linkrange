@@ -1,0 +1,822 @@
+{
+  "adjacency": {
+    "source://source/Bridge.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Both.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Changed%20Links%20Empty.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Common%20Empty.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Move%20Only.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Rename%20Only.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Old/Unique%20Empty.md": {
+      "inlinks": [
+        "source://source/Start.md"
+      ],
+      "outlinks": []
+    },
+    "source://source/Start.md": {
+      "inlinks": [],
+      "outlinks": [
+        "source://source/Bridge.md",
+        "source://source/Old/Both.md",
+        "source://source/Old/Changed%20Links%20Empty.md",
+        "source://source/Old/Common%20Empty.md",
+        "source://source/Old/Move%20Only.md",
+        "source://source/Old/Rename%20Only.md",
+        "source://source/Old/Unique%20Empty.md"
+      ]
+    }
+  },
+  "complete": true,
+  "diagnostics": [],
+  "edges": [
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Move Only",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Move Only",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Move%20Only.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Move%20Only.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Move%20Only.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Rename Only",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Rename Only",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Rename%20Only.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Rename%20Only.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Rename%20Only.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Both",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Both",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Both.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Both.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Both.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Unique Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Unique Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Unique%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Unique%20Empty.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Unique%20Empty.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Common Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Common Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Common%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Common%20Empty.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Common%20Empty.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Changed Links Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Changed Links Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Changed%20Links%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Changed%20Links%20Empty.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Old/Changed%20Links%20Empty.md"
+    },
+    {
+      "bidirectional": false,
+      "link": {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Bridge",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Bridge",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Bridge.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Bridge.md"
+      },
+      "source": "source://source/Start.md",
+      "target": "source://source/Bridge.md"
+    }
+  ],
+  "linksBySource": {
+    "source://source/Bridge.md": [],
+    "source://source/Old/Both.md": [],
+    "source://source/Old/Changed%20Links%20Empty.md": [],
+    "source://source/Old/Common%20Empty.md": [],
+    "source://source/Old/Move%20Only.md": [],
+    "source://source/Old/Rename%20Only.md": [],
+    "source://source/Old/Unique%20Empty.md": [],
+    "source://source/Start.md": [
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Move Only",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Move Only",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Move%20Only.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Move%20Only.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Rename Only",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Rename Only",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Rename%20Only.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Rename%20Only.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Both",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Both",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Both.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Both.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Unique Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Unique Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Unique%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Unique%20Empty.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Common Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Common Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Common%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Common%20Empty.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Old/Changed Links Empty",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "Old/",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Changed Links Empty",
+        "link_resolved_target_directory": "source://source/Old",
+        "link_resolved_target_path": "source://source/Old/Changed%20Links%20Empty.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Old/Changed%20Links%20Empty.md"
+      },
+      {
+        "is_embedded": false,
+        "is_relative_path_link": false,
+        "link_original_text": "Bridge",
+        "link_parsed_alias": null,
+        "link_parsed_anchor": null,
+        "link_parsed_anchor_type": null,
+        "link_parsed_directory": "",
+        "link_parsed_file_type": "md",
+        "link_parsed_media_size": null,
+        "link_parsed_title": "Bridge",
+        "link_resolved_target_directory": "source://source/",
+        "link_resolved_target_path": "source://source/Bridge.md",
+        "link_resolved_target_source": "source",
+        "link_source_name": "source",
+        "link_source_page_path": "source://source/Start.md",
+        "target": "source://source/Bridge.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "depth": 1,
+      "digest": "ceea74e833217f9d6e2c0d73a6faccf2b593fc47ed317979e9a4047a30f57f77",
+      "directory": "source://source/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Bridge.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Bridge.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Bridge.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 71,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Bridge",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "887180cc5beeb3644bfbf9baaf5d4e14edcf03a748cc20534722846d9f6258b4",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Both.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Both.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Both.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 94,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Both",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Changed%20Links%20Empty.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Changed%20Links%20Empty.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Changed%20Links%20Empty.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 0,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Changed Links Empty",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Common%20Empty.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Common%20Empty.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Common%20Empty.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 0,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Common Empty",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "bc55b237f5cae211d487806f6958c9e873fe65254e0e4aa45da3563de358d94c",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Move%20Only.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Move%20Only.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Move%20Only.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 76,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Move Only",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "ea71c02abf8652855e2e4490a8001c430adb29f025f23e343215594f85ec7ccd",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Rename%20Only.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Rename%20Only.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Rename%20Only.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 76,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Rename Only",
+      "via": "outlink"
+    },
+    {
+      "depth": 1,
+      "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "directory": "source://source/Old",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": {
+        "remainingInlinks": 0,
+        "remainingOutlinks": 3
+      },
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Old/Unique%20Empty.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 3,
+      "route": [
+        "source://source/Start.md",
+        "source://source/Old/Unique%20Empty.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        },
+        {
+          "depth": 1,
+          "inclusion": "traversal",
+          "inherited": {
+            "remainingInlinks": 0,
+            "remainingOutlinks": 3
+          },
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Old/Unique%20Empty.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3,
+          "retainedForTraversal": true,
+          "via": "outlink"
+        }
+      ],
+      "size": 0,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 3
+        }
+      ],
+      "title": "Unique Empty",
+      "via": "outlink"
+    },
+    {
+      "depth": 0,
+      "digest": "483871b015197c7fe9f11fb0cf1e843c29e901ec87ce9c40f164087e2c2567b7",
+      "directory": "source://source/",
+      "format": "md",
+      "inclusion": "traversal",
+      "inherited": null,
+      "metadata": {},
+      "overriddenInlinks": null,
+      "overriddenOutlinks": null,
+      "path": "source://source/Start.md",
+      "remainingInlinks": 0,
+      "remainingOutlinks": 4,
+      "route": [
+        "source://source/Start.md"
+      ],
+      "routeSteps": [
+        {
+          "depth": 0,
+          "inclusion": "traversal",
+          "inherited": null,
+          "overriddenInlinks": null,
+          "overriddenOutlinks": null,
+          "path": "source://source/Start.md",
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4,
+          "retainedForTraversal": true,
+          "via": "start"
+        }
+      ],
+      "size": 148,
+      "states": [
+        {
+          "remainingInlinks": 0,
+          "remainingOutlinks": 4
+        }
+      ],
+      "title": "Start",
+      "via": "start"
+    }
+  ],
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "directory": "sources/source-identity-data",
+      "name": "source"
+    }
+  ]
+}
