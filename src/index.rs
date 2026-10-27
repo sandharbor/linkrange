@@ -107,6 +107,39 @@ fn fail_or_record(
     Ok(())
 }
 
+/// A source changed between the scan listing it and reading it, as when an
+/// editor saves during a scan. A later scan can succeed.
+#[derive(Debug)]
+struct SourcesChanged(String);
+
+impl std::fmt::Display for SourcesChanged {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(&self.0)
+    }
+}
+
+impl std::error::Error for SourcesChanged {}
+
+/// Like `fail_or_record`, for a source that changed while it was indexed.
+fn changed_or_record(
+    options: &IndexOptions,
+    inventory: &mut Inventory,
+    path: &str,
+    error: impl std::fmt::Display,
+) -> Result<()> {
+    if !options.best_effort {
+        return Err(SourcesChanged(format!(
+            "Could not index {path}: {error}; previous cache preserved"
+        ))
+        .into());
+    }
+    fail_or_record(options, inventory, path, error)
+}
+
+fn vanished(error: &std::io::Error) -> bool {
+    error.kind() == std::io::ErrorKind::NotFound
+}
+
 fn relative(root: &Path, path: &Path) -> Result<String> {
     Ok(path
         .strip_prefix(root)?
@@ -159,6 +192,10 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
         active.insert(dir.into());
         let entries = match fs::read_dir(dir) {
             Ok(entries) => entries,
+            Err(error) if vanished(&error) => {
+                changed_or_record(options, result, &relative_dir, error)?;
+                return Ok(());
+            }
             Err(error) => {
                 fail_or_record(options, result, &relative_dir, error)?;
                 return Ok(());
@@ -292,7 +329,24 @@ fn inventory(root: &Path, options: &IndexOptions) -> Result<Inventory> {
     Ok(result)
 }
 
+/// Scans that meet a changing source start over this many times in all.
+const ATTEMPTS: u32 = 3;
+
 pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
+    let mut attempt = 1;
+    loop {
+        match load_once(root, options) {
+            Err(error) if attempt < ATTEMPTS && error.is::<SourcesChanged>() => {
+                // Give the save that interrupted this scan time to finish.
+                std::thread::sleep(std::time::Duration::from_millis(25 * u64::from(attempt)));
+                attempt += 1;
+            }
+            result => return result,
+        }
+    }
+}
+
+fn load_once(root: &Path, options: &IndexOptions) -> Result<Index> {
     let start = Instant::now();
     for field in &options.frontmatter {
         anyhow::ensure!(
@@ -363,6 +417,8 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
         .insert("cacheLoad".into(), start.elapsed().as_secs_f64() * 1000.0);
     let phase = Instant::now();
     let mut inventory = inventory(root, options)?;
+    #[cfg(test)]
+    tests::AFTER_INVENTORY.with(|hook| hook.take().map(|change| change()));
     metrics
         .phases_ms
         .insert("inventory".into(), phase.elapsed().as_secs_f64() * 1000.0);
@@ -382,6 +438,10 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
         let path = root.join(name);
         let bytes = match fs::read(&path) {
             Ok(bytes) => bytes,
+            Err(error) if vanished(&error) => {
+                changed_or_record(options, &mut inventory, name, error)?;
+                continue;
+            }
             Err(error) => {
                 fail_or_record(options, &mut inventory, name, error)?;
                 continue;
@@ -389,7 +449,7 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
         };
         metrics.files_read += 1;
         if Stamp::read(&path).ok().as_ref() != Some(stamp) {
-            fail_or_record(
+            changed_or_record(
                 options,
                 &mut inventory,
                 name,
@@ -457,7 +517,10 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
     if changed && !inventory.incomplete {
         let final_inventory = self::inventory(root, options)?;
         if final_inventory != inventory {
-            anyhow::bail!("Source files changed while indexing; retry; previous cache preserved");
+            return Err(SourcesChanged(
+                "Source files changed while indexing; retry; previous cache preserved".into(),
+            )
+            .into());
         }
         if let Some(filename) = &filename {
             let staged = filename.with_extension(format!("{}.tmp", std::process::id()));
@@ -492,4 +555,57 @@ pub(crate) fn load(root: &Path, options: &IndexOptions) -> Result<Index> {
         complete: !inventory.incomplete,
         metrics,
     })
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::cell::Cell;
+
+    thread_local! {
+        pub(super) static AFTER_INVENTORY: Cell<Option<Box<dyn FnOnce()>>> = Cell::new(None);
+    }
+
+    // Saving in an editor can rename or rewrite a file after the scan has
+    // listed it. The scan starts over instead of failing.
+    #[test]
+    fn a_source_renamed_while_indexing_is_indexed_again() {
+        let temp = tempfile::tempdir().unwrap();
+        let root = temp.path().canonicalize().unwrap();
+        fs::write(root.join("A.md"), "[[B]]").unwrap();
+        fs::write(root.join("B.md"), "").unwrap();
+        let moved = root.clone();
+        AFTER_INVENTORY.with(|hook| {
+            hook.set(Some(Box::new(move || {
+                fs::rename(moved.join("B.md"), moved.join("C.md")).unwrap()
+            })))
+        });
+        let options = IndexOptions {
+            no_cache: true,
+            ..IndexOptions::default()
+        };
+        let index = load(&root, &options).unwrap();
+        let paths: Vec<_> = index.files.iter().map(|record| &record.file.path).collect();
+        assert_eq!(paths, ["A.md", "C.md"]);
+        assert!(index.complete);
+    }
+
+    #[test]
+    fn a_source_rewritten_while_indexing_is_indexed_again() {
+        let temp = tempfile::tempdir().unwrap();
+        let root = temp.path().canonicalize().unwrap();
+        fs::write(root.join("A.md"), "").unwrap();
+        let changed = root.clone();
+        AFTER_INVENTORY.with(|hook| {
+            hook.set(Some(Box::new(move || {
+                fs::write(changed.join("A.md"), "[[B]]").unwrap()
+            })))
+        });
+        let options = IndexOptions {
+            no_cache: true,
+            ..IndexOptions::default()
+        };
+        let index = load(&root, &options).unwrap();
+        assert_eq!(index.files[0].file.size, 5);
+    }
 }
